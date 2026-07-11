@@ -159,6 +159,76 @@
     .campaign-card:hover .campaign-img {
       transform: scale(1.03);
     }
+
+    /* Infinite Marquee Partner Showcase Styles */
+    .marquee-container {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      user-select: none;
+      gap: var(--space-6);
+      mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+      padding: var(--space-4) 0;
+    }
+    .marquee-track {
+      display: flex;
+      gap: var(--space-6);
+      animation: marquee-scroll 28s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .partner-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      box-shadow: var(--shadow-sm);
+      width: 220px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4) var(--space-6);
+      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(25, 135, 84, 0.2);
+    }
+    .partner-logo {
+      max-height: 80px;
+      max-width: 170px;
+      object-fit: contain;
+      filter: grayscale(15%) contrast(95%);
+      transition: filter 200ms ease;
+    }
+    .partner-card:hover .partner-logo {
+      filter: none;
+    }
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 767px) {
+      .partner-card {
+        width: 160px;
+        height: 90px;
+        border-radius: 20px;
+        padding: var(--space-3) var(--space-4);
+      }
+      .partner-logo {
+        max-height: 55px;
+        max-width: 120px;
+      }
+      .marquee-track {
+        animation-duration: 22s;
+      }
+    }
   </style>
 </head>
 <body>
@@ -541,6 +611,81 @@
           <a href="/pages/campaigns.html" class="btn btn-secondary btn-lg" style="box-shadow: var(--shadow-sm);">
             <span>View All Campaigns</span>
           </a>
+        </div>
+
+      </div>
+    <!-- 5. OUR PARTNERS & SUPPORTERS SECTION -->
+    <section class="section" id="partners" style="background: linear-gradient(180deg, #f9fdfb 0%, #eef8f2 100%); position: relative; overflow: hidden; border-top: 1px solid var(--border-light); padding: var(--space-10) 0;">
+      
+      <!-- Subtle abstract blur shapes in background -->
+      <div style="position: absolute; top: 10%; left: 5%; width: 250px; height: 250px; border-radius: 50%; background: var(--primary); filter: blur(90px); opacity: 0.05; pointer-events: none;"></div>
+      <div style="position: absolute; bottom: 10%; right: 5%; width: 250px; height: 250px; border-radius: 50%; background: var(--accent); filter: blur(90px); opacity: 0.04; pointer-events: none;"></div>
+
+      <div class="container-wide">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; max-width: 760px; margin: 0 auto var(--space-8); display: flex; flex-direction: column; gap: var(--space-3); padding: 0 var(--space-4);">
+          <span class="text-muted-label" style="color: var(--primary); font-weight: 700; letter-spacing: 0.1em;">TRUSTED BY</span>
+          <h2 style="font-size: var(--text-3xl); color: var(--primary-dark); margin: 0; line-height: 1.2;">Our Partners &amp; Supporters</h2>
+          <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin: 0;">
+            We are grateful to the government organizations, corporate partners, NGOs, and institutions that continuously support Pahela Kadam in empowering children with disabilities through education, therapy, healthcare, and inclusive development.
+          </p>
+        </div>
+
+        <!-- Infinite Marquee container -->
+        <div class="marquee-container">
+          
+          <!-- Track containing two identical lists of logo cards for infinite seamless looping -->
+          <div class="marquee-track">
+            
+            <!-- SET 1 -->
+            <div class="partner-card">
+              <img src="../assets/images/partners/coal_india.png" alt="Coal India Limited Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/jharkhand_gov.png" alt="Government of Jharkhand Emblem" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/maithan_alloys.png" alt="Maithan Alloys Ltd Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/niepmd.png" alt="NIEPMD National Institute Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/parivaar.png" alt="Parivaar Association Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/darpan.png" alt="Darpan NGO Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/national_trust.png" alt="The National Trust India Logo" class="partner-logo" loading="lazy">
+            </div>
+
+            <!-- SET 2 (Duplicate set for seamless transition) -->
+            <div class="partner-card">
+              <img src="../assets/images/partners/coal_india.png" alt="Coal India Limited Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/jharkhand_gov.png" alt="Government of Jharkhand Emblem" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/maithan_alloys.png" alt="Maithan Alloys Ltd Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/niepmd.png" alt="NIEPMD National Institute Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/parivaar.png" alt="Parivaar Association Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/darpan.png" alt="Darpan NGO Logo" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/national_trust.png" alt="The National Trust India Logo" class="partner-logo" loading="lazy">
+            </div>
+
+          </div>
+
         </div>
 
       </div>
