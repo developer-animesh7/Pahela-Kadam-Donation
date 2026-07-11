@@ -1,0 +1,128 @@
+/* ==========================================================================
+   UTILITY CLASSES & ACCESSIBILITY HELPERS
+   ========================================================================== */
+
+/* Accessibility: Hide element but keep screen-readable (WCAG AA standard) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Image Scrim Overlays - Crucial for text readability over photos */
+.scrim-dark {
+  position: relative;
+}
+
+.scrim-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 25, 59, 0.85) 0%, rgba(7, 25, 59, 0.3) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+.scrim-tint {
+  position: relative;
+}
+
+.scrim-tint::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 25, 59, 0.15);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Glassmorphism panel styling */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Aspect Ratio System - avoids Layout Shift */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* Object Fit controller */
+.object-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text alignment & weight modifiers */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+
+/* Display controllers */
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+.d-none { display: none; }
+
+/* Margin / Padding fast resets */
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+
+/* Text colors */
+.text-primary-color { color: var(--primary); }
+.text-accent-color { color: var(--accent); }
+.text-white { color: var(--text-on-dark); }
+.text-secondary-color { color: var(--text-secondary); }
+.text-muted-color { color: var(--text-muted); }
+
+/* Full Cover Background setup */
+.bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* User Selection blocking */
+.select-none {
+  user-select: none;
+}

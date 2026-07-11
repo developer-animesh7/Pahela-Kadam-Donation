@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Pahela Kadam | Narayani Charitable Trust</title>
+
+  <!-- SEO Optimization -->
+  <meta name="description" content="Learn about Pahela Kadam School for Special Children in Dhanbad. Founded by Narayani Charitable Trust, run by Mrs. Anita Agarwal. Guided by trust, care, and transparency.">
+  <meta name="keywords" content="about us, special children school, Anita Agarwal, Narayani Charitable Trust, speech therapy, Dhanbad">
+
+  <!-- Browser Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/logos/Screenshot%202026-07-11%20225005.png?v=2">
+
+  <!-- Core modular CSS layers -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/utilities.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* ======================================================
+       PAGE-LEVEL STYLES
+    ====================================================== */
+
+    .nav-logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-logo-img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* 3-Column Footer Grid */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1.6fr 1fr 1fr;
+        gap: var(--space-10);
+      }
+    }
+
+    /* Social Media buttons */
+    .social-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
+      will-change: transform;
+      cursor: pointer;
+    }
+    .social-icon-btn:hover {
+      background-color: var(--primary);
+      border-color: transparent;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Desktop Navigation toggles */
+    @media (max-width: 1023px) {
+      .desktop-only { display: none !important; }
+      .nav-burger   { display: flex !important; }
+    }
+    @media (min-width: 1024px) {
+      .desktop-only { display: flex !important; }
+      .nav-burger   { display: none !important; }
+    }
+
+    .nav-burger.is-active .burger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-burger.is-active .burger-line:nth-child(2) { opacity: 0; }
+    .nav-burger.is-active .burger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-menu.is-active {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* Spacing fixes */
+    #main-content {
+      margin-top: 72px;
+    }
+
+    /* Premium about us section styles */
+    .about-visual-frame {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      aspect-ratio: 4/3;
+    }
+
+    .premium-card-accent {
+      border-top: 4px solid var(--primary);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .premium-card-accent:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(25, 135, 84, 0.2);
+    }
+
+    /* Journey Timeline */
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      position: relative;
+      margin-left: 20px;
+    }
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gradient-primary-soft);
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: var(--space-6);
+      padding-bottom: var(--space-6);
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-bullet {
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      border: 2px solid #ffffff;
+    }
+    .timeline-content-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-5);
+      box-shadow: var(--shadow-sm);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .timeline-content-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(25, 135, 84, 0.15);
+    }
+
+    /* Facility Grid */
+    .facility-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    @media (min-width: 576px) {
+      .facility-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 992px) {
+      .facility-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .facility-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-5);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+    }
+    .facility-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(25, 135, 84, 0.2);
+    }
+    .facility-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    /* Gov Facilitation Cards */
+    .gov-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+    @media (min-width: 576px) {
+      .gov-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 768px) {
+      .gov-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1200px) {
+      .gov-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .gov-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      text-align: center;
+      transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+    }
+    .gov-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(25, 135, 84, 0.2);
+    }
+    .gov-value {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 2px;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gov-label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       STATIC NAVIGATION HEADER
+       Pre-rendered for zero visual flash
+  ====================================================== -->
+  <header class="header-wrapper">
+    <div class="container-wide flex-between" style="height: 72px;">
+      <!-- Brand Logo -->
+      <a href="/pages/landing.html" class="d-flex" style="align-items: center; gap: var(--space-3); text-decoration: none;" aria-label="Pahela Kadam – Home">
+        <img src="../assets/images/logos/PAHELA KADAM.png"
+             alt="Pahela Kadam Logo"
+             class="nav-logo-img"
+             onerror="this.style.display='none'">
+        <div class="d-flex flex-column" style="line-height: 1.15;">
+          <span class="font-extrabold text-primary-color" style="letter-spacing: -0.02em; font-size: var(--text-base); font-weight: 800;">Pahela Kadam</span>
+          <span class="text-muted-label" style="font-size: 8px; letter-spacing: 0.05em; font-weight: 700; color: var(--text-muted);">Narayani Charitable Trust</span>
+        </div>
+      </a>
+
+      <!-- Centered nav links (desktop) -->
+      <div class="desktop-only centered-nav-links-wrap" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        <nav style="display: flex; gap: var(--space-5); align-items: center;" aria-label="Main Navigation">
+          <a href="/pages/landing.html"   class="nav-link">Home</a>
+          <a href="/pages/about.html"     class="nav-link is-active">About</a>
+          <a href="/pages/campaigns.html" class="nav-link">Campaign</a>
+          <a href="/pages/gallery.html"   class="nav-link">Gallery</a>
+          <a href="/pages/contact.html"   class="nav-link">Contact</a>
+          <a href="/pages/internship.html" class="nav-link">Internship</a>
+        </nav>
+      </div>
+
+      <!-- Right: Donate CTA + Burger -->
+      <div class="d-flex" style="align-items: center; gap: var(--space-3);">
+        <a href="/pages/donate.html" class="btn btn-accent btn-sm pulse-donate desktop-only"
+           style="padding: 0.65rem 1.5rem; font-size: var(--text-xs); border-radius: var(--radius-full);">
+          <span>Donate</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 2px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+
+        <button class="nav-burger" aria-label="Open Navigation Menu" aria-expanded="false"
+                style="width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; z-index: 110; border: 1px solid transparent; background: transparent; cursor: pointer; transition: border-color var(--transition-normal);">
+          <span class="burger-line" style="display: block; width: 22px; height: 2px; background: var(--primary); transition: transform var(--transition-normal), opacity var(--transition-normal);"></span>
+          <span class="burger-line" style="display: block; width: 22px; height: 2px; background: var(--primary); transition: opacity var(--transition-normal);"></span>
+          <span class="burger-line" style="display: block; width: 22px; height: 2px; background: var(--primary); transition: transform var(--transition-normal), opacity var(--transition-normal);"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel overlay -->
+    <nav class="nav-menu" aria-label="Mobile Navigation"
+         style="position: fixed; inset: 0; background-color: rgba(252, 250, 245, 0.98); backdrop-filter: blur(16px); z-index: 90; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--space-5); transform: translateY(-100%); opacity: 0; visibility: hidden; transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1), opacity 250ms, visibility 250ms;">
+      <a href="/pages/landing.html"   class="nav-link" style="font-size: var(--text-lg);">Home</a>
+      <a href="/pages/about.html"     class="nav-link is-active" style="font-size: var(--text-lg);">About</a>
+      <a href="/pages/campaigns.html" class="nav-link" style="font-size: var(--text-lg);">Campaign</a>
+      <a href="/pages/gallery.html"   class="nav-link" style="font-size: var(--text-lg);">Gallery</a>
+      <a href="/pages/contact.html"   class="nav-link" style="font-size: var(--text-lg);">Contact</a>
+      <a href="/pages/internship.html" class="nav-link" style="font-size: var(--text-lg);">Internship</a>
+      <div style="display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-4);">
+        <img src="../assets/images/logos/PAHELA KADAM.png" alt="Pahela Kadam Logo" style="height: 52px; width: auto; opacity: 0.85;">
+        <div class="d-flex flex-column" style="line-height: 1.15; text-align: left;">
+          <span class="font-extrabold" style="letter-spacing: -0.02em; font-size: var(--text-lg); color: var(--primary-dark); font-weight: 800;">Pahela Kadam</span>
+          <span style="font-size: 9px; letter-spacing: 0.05em; font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">Narayani Charitable Trust</span>
+        </div>
+      </div>
+      <a href="/pages/donate.html" class="btn btn-accent pulse-donate" style="width: 200px; margin-top: var(--space-2);">
+        <span>Donate</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </a>
+    </nav>
+  </header>
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: ABOUT PAHELA KADAM -->
+    <section class="section" style="padding-top: clamp(2.5rem, 5vw, 6rem);">
+      <div class="container grid grid-2" style="align-items: center; gap: var(--space-8);">
+        
+        <!-- Left: Large rounded photograph -->
+        <div class="reveal-left">
+          <div class="about-visual-frame">
+            <img src="../assets/images/children/learning_session.png" alt="Special children classroom learning session" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="d-flex flex-column reveal-right" style="gap: var(--space-4);">
+          <div>
+            <span class="text-muted-label" style="color: var(--primary); font-weight: 700;">ABOUT US</span>
+          </div>
+          <h1 class="text-gradient" style="font-size: var(--text-4xl); margin: 0; line-height: 1.15;">Helping Today,<br>Building Tomorrow.</h1>
+          <p style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7; margin: 0;">
+            Welcome to Pahela Kadam. Established in Dhanbad, Jharkhand, and operated by the Narayani Charitable Trust, we are a dedicated day school and rehabilitation center. Our core mission is to empower children with intellectual disabilities, autism, cerebral palsy, visual, hearing, and multiple physical challenges. Through a structured combination of special education, advanced therapies, and vocational training, we help these special children break through developmental limits to lead self-reliant lives. We are committed to fostering an inclusive environment that guides families, restores dignity, and builds a sustainable future for our children.
+          </p>
+          <a href="#our-journey" class="btn btn-secondary btn-lg" style="align-self: flex-start; margin-top: var(--space-2);">
+            <span>Read Our Story</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: MISSION & VISION (Premium Cards) -->
+    <section class="section" style="background: var(--gradient-section); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container grid grid-2" style="gap: var(--space-6);">
+        
+        <!-- Mission Card -->
+        <div class="premium-card-accent reveal-left" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6) var(--space-8); box-shadow: var(--shadow-md);">
+          <div class="d-flex" style="align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);">
+            <span style="font-size: 32px;">🎯</span>
+            <h3 style="font-size: var(--text-xl); color: var(--primary-dark); margin: 0; font-weight: 700;">Our Mission</h3>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.7; margin: 0;">
+            Our mission is to empower children with intellectual, sensory, and physical challenges by providing comprehensive therapeutic care, specialized education, and adaptive vocational training. By creating targeted developmental milestones, we aim to integrate these special children into mainstream society, restoring their personal dignity, securing their human rights, and building the necessary self-reliance for them to thrive in their daily lives.
+          </p>
+        </div>
+
+        <!-- Vision Card -->
+        <div class="premium-card-accent reveal-right" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-6) var(--space-8); box-shadow: var(--shadow-md);">
+          <div class="d-flex" style="align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);">
+            <span style="font-size: 32px;">🌟</span>
+            <h3 style="font-size: var(--text-xl); color: var(--primary-dark); margin: 0; font-weight: 700;">Our Vision</h3>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.7; margin: 0;">
+            Our vision is a society where children with developmental and physical disabilities are fully valued, respected, and given equal opportunities to live with pride. We envision a future where specialized pediatric therapies and inclusive developmental systems are accessible to every special child, regardless of socioeconomic background, enabling them to achieve independence and contribute meaningfully to their communities.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: OUR JOURNEY (Storytelling Timeline) -->
+    <section class="section" id="our-journey">
+      <div class="container grid grid-2" style="gap: var(--space-8); align-items: start;">
+        
+        <!-- Left: Founder photograph & brief caption -->
+        <div class="reveal-left" style="position: sticky; top: 100px;">
+          <div class="about-visual-frame" style="margin-bottom: var(--space-4);">
+            <img src="../assets/images/founder/anita_agarwal.png" alt="Mrs. Anita Agarwal - Founder of Pahela Kadam" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div style="text-align: center; line-height: 1.3;">
+            <h3 style="font-size: var(--text-lg); color: var(--primary-dark); margin: 0 0 2px; font-weight: 700;">Mrs. Anita Agarwal</h3>
+            <span style="font-size: var(--text-xs); color: var(--text-secondary);">Founder and Inspirational Director, Pahela Kadam</span>
+          </div>
+        </div>
+
+        <!-- Right: Vertical Timeline storytelling -->
+        <div class="reveal-right">
+          <div class="d-flex flex-column" style="gap: var(--space-3); margin-bottom: var(--space-6);">
+            <span class="text-muted-label" style="color: var(--accent); font-weight: 700;">OUR JOURNEY</span>
+            <h2 style="font-size: var(--text-2xl); color: var(--primary-dark); margin: 0; line-height: 1.2;">How We Began &amp; Where We Stand</h2>
+          </div>
+
+          <div class="timeline-container">
+            
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <div class="timeline-content-card">
+                <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--primary-dark); margin: 0 0 6px;">Founder's Inspiration</h4>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                  Recognizing the acute lack of therapeutic care and cognitive integration for children with developmental limits in Dhanbad, Mrs. Anita Agarwal took the initiative to set up a comprehensive support center.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <div class="timeline-content-card">
+                <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--primary-dark); margin: 0 0 6px;">Humble Beginnings (2008)</h4>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                  Pahela Kadam launched its operational journey in a modest layout in 2008, initially providing caring education and basic therapy to just two special needs children.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <div class="timeline-content-card">
+                <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--primary-dark); margin: 0 0 6px;">Growing Community &amp; Family Trust</h4>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                  As children began exhibiting measurable milestones in articulation, movement, and cognitive behavior, local families increasingly placed their trust in our school, expanding student registration.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <div class="timeline-content-card">
+                <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--primary-dark); margin: 0 0 6px;">NGO &amp; Corporate Collaborations</h4>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                  Collaboration with various national NGOs, social enterprises, and corporates helped fund high-end tools, interactive sensory integration labs, and specialized clinical rooms.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 5 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <div class="timeline-content-card">
+                <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--primary-dark); margin: 0 0 6px;">Today Supporting 150+ Children</h4>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                  Today, Pahela Kadam operates as a premier day school and comprehensive therapy lab serving over 150 special needs children with direct daily physical, vocational, and social integration support.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: OUR FACILITIES (Responsive Icon Grid) -->
+    <section class="section" style="background: var(--bg-canvas); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-8); display: flex; flex-direction: column; gap: var(--space-3);">
+          <span class="text-muted-label" style="color: var(--primary); font-weight: 700;">OUR FACILITIES</span>
+          <h2 style="font-size: var(--text-3xl); color: var(--primary-dark); margin: 0; line-height: 1.2;">Therapies &amp; Rehabilitation Services</h2>
+        </div>
+
+        <div class="facility-grid">
+          
+          <!-- Facility Card 1 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🗣</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Speech Therapy</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Articulative voicing and verbal articulation training.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 2 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🧠</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Occupational Therapy</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Everyday living training and fine sensory motor skill checks.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 3 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">💧</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Water Therapy</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Hydrotherapy pools for muscle relaxation and physical coordination.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 4 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🧒</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Physiotherapy</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Mobility training, gait rehabilitation, and motor scaling.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 5 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🎨</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Art &amp; Craft</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Enhancing visual creativity, painting, and hand alignment.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 6 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🎵</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Dance &amp; Music</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Rhythm-motor checks, singing, and coordinate motor integration.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 7 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🏫</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Smart Classroom</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Interactive screen boards and adaptive children lessons.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 8 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">💻</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Computer Lab</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Keyboard lessons, visual puzzles, and digit skills.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 9 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">📚</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Library</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Accessible story sheets, picture sheets, and auditory aids.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 10 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">⚽</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Sports</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Indoor adaptive games, track runs, and team coordination play.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 11 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">👨‍👩‍👧</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Parent Awareness</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Behavior integration seminars and home care methodologies.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 12 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🎓</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Vocational Training</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Hand-crafting, packaging, and commercial self-reliance skills.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 13 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🩺</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Doctor Chamber</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Regular diagnostic visits, pediatric consulting, and records.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 14 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">👂</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Audiology</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Auditory mapping diagnostics and sound aid fittings.</p>
+            </div>
+          </div>
+
+          <!-- Facility Card 15 -->
+          <div class="facility-card reveal">
+            <span class="facility-icon">🧩</span>
+            <div>
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0 0 4px;">Sensory Therapy</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">Tactile play integration, balance checks, and color therapy.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: GOVERNMENT SUPPORT FACILITATION (Statistic cards with counter logic) -->
+    <section class="section">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-8); display: flex; flex-direction: column; gap: var(--space-3);">
+          <span class="text-muted-label" style="color: var(--accent); font-weight: 700;">GOVERNMENT INTEGRATION</span>
+          <h2 style="font-size: var(--text-3xl); color: var(--primary-dark); margin: 0; line-height: 1.2;">Government Support Facilitated</h2>
+        </div>
+
+        <div class="gov-grid">
+          
+          <!-- Card 1 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="200">0</span>+</span>
+            <span class="gov-label">Aadhaar Card</span>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="170">0</span>+</span>
+            <span class="gov-label">Bank Account</span>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="65">0</span>+</span>
+            <span class="gov-label">Ration Card</span>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="170">0</span>+</span>
+            <span class="gov-label">UDID Card</span>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="120">0</span>+</span>
+            <span class="gov-label">Disability Certificate</span>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="35">0</span>+</span>
+            <span class="gov-label">Swami Vivekananda Scholarship</span>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="40">0</span>+</span>
+            <span class="gov-label">Legal Guardianship</span>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="35">0</span>+</span>
+            <span class="gov-label">Niramaya Health Insurance</span>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="gov-card reveal">
+            <span class="gov-value"><span class="counter" data-target="40">0</span>+</span>
+            <span class="gov-label">Railway Concession</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER — Pre-rendered for zero visual flash
+  ====================================================== -->
+  <footer style="background-color: #0f1923; color: rgba(255, 255, 255, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.06); padding: var(--space-10) 0 var(--space-6); position: relative; z-index: 10;">
+    <div class="container">
+      <div class="footer-grid" style="margin-bottom: var(--space-8);">
+        
+        <!-- COLUMN 1: Brand & Logo & Social Icons -->
+        <div class="d-flex flex-column" style="gap: var(--space-5); max-width: 440px;">
+          <a href="/pages/landing.html" class="d-flex" style="align-items: center; gap: var(--space-4); text-decoration: none; color: #FFFFFF;" aria-label="Pahela Kadam Home">
+            <img src="../assets/images/logos/PAHELA KADAM.png"
+                 alt="Pahela Kadam Logo"
+                 class="footer-logo-img"
+                 onerror="this.style.display='none'">
+            <div class="d-flex flex-column" style="line-height: 1.15;">
+              <span class="font-extrabold" style="letter-spacing: -0.02em; font-size: var(--text-xl); font-weight: 800; color: #FFFFFF;">Pahela Kadam</span>
+              <span style="font-size: 10px; letter-spacing: 0.05em; font-weight: 700; color: rgba(255, 255, 255, 0.65); text-transform: uppercase;">Narayani Charitable Trust</span>
+            </div>
+          </a>
+          <p style="font-size: var(--text-sm); color: rgba(255, 255, 255, 0.85); line-height: 1.7; margin: 0;">
+            Special Schools in Dhanbad – Find the best special children schools for Intellectual, Autism, Cerebral Palsy, Hearing and Physically Challenged children in Dhanbad.
+          </p>
+          
+          <!-- Social Icons -->
+          <div style="display: flex; gap: var(--space-3);">
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FTrustNarayani"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Follow Narayani Trust on X (Twitter)" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.262 5.636 5.902-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/pahela_kadam"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Follow Pahela Kadam on Instagram" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/pahela.kadam.96"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Follow Pahela Kadam on Facebook" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCpcMrXxyuKg_owAl3YemW3Q"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Subscribe to Pahela Kadam on YouTube" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- COLUMN 2: Contact Info -->
+        <div class="d-flex flex-column" style="gap: var(--space-4);">
+          <h4 style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-weight: 700; margin: 0;">Contact</h4>
+          <div class="d-flex flex-column" style="gap: var(--space-4);">
+            <div>
+              <span style="display: block; font-weight: 700; color: rgba(255, 255, 255, 0.65); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1);">Call Us</span>
+              <a href="tel:+919471162439" style="display: block; color: rgba(255, 255, 255, 0.85); text-decoration: none; line-height: 1.8; font-size: var(--text-sm);">+91 9471162439</a>
+              <a href="tel:03263556440" style="display: block; color: rgba(255, 255, 255, 0.85); text-decoration: none; line-height: 1.8; font-size: var(--text-sm);">03263556440</a>
+            </div>
+            <div>
+              <span style="display: block; font-weight: 700; color: rgba(255, 255, 255, 0.65); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1);">Mail Us</span>
+              <a href="mailto:pahelakadams@gmail.com" style="color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: var(--text-sm);">pahelakadams@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- COLUMN 3: Visit Us Address -->
+        <div class="d-flex flex-column" style="gap: var(--space-4);">
+          <h4 style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-weight: 700; margin: 0;">Visit Us</h4>
+          <div style="font-size: var(--text-sm); color: rgba(255, 255, 255, 0.85); line-height: 1.8;">
+            <span style="display: block; font-weight: 700; color: rgba(255, 255, 255, 0.65); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1);">Address</span>
+            Pahela Kadam School<br>
+            Bungalow No. 8, Jagjeevan Nagar,<br>
+            Near Saraidhela Police Station,<br>
+            Saraidhella, Dhanbad,<br>
+            India – 826003
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Bottom bar -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: var(--space-4); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: var(--text-xs); color: rgba(255, 255, 255, 0.65); align-items: center;">
+        <span>© Pahela Kadam School – Narayani Charitable Trust. All Rights Reserved.</span>
+        <a href="/pages/transparency.html" style="color: inherit; text-decoration: none;">Transparency Audit Records</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Modules -->
+  <script src="../js/component-loader.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

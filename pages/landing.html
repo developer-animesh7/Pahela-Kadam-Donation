@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pahela Kadam - Premium Donation Platform | Narayani Charitable Trust</title>
+
+  <!-- SEO Optimization -->
+  <meta name="description" content="Support special children at Pahela Kadam. Sponsored by Narayani Charitable Trust. Fully audited 80G tax-exempt donations.">
+  <meta name="keywords" content="donate, special children, physical therapy, Narayani Charitable Trust, Pahela Kadam, Dhanbad">
+  <meta property="og:title" content="Pahela Kadam - Premium Donation Platform">
+  <meta property="og:description" content="Help special children stand, speak, and thrive. Direct therapy sponsorship and 100% transparency.">
+
+  <!-- Browser Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/logos/Screenshot%202026-07-11%20225005.png?v=2">
+
+  <!-- Core modular CSS layers -->
+  <link rel="preload" href="../assets/images/hero/speech_therapy.webp" as="image">
+  <link rel="preload" href="../assets/images/hero/occupational_therapy.webp" as="image">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/utilities.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* ======================================================
+       PAGE-LEVEL COMPONENT STYLES
+    ====================================================== */
+
+    /* Navbar logo image (Increased by 30% to 52px height for readability) */
+    .nav-logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Footer logo (Increased 2x to 72px height for premium brand layout prominence) */
+    .footer-logo-img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* NSE badge (green gradient trust pill) */
+    .nse-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .nse-badge-green {
+      background: var(--gradient-primary-soft);
+      color: var(--primary-dark);
+      border-color: rgba(25, 135, 84, 0.2);
+    }
+    .nse-badge-neutral {
+      background-color: var(--bg-shaded);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+
+    /* Desktop nav only */
+    @media (max-width: 1023px) {
+      .desktop-only { display: none !important; }
+      .nav-burger   { display: flex !important; }
+    }
+    @media (min-width: 1024px) {
+      .desktop-only { display: flex !important; }
+      .nav-burger   { display: none !important; }
+    }
+
+    /* Burger active state */
+    .nav-burger.is-active .burger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-burger.is-active .burger-line:nth-child(2) { opacity: 0; }
+    .nav-burger.is-active .burger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Mobile menu open */
+    .nav-menu.is-active {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* 3-Column Footer Grid Layout */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1.6fr 1fr 1fr;
+        gap: var(--space-10);
+      }
+    }
+
+    /* Premium High-Contrast White Social Buttons with Green Hover Transition */
+    .social-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
+      will-change: transform;
+      cursor: pointer;
+    }
+
+    .social-icon-btn:hover {
+      background-color: var(--primary);
+      border-color: transparent;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Campaign grid & hover styles */
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    @media (min-width: 768px) {
+      .campaign-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .campaign-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+      }
+    }
+    .campaign-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg) !important;
+      border-color: rgba(25, 135, 84, 0.2) !important;
+    }
+    .campaign-card:hover .campaign-img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       STATIC NAVIGATION HEADER
+       Pre-rendered: zero fetch flash, instant paint
+  ====================================================== -->
+  <header class="header-wrapper">
+    <div class="container-wide flex-between" style="height: 72px;">
+
+      <!-- Brand Logo (PNG icon + Brand typography text next to it) -->
+      <a href="/pages/landing.html" class="d-flex" style="align-items: center; gap: var(--space-3); text-decoration: none;" aria-label="Pahela Kadam – Home">
+        <img src="../assets/images/logos/PAHELA KADAM.png"
+             alt="Pahela Kadam Logo"
+             class="nav-logo-img"
+             onerror="this.style.display='none'">
+        <div class="d-flex flex-column" style="line-height: 1.15;">
+          <span class="font-extrabold text-primary-color" style="letter-spacing: -0.02em; font-size: var(--text-base); font-weight: 800;">Pahela Kadam</span>
+          <span class="text-muted-label" style="font-size: 8px; letter-spacing: 0.05em; font-weight: 700; color: var(--text-muted);">Narayani Charitable Trust</span>
+        </div>
+      </a>
+
+      <!-- Centered nav links (desktop) -->
+      <div class="desktop-only centered-nav-links-wrap" style="position: absolute; left: 50%; transform: translateX(-50%);">
+        <nav style="display: flex; gap: var(--space-5); align-items: center;" aria-label="Main Navigation">
+          <a href="/pages/landing.html"   class="nav-link">Home</a>
+          <a href="/pages/about.html"     class="nav-link">About</a>
+          <a href="/pages/campaigns.html" class="nav-link">Campaign</a>
+          <a href="/pages/gallery.html"   class="nav-link">Gallery</a>
+          <a href="/pages/contact.html"   class="nav-link">Contact</a>
+          <a href="/pages/internship.html" class="nav-link">Intership</a>
+        </nav>
+      </div>
+
+      <!-- Right: Donate CTA + Burger -->
+      <div class="d-flex" style="align-items: center; gap: var(--space-3);">
+        <a href="/pages/donate.html" class="btn btn-accent btn-sm pulse-donate desktop-only"
+           style="padding: 0.65rem 1.5rem; font-size: var(--text-xs); border-radius: var(--radius-full);">
+          <span>Donate</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 2px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+
+        <button class="nav-burger" aria-label="Open Navigation Menu" aria-expanded="false"
+                style="width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; z-index: 110; border: 1px solid transparent; background: transparent; cursor: pointer; transition: border-color var(--transition-normal);">
+          <span class="burger-line" style="display: block; width: 22px; height: 2px; background: var(--primary); transition: transform var(--transition-normal), opacity var(--transition-normal);"></span>
+          <span class="burger-line" style="display: block; width: 22px; height: 2px; background: var(--primary); transition: opacity var(--transition-normal);"></span>
+          <span class="burger-line" style="display: block; width: 22px; height: 2px; background: var(--primary); transition: transform var(--transition-normal), opacity var(--transition-normal);"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel overlay -->
+    <nav class="nav-menu" aria-label="Mobile Navigation"
+         style="position: fixed; inset: 0; background-color: rgba(252, 250, 245, 0.98); backdrop-filter: blur(16px); z-index: 90; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--space-5); transform: translateY(-100%); opacity: 0; visibility: hidden; transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1), opacity 250ms, visibility 250ms;">
+      <a href="/pages/landing.html"   class="nav-link" style="font-size: var(--text-lg);">Home</a>
+      <a href="/pages/about.html"     class="nav-link" style="font-size: var(--text-lg);">About</a>
+      <a href="/pages/campaigns.html" class="nav-link" style="font-size: var(--text-lg);">Campaign</a>
+      <a href="/pages/gallery.html"   class="nav-link" style="font-size: var(--text-lg);">Gallery</a>
+      <a href="/pages/contact.html"   class="nav-link" style="font-size: var(--text-lg);">Contact</a>
+      <a href="/pages/internship.html" class="nav-link" style="font-size: var(--text-lg);">Internship</a>
+      <div style="display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-4);">
+        <img src="../assets/images/logos/PAHELA KADAM.png" alt="Pahela Kadam Logo" style="height: 52px; width: auto; opacity: 0.85;">
+        <div class="d-flex flex-column" style="line-height: 1.15; text-align: left;">
+          <span class="font-extrabold" style="letter-spacing: -0.02em; font-size: var(--text-lg); color: var(--primary-dark); font-weight: 800;">Pahela Kadam</span>
+          <span style="font-size: 9px; letter-spacing: 0.05em; font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">Narayani Charitable Trust</span>
+        </div>
+      </div>
+      <a href="/pages/donate.html" class="btn btn-accent pulse-donate" style="width: 200px; margin-top: var(--space-2);">
+        <span>Donate</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </a>
+    </nav>
+  </header>
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <div data-component="hero"></div>
+
+    <!-- ─── 1. NSE TRUST VERIFICATION CARD ─────────────────── -->
+    <section class="section" style="padding-top: 0; z-index: 10;">
+      <div class="container">
+        <div class="nse-trust-card reveal" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); border-radius: var(--radius-xl); padding: var(--space-6) var(--space-8);">
+          <div class="grid grid-2" style="align-items: center; gap: var(--space-6);">
+            <!-- Text & Badge column -->
+            <div class="d-flex flex-column" style="gap: var(--space-3);">
+              <div>
+                <span class="nse-badge nse-badge-green">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-right: 2px; color: var(--primary);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>NSE SSE Registered NGO</span>
+                </span>
+                <span class="nse-badge nse-badge-neutral" style="margin-left: 8px;">
+                  <span>SR. NO. 37</span>
+                </span>
+              </div>
+              <h2 style="font-size: var(--text-2xl); color: var(--primary-dark); margin: 0; letter-spacing: -0.02em;">Narayani Charitable Trust</h2>
+              <p class="text-sm-body" style="line-height: 1.6; color: var(--text-secondary); margin: 0;">
+                Narayani Charitable Trust is officially listed as a registered Social Enterprise on the National Stock Exchange (NSE) Social Stock Exchange (SSE) under Serial Number 37. This official listing subjects our organization to rigorous continuous audits, social disclosures, and financial transparency, ensuring absolute accountability.
+              </p>
+              <div style="margin-top: var(--space-2);">
+                <a href="https://www.nseindia.com/static/list-registered-ngos" target="_blank" class="btn btn-secondary" style="font-size: var(--text-xs); padding: 0.6rem 1.25rem;">
+                  <span>Verify on NSE</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual NSE logo column (Vertically centered, double sizing) -->
+            <div class="d-flex" style="justify-content: center; align-items: center; padding: var(--space-6);">
+              <div class="d-flex flex-column" style="align-items: center; gap: var(--space-4);">
+                <div style="padding: var(--space-5) var(--space-6); background: #fafafa; border: 1px solid var(--border-light); border-radius: var(--radius-xl);">
+                  <img src="../assets/images/logos/NSE LOGO.png" alt="NSE Logo" style="height: 96px; width: auto; object-fit: contain; display: block;" onerror="this.style.display='none';">
+                </div>
+                <div style="text-align: center; line-height: 1.2;">
+                  <span style="font-size: var(--text-xs); font-weight: 700; color: var(--text-primary); display: block;">National Stock Exchange</span>
+                  <span style="font-size: 10px; color: var(--text-secondary);">Social Stock Exchange Listing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT US SECTION (Core narrative) -->
+    <section class="section" id="about-us">
+      <div class="container grid grid-2" style="align-items: center; gap: var(--space-8);">
+        <!-- Left Side: Rounded Image Offset Frame -->
+        <div class="reveal-left">
+          <div class="media-frame-offset">
+            <img src="../assets/images/about/center_building.webp" alt="Pahela Kadam School building day session" class="object-cover" style="width: 100%; height: 100%;">
+          </div>
+        </div>
+
+        <!-- Right Side: Narrative about Pahela Kadam -->
+        <div class="d-flex flex-column reveal-right" style="gap: var(--space-4);">
+          <div>
+            <span class="text-muted-label" style="color: var(--primary);">About Us</span>
+          </div>
+          <h2 class="text-gradient" style="margin: 0; font-size: var(--text-3xl); line-height: 1.2;">Empowering Special Children Since 2008</h2>
+          <p class="text-story" style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7;">
+            Narayani Charitable Trust operates the Pahela Kadam School for Special Children. Dedicated to the treatment, care, and cognitive support of children with intellectual disabilities, autism, cerebral palsy, and multiple developmental challenges, the day school provides occupational therapy, sensory integration support, early developmental care, and vocational skills.
+          </p>
+          <p class="text-story" style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7;">
+            Our child-first model transforms physical and developmental limits into independent steps, creating a warm community environment that supports children and guides their families.
+          </p>
+          <div style="margin-top: var(--space-2);">
+            <a href="/pages/about.html" class="btn btn-secondary btn-lg">
+              <span>Read Our Full Story</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OUR GOALS / WHY DONATE TO US -->
+    <section class="section" id="why-donate" style="background: radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.02) 0%, transparent 60%), var(--bg-canvas); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container grid grid-2" style="align-items: center; gap: var(--space-8);">
+        <!-- Left Side: Core Mission goals and CTA -->
+        <div class="d-flex flex-column reveal-left" style="gap: var(--space-4);">
+          <div>
+            <span class="text-muted-label" style="color: var(--accent);">Our Vision & Goals</span>
+          </div>
+          <h2 class="text-gradient" style="margin: 0; font-size: var(--text-3xl); line-height: 1.2;">Why Your Support is Critical</h2>
+          <p class="text-story" style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7;">
+            Sustaining a premium daily rehabilitation day school requires continuous specialized resources. Your donations go directly to funding occupational therapist fees, maintaining specialized tactile board tools, distributing daily warm lunchboxes, and operating our door-to-door safety transport vans.
+          </p>
+          <p class="text-story" style="font-size: var(--text-base); color: var(--text-secondary); line-height: 1.7;">
+            Every rupee donated maps to clear developmental goals. We believe that regular therapy transforms a child's outlook and enables structural independence.
+          </p>
+          <div style="margin-top: var(--space-3);">
+            <a href="/pages/donate.html" class="btn btn-primary btn-lg text-white" style="box-shadow: var(--shadow-md);">
+              <span>Donate Now</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Occupational Session visual frame -->
+        <div class="reveal-right">
+          <div class="media-frame-offset" style="position: relative;">
+            <img src="../assets/images/therapy/occupational_session.webp" alt="Therapist conducting sensory-motor integration sessions" class="object-cover" style="width: 100%; height: 100%;">
+            <!-- Small floating badge overlay -->
+            <div class="hero-floating-badge reveal-scale" style="top: var(--space-4); right: calc(var(--space-4) * -1); border: 1px solid var(--border-color); background-color: var(--bg-surface); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); z-index: 10;">
+              <span style="font-size: 10px; font-weight: 700; color: var(--primary);">Active Sensory Lab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PREMIUM CAMPAIGN SECTION -->
+    <section class="section" id="campaigns" style="background: var(--bg-canvas); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); position: relative; overflow: hidden;">
+      
+      <!-- Subtle organic background shapes -->
+      <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(25, 135, 84, 0.02) 0%, transparent 70%); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -100px; right: -100px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(37, 99, 235, 0.02) 0%, transparent 70%); pointer-events: none;"></div>
+
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-8); display: flex; flex-direction: column; gap: var(--space-3);">
+          <span class="text-muted-label" style="color: var(--primary); font-weight: 700; letter-spacing: 0.1em;">OUR CAMPAIGNS</span>
+          <h2 class="text-gradient" style="font-size: var(--text-3xl); margin: 0; line-height: 1.2;">Support a Cause. Change a Life.</h2>
+          <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin: 0; max-width: 500px; align-self: center;">
+            Every campaign directly supports therapy, education, healthcare, assistive devices and a better future for children with disabilities.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="campaign-grid" style="margin-bottom: var(--space-8);">
+          
+          <!-- Card 1: Speech Therapy Kits -->
+          <div class="campaign-card reveal" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform 250ms ease-out, box-shadow 250ms ease-out; box-shadow: var(--shadow-sm);">
+            <!-- Image Area -->
+            <div style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="../assets/images/campaigns/therapy_kits.png" alt="Sponsor Speech Therapy Kits" class="campaign-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease-out; will-change: transform;">
+              <span style="position: absolute; top: var(--space-3); left: var(--space-3); background: rgba(15, 25, 35, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">🗣 Speech Therapy</span>
+            </div>
+            
+            <!-- Card Body -->
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; gap: var(--space-4);">
+              
+              <!-- Trust badge & Title -->
+              <div>
+                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                  <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    Verified Campaign
+                  </span>
+                  <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">12 Children Benefited</span>
+                </div>
+                <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3;">Sponsor Speech Therapy Kits</h3>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: var(--space-2) 0 0; min-height: 3.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                  Provide specialized tactile sound kits to help special needs children with autism and down syndrome speak and communicate effectively.
+                </p>
+              </div>
+
+              <!-- Progress bar & numbers -->
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; margin-bottom: var(--space-1); font-weight: 600;">
+                  <span style="color: var(--text-primary);">₹1,44,000 <span style="color: var(--text-secondary); font-weight: 400;">Raised</span></span>
+                  <span style="color: var(--primary); font-weight: 700;">72%</span>
+                </div>
+                <div style="width: 100%; height: 6px; background-color: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
+                  <div class="progress-fill" data-percent="72" style="width: 0%; height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                  <span>Goal: ₹2,00,000</span>
+                  <span style="font-weight: 600; color: var(--warning);">14 Days Left</span>
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: auto;">
+                <a href="/pages/donate.html?campaign=speech-kits" class="btn btn-accent btn-full pulse-donate" style="justify-content: center; font-size: var(--text-xs); padding: 0.7rem var(--space-4);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span>Donate Now</span>
+                </a>
+                <a href="/pages/campaigns.html#speech-kits" style="text-align: center; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-decoration: none; padding: 4px 0; transition: color 150ms;">Learn More</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 2: Pediatric Walkers -->
+          <div class="campaign-card reveal" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform 250ms ease-out, box-shadow 250ms ease-out; box-shadow: var(--shadow-sm);">
+            <!-- Image Area -->
+            <div style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="../assets/images/campaigns/mobility_walkers.png" alt="Pediatric Mobility & Walkers" class="campaign-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease-out; will-change: transform;">
+              <span style="position: absolute; top: var(--space-3); left: var(--space-3); background: rgba(15, 25, 35, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">🦽 Assistive Devices</span>
+            </div>
+            
+            <!-- Card Body -->
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; gap: var(--space-4);">
+              
+              <!-- Trust badge & Title -->
+              <div>
+                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                  <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Managed by Trust
+                  </span>
+                  <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">8 Children Benefited</span>
+                </div>
+                <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3;">Pediatric Mobility &amp; Walkers</h3>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: var(--space-2) 0 0; min-height: 3.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                  Custom supportive walkers, pediatric orthotics, and active physical therapy aids for independent steps and physical gait rehabilitation.
+                </p>
+              </div>
+
+              <!-- Progress bar & numbers -->
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; margin-bottom: var(--space-1); font-weight: 600;">
+                  <span style="color: var(--text-primary);">₹2,98,000 <span style="color: var(--text-secondary); font-weight: 400;">Raised</span></span>
+                  <span style="color: var(--primary); font-weight: 700;">85%</span>
+                </div>
+                <div style="width: 100%; height: 6px; background-color: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
+                  <div class="progress-fill" data-percent="85" style="width: 0%; height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                  <span>Goal: ₹3,50,000</span>
+                  <span style="font-weight: 600; color: var(--warning);">8 Days Left</span>
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: auto;">
+                <a href="/pages/donate.html?campaign=mobility-walkers" class="btn btn-accent btn-full pulse-donate" style="justify-content: center; font-size: var(--text-xs); padding: 0.7rem var(--space-4);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span>Donate Now</span>
+                </a>
+                <a href="/pages/campaigns.html#mobility-walkers" style="text-align: center; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-decoration: none; padding: 4px 0; transition: color 150ms;">Learn More</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 3: Sensory Integration Room -->
+          <div class="campaign-card reveal" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform 250ms ease-out, box-shadow 250ms ease-out; box-shadow: var(--shadow-sm);">
+            <!-- Image Area -->
+            <div style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
+              <img src="../assets/images/campaigns/sensory_room.png" alt="Equip Sensory Integration Room" class="campaign-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease-out; will-change: transform;">
+              <span style="position: absolute; top: var(--space-3); left: var(--space-3); background: rgba(15, 25, 35, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">🧠 Occupational Therapy</span>
+            </div>
+            
+            <!-- Card Body -->
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; gap: var(--space-4);">
+              
+              <!-- Trust badge & Title -->
+              <div>
+                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                  <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    Verified Campaign
+                  </span>
+                  <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">20 Children Benefited</span>
+                </div>
+                <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3;">Equip Sensory Integration Room</h3>
+                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: var(--space-2) 0 0; min-height: 3.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                  A safe bubble tube, sound-proof sensory swing, and interactive tactile play environment for autistic children and those with sensory challenges.
+                </p>
+              </div>
+
+              <!-- Progress bar & numbers -->
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; margin-bottom: var(--space-1); font-weight: 600;">
+                  <span style="color: var(--text-primary);">₹1,80,000 <span style="color: var(--text-secondary); font-weight: 400;">Raised</span></span>
+                  <span style="color: var(--primary); font-weight: 700;">36%</span>
+                </div>
+                <div style="width: 100%; height: 6px; background-color: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
+                  <div class="progress-fill" data-percent="36" style="width: 0%; height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
+                  <span>Goal: ₹5,00,000</span>
+                  <span style="font-weight: 600; color: var(--text-secondary);">30 Days Left</span>
+                </div>
+              </div>
+
+              <!-- CTAs -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: auto;">
+                <a href="/pages/donate.html?campaign=sensory-room" class="btn btn-accent btn-full pulse-donate" style="justify-content: center; font-size: var(--text-xs); padding: 0.7rem var(--space-4);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span>Donate Now</span>
+                </a>
+                <a href="/pages/campaigns.html#sensory-room" style="text-align: center; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-decoration: none; padding: 4px 0; transition: color 150ms;">Learn More</a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Center CTA: View All Campaigns -->
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <a href="/pages/campaigns.html" class="btn btn-secondary btn-lg" style="box-shadow: var(--shadow-sm);">
+            <span>View All Campaigns</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Static Redesigned Minimal Footer (Pre-rendered for performance, 3-column layout) -->
+  <footer style="background-color: #0f1923; color: rgba(255, 255, 255, 0.85); border-top: 1px solid rgba(255, 255, 255, 0.06); padding: var(--space-10) 0 var(--space-6); position: relative; z-index: 10;">
+    <div class="container">
+      <div class="footer-grid" style="margin-bottom: var(--space-8);">
+        
+        <!-- COLUMN 1: Brand & Logo & Social Icons -->
+        <div class="d-flex flex-column" style="gap: var(--space-5); max-width: 440px;">
+          <a href="/pages/landing.html" class="d-flex" style="align-items: center; gap: var(--space-4); text-decoration: none; color: #FFFFFF;" aria-label="Pahela Kadam Home">
+            <img src="../assets/images/logos/PAHELA KADAM.png"
+                 alt="Pahela Kadam Logo"
+                 class="footer-logo-img"
+                 onerror="this.style.display='none'">
+            <div class="d-flex flex-column" style="line-height: 1.15;">
+              <span class="font-extrabold" style="letter-spacing: -0.02em; font-size: var(--text-xl); font-weight: 800; color: #FFFFFF;">Pahela Kadam</span>
+              <span style="font-size: 10px; letter-spacing: 0.05em; font-weight: 700; color: rgba(255, 255, 255, 0.65); text-transform: uppercase;">Narayani Charitable Trust</span>
+            </div>
+          </a>
+          <p style="font-size: var(--text-sm); color: rgba(255, 255, 255, 0.85); line-height: 1.7; margin: 0;">
+            Special Schools in Dhanbad – Find the best special children schools for Intellectual, Autism, Cerebral Palsy, Hearing and Physically Challenged children in Dhanbad.
+          </p>
+          
+          <!-- Social Icons -->
+          <div style="display: flex; gap: var(--space-3);">
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FTrustNarayani"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Follow Narayani Trust on X (Twitter)" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.262 5.636 5.902-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/pahela_kadam"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Follow Pahela Kadam on Instagram" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.facebook.com/pahela.kadam.96"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Follow Pahela Kadam on Facebook" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCpcMrXxyuKg_owAl3YemW3Q"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Subscribe to Pahela Kadam on YouTube" class="social-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- COLUMN 2: Contact Info -->
+        <div class="d-flex flex-column" style="gap: var(--space-4);">
+          <h4 style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-weight: 700; margin: 0;">Contact</h4>
+          <div class="d-flex flex-column" style="gap: var(--space-4);">
+            <div>
+              <span style="display: block; font-weight: 700; color: rgba(255, 255, 255, 0.65); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1);">Call Us</span>
+              <a href="tel:+919471162439" style="display: block; color: rgba(255, 255, 255, 0.85); text-decoration: none; line-height: 1.8; font-size: var(--text-sm);">+91 9471162439</a>
+              <a href="tel:03263556440" style="display: block; color: rgba(255, 255, 255, 0.85); text-decoration: none; line-height: 1.8; font-size: var(--text-sm);">03263556440</a>
+            </div>
+            <div>
+              <span style="display: block; font-weight: 700; color: rgba(255, 255, 255, 0.65); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1);">Mail Us</span>
+              <a href="mailto:pahelakadams@gmail.com" style="color: rgba(255, 255, 255, 0.85); text-decoration: none; font-size: var(--text-sm);">pahelakadams@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- COLUMN 3: Visit Us Address -->
+        <div class="d-flex flex-column" style="gap: var(--space-4);">
+          <h4 style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.05em; color: #FFFFFF; font-weight: 700; margin: 0;">Visit Us</h4>
+          <div style="font-size: var(--text-sm); color: rgba(255, 255, 255, 0.85); line-height: 1.8;">
+            <span style="display: block; font-weight: 700; color: rgba(255, 255, 255, 0.65); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-1);">Address</span>
+            Pahela Kadam School<br>
+            Bungalow No. 8, Jagjeevan Nagar,<br>
+            Near Saraidhela Police Station,<br>
+            Saraidhella, Dhanbad,<br>
+            India – 826003
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Bottom bar -->
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: var(--space-4); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: var(--text-xs); color: rgba(255, 255, 255, 0.65); align-items: center;">
+        <span>© Pahela Kadam School – Narayani Charitable Trust. All Rights Reserved.</span>
+        <a href="/pages/transparency.html" style="color: inherit; text-decoration: none;">Transparency Audit Records</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Modules -->
+  <script src="../js/component-loader.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

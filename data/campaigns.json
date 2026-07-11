@@ -1,0 +1,42 @@
+[
+  {
+    "id": "speech-kits",
+    "title": "Sponsor Speech Therapy Kits",
+    "tagline": "Provide specialized tactile sound kits to help children communicate.",
+    "goal": 200000,
+    "raised": 144000,
+    "daysLeft": 14,
+    "image": "../assets/images/campaigns/therapy_kits.webp",
+    "isUrgent": true
+  },
+  {
+    "id": "mobility-walkers",
+    "title": "Pediatric Mobility & Walkers",
+    "tagline": "Custom supportive walkers and physical therapy aids for independent steps.",
+    "goal": 350000,
+    "raised": 298000,
+    "daysLeft": 8,
+    "image": "../assets/images/campaigns/mobility_walkers.webp",
+    "isUrgent": true
+  },
+  {
+    "id": "sensory-room",
+    "title": "Equip Sensory Integration Room",
+    "tagline": "A safe bubble tube, sound-proof, and tactile environment for ADHD & Autistic children.",
+    "goal": 500000,
+    "raised": 180000,
+    "daysLeft": 30,
+    "image": "../assets/images/campaigns/sensory_room.webp",
+    "isUrgent": false
+  },
+  {
+    "id": "daily-meals",
+    "title": "Sponsor Nutritious Mid-day Meals",
+    "tagline": "Ensure special children receive balanced nutritional lunch boxes daily.",
+    "goal": 150000,
+    "raised": 95000,
+    "daysLeft": 12,
+    "image": "../assets/images/campaigns/daily_meals.webp",
+    "isUrgent": false
+  }
+]

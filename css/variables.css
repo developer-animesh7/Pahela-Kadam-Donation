@@ -1,0 +1,105 @@
+/* ==========================================================================
+   PAHELA KADAM DESIGN SYSTEM TOKENS
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Hope, Trust, Care & Growth (Premium Green-Centered Theme) */
+  --primary: #198754;        /* Primary Green */
+  --primary-hover: #157347;  /* Primary Hover Green */
+  --primary-light: #e8f5e9;  /* Light Green surface fills */
+  --primary-dark: #115e3a;   /* Forest dark green for headings */
+
+  /* Premium Green Gradient System */
+  --gradient-primary: linear-gradient(135deg, #198754 0%, #34C38F 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #157347 0%, #2aab7a 100%);
+  --gradient-primary-soft: linear-gradient(135deg, rgba(25, 135, 84, 0.08) 0%, rgba(52, 195, 143, 0.04) 100%);
+  --gradient-hero: radial-gradient(circle at 90% 10%, rgba(25, 135, 84, 0.05) 0%, rgba(52, 195, 143, 0.02) 60%, transparent 100%);
+  --gradient-section: linear-gradient(135deg, #f8fbf8 0%, #e8f5e9 100%);
+
+  --accent: #2563EB;         /* Accent Blue for trust elements */
+  --accent-light: #3b82f6;
+  --accent-dark: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.06);
+
+  /* Success & Warning/Alert highlights */
+  --success: #16a34a;        /* Success green */
+  --warning: #f59e0b;        /* Warning orange (used ONLY for micro accents / warnings) */
+  --warning-soft: rgba(245, 158, 11, 0.08);
+
+  /* Backgrounds & Neutral Surfaces - Fresh, Calm Warm Canvas */
+  --bg-canvas: #f8fbf8;     /* Soft warm canvas background */
+  --bg-canvas-gradient: radial-gradient(circle at 80% 10%, rgba(25, 135, 84, 0.04) 0%, rgba(37, 99, 235, 0.01) 50%, transparent 100%), linear-gradient(135deg, #f8fbf8 0%, #e8f5e9 100%);
+  --bg-surface: #ffffff;    /* Cards background */
+  --bg-elevated: #ffffff;   /* Double elevated areas */
+  --bg-shaded: #eef5ee;     /* Warm green-gray for minor containers */
+  
+  /* Text Colors */
+  --text-primary: #1f2937;   /* Charcoal primary text - high readability & contrast */
+  --text-secondary: #6b7280; /* Muted gray for description copies */
+  --text-muted: #9ca3af;     /* Light gray for meta elements */
+  --text-on-dark: #ffffff;
+  
+  /* Borders and Dividers */
+  --border-color: #dde7df;
+  --border-hover: #ccd9cd;
+  --border-light: #eef5ee;
+  
+  /* Shadows and Ambient Occlusion Elevations */
+  --shadow-color: 152, 10%, 15%;
+  --shadow-sm: 0 1px 2px 0 rgba(var(--shadow-color), 0.03);
+  --shadow-md: 0 4px 10px -2px rgba(var(--shadow-color), 0.05), 0 2px 4px -2px rgba(var(--shadow-color), 0.02);
+  --shadow-lg: 0 10px 20px -4px rgba(var(--shadow-color), 0.06), 0 4px 8px -4px rgba(var(--shadow-color), 0.02);
+  --shadow-xl: 0 20px 40px -8px rgba(var(--shadow-color), 0.08), 0 6px 12px -8px rgba(var(--shadow-color), 0.03);
+  --shadow-premium: 0 30px 60px -15px rgba(var(--shadow-color), 0.12);
+  
+  /* Reduced Glassmorphism System */
+  --glass-bg: rgba(248, 251, 248, 0.8);
+  --glass-border: rgba(221, 231, 223, 0.5);
+  --glass-blur: 6px;         /* Reduced from 16px */
+
+  /* Typography Scale - Responsive clamp system */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8rem);
+  --text-sm: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+  --text-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --text-lg: clamp(1.1rem, 1.05rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.1vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.85rem + 1.6vw, 3rem);
+  --text-5xl: clamp(3rem, 2.3rem + 2.8vw, 4.25rem);
+  
+  /* Spacing Scale - 8px based */
+  --space-05: 0.125rem; /* 2px */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-8: 3rem;      /* 48px */
+  --space-10: 4rem;     /* 64px */
+  --space-12: 6rem;     /* 96px */
+  --space-16: 8rem;     /* 128px */
+  
+  /* Border Radii - Warm Human Curves */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Layout Width Constraints */
+  --container-max: 1280px;
+  --container-narrow: 800px;
+  --container-wide: 1440px;
+
+  /* Interactive Animations & Transitions - Strict Max 150ms Limit */
+  --transition-fast: 100ms ease;
+  --transition-normal: 150ms ease;
+  --transition-slow: 150ms ease;
+  --transition-bounce: 150ms ease;
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tata-csr",
+    "name": "Tata Capital CSR Trust",
+    "logo": "../assets/images/partners/tata.svg",
+    "status": "Audited CSR Partner"
+  },
+  {
+    "id": "bokaro-steel",
+    "name": "Steel Authority of India (SAIL - Bokaro)",
+    "logo": "../assets/images/partners/sail.svg",
+    "status": "Community Facility Partner"
+  },
+  {
+    "id": "jharkhand-sw",
+    "name": "Jharkhand Social Welfare Board",
+    "logo": "../assets/images/partners/jharkhand.svg",
+    "status": "Registered NGO Board"
+  },
+  {
+    "id": "rotary-bokaro",
+    "name": "Rotary International District 3250",
+    "logo": "../assets/images/partners/rotary.svg",
+    "status": "Sensory Lab Equipment Partner"
+  }
+]

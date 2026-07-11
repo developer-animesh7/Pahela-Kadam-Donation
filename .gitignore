@@ -1,0 +1,13 @@
+# Gemini and Editor Settings
+.gemini/
+.agents/
+.vscode/
+.idea/
+
+# Local server log files
+*.log
+tempCodeRunnerFile.bat
+
+# OS generated files
+.DS_Store
+Thumbs.db

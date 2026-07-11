@@ -1,0 +1,26 @@
+[
+  {
+    "id": "tata-eval",
+    "quote": "Our CSR audit team reviewed the financial records and operational reports of Narayani Charitable Trust. Their commitment to 100% transparent audits and child-level impact reports sets an international benchmark for social change.",
+    "author": "Vikram Sahay",
+    "role": "Director of CSR",
+    "organization": "Tata Capital Services",
+    "type": "CSR Partner"
+  },
+  {
+    "id": "nri-sponsor",
+    "quote": "Sponsoring Aarav's speech therapy monthly has been incredibly rewarding. The trust sends us video clips showing his speech progress and direct copies of therapy bills. We know exactly where our help goes.",
+    "author": "Nisha & Sandeep K.",
+    "role": "Monthly Donors",
+    "organization": "Individual NRI Contributors",
+    "type": "Sponsor"
+  },
+  {
+    "id": "parent-voice",
+    "quote": "Before Pahela Kadam, we had no guidance on autism support in Bokaro. Today, my son walks to his classroom and communicates his ideas. The trust is a second home to our family.",
+    "author": "Rani Mahato",
+    "role": "Mother of Rohan",
+    "organization": "Bokaro Steel City",
+    "type": "Parent Testimony"
+  }
+]

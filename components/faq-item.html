@@ -1,0 +1,22 @@
+<details class="reveal" style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); background-color: var(--bg-surface); overflow: hidden; margin-bottom: var(--space-3); transition: border-color var(--transition-normal);">
+  <summary style="padding: var(--space-4) var(--space-5); font-weight: 700; font-size: var(--text-base); color: var(--primary); display: flex; align-items: center; justify-content: space-between; list-style: none; user-select: none; cursor: pointer;">
+    <span>How is my donation utilized?</span>
+    <svg class="summary-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform var(--transition-normal);"><path d="M19 9l-7 7-7-7"/></svg>
+  </summary>
+  <div style="padding: 0 var(--space-5) var(--space-4) var(--space-5); font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6;">
+    Narayani Charitable Trust operates on a child-first donation assignment. 100% of individual child sponsorships are mapped directly to physical therapy costs, specialized occupational materials, and home-to-school transit. Full audited tax receipts and annual performance sheets are sent to all contributors.
+  </div>
+</details>
+
+<style>
+/* Summary Arrow Animation */
+details[open] .summary-arrow {
+  transform: rotate(180deg);
+}
+details[open] {
+  border-color: var(--primary-light);
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+</style>

@@ -1,0 +1,119 @@
+/* ==========================================================================
+   RESPONSIVE STRATEGY & BREAKPOINTS
+   ========================================================================== */
+
+/* Spacing Adjustments for Small screens (Fine tuning what clamp couldn't reach) */
+@media (max-width: 640px) {
+  :root {
+    --space-5: 1.25rem;   /* Tighter spacing for mobile components */
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3.5rem;
+    --space-16: 4.5rem;
+  }
+
+  .section {
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+
+  /* Buttons stack full-width on mobile */
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-3);
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* Statistics stack as responsive cards */
+  .hero-stats-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .stat-item {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Floating badges safety stacking to prevent horizontal scroll */
+  .hero-floating-badge {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: var(--space-3) auto 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Mobile-First Header Nav Controls */
+@media (max-width: 1023px) {
+  .nav-menu {
+    position: fixed;
+    top: 72px; /* Navbar height */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-canvas);
+    padding: var(--space-6) var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+    z-index: 99;
+  }
+  
+  .nav-menu.is-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-tablet-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Quick select donation panels styling on medium screens */
+  .donation-card-layout {
+    grid-column: span 2;
+  }
+}
+
+/* Large Screens (Desktop First enhancements) */
+@media (min-width: 1200px) {
+  .hero-layout-split {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+}
+
+/* Extremely Wide screens: prevent massive stretched cards */
+@media (min-width: 1600px) {
+  .container-wide {
+    max-width: 1560px;
+  }
+}

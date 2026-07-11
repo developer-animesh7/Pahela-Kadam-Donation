@@ -1,0 +1,147 @@
+/* ==========================================================================
+   INTERACTIVE ANIMATIONS & SCROLL REVEALS - MICRO INTERACTIONS SYSTEM
+   ========================================================================== */
+
+/* Keyframe Core */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px); /* Very subtle translation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-4px); /* Very subtle translation */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Base Scroll Reveal Classes (controlled via JS Intersection Observer) */
+.reveal {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  will-change: opacity, transform;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(4px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  will-change: opacity, transform;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* No zoom reveals - maps directly to fade-up */
+.reveal-scale {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger systems for dynamic list items (cards) */
+.stagger-parent > .reveal {
+  transition-delay: calc(var(--stagger-index, 0) * 40ms); /* Stagger speeded up to feel instant */
+}
+
+/* Dynamic hover effects for images inside cards (Very subtle zoom) */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform var(--transition-normal);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.01);
+}
+
+/* Premium Card displacement on hover - Gentle 2px lift */
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  will-change: transform, box-shadow;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Loader Shimmering effects for skeleton components */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f3f7f3 25%, #eaf1ea 50%, #f3f7f3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Donation Action Pulse - Gentle shadow bloom */
+.pulse-donate {
+  transition: box-shadow var(--transition-normal);
+}
+
+.pulse-donate:hover {
+  box-shadow: 0 4px 14px rgba(25, 135, 84, 0.3);
+}
+
+/* WCAG accessibility: Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .hover-zoom img,
+  .hover-lift,
+  .pulse-donate {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
