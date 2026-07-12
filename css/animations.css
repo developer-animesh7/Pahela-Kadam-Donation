@@ -247,36 +247,58 @@
   animation: shimmer 1.5s infinite linear;
 }
 
-/* Donation Action Pulse - Premium glass animations, heartbeats, sparkles, glow, and hover/click states */
+/* Donation Action Pulse - Primary Orange CTA with Glass Shimmers, Heartbeats, and Breathing Glows */
 .pulse-donate {
   position: relative;
   overflow: hidden;
-  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease !important;
-  animation: premium-button-glow 6s ease-in-out infinite;
-  box-shadow: 0 2px 6px rgba(15, 25, 35, 0.1);
+  height: 62px !important;
+  padding: 0 38px !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-full) !important;
+  border: 1px solid rgba(249, 115, 22, 0.2) !important;
+  background: linear-gradient(135deg, #F59E0B 0%, #F97316 45%, #FB923C 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.15);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, filter 220ms ease !important;
+  animation: orange-glow-breathe 4s ease-in-out infinite;
   cursor: pointer;
   z-index: 5;
 }
 
+/* Hover: Lift, Brighter gradient, Stronger shadow, Heart rotate */
 .pulse-donate:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(25, 135, 84, 0.35) !important;
-  background-color: #157347 !important; /* ~5% darker green */
-  animation-play-state: paused; /* Pause soft glow on hover */
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #EA580C 0%, #F97316 50%, #FDBA74 100%) !important;
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4) !important;
+  filter: brightness(1.03);
 }
 
+.pulse-donate:hover::before {
+  animation-duration: 1.6s; /* Shimmer speeds up on hover */
+}
+
+.pulse-donate:hover svg {
+  transform: scale(1.25) translateY(-3px) rotate(5deg) !important;
+}
+
+/* Active click states */
 .pulse-donate:active {
-  transform: scale(0.98) translateY(0);
+  transform: scale(0.97) translateY(-1px) !important;
   transition: transform 150ms ease !important;
 }
 
-/* 1. Continuous Glass Shimmer */
+/* 1. Continuous Glass Shimmer (Wider, blurred, soft) */
 @keyframes shimmer-move {
   0% {
-    transform: translateX(-160%) skewX(-25deg);
+    transform: translateX(-180%) skewX(-25deg);
   }
   100% {
-    transform: translateX(160%) skewX(-25deg);
+    transform: translateX(180%) skewX(-25deg);
   }
 }
 
@@ -285,84 +307,108 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 40%; /* 40% of the button width */
   height: 100%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.08) 20%,
-    rgba(255, 255, 255, 0.22) 50%,
-    rgba(255, 255, 255, 0.08) 80%,
+    rgba(255, 255, 255, 0.05) 10%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.05) 90%,
     transparent
   );
-  transform: translateX(-160%) skewX(-25deg);
+  filter: blur(4px);
+  transform: translateX(-180%) skewX(-25deg);
   animation: shimmer-move 3.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
   pointer-events: none;
   z-index: 1;
 }
 
-/* 2. Heart Icon Animation */
+/* 2. Heart Icon Animation (Expressive, every 3.5 seconds) */
 @keyframes premium-heart-beat {
-  0%, 82%, 100% {
-    transform: scale(1) translateY(0);
+  0%, 80%, 100% {
+    transform: scale(1) translateY(0) rotate(0deg);
   }
-  86% {
-    transform: scale(1.18) translateY(-2px);
+  85% {
+    transform: scale(1.25) translateY(-3px) rotate(-3deg);
   }
   90% {
-    transform: scale(1.05) translateY(-0.5px);
+    transform: scale(1.1) translateY(-1px) rotate(3deg);
   }
-  94% {
-    transform: scale(1.15) translateY(-1.5px);
+  95% {
+    transform: scale(1.2) translateY(-2px) rotate(0deg);
   }
 }
 
 .pulse-donate svg {
-  animation: premium-heart-beat 4.5s ease-in-out infinite;
+  animation: premium-heart-beat 3.5s ease-in-out infinite;
   will-change: transform;
   display: inline-block;
   vertical-align: middle;
+  transition: transform 220ms ease;
 }
 
 /* 3. Tiny Sparkle behind Heart */
 @keyframes heart-sparkle {
-  0%, 82%, 100% {
+  0%, 80%, 100% {
     opacity: 0;
     transform: scale(0.4) translate(-50%, -50%);
   }
-  86% {
-    opacity: 0.8;
-    transform: scale(1.2) translate(-50%, -50%);
+  85% {
+    opacity: 0.7;
+    transform: scale(1.3) translate(-50%, -50%);
   }
-  94% {
+  95% {
     opacity: 0;
-    transform: scale(1.4) translate(-50%, -50%);
+    transform: scale(1.5) translate(-50%, -50%);
   }
 }
 
 .pulse-donate::after {
   content: '';
   position: absolute;
-  right: 18px;
-  top: 52%;
-  width: 16px;
-  height: 16px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  right: 28px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: heart-sparkle 4.5s ease-in-out infinite;
+  animation: heart-sparkle 3.5s ease-in-out infinite;
   z-index: 2;
 }
 
-/* 4. Button Glow Keyframes */
-@keyframes premium-button-glow {
+/* 4. Orange Button Glow Breathe Keyframes */
+@keyframes orange-glow-breathe {
   0%, 100% {
-    box-shadow: 0 2px 6px rgba(15, 25, 35, 0.1);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.15);
   }
   50% {
-    box-shadow: 0 2px 14px rgba(25, 135, 84, 0.22), 0 0 0 3px rgba(34, 197, 94, 0.1);
+    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.30), 0 0 0 4px rgba(249, 115, 22, 0.08);
   }
+/* 5. Header Single Floating Heart Particle Animation */
+@keyframes header-float-heart {
+  0% {
+    transform: translate(-50%, 0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -16px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+.header-floating-heart {
+  position: absolute;
+  pointer-events: none;
+  font-size: 11px;
+  animation: header-float-heart 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+  z-index: 10;
 }
 
 /* WCAG accessibility: Respect user preference for reduced motion */

@@ -87,6 +87,38 @@ function initializeDonateButtonAnimation() {
       }, 600);
     });
   });
+
+  // Synchronized single floating heart particle loop for header CTAs
+  const headerBtns = document.querySelectorAll('.pulse-donate');
+  headerBtns.forEach(btn => {
+    if (btn.dataset.heartLoopRunning) return;
+    btn.dataset.heartLoopRunning = 'true';
+
+    // Run interval matching the 3.5s heartbeat CSS cycle
+    setInterval(() => {
+      const svg = btn.querySelector('svg');
+      if (!svg) return;
+
+      const particle = document.createElement('span');
+      particle.className = 'header-floating-heart';
+      particle.innerHTML = '❤️';
+
+      const btnRect = btn.getBoundingClientRect();
+      const svgRect = svg.getBoundingClientRect();
+
+      // Position relative to SVG coordinates
+      const leftOffset = svgRect.left - btnRect.left + (svgRect.width / 2);
+      const topOffset = svgRect.top - btnRect.top;
+
+      particle.style.left = `${leftOffset}px`;
+      particle.style.top = `${topOffset}px`;
+      btn.appendChild(particle);
+
+      setTimeout(() => {
+        particle.remove();
+      }, 1450);
+    }, 3500);
+  });
 }
 
 function spawnHeart(parent) {
