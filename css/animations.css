@@ -403,6 +403,11 @@
   display: none !important;
 }
 
+/* Base Trust Cards Group container for Desktop (no layout impact) */
+.hero-trust-cards-group {
+  display: contents;
+}
+
 /* ==========================================================================
    MOBILE & TABLET RESPONSIVENESS OVERRIDES
    ========================================================================== */
@@ -504,6 +509,32 @@
   }
 }
 
+/* ==========================================================================
+   HERO IMAGE ENTRANCE ANIMATION (Mobile – graceful fade-up)
+   ========================================================================== */
+@keyframes heroImgFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 767px) {
+  /* Initial hidden state — image waits off-screen */
+  .mobile-hero-img-frame {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  /* Triggered by JS adding .is-visible to the wrapper */
+  .mobile-hero-img-frame.is-visible {
+    animation: heroImgFadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) 400ms both;
+  }
+}
+
 @media (max-width: 767px) {
   /* 1. Stack Hero Content elements in custom mobile sequence */
   .container.grid.grid-2 {
@@ -511,12 +542,12 @@
     flex-direction: column !important;
     gap: var(--space-6) !important;
   }
-  
+
   /* Make column wrappers display contents to expose children to flexbox ordering */
   .container.grid.grid-2 > div:first-child {
     display: contents !important;
   }
-  
+
   .hero-entrance-img {
     display: contents !important;
   }
@@ -526,14 +557,14 @@
     margin: 0 auto !important;
     align-self: center !important;
   }
-  
+
   .hero-entrance-title, .text-display, h1 {
     order: 2 !important;
     font-size: clamp(1.8rem, 5vw + 1.2rem, 2.4rem) !important;
     line-height: 1.2 !important;
     text-align: center !important;
   }
-  
+
   .hero-entrance-desc, .text-story, p {
     order: 3 !important;
     font-size: 16px !important;
@@ -541,7 +572,7 @@
     text-align: center !important;
     margin: 0 auto !important;
   }
-  
+
   .hero-entrance-btns, .btn-group {
     order: 4 !important;
     justify-content: center !important;
@@ -549,7 +580,7 @@
     gap: var(--space-3) !important;
     margin: 0 auto !important;
   }
-  
+
   /* Hero Image Frame Wrapper */
   .hero-entrance-img > div:first-child {
     order: 5 !important;
@@ -557,26 +588,72 @@
     max-width: 500px !important;
     margin: var(--space-4) auto !important;
   }
-  
-  /* Floating Trust Cards */
+
+  /* 2. Trust Cards — grouped with tight gap, equal breathing room above & below */
   .hero-floating-badge {
     order: 6 !important;
     position: static !important;
     transform: none !important;
     width: 100% !important;
-    max-width: 320px !important;
-    margin: var(--space-2) auto !important;
+    max-width: 340px !important;
     box-shadow: var(--shadow-sm) !important;
   }
-  
-  /* Statistics Cards */
-  .hero-entrance-stats, .hero-stats-row {
-    order: 7 !important;
-    margin: var(--space-6) auto !important;
-    justify-content: center !important;
-    gap: var(--space-6) !important;
+  /* Wrapper group for the two trust cards */
+  .hero-trust-cards-group {
+    order: 6 !important;
     display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;           /* tight gap between the two cards */
+    margin: var(--space-5) auto !important;
     width: 100% !important;
+    max-width: 340px !important;
+  }
+  /* Each card inside the group has no extra margin of its own */
+  .hero-trust-cards-group .hero-floating-badge {
+    order: unset !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* 3. Statistics Row — 2-column grid: [220+][18+] / [100% full-width] */
+  .hero-entrance-stats,
+  .hero-stats-row {
+    order: 7 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 12px !important;
+    margin: var(--space-5) auto !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    border-top: none !important;  /* remove the desktop border-top */
+    padding-top: 0 !important;
+    margin-top: var(--space-5) !important;
+  }
+  /* Third stat (100%) spans both columns */
+  .hero-stats-row .stat-item:nth-child(3),
+  .hero-entrance-stats .stat-item:nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+  /* Each stat item becomes a card */
+  .hero-stats-row .stat-item,
+  .hero-entrance-stats .stat-item {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    padding: var(--space-3) var(--space-4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    text-align: center !important;
+  }
+  .hero-stats-row .stat-count,
+  .hero-entrance-stats .stat-count {
+    font-size: var(--text-2xl) !important;
   }
 
   .grid-2 {
@@ -586,9 +663,9 @@
 }
 
 @media (max-width: 480px) {
-  .hero-stats-row {
-    flex-direction: column !important;
-    gap: var(--space-4) !important;
-    align-items: center !important;
+  /* At very small screens keep 2-column grid but reduce font slightly */
+  .hero-stats-row .stat-count,
+  .hero-entrance-stats .stat-count {
+    font-size: var(--text-xl) !important;
   }
 }

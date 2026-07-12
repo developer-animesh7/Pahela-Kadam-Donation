@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 4. Initialize premium Donate button micro-animations
   initializeDonateButtonAnimation();
 
+  // 4b. Initialize graceful mobile hero image fade-up on scroll intersection
+  initializeMobileHeroImageAnimation();
+
   // 5. Fire scroll reveals and entrance animation handlers
   if (window.ScrollRevealEngine) {
     window.ScrollRevealEngine.init();
@@ -350,4 +353,29 @@ function initializeStaticNavbar() {
       document.body.style.overflow = '';
     });
   });
+}
+
+/**
+ * Graceful fade-up entrance for mobile hero image on scroll intersection
+ */
+function initializeMobileHeroImageAnimation() {
+  const frame = document.querySelector('.mobile-hero-img-frame');
+  if (!frame) return;
+  
+  if (!('IntersectionObserver' in window)) {
+    frame.style.opacity = '1';
+    frame.style.transform = 'none';
+    return;
+  }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(frame);
 }

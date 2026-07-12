@@ -63,34 +63,64 @@
 
     <!-- RIGHT SIDE: Single styled hero child image with soft zoom & shadow -->
     <div class="d-flex hero-entrance-img" style="justify-content: center; align-items: center; position: relative;">
-      
-      <!-- Rounded Image Frame -->
-      <div style="width: 100%; max-width: 580px; aspect-ratio: 4/3; border-radius: 32px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background-color: #ffffff; position: relative;" class="reveal-zoom active">
+
+      <!-- Rounded Image Frame – also carries mobile-hero-img-frame for entrance animation -->
+      <div class="reveal-zoom active mobile-hero-img-frame" style="width: 100%; max-width: 580px; aspect-ratio: 4/3; border-radius: 32px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background-color: #ffffff; position: relative;">
         <img src="../assets/images/hero/child image.png" alt="Happy special children in classroom gathering" class="hero-img-zoom" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="eager">
       </div>
 
-      <!-- Floating Trust Card (Top-Right) -->
-      <div class="hero-floating-badge hero-badge-top-right reveal-scale active" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); z-index: 10;">
-        <div style="width: 28px; height: 28px; border-radius: var(--radius-sm); background-color: rgba(25, 135, 84, 0.08); display: grid; place-items: center; color: var(--primary); flex-shrink: 0;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        </div>
-        <div class="d-flex flex-column" style="line-height: 1.2;">
-          <span style="font-size: 11px; font-weight: 700; color: var(--text-primary);">80G Tax Deductible</span>
-          <span style="font-size: 9px; color: var(--text-secondary);">Instant tax receipts generated</span>
-        </div>
-      </div>
+      <!-- Trust Cards Group wrapper (mobile: stacked with 12px gap; desktop: absolute badges) -->
+      <div class="hero-trust-cards-group">
 
-      <!-- Floating Trust Card (Bottom-Left) -->
-      <div class="hero-floating-badge hero-badge-bottom-left reveal-scale active" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); z-index: 10;">
-        <div style="width: 28px; height: 28px; border-radius: var(--radius-sm); background-color: rgba(37, 99, 235, 0.08); display: grid; place-items: center; color: var(--accent); flex-shrink: 0;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <!-- Floating Trust Card 1 – 80G Tax Deductible -->
+        <div class="hero-floating-badge hero-badge-top-right reveal-scale active" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); z-index: 10;">
+          <div style="width: 28px; height: 28px; border-radius: var(--radius-sm); background-color: rgba(25, 135, 84, 0.08); display: grid; place-items: center; color: var(--primary); flex-shrink: 0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div class="d-flex flex-column" style="line-height: 1.2;">
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-primary);">80G Tax Deductible</span>
+            <span style="font-size: 9px; color: var(--text-secondary);">Instant tax receipts generated</span>
+          </div>
         </div>
-        <div class="d-flex flex-column" style="line-height: 1.2;">
-          <span style="font-size: 11px; font-weight: 700; color: var(--text-primary);">Narayani Trust</span>
-          <span style="font-size: 9px; color: var(--text-secondary);">100% transparency audited</span>
+
+        <!-- Floating Trust Card 2 – Narayani Trust -->
+        <div class="hero-floating-badge hero-badge-bottom-left reveal-scale active" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); z-index: 10;">
+          <div style="width: 28px; height: 28px; border-radius: var(--radius-sm); background-color: rgba(37, 99, 235, 0.08); display: grid; place-items: center; color: var(--accent); flex-shrink: 0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="d-flex flex-column" style="line-height: 1.2;">
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-primary);">Narayani Trust</span>
+            <span style="font-size: 9px; color: var(--text-secondary);">100% transparency audited</span>
+          </div>
         </div>
-      </div>
+
+      </div><!-- /hero-trust-cards-group -->
 
     </div>
   </div>
 </section>
+
+<script>
+/* Mobile hero image entrance – IntersectionObserver triggers .is-visible */
+(function () {
+  var frame = document.querySelector('.mobile-hero-img-frame');
+  if (!frame) return;
+  if (!('IntersectionObserver' in window) || window.matchMedia('(max-width: 767px)').matches === false) {
+    /* Desktop: ensure the element is fully visible right away */
+    frame.style.opacity = '';
+    frame.style.transform = '';
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  observer.observe(frame);
+})();
+</script>
+
+
