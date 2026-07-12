@@ -88,17 +88,21 @@ function initializeDonateButtonAnimation() {
     });
   });
 
-  // Synchronized single floating heart particle loop for header CTAs
+  // Synchronized single floating heart particle loop for header CTAs (Instagram-like Pop)
   const headerBtns = document.querySelectorAll('.pulse-donate');
   headerBtns.forEach(btn => {
     if (btn.dataset.heartLoopRunning) return;
     btn.dataset.heartLoopRunning = 'true';
 
-    // Run interval matching the 3.5s heartbeat CSS cycle
+    // Run every 4.5 seconds for a non-distracting premium cue
     setInterval(() => {
       const svg = btn.querySelector('svg');
       if (!svg) return;
 
+      // 1. Temporarily hide the original white heart icon outline
+      btn.classList.add('heart-pop-active');
+
+      // 2. Spawn the single red pop heart particle
       const particle = document.createElement('span');
       particle.className = 'header-floating-heart';
       particle.innerHTML = '❤️';
@@ -106,7 +110,7 @@ function initializeDonateButtonAnimation() {
       const btnRect = btn.getBoundingClientRect();
       const svgRect = svg.getBoundingClientRect();
 
-      // Position relative to SVG coordinates
+      // Position centered over the SVG icon location
       const leftOffset = svgRect.left - btnRect.left + (svgRect.width / 2);
       const topOffset = svgRect.top - btnRect.top;
 
@@ -114,10 +118,12 @@ function initializeDonateButtonAnimation() {
       particle.style.top = `${topOffset}px`;
       btn.appendChild(particle);
 
+      // 3. Wait 650ms (animation duration) to clean up particle and restore white icon
       setTimeout(() => {
         particle.remove();
-      }, 1450);
-    }, 3500);
+        btn.classList.remove('heart-pop-active');
+      }, 650);
+    }, 4500);
   });
 }
 

@@ -247,12 +247,12 @@
   animation: shimmer 1.5s infinite linear;
 }
 
-/* Donation Action Pulse - Primary Orange CTA with Glass Shimmers, Heartbeats, and Breathing Glows */
+/* Donation Action Pulse - Primary Orange CTA with Glass Shimmers and Breathing Glows */
 .pulse-donate {
   position: relative;
   overflow: hidden;
-  height: 62px !important;
-  padding: 0 38px !important;
+  height: 56px !important;
+  padding: 0 28px !important;
   font-size: 17px !important;
   font-weight: 700 !important;
   display: inline-flex !important;
@@ -283,7 +283,7 @@
 }
 
 .pulse-donate:hover svg {
-  transform: scale(1.25) translateY(-3px) rotate(5deg) !important;
+  transform: scale(1.2) translateY(-2px) rotate(5deg) !important;
 }
 
 /* Active click states */
@@ -324,62 +324,20 @@
   z-index: 1;
 }
 
-/* 2. Heart Icon Animation (Expressive, every 3.5 seconds) */
-@keyframes premium-heart-beat {
-  0%, 80%, 100% {
-    transform: scale(1) translateY(0) rotate(0deg);
-  }
-  85% {
-    transform: scale(1.25) translateY(-3px) rotate(-3deg);
-  }
-  90% {
-    transform: scale(1.1) translateY(-1px) rotate(3deg);
-  }
-  95% {
-    transform: scale(1.2) translateY(-2px) rotate(0deg);
-  }
-}
-
+/* 2. Static Outline Heart transition rule */
 .pulse-donate svg {
-  animation: premium-heart-beat 3.5s ease-in-out infinite;
-  will-change: transform;
+  will-change: transform, opacity;
   display: inline-block;
   vertical-align: middle;
-  transition: transform 220ms ease;
+  transition: transform 220ms ease, opacity 150ms ease;
 }
 
-/* 3. Tiny Sparkle behind Heart */
-@keyframes heart-sparkle {
-  0%, 80%, 100% {
-    opacity: 0;
-    transform: scale(0.4) translate(-50%, -50%);
-  }
-  85% {
-    opacity: 0.7;
-    transform: scale(1.3) translate(-50%, -50%);
-  }
-  95% {
-    opacity: 0;
-    transform: scale(1.5) translate(-50%, -50%);
-  }
+/* Hide original white heart outline temporarily when red heart is popping */
+.pulse-donate.heart-pop-active svg {
+  opacity: 0 !important;
 }
 
-.pulse-donate::after {
-  content: '';
-  position: absolute;
-  right: 28px;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 70%);
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  animation: heart-sparkle 3.5s ease-in-out infinite;
-  z-index: 2;
-}
-
-/* 4. Orange Button Glow Breathe Keyframes */
+/* 3. Orange Button Glow Breathe Keyframes */
 @keyframes orange-glow-breathe {
   0%, 100% {
     box-shadow: 0 4px 15px rgba(249, 115, 22, 0.15);
@@ -387,17 +345,24 @@
   50% {
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.30), 0 0 0 4px rgba(249, 115, 22, 0.08);
   }
-/* 5. Header Single Floating Heart Particle Animation */
+}
+
+/* 4. Instagram-like Pop Single Heart Particle Animation (Scale 0.7 -> 1.25 -> 1, Up 12px, Rotate, Eased Fade) */
 @keyframes header-float-heart {
   0% {
-    transform: translate(-50%, 0) scale(0.6);
+    transform: translate(-50%, 0) scale(0.7) rotate(-5deg);
     opacity: 0;
   }
-  20% {
-    opacity: 0.9;
+  35% {
+    transform: translate(-50%, -6px) scale(1.25) rotate(5deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -10px) scale(1) rotate(-3deg);
+    opacity: 0.8;
   }
   100% {
-    transform: translate(-50%, -16px) scale(1.15);
+    transform: translate(-50%, -12px) scale(0.9) rotate(0deg);
     opacity: 0;
   }
 }
@@ -406,7 +371,7 @@
   position: absolute;
   pointer-events: none;
   font-size: 11px;
-  animation: header-float-heart 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: header-float-heart 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   opacity: 0;
   z-index: 10;
 }
