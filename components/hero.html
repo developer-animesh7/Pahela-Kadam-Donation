@@ -3,30 +3,30 @@
   <div style="position: absolute; width: 450px; height: 450px; border-radius: var(--radius-full); background: radial-gradient(circle, rgba(25, 135, 84, 0.03) 0%, transparent 70%); top: -120px; right: -120px; pointer-events: none; z-index: 1;"></div>
   <div style="position: absolute; width: 350px; height: 350px; border-radius: var(--radius-full); background: radial-gradient(circle, rgba(37, 99, 235, 0.01) 0%, transparent 70%); bottom: -60px; left: -60px; pointer-events: none; z-index: 1;"></div>
 
-  <div class="container grid grid-2" style="gap: var(--space-8); position: relative; z-index: 5;">
+  <div class="container grid grid-2" style="gap: var(--space-8); position: relative; z-index: 5; align-items: center;">
     <!-- LEFT SIDE: Emotional Narrative & Stats -->
     <div class="d-flex flex-column" style="justify-content: center; gap: var(--space-4);">
       <!-- Small Trust Badge (Calm Green) -->
-      <div class="badge-trust badge-trust-verified" style="width: fit-content; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-weight: 700; background-color: rgba(25, 135, 84, 0.06); color: var(--primary); border: 1px solid rgba(25, 135, 84, 0.1);">
+      <div class="badge-trust badge-trust-verified hero-entrance-badge" style="width: fit-content; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-weight: 700; background-color: rgba(25, 135, 84, 0.06); color: var(--primary); border: 1px solid rgba(25, 135, 84, 0.1);">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-right: 4px; color: var(--primary);"><polyline points="20 6 9 17 4 12"></polyline></svg>
         <span>Registered Charitable Trust</span>
       </div>
 
       <!-- Emotional Headline -->
-      <h1 class="text-display text-gradient" style="font-size: clamp(2.25rem, 2.5vw + 1.8rem, 3.75rem); line-height: 1.1; margin-bottom: 2px;">
+      <h1 class="text-display text-gradient hero-entrance-title" style="font-size: clamp(2.25rem, 2.5vw + 1.8rem, 3.75rem); line-height: 1.1; margin-bottom: 2px;">
         Empowering Special Children to Stand, Speak, and Thrive.
       </h1>
 
       <!-- Supporting context detailing therapies and future -->
-      <p class="text-story" style="font-size: var(--text-base); color: var(--text-secondary); max-width: 540px; margin-bottom: var(--space-2);">
+      <p class="text-story hero-entrance-desc" style="font-size: var(--text-base); color: var(--text-secondary); max-width: 540px; margin-bottom: var(--space-2);">
         Every child deserves a chance to take independent steps. Your support directly funds specialized physical therapy, speech rehabilitation, special education, and vocational training that shapes a self-reliant future.
       </p>
 
       <!-- Primary & Secondary CTA Buttons (Green Primary & Outline Secondary) -->
-      <div class="btn-group" style="margin-bottom: var(--space-4);">
-        <a href="/pages/donate.html" class="btn btn-primary btn-lg text-white" style="box-shadow: var(--shadow-md);">
+      <div class="btn-group hero-entrance-btns" style="margin-bottom: var(--space-4);">
+        <a href="/pages/donate.html" class="btn btn-primary btn-lg text-white premium-donate-btn" style="background: linear-gradient(135deg, #198754 0%, #157347 100%); border: 1px solid rgba(25, 135, 84, 0.25); box-shadow: 0 4px 15px rgba(25, 135, 84, 0.25);">
           <span>Donate Now</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 4px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </a>
         <a href="/pages/about.html" class="btn btn-secondary btn-lg">
           <span>Our Story</span>
@@ -34,7 +34,7 @@
       </div>
 
       <!-- Impact Statistics with Count-Up support (Green numbers) -->
-      <div class="hero-stats-row" style="max-width: 500px;">
+      <div class="hero-stats-row hero-entrance-stats" style="max-width: 500px;">
         <div class="stat-item">
           <div class="stat-count d-flex" style="color: var(--primary);">
             <span class="counter" data-target="220">0</span>
@@ -61,88 +61,16 @@
       </div>
     </div>
 
-    <!-- RIGHT SIDE: Premium cross-fading slideshow of school activities -->
-    <div class="d-flex" style="justify-content: center; align-items: center; position: relative;">
+    <!-- RIGHT SIDE: Single styled hero child image with soft zoom & shadow -->
+    <div class="d-flex hero-entrance-img" style="justify-content: center; align-items: center; position: relative;">
       
-      <!-- Rounded Media Slideshow Wrapper -->
-      <div class="slideshow-container">
-        
-        <!-- Slide 1: Speech Therapy -->
-        <div class="slideshow-slide is-active" data-index="0">
-          <img src="../assets/images/hero/speech_therapy.webp" alt="Speech therapy session focusing on word pronunciations">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Therapy</span>
-            <span class="slide-title">Speech & Communication Therapy</span>
-          </div>
-        </div>
-
-        <!-- Slide 2: Occupational Therapy -->
-        <div class="slideshow-slide" data-index="1">
-          <img src="../assets/images/hero/occupational_therapy.webp" alt="Occupational therapy focusing on sensory toys">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Development</span>
-            <span class="slide-title">Sensory Motor Integration</span>
-          </div>
-        </div>
-
-        <!-- Slide 3: Children Learning -->
-        <div class="slideshow-slide" data-index="2">
-          <img src="../assets/images/hero/children_learning.webp" alt="Children learning letters and sorting colors">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Special Education</span>
-            <span class="slide-title">Personalized Education Plans</span>
-          </div>
-        </div>
-
-        <!-- Slide 4: Sports Activities -->
-        <div class="slideshow-slide" data-index="3">
-          <img src="../assets/images/hero/sports_activities.webp" alt="Sports day activities for special kids">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Physical Play</span>
-            <span class="slide-title">Coordination & Outdoor Exercises</span>
-          </div>
-        </div>
-
-        <!-- Slide 5: Vocational Training -->
-        <div class="slideshow-slide" data-index="4">
-          <img src="../assets/images/hero/vocational_training.webp" alt="Vocational crafts session for students">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Independence</span>
-            <span class="slide-title">Vocational Skill Empowerment</span>
-          </div>
-        </div>
-
-        <!-- Slide 6: Parents Outreach -->
-        <div class="slideshow-slide" data-index="5">
-          <img src="../assets/images/hero/parents.webp" alt="Counseling session for parents of special needs children">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Community</span>
-            <span class="slide-title">Parent Counseling & Guidance</span>
-          </div>
-        </div>
-
-        <!-- Slide 7: Founder Journey -->
-        <div class="slideshow-slide" data-index="6">
-          <img src="../assets/images/hero/founder.webp" alt="Founder interacting with children">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Leadership</span>
-            <span class="slide-title">Founder's Ongoing Daily Journey</span>
-          </div>
-        </div>
-
-        <!-- Slide 8: School Activities -->
-        <div class="slideshow-slide" data-index="7">
-          <img src="../assets/images/hero/school_activities.webp" alt="General school morning gathering session">
-          <div class="slideshow-caption-card">
-            <span class="slide-tag">Daily Life</span>
-            <span class="slide-title">Assembly & Social Cohesion</span>
-          </div>
-        </div>
-
+      <!-- Rounded Image Frame -->
+      <div style="width: 100%; max-width: 580px; aspect-ratio: 4/3; border-radius: 32px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background-color: #ffffff; position: relative;" class="reveal-zoom active">
+        <img src="../assets/images/hero/child image.png" alt="Happy special children in classroom gathering" class="hero-img-zoom" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="eager">
       </div>
 
       <!-- Floating Trust Card (Top-Right) -->
-      <div class="hero-floating-badge hero-badge-top-right reveal-scale" style="transition-delay: 100ms; background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+      <div class="hero-floating-badge hero-badge-top-right reveal-scale active" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); z-index: 10;">
         <div style="width: 28px; height: 28px; border-radius: var(--radius-sm); background-color: rgba(25, 135, 84, 0.08); display: grid; place-items: center; color: var(--primary); flex-shrink: 0;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </div>
@@ -153,7 +81,7 @@
       </div>
 
       <!-- Floating Trust Card (Bottom-Left) -->
-      <div class="hero-floating-badge hero-badge-bottom-left reveal-scale" style="transition-delay: 200ms; background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+      <div class="hero-floating-badge hero-badge-bottom-left reveal-scale active" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); z-index: 10;">
         <div style="width: 28px; height: 28px; border-radius: var(--radius-sm); background-color: rgba(37, 99, 235, 0.08); display: grid; place-items: center; color: var(--accent); flex-shrink: 0;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
         </div>

@@ -38,8 +38,8 @@
 /* Base Scroll Reveal Classes (controlled via JS Intersection Observer) */
 .reveal {
   opacity: 0;
-  transform: translateY(4px);
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -50,8 +50,8 @@
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-4px);
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  transform: translateX(-20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -62,8 +62,8 @@
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(4px);
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  transform: translateX(20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -72,17 +72,143 @@
   transform: translateX(0);
 }
 
-/* No zoom reveals - maps directly to fade-up */
 .reveal-scale {
   opacity: 0;
-  transform: translateY(4px);
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  transform: scale(0.95) translateY(10px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-scale.active {
   opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Image reveal zoom */
+.reveal-zoom {
+  overflow: hidden;
+  border-radius: inherit;
+}
+.reveal-zoom img {
+  transform: scale(1.08);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-zoom.active img {
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   LANDING PAGE ENTRANCE SEQUENCE
+   Staggered entrance delays activated on body.entrance-ready
+   ========================================================================== */
+.entrance-ready .header-wrapper,
+.entrance-ready .hero-entrance-badge,
+.entrance-ready .hero-entrance-title,
+.entrance-ready .hero-entrance-desc,
+.entrance-ready .hero-entrance-btns,
+.entrance-ready .hero-entrance-stats,
+.entrance-ready .hero-entrance-img {
+  opacity: 1;
   transform: translateY(0);
+}
+
+.header-wrapper {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-entrance-badge,
+.hero-entrance-title,
+.hero-entrance-desc,
+.hero-entrance-btns,
+.hero-entrance-stats,
+.hero-entrance-img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-ready .header-wrapper      { transition-delay: 50ms; }
+.entrance-ready .hero-entrance-badge  { transition-delay: 150ms; }
+.entrance-ready .hero-entrance-title  { transition-delay: 250ms; }
+.entrance-ready .hero-entrance-desc   { transition-delay: 350ms; }
+.entrance-ready .hero-entrance-btns   { transition-delay: 450ms; }
+.entrance-ready .hero-entrance-stats  { transition-delay: 550ms; }
+.entrance-ready .hero-entrance-img    { transition-delay: 650ms; }
+
+/* Subtle Hero Image Zoom Animation */
+@keyframes subtleHeroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+.hero-img-zoom {
+  animation: subtleHeroZoom 15s ease-out forwards;
+}
+
+/* ==========================================================================
+   DONATE BUTTON MICRO-ANIMATIONS
+   Soft glassmorphism, breathing glow, ripple click, floating hearts
+   ========================================================================== */
+@keyframes premium-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(25, 135, 84, 0.2);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow: 0 4px 25px rgba(25, 135, 84, 0.4), 0 0 0 5px rgba(25, 135, 84, 0.12);
+  }
+}
+.premium-donate-btn {
+  animation: premium-breathe 4s ease-in-out infinite;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+}
+.premium-donate-btn:hover {
+  transform: translateY(-3px) scale(1.025) !important;
+  box-shadow: 0 6px 28px rgba(25, 135, 84, 0.45) !important;
+  animation-play-state: paused;
+}
+
+/* Floating heart icon keyframes */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-65px) scale(1.2);
+    opacity: 0;
+  }
+}
+.floating-heart {
+  position: absolute;
+  bottom: 5px;
+  pointer-events: none;
+  font-size: 11px;
+  animation: float-heart 1.8s ease-in-out forwards;
+  opacity: 0;
+  z-index: 10;
+}
+
+/* Ripple click effect */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 
 /* Stagger systems for dynamic list items (cards) */
