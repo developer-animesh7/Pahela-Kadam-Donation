@@ -139,10 +139,4 @@ img {
   }
 }
 
-/* Footer responsive fallback */
-@media (max-width: 767px) {
-  .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: var(--space-6);
-  }
-}
+/* Footer responsive handled by components.css */
