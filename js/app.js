@@ -165,12 +165,13 @@ function registerNavbarComponent() {
         link.classList.add('is-current-page');
       }
     });
-
     burgerBtn.addEventListener('click', () => {
       const isExpanded = burgerBtn.getAttribute('aria-expanded') === 'true';
       burgerBtn.setAttribute('aria-expanded', !isExpanded);
       burgerBtn.classList.toggle('is-active');
       menuEl.classList.toggle('is-active');
+      navbarElement.classList.toggle('menu-open');
+      document.documentElement.classList.toggle('html-menu-open', !isExpanded);
       
       // Prevent scrolling behind mobile nav overlay
       document.body.style.overflow = !isExpanded ? 'hidden' : '';
@@ -183,6 +184,8 @@ function registerNavbarComponent() {
         burgerBtn.setAttribute('aria-expanded', 'false');
         burgerBtn.classList.remove('is-active');
         menuEl.classList.remove('is-active');
+        navbarElement.classList.remove('menu-open');
+        document.documentElement.classList.remove('html-menu-open');
         document.body.style.overflow = '';
       });
     }
@@ -194,6 +197,8 @@ function registerNavbarComponent() {
         burgerBtn.setAttribute('aria-expanded', 'false');
         burgerBtn.classList.remove('is-active');
         menuEl.classList.remove('is-active');
+        navbarElement.classList.remove('menu-open');
+        document.documentElement.classList.remove('html-menu-open');
         document.body.style.overflow = '';
       });
     });
@@ -331,6 +336,8 @@ function initializeStaticNavbar() {
     burgerBtn.setAttribute('aria-expanded', !isExpanded);
     burgerBtn.classList.toggle('is-active');
     menuEl.classList.toggle('is-active');
+    navbarElement.classList.toggle('menu-open');
+    document.documentElement.classList.toggle('html-menu-open', !isExpanded);
     document.body.style.overflow = !isExpanded ? 'hidden' : '';
   });
 
@@ -340,6 +347,8 @@ function initializeStaticNavbar() {
       burgerBtn.setAttribute('aria-expanded', 'false');
       burgerBtn.classList.remove('is-active');
       menuEl.classList.remove('is-active');
+      navbarElement.classList.remove('menu-open');
+      document.documentElement.classList.remove('html-menu-open');
       document.body.style.overflow = '';
     });
   }
@@ -350,6 +359,8 @@ function initializeStaticNavbar() {
       burgerBtn.setAttribute('aria-expanded', 'false');
       burgerBtn.classList.remove('is-active');
       menuEl.classList.remove('is-active');
+      navbarElement.classList.remove('menu-open');
+      document.documentElement.classList.remove('html-menu-open');
       document.body.style.overflow = '';
     });
   });
