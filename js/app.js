@@ -6,7 +6,7 @@ document.addEventListener('error', (event) => {
     img.dataset.fallbackTriggered = 'true';
     
     const altText = img.getAttribute('alt') || 'Pahela Kadam Program';
-    img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="100%" height="100%" fill="%23eef5ee"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600" fill="%23198754">${encodeURIComponent(altText)}</text></svg>`;
+    img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="100%" height="100%" fill="%23eff6ff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600" fill="%232563eb">${encodeURIComponent(altText)}</text></svg>`;
   }
 }, true);
 

@@ -3,35 +3,45 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Hope, Trust, Care & Growth (Premium Green-Centered Theme) */
-  --primary: #198754;        /* Primary Green */
-  --primary-hover: #157347;  /* Primary Hover Green */
-  --primary-light: #e8f5e9;  /* Light Green surface fills */
-  --primary-dark: #115e3a;   /* Forest dark green for headings */
+  /* Color Palette - Hope, Trust, Care & Growth (Premium Blue-Centered Theme) */
+  --primary: #2563EB;        /* Primary Blue */
+  --primary-hover: #1D4ED8;  /* Primary Hover Blue */
+  --primary-light: #EFF6FF;  /* Light Blue surface fills */
+  --primary-dark: #1E40AF;   /* Dark blue for headings */
 
-  /* Premium Green Gradient System */
-  --gradient-primary: linear-gradient(135deg, #198754 0%, #34C38F 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #157347 0%, #2aab7a 100%);
-  --gradient-primary-soft: linear-gradient(135deg, rgba(25, 135, 84, 0.08) 0%, rgba(52, 195, 143, 0.04) 100%);
-  --gradient-hero: radial-gradient(circle at 90% 10%, rgba(25, 135, 84, 0.05) 0%, rgba(52, 195, 143, 0.02) 60%, transparent 100%);
-  --gradient-section: linear-gradient(135deg, #f8fbf8 0%, #e8f5e9 100%);
+  /* Premium Blue Gradient System */
+  --gradient-primary: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  --gradient-primary-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
+  --gradient-hero: radial-gradient(circle at 90% 10%, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 60%, transparent 100%);
+  --gradient-section: linear-gradient(135deg, #F8FBFF 0%, #EFF6FF 100%);
+  
+  --gradient-secondary: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --gradient-accent: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
 
   --accent: #2563EB;         /* Accent Blue for trust elements */
-  --accent-light: #3b82f6;
-  --accent-dark: #1d4ed8;
+  --accent-light: #3B82F6;
+  --accent-dark: #1D4ED8;
   --accent-soft: rgba(37, 99, 235, 0.06);
 
+  /* Orange Donation CTA System */
+  --donate: #FF8A00;
+  --donate-hover: #E07B00;
+  --gradient-donate: linear-gradient(135deg, #FF8A00 0%, #FFA94D 100%);
+  --gradient-donate-hover: linear-gradient(135deg, #E07B00 0%, #FF8A00 100%);
+
   /* Success & Warning/Alert highlights */
-  --success: #16a34a;        /* Success green */
-  --warning: #f59e0b;        /* Warning orange (used ONLY for micro accents / warnings) */
+  --success: #2563EB;        /* Success blue */
+  --success-soft: rgba(37, 99, 235, 0.08); /* Soft blue backdrop */
+  --warning: #F59E0B;        /* Warning orange */
   --warning-soft: rgba(245, 158, 11, 0.08);
 
-  /* Backgrounds & Neutral Surfaces - Fresh, Calm Warm Canvas */
-  --bg-canvas: #f8fbf8;     /* Soft warm canvas background */
-  --bg-canvas-gradient: radial-gradient(circle at 80% 10%, rgba(25, 135, 84, 0.04) 0%, rgba(37, 99, 235, 0.01) 50%, transparent 100%), linear-gradient(135deg, #f8fbf8 0%, #e8f5e9 100%);
+  /* Backgrounds & Neutral Surfaces - Premium Blue Canvas */
+  --bg-canvas: #F8FBFF;     /* Soft warm blue background */
+  --bg-canvas-gradient: radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.04) 0%, rgba(59, 130, 246, 0.01) 50%, transparent 100%), linear-gradient(135deg, #F8FBFF 0%, #EFF6FF 100%);
   --bg-surface: #ffffff;    /* Cards background */
   --bg-elevated: #ffffff;   /* Double elevated areas */
-  --bg-shaded: #eef5ee;     /* Warm green-gray for minor containers */
+  --bg-shaded: #EFF6FF;     /* Soft background tint */
   
   /* Text Colors */
   --text-primary: #1f2937;   /* Charcoal primary text - high readability & contrast */
@@ -40,12 +50,12 @@
   --text-on-dark: #ffffff;
   
   /* Borders and Dividers */
-  --border-color: #dde7df;
-  --border-hover: #ccd9cd;
-  --border-light: #eef5ee;
+  --border-color: #D0E1FD;
+  --border-hover: #B9D6FC;
+  --border-light: #EFF6FF;
   
   /* Shadows and Ambient Occlusion Elevations */
-  --shadow-color: 152, 10%, 15%;
+  --shadow-color: 220, 15%, 15%;
   --shadow-sm: 0 1px 2px 0 rgba(var(--shadow-color), 0.03);
   --shadow-md: 0 4px 10px -2px rgba(var(--shadow-color), 0.05), 0 2px 4px -2px rgba(var(--shadow-color), 0.02);
   --shadow-lg: 0 10px 20px -4px rgba(var(--shadow-color), 0.06), 0 4px 8px -4px rgba(var(--shadow-color), 0.02);
@@ -53,8 +63,8 @@
   --shadow-premium: 0 30px 60px -15px rgba(var(--shadow-color), 0.12);
   
   /* Reduced Glassmorphism System */
-  --glass-bg: rgba(248, 251, 248, 0.8);
-  --glass-border: rgba(221, 231, 223, 0.5);
+  --glass-bg: rgba(248, 251, 255, 0.8);
+  --glass-border: rgba(208, 225, 253, 0.5);
   --glass-blur: 6px;         /* Reduced from 16px */
 
   /* Typography Scale - Responsive clamp system */

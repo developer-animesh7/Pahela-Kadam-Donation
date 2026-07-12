@@ -21,43 +21,43 @@
   gap: var(--space-2);
 }
 
-/* Premium Primary Button (Green-Centered CTA with gradient) */
+/* Premium Primary Button (Blue-Centered CTA with gradient) */
 .btn-primary {
   background: var(--gradient-primary);
   color: var(--text-on-dark);
-  box-shadow: 0 2px 10px rgba(25, 135, 84, 0.25);
-  border: 1px solid rgba(25, 135, 84, 0.3);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary:hover {
   background: var(--gradient-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(25, 135, 84, 0.35);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
 .btn-primary:active {
   transform: translateY(0);
 }
 
-/* Accent Donation Button (Premium gradient green for high-conversion) */
+/* Accent Donation Button (Premium orange gradient for high-conversion) */
 .btn-accent {
-  background: var(--gradient-primary);
+  background: var(--gradient-donate);
   color: var(--text-on-dark);
-  box-shadow: 0 2px 10px rgba(25, 135, 84, 0.25);
-  border: 1px solid rgba(25, 135, 84, 0.3);
+  box-shadow: 0 2px 10px rgba(255, 138, 0, 0.25);
+  border: 1px solid rgba(255, 138, 0, 0.3);
 }
 
 .btn-accent:hover {
-  background: var(--gradient-primary-hover);
+  background: var(--gradient-donate-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(25, 135, 84, 0.35);
+  box-shadow: 0 4px 16px rgba(255, 138, 0, 0.35);
 }
 
 .btn-accent:active {
   transform: translateY(0);
 }
 
-/* Secondary Button (Sleek Outline with clean light green shift on hover) */
+/* Secondary Button (Sleek Outline with clean light blue shift on hover) */
 .btn-secondary {
   background-color: #ffffff;
   color: var(--text-primary);
@@ -358,7 +358,7 @@
 /* Dynamics Translation Text box */
 .donation-impact-translation {
   background-color: var(--success-soft);
-  border: 1px solid rgba(30, 155, 95, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   color: var(--success);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
@@ -389,7 +389,7 @@
 .badge-trust-verified {
   background-color: var(--success-soft);
   color: var(--success);
-  border: 1px solid rgba(30, 155, 95, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 .badge-trust-verified svg {
@@ -592,14 +592,14 @@
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   font-weight: 700;
-  border: 1px solid rgba(25, 135, 84, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.12);
 }
 
 .nse-logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f1f7f2;
+  background-color: #EFF6FF;
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-5);
   font-weight: 800;
@@ -636,7 +636,7 @@
   background-color: var(--primary-light);
   border-radius: var(--radius-xl);
   z-index: 1;
-  border: 1px dashed rgba(25, 135, 84, 0.15);
+  border: 1px dashed rgba(37, 99, 235, 0.15);
 }
 
 /* ==========================================================================
@@ -658,7 +658,7 @@
 .footer-map-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(17, 94, 58, 0.85); /* Premium green tint */
+  background-color: rgba(30, 64, 175, 0.85); /* Premium blue tint */
   display: flex;
   flex-direction: column;
   align-items: center;
