@@ -157,11 +157,11 @@
 @keyframes premium-breathe {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 4px 15px rgba(25, 135, 84, 0.2);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
   }
   50% {
     transform: scale(1.015);
-    box-shadow: 0 4px 25px rgba(25, 135, 84, 0.4), 0 0 0 5px rgba(25, 135, 84, 0.12);
+    box-shadow: 0 4px 25px rgba(37, 99, 235, 0.4), 0 0 0 5px rgba(37, 99, 235, 0.12);
   }
 }
 .premium-donate-btn {
@@ -171,7 +171,7 @@
 }
 .premium-donate-btn:hover {
   transform: translateY(-3px) scale(1.025) !important;
-  box-shadow: 0 6px 28px rgba(25, 135, 84, 0.45) !important;
+  box-shadow: 0 6px 28px rgba(37, 99, 235, 0.45) !important;
   animation-play-state: paused;
 }
 
@@ -264,10 +264,10 @@
   justify-content: center;
   gap: 8px;
   border-radius: var(--radius-full) !important;
-  border: 1px solid rgba(249, 115, 22, 0.2) !important;
-  background: linear-gradient(135deg, #F59E0B 0%, #F97316 45%, #FB923C 100%) !important;
+  border: 1px solid rgba(255, 138, 0, 0.2) !important;
+  background: var(--gradient-donate) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
   transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, filter 220ms ease !important;
   animation: orange-glow-breathe 4s ease-in-out infinite;
   cursor: pointer;
@@ -277,8 +277,8 @@
 /* Hover: Lift, Brighter gradient, Stronger shadow, Heart rotate */
 .pulse-donate:hover {
   transform: translateY(-3px);
-  background: linear-gradient(135deg, #EA580C 0%, #F97316 50%, #FDBA74 100%) !important;
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4) !important;
+  background: var(--gradient-donate-hover) !important;
+  box-shadow: 0 10px 30px rgba(255, 138, 0, 0.4) !important;
   filter: brightness(1.03);
 }
 
@@ -344,10 +344,10 @@
 /* 3. Orange Button Glow Breathe Keyframes */
 @keyframes orange-glow-breathe {
   0%, 100% {
-    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.15);
+    box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
   }
   50% {
-    box-shadow: 0 10px 30px rgba(249, 115, 22, 0.30), 0 0 0 4px rgba(249, 115, 22, 0.08);
+    box-shadow: 0 10px 30px rgba(255, 138, 0, 0.30), 0 0 0 4px rgba(255, 138, 0, 0.08);
   }
 }
 
