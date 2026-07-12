@@ -247,13 +247,122 @@
   animation: shimmer 1.5s infinite linear;
 }
 
-/* Donation Action Pulse - Gentle shadow bloom */
+/* Donation Action Pulse - Premium glass animations, heartbeats, sparkles, glow, and hover/click states */
 .pulse-donate {
-  transition: box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease !important;
+  animation: premium-button-glow 6s ease-in-out infinite;
+  box-shadow: 0 2px 6px rgba(15, 25, 35, 0.1);
+  cursor: pointer;
+  z-index: 5;
 }
 
 .pulse-donate:hover {
-  box-shadow: 0 4px 14px rgba(25, 135, 84, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(25, 135, 84, 0.35) !important;
+  background-color: #157347 !important; /* ~5% darker green */
+  animation-play-state: paused; /* Pause soft glow on hover */
+}
+
+.pulse-donate:active {
+  transform: scale(0.98) translateY(0);
+  transition: transform 150ms ease !important;
+}
+
+/* 1. Continuous Glass Shimmer */
+@keyframes shimmer-move {
+  0% {
+    transform: translateX(-160%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(160%) skewX(-25deg);
+  }
+}
+
+.pulse-donate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent
+  );
+  transform: translateX(-160%) skewX(-25deg);
+  animation: shimmer-move 3.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2. Heart Icon Animation */
+@keyframes premium-heart-beat {
+  0%, 82%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  86% {
+    transform: scale(1.18) translateY(-2px);
+  }
+  90% {
+    transform: scale(1.05) translateY(-0.5px);
+  }
+  94% {
+    transform: scale(1.15) translateY(-1.5px);
+  }
+}
+
+.pulse-donate svg {
+  animation: premium-heart-beat 4.5s ease-in-out infinite;
+  will-change: transform;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 3. Tiny Sparkle behind Heart */
+@keyframes heart-sparkle {
+  0%, 82%, 100% {
+    opacity: 0;
+    transform: scale(0.4) translate(-50%, -50%);
+  }
+  86% {
+    opacity: 0.8;
+    transform: scale(1.2) translate(-50%, -50%);
+  }
+  94% {
+    opacity: 0;
+    transform: scale(1.4) translate(-50%, -50%);
+  }
+}
+
+.pulse-donate::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  top: 52%;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: heart-sparkle 4.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* 4. Button Glow Keyframes */
+@keyframes premium-button-glow {
+  0%, 100% {
+    box-shadow: 0 2px 6px rgba(15, 25, 35, 0.1);
+  }
+  50% {
+    box-shadow: 0 2px 14px rgba(25, 135, 84, 0.22), 0 0 0 3px rgba(34, 197, 94, 0.1);
+  }
 }
 
 /* WCAG accessibility: Respect user preference for reduced motion */

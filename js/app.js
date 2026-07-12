@@ -42,47 +42,50 @@ document.addEventListener('DOMContentLoaded', async () => {
  * Handles custom ripple clicks and floating heart symbols on hover
  */
 function initializeDonateButtonAnimation() {
-  const btn = document.querySelector('.premium-donate-btn');
-  if (!btn) return;
+  const premiumBtn = document.querySelector('.premium-donate-btn');
+  if (premiumBtn) {
+    // Spawn floating heart particles slowly on hover (deliberate, non-distracting pace)
+    let heartTimer = null;
+    premiumBtn.addEventListener('mouseenter', () => {
+      // Spawn first heart instantly on hover
+      spawnHeart(premiumBtn);
+      // Periodically spawn subsequent hearts every 600ms
+      heartTimer = setInterval(() => {
+        spawnHeart(premiumBtn);
+      }, 600);
+    });
 
-  // Custom click ripple effect
-  btn.addEventListener('click', (e) => {
-    // Avoid creating multiple rapid ripples blocking main UI thread
-    const existingRipple = btn.querySelector('.ripple-effect');
-    if (existingRipple) existingRipple.remove();
+    premiumBtn.addEventListener('mouseleave', () => {
+      if (heartTimer) {
+        clearInterval(heartTimer);
+        heartTimer = null;
+      }
+    });
+  }
 
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  // Register ripple click effects on all premium buttons
+  const rippleBtns = document.querySelectorAll('.premium-donate-btn, .pulse-donate');
+  rippleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // Avoid creating multiple rapid ripples blocking main UI thread
+      const existingRipple = btn.querySelector('.ripple-effect');
+      if (existingRipple) existingRipple.remove();
 
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple-effect';
-    ripple.style.width = ripple.style.height = `${Math.max(rect.width, rect.height) * 2}px`;
-    ripple.style.left = `${x - Math.max(rect.width, rect.height)}px`;
-    ripple.style.top = `${y - Math.max(rect.width, rect.height)}px`;
-    btn.appendChild(ripple);
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-    setTimeout(() => {
-      ripple.remove();
-    }, 600);
-  });
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple-effect';
+      ripple.style.width = ripple.style.height = `${Math.max(rect.width, rect.height) * 2}px`;
+      ripple.style.left = `${x - Math.max(rect.width, rect.height)}px`;
+      ripple.style.top = `${y - Math.max(rect.width, rect.height)}px`;
+      btn.appendChild(ripple);
 
-  // Spawn floating heart particles slowly on hover (deliberate, non-distracting pace)
-  let heartTimer = null;
-  btn.addEventListener('mouseenter', () => {
-    // Spawn first heart instantly on hover
-    spawnHeart(btn);
-    // Periodically spawn subsequent hearts every 600ms
-    heartTimer = setInterval(() => {
-      spawnHeart(btn);
-    }, 600);
-  });
-
-  btn.addEventListener('mouseleave', () => {
-    if (heartTimer) {
-      clearInterval(heartTimer);
-      heartTimer = null;
-    }
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
   });
 }
 
