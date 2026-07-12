@@ -11,7 +11,7 @@
 
   /* Premium Blue Gradient System */
   --gradient-primary: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
   --gradient-primary-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 100%);
   --gradient-hero: radial-gradient(circle at 90% 10%, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.05) 60%, transparent 100%);
   --gradient-section: linear-gradient(135deg, #F8FBFF 0%, #EFF6FF 100%);
