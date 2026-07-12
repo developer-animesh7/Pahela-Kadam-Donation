@@ -112,6 +112,10 @@
   transform: translateY(0);
 }
 
+.entrance-ready .header-wrapper {
+  transform: none !important;
+}
+
 .header-wrapper {
   opacity: 0;
   transform: translateY(-15px);
@@ -389,5 +393,142 @@
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+@media (max-width: 991px) {
+  /* 1. Mobile Menu Redesign */
+  .nav-menu {
+    position: fixed !important;
+    inset: 0 !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    z-index: 2500 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: var(--space-4) !important;
+    padding: calc(var(--space-10) + env(safe-area-inset-top, 24px)) var(--space-6) var(--space-6) !important;
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease, visibility 300ms !important;
+    overflow-y: auto !important;
+  }
+  .nav-menu.is-active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .nav-menu-close {
+    position: fixed !important;
+    top: calc(20px + env(safe-area-inset-top, 0px)) !important;
+    right: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 38px !important;
+    color: var(--primary) !important;
+    cursor: pointer !important;
+    z-index: 2510 !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .nav-menu .nav-link {
+    font-size: var(--text-lg) !important;
+    font-weight: 700 !important;
+    color: var(--primary-dark) !important;
+    text-decoration: none !important;
+    padding: var(--space-1) var(--space-3) !important;
+    transition: color 200ms ease !important;
+  }
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.is-current-page {
+    color: var(--accent) !important;
+  }
+
+  /* 2. Hero Section Collapses Stack */
+  .container.grid.grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8) !important;
+    text-align: center !important;
+  }
+  .hero-entrance-img {
+    flex-direction: column !important;
+    gap: var(--space-6) !important;
+  }
+  .slideshow-container,
+  .hero-entrance-img > div:first-child {
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+
+  /* 3. Floating cards position static below image */
+  .hero-floating-badge {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  /* 4. Spacing overrides */
+  section.section {
+    padding: var(--space-10) 0 !important;
+  }
+  .nse-trust-card {
+    padding: var(--space-6) var(--space-4) !important;
+  }
+  .media-frame-offset {
+    margin-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Typography Scale Clamp */
+  .text-display, h1 {
+    font-size: clamp(1.8rem, 5vw + 1.2rem, 2.4rem) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+  .text-story, p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+  }
+  .btn-group {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-3) !important;
+  }
+  .badge-trust {
+    align-self: center !important;
+  }
+  .hero-stats-row {
+    margin: var(--space-6) auto !important;
+    justify-content: center !important;
+    gap: var(--space-6) !important;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-row {
+    flex-direction: column !important;
+    gap: var(--space-4) !important;
+    align-items: center !important;
   }
 }

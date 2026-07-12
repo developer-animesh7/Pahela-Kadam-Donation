@@ -64,31 +64,8 @@
   }
 }
 
-/* Mobile-First Header Nav Controls */
+/* Mobile-First Header Nav Controls (Inherited from animations.css) */
 @media (max-width: 1023px) {
-  .nav-menu {
-    position: fixed;
-    top: 72px; /* Navbar height */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--bg-canvas);
-    padding: var(--space-6) var(--space-4);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
-    z-index: 99;
-  }
-  
-  .nav-menu.is-active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 /* Tablet Optimizations */

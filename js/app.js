@@ -173,6 +173,17 @@ function registerNavbarComponent() {
       document.body.style.overflow = !isExpanded ? 'hidden' : '';
     });
 
+    // Close menu when close button inside overlay is clicked
+    const closeBtn = menuEl.querySelector('.nav-menu-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        burgerBtn.classList.remove('is-active');
+        menuEl.classList.remove('is-active');
+        document.body.style.overflow = '';
+      });
+    }
+
     // Close menu when links are clicked (useful for anchors on same page)
     const navLinks = menuEl.querySelectorAll('a');
     navLinks.forEach(link => {
@@ -319,6 +330,16 @@ function initializeStaticNavbar() {
     menuEl.classList.toggle('is-active');
     document.body.style.overflow = !isExpanded ? 'hidden' : '';
   });
+
+  const closeBtn = menuEl.querySelector('.nav-menu-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      burgerBtn.classList.remove('is-active');
+      menuEl.classList.remove('is-active');
+      document.body.style.overflow = '';
+    });
+  }
 
   const navLinks = menuEl.querySelectorAll('a');
   navLinks.forEach(link => {
