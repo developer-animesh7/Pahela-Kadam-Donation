@@ -396,11 +396,21 @@
   }
 }
 
+/* Base Mobile Menu Hidden State for Desktop */
+.nav-menu,
+.nav-menu-close,
+.nav-menu-brand {
+  display: none !important;
+}
+
 /* ==========================================================================
    MOBILE & TABLET RESPONSIVENESS OVERRIDES
    ========================================================================== */
-@media (max-width: 991px) {
+@media (max-width: 1023px) {
   /* 1. Mobile Menu Redesign */
+  .nav-menu-brand {
+    display: flex !important;
+  }
   .nav-menu {
     position: fixed !important;
     inset: 0 !important;
