@@ -108,7 +108,7 @@
       position: relative;
       border-radius: var(--radius-xl);
       overflow: hidden;
-      height: clamp(250px, 35vw, 420px);
+      min-height: clamp(250px, 35vw, 420px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -117,6 +117,7 @@
       background-image: url('../assets/images/campaigns/campaign_hero_banner.png');
       background-size: cover;
       background-position: center;
+      padding: var(--space-6) var(--space-5);
       margin-bottom: var(--space-5);
       box-shadow: var(--shadow-md);
       border: 1px solid var(--border-color);
@@ -284,12 +285,37 @@
         gap: var(--space-5) !important;
       }
       .campaign-hero-banner {
-        height: clamp(180px, 50vw, 280px);
+        height: auto;
+        min-height: 280px;
+        padding: var(--space-8) var(--space-4);
         margin-bottom: var(--space-4);
+        border-radius: var(--radius-lg);
+      }
+      .campaign-hero-content {
+        padding: 0 var(--space-3);
+        gap: var(--space-3);
+      }
+      .campaign-hero-content h1 {
+        font-size: clamp(1.3rem, 5vw, 1.75rem) !important;
+        line-height: 1.25 !important;
+      }
+      .campaign-hero-content p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
       }
       #main-content .section {
         padding-top: clamp(2rem, 5vw, 3rem);
         padding-bottom: clamp(2rem, 5vw, 3rem);
+      }
+    }
+
+    @media (max-width: 380px) {
+      .campaign-hero-banner {
+        min-height: 260px;
+        padding: var(--space-6) var(--space-3);
+      }
+      .campaign-hero-content h1 {
+        font-size: 1.2rem !important;
       }
     }
 
