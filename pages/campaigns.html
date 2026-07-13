@@ -265,45 +265,6 @@
       border-color: rgba(37, 99, 235, 0.15);
     }
 
-    /* Success Stories */
-    .stories-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
-    @media (min-width: 768px) {
-      .stories-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .story-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-sm);
-      transition: transform 200ms ease, box-shadow 200ms ease;
-    }
-    .story-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(37, 99, 235, 0.15);
-    }
-    .story-img-wrap {
-      position: relative;
-      aspect-ratio: 16/10;
-      overflow: hidden;
-    }
-    .story-card:hover .story-img {
-      transform: scale(1.02);
-    }
-    .story-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 200ms ease;
-    }
-
     /* ======================================================
        CAMPAIGN PAGE — SECTION SPACING OPTIMIZATION
     ====================================================== */
@@ -728,54 +689,6 @@
             <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
               Operating for over 18 years in Dhanbad, we provide daily safety transport, lunchboxes, and therapies to 150+ special kids.
             </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION: SUCCESS STORIES PREVIEW -->
-    <section class="section">
-      <div class="container">
-        
-        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-8); display: flex; flex-direction: column; gap: var(--space-3);">
-          <span class="text-muted-label" style="color: var(--accent); font-weight: 700;">REAL IMPACT</span>
-          <h2 style="font-size: var(--text-3xl); color: var(--primary-dark); margin: 0; line-height: 1.2;">Success Stories</h2>
-        </div>
-
-        <div class="stories-grid">
-          
-          <!-- Story 1: Rahul -->
-          <div class="story-card reveal">
-            <div class="story-img-wrap">
-              <img src="../assets/images/stories/story_rahul.png" alt="Rahul smiling with his painting success" class="story-img">
-            </div>
-            <div style="padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex-grow: 1;">
-              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0;">Rahul's Creative Path</h4>
-              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
-                Rahul joined us with cerebral palsy and limited fine motor controls. Through adaptive paint brushes and dedicated occupational therapy, he discovered an incredible talent for color combinations. Today, his custom paintings are featured in our vocational craft bazaar.
-              </p>
-              <a href="/pages/gallery.html" class="btn btn-secondary btn-sm" style="align-self: flex-start; margin-top: auto; font-size: 11px; padding: 0.5rem 1rem;">
-                <span>Read Story</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Story 2: Priya -->
-          <div class="story-card reveal">
-            <div class="story-img-wrap">
-              <img src="../assets/images/stories/story_priya.png" alt="Priya typing on a computer success" class="story-img">
-            </div>
-            <div style="padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); flex-grow: 1;">
-              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-primary); margin: 0;">Priya's Digital Journey</h4>
-              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: 0;">
-                Priya, who has down syndrome, started learning typing in our computer lab. With patience and smart screen boards, she mastered layout controls and basic computer typing. She now assists our administrative office in typing daily attendance logs.
-              </p>
-              <a href="/pages/gallery.html" class="btn btn-secondary btn-sm" style="align-self: flex-start; margin-top: auto; font-size: 11px; padding: 0.5rem 1rem;">
-                <span>Read Story</span>
-              </a>
-            </div>
           </div>
 
         </div>
