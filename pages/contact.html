@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact the Trust | Pahela Kadam Premium Donation Platform</title>
-  <meta name="description" content="Support special children at Pahela Kadam. Managed by Narayani Charitable Trust. Fully audited 80G tax-exempt donations.">
+  <title>Contact Narayani Charitable Trust | Pahela Kadam School</title>
   
-    <!-- Browser Favicon -->
+  <!-- SEO Optimization -->
+  <meta name="description" content="Connect with Narayani Charitable Trust & Pahela Kadam School for Special Children in Dhanbad. View specialized point-of-contacts directories, trust credentials, and FAQs.">
+  <meta name="keywords" content="contact, Pahela Kadam, Narayani Charitable Trust, special school Dhanbad, Anita Agarwal, address, phone number, 80G tax exemption, registrations">
+
+  <!-- Browser Favicon -->
   <link rel="icon" type="image/x-icon" href="../assets/images/logos/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logos/favicon-16x16.png">
@@ -20,6 +23,890 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* ======================================================
+       PAGE-LEVEL STYLES (Navbar & Footer FOUC Prevention)
+    ====================================================== */
+    .nav-logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-logo-img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1.6fr 1fr 1fr;
+        gap: var(--space-10);
+      }
+    }
+
+    .social-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
+      will-change: transform;
+      cursor: pointer;
+    }
+    .social-icon-btn:hover {
+      background-color: var(--primary);
+      border-color: transparent;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1023px) {
+      .desktop-only { display: none !important; }
+      .nav-burger   { display: flex !important; }
+    }
+    @media (min-width: 1024px) {
+      .desktop-only { display: flex !important; }
+      .nav-burger   { display: none !important; }
+    }
+
+    .nav-burger.is-active .burger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-burger.is-active .burger-line:nth-child(2) { opacity: 0; }
+    .nav-burger.is-active .burger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-menu.is-active {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    #main-content {
+      margin-top: 72px;
+    }
+
+    /* ======================================================
+       FUTURISTIC & PREMIUM LAYOUT STYLES
+    ====================================================== */
+    
+    /* Cyber Dot Grid Background */
+    .futuristic-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(rgba(37, 99, 235, 0.08) 1.5px, transparent 1.5px),
+        radial-gradient(rgba(37, 99, 235, 0.04) 1.5px, transparent 1.5px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      opacity: 0.9;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 100%);
+      animation: grid-drift 30s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes grid-drift {
+      0% { background-position: 0 0, 15px 15px; }
+      100% { background-position: 30px 30px, 45px 45px; }
+    }
+
+    /* Grid layout */
+    .contact-layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      margin-top: var(--space-6);
+      position: relative;
+      z-index: 1;
+    }
+    @media (min-width: 1024px) {
+      .contact-layout-grid {
+        grid-template-columns: 1.15fr 1.25fr;
+        gap: var(--space-12);
+      }
+    }
+
+    /* Cyber-Glass Contact Cards (Left column) */
+    .director-greeting-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(239, 246, 255, 0.65) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.03);
+      margin-bottom: var(--space-6);
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .director-greeting-card:hover {
+      border-color: rgba(37, 99, 235, 0.3);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
+      transform: translateY(-4px);
+    }
+    @media (min-width: 768px) {
+      .director-greeting-card {
+        flex-direction: row;
+      }
+    }
+    .director-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: var(--bg-shaded);
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .director-img-wrap {
+        width: 160px;
+        height: auto;
+      }
+    }
+    .director-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .director-greeting-card:hover .director-img-wrap img {
+      transform: scale(1.05);
+    }
+    
+    .glowing-avatar-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px solid transparent;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #2563EB, #818CF8) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      opacity: 0.65;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .director-message {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+    .director-quote {
+      font-size: var(--text-sm);
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+      position: relative;
+    }
+    .director-sign h4 {
+      font-size: var(--text-sm);
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+    .director-sign span {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Cyber Glass Cards */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(239, 246, 255, 0.6) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-6);
+      display: flex;
+      gap: var(--space-5);
+      box-shadow: 0 4px 24px rgba(15, 23, 42, 0.015);
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, 0.32);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
+    }
+
+    .contact-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(129, 140, 248, 0.08) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: all 300ms ease;
+    }
+    .contact-card:hover .contact-icon-wrapper {
+      background: linear-gradient(135deg, var(--primary) 0%, #818CF8 100%);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.22);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .contact-details h3 {
+      font-size: var(--text-sm);
+      margin: 0;
+      font-weight: 800;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-details p {
+      font-size: var(--text-xs);
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .contact-action-btn {
+      align-self: flex-start;
+      margin-top: var(--space-2);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform var(--transition-normal), color var(--transition-normal);
+    }
+    .contact-action-btn:hover {
+      color: var(--primary-dark);
+      transform: translateX(4px);
+    }
+
+    /* Live pulse dots */
+    .pulse-ping-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      position: relative;
+    }
+    .pulse-ping-dot::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: inherit;
+      animation: ping-pulse 1.6s infinite ease-in-out;
+      opacity: 0.7;
+    }
+    @keyframes ping-pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(2.8); opacity: 0; }
+    }
+
+    /* Points of Contact Cards */
+    .poc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    @media (min-width: 768px) {
+      .poc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .poc-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(239, 246, 255, 0.65) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.015);
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .poc-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(37, 99, 235, 0.3);
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.07);
+    }
+    .poc-card h4 {
+      font-size: var(--text-xs);
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .poc-card p {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .status-pulse-green {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+      display: inline-block;
+      position: relative;
+    }
+    .status-pulse-green::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: inherit;
+      animation: ping-pulse 2s infinite ease-in-out;
+    }
+
+    /* High-tech Credentials List */
+    .cred-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .cred-list li {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .cred-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 8px var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* Visiting Pipeline Timeline */
+    .visit-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      position: relative;
+      margin-top: var(--space-4);
+      padding-left: var(--space-1);
+    }
+    .visit-timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 16px;
+      bottom: 16px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary) 0%, #818CF8 50%, rgba(37, 99, 235, 0.1) 100%);
+    }
+    .timeline-step {
+      display: flex;
+      gap: var(--space-4);
+      position: relative;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      z-index: 1;
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .timeline-step:hover .step-num {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+      transform: scale(1.1) rotate(360deg);
+    }
+    .step-content h4 {
+      font-size: var(--text-xs);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0 0 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .step-content p {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ======================================================
+       CYBER MESSAGE FORM TERMINAL (Right Panel - LIGHT GLASS)
+    ====================================================== */
+    .form-wrapper-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(239, 246, 255, 0.75) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-6) var(--space-6) var(--space-8);
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.04);
+      position: relative;
+      overflow: hidden;
+      color: var(--text-primary);
+    }
+    .form-wrapper-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2563EB, #818CF8, #34D399);
+    }
+    @media (min-width: 768px) {
+      .form-wrapper-card {
+        padding: var(--space-8) var(--space-8) var(--space-10);
+      }
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: var(--space-6);
+    }
+    
+    .form-icon-wrap {
+      position: absolute;
+      left: 16px;
+      top: 15px;
+      color: var(--text-muted);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      transition: color 250ms ease;
+    }
+    .form-input:focus ~ .form-icon-wrap {
+      color: var(--primary);
+    }
+
+    .form-input {
+      background-color: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(208, 225, 253, 0.8);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px 14px 44px;
+      width: 100%;
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: inherit;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background-color: white;
+      box-shadow: 0 0 16px rgba(37, 99, 235, 0.12);
+    }
+
+    .form-label {
+      position: absolute;
+      left: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      background: transparent;
+      padding: 0 var(--space-1);
+      font-size: var(--text-sm);
+    }
+
+    .form-input:focus ~ .form-label,
+    .form-input:not(:placeholder-shown) ~ .form-label {
+      top: 0;
+      left: 16px;
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 800;
+      background: white;
+      padding: 0 6px;
+      border-radius: 4px;
+      transform: translateY(-50%) scale(0.95);
+      box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    .form-input-textarea {
+      min-height: 120px;
+      resize: vertical;
+      padding-top: 14px;
+    }
+    .form-input-textarea ~ .form-icon-wrap {
+      top: 15px;
+    }
+    .form-input-textarea ~ .form-label {
+      top: 24px;
+      transform: translateY(-50%);
+    }
+    .form-input-textarea:focus ~ .form-label,
+    .form-input-textarea:not(:placeholder-shown) ~ .form-label {
+      top: 0;
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .error-message {
+      display: none;
+      color: #ef4444;
+      font-size: 10px;
+      margin-top: 6px;
+      font-weight: 600;
+      padding-left: var(--space-1);
+    }
+
+    .form-input.invalid {
+      border-color: #ef4444;
+      background-color: rgba(239, 68, 68, 0.02);
+    }
+    .form-input.invalid ~ .error-message {
+      display: block;
+    }
+    .form-input.invalid ~ .form-icon-wrap {
+      color: #ef4444;
+    }
+
+    /* Cyber Button with Glowing Shadow */
+    .btn-submit-cyber {
+      background: linear-gradient(135deg, #2563EB 0%, #818CF8 100%);
+      color: white;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: var(--text-sm);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      height: 52px;
+      width: 100%;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-submit-cyber:hover {
+      background: linear-gradient(135deg, #1D4ED8 0%, #6366F1 100%);
+      box-shadow: 0 8px 28px rgba(37, 99, 235, 0.55);
+      transform: translateY(-3px);
+    }
+    .btn-submit-cyber:active {
+      transform: translateY(0);
+    }
+
+    /* Accordion Diagnostic Dropdowns */
+    .faq-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+    }
+
+    .faq-item {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(239, 246, 255, 0.6) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(37, 99, 235, 0.1);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.01);
+    }
+
+    .faq-item:hover {
+      border-color: rgba(37, 99, 235, 0.28);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.07);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 18px var(--space-5);
+      text-align: left;
+      font-size: var(--text-sm);
+      font-weight: 800;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+      outline: none;
+    }
+
+    .faq-icon-arrow {
+      color: var(--primary);
+      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 350ms cubic-bezier(0.16, 1, 0.3, 1), padding 350ms ease;
+      background-color: rgba(239, 246, 255, 0.35);
+      padding: 0 var(--space-5);
+    }
+
+    .faq-content p {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+      padding-bottom: var(--space-5);
+    }
+
+    .faq-item.is-open {
+      border-color: var(--primary);
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.1);
+    }
+    .faq-item.is-open .faq-icon-arrow {
+      transform: rotate(180deg);
+    }
+    .faq-item.is-open .faq-content {
+      max-height: 160px;
+      padding-top: var(--space-3);
+    }
+
+    /* ======================================================
+       SUCCESS ANIMATION POPUP OVERLAY
+    ====================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-6);
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+
+    .modal-overlay.is-active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      max-width: 440px;
+      width: 100%;
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8) var(--space-6);
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.1);
+      transform: scale(0.95);
+      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.is-active .modal-card {
+      transform: scale(1);
+    }
+
+    .success-icon-wrap {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-5);
+    }
+
+    .checkmark__circle {
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+      stroke: var(--primary);
+      fill: none;
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 2;
+      stroke: var(--primary);
+      stroke-miterlimit: 10;
+      box-shadow: inset 0px 0px 0px var(--primary);
+      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s forwards;
+    }
+
+    .checkmark__check {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+
+    @keyframes stroke {
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes scale {
+      0%, 100% { transform: none; }
+      50% { transform: scale3d(1.1, 1.1, 1); }
+    }
+    @keyframes fill {
+      100% { box-shadow: inset 0px 0px 0px 40px var(--primary-light); }
+    }
+
+    /* Organized Campus & Facilities Showcase Grid */
+    .facility-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      margin-top: var(--space-4);
+    }
+    @media (min-width: 768px) {
+      .facility-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .facility-showcase-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-5);
+      }
+    }
+    .facility-card-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .facility-card-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .facility-img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: var(--bg-shaded);
+      position: relative;
+    }
+    .facility-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .facility-card-item:hover .facility-img-wrap img {
+      transform: scale(1.06);
+    }
+    .facility-info {
+      padding: var(--space-4) var(--space-5) var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex-grow: 1;
+    }
+    .facility-info h4 {
+      font-size: var(--text-sm);
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+    .facility-info p {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Visiting Timeline Styles */
+    .visit-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      position: relative;
+      margin-top: var(--space-2);
+    }
+    .timeline-step {
+      display: flex;
+      gap: var(--space-4);
+      position: relative;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: var(--text-xs);
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .step-content h4 {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 2px;
+    }
+    .step-content p {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -27,13 +914,380 @@
   <header class="header-wrapper" data-component="navbar"></header>
 
   <main id="main-content">
-    <section class="section">
-      <div class="container text-center">
-        <h1 class="text-gradient">Contact the Trust</h1>
-        <p class="text-story" style="margin-top: var(--space-4);">This route is ready for dynamic donation-focused copy and storytelling blocks.</p>
+    
+    <!-- Redesigned Main Content Area (Starting with title directly) -->
+    <section class="section" style="padding: clamp(2rem, 4vw, 4rem) 0 var(--space-12); background-color: var(--bg-canvas); position: relative; overflow: hidden;">
+      
+      <!-- Drifting Grid Cyber Background -->
+      <div class="futuristic-grid-bg"></div>
+      
+      <div class="container">
+
+        <div class="contact-layout-grid">
+          
+          <!-- Left Column: Director Message, Point of Contacts, Credentials -->
+          <div class="contact-info-column reveal">
+
+            <!-- Founder greeting card -->
+            <div class="director-greeting-card">
+              <div class="director-img-wrap">
+                <div class="glowing-avatar-ring"></div>
+                <img src="../assets/images/founder/Anita Agarwal.png" alt="Mrs. Anita Agarwal - Founder of Pahela Kadam">
+              </div>
+              <div class="director-message">
+                <p class="director-quote">
+                  "Every special child holds a unique spark. At Pahela Kadam, we nurture that spark into a flame of independence. Connect with us directly to visit, volunteer, or coordinate CSR initiatives."
+                </p>
+                <div class="director-sign">
+                  <h4>Mrs. Anita Agarwal</h4>
+                  <span>Founder Director, Pahela Kadam</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Point of Contacts Grid -->
+            <h3 style="font-size: var(--text-base); font-weight: 800; color: var(--primary-dark); margin: var(--space-2) 0 0;">Points of Contact</h3>
+            <div class="poc-grid">
+              
+              <div class="poc-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <h4>Admissions &amp; Visits</h4>
+                  <span class="status-pulse-green"></span>
+                </div>
+                <p>Special Education Team<br>Phone: +91 9471162439, +91 7004912363<br>Mon-Sat, 9:00 AM - 4:00 PM</p>
+              </div>
+
+              <div class="poc-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <h4>CSR &amp; Sponsorships</h4>
+                  <span class="status-pulse-green"></span>
+                </div>
+                <p>Mrs. Anita Agarwal (Secretary)<br>Email: pahelakadams@gmail.com<br>Mon-Fri, 10:00 AM - 5:00 PM</p>
+              </div>
+
+            </div>
+
+            <!-- Trust Legal Credentials Card -->
+            <div class="contact-card" style="flex-direction: column; gap: var(--space-4); border-color: rgba(37, 99, 235, 0.15); background-color: rgba(37, 99, 235, 0.02); margin-top: var(--space-6);">
+              <h3 style="font-size: var(--text-sm); font-weight: 800; color: var(--primary); margin: 0; text-transform: uppercase; letter-spacing: 0.05em;">Narayani Charitable Trust Credentials</h3>
+              <p style="font-size: 11px; color: var(--text-secondary); margin: 0; line-height: 1.45;">
+                Pahela Kadam School is managed by Narayani Charitable Trust (Dhanbad), a registered public charitable trust.
+              </p>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-2); margin-top: 2px;">
+                <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">Trust Registration No.</span>
+                  <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 12px;">10287 / 1283 / 2014</span>
+                  <span style="font-size: 9px; color: var(--text-muted);">Registered under the Indian Trusts Act, 1882</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2);">
+                  <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">Permanent Account No.</span>
+                    <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 11px;">AABTN6500D</span>
+                  </div>
+                  <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">CSR Registration No.</span>
+                    <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 11px;">CSR00008850</span>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2);">
+                  <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">NITI Aayog Darpan UID</span>
+                    <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 11px;">JH/2018/0188326</span>
+                  </div>
+                  <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">National Trust ID</span>
+                    <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 11px;">JHAR19521418106</span>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2);">
+                  <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">UDISE School Code</span>
+                    <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 11px;">20120302021</span>
+                  </div>
+                  <div style="font-size: 11px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(37, 99, 235, 0.08); border-radius: var(--radius-md); padding: 8px 12px; display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-weight: 800; color: var(--primary); font-size: 9px; text-transform: uppercase; letter-spacing: 0.02em;">Tax Exemption Status</span>
+                    <span style="font-family: monospace; color: var(--text-primary); font-weight: 700; font-size: 11px;">12AA &amp; 80G Active</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Real Committee Meeting Photo Showcase (NEW IMAGE) -->
+            <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); aspect-ratio: 16 / 10; margin-top: var(--space-6); background-color: var(--bg-shaded);">
+              <img src="../assets/images/gallery/report_meeting_1.jpeg" alt="Narayani Charitable Trust core committee meeting and support staff" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <!-- Core Address Details -->
+            <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-6);">
+              <div class="contact-card">
+                <div class="contact-icon-wrapper">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-details">
+                  <h3>School Address <span class="pulse-ping-dot" style="margin-left: 6px;"></span></h3>
+                  <p>
+                    Bungalow No. 8, Jagjeevan Nagar,<br>
+                    Near Saraidhela Police Station,<br>
+                    Saraidhella, Dhanbad, Jharkhand – 826003<br>
+                    <span style="display: inline-block; margin-top: 6px; font-weight: 700; color: var(--text-primary);">Landline: +91 03263146628</span>
+                  </p>
+                  <a href="https://maps.google.com/?q=Pahela+Kadam+School+for+Special+Children+Dhanbad" target="_blank" rel="noopener noreferrer" class="contact-action-btn">
+                    Get Directions &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Contact Form & Accordion FAQs -->
+          <div class="contact-form-column reveal reveal-delay-1">
+            
+            <div class="form-wrapper-card">
+              <div style="display:flex; flex-direction:column; gap:4px; margin-bottom: var(--space-6);">
+                <span style="font-size: 9px; font-weight: 800; color: var(--primary); letter-spacing: 0.15em; text-transform: uppercase;">Secure Message Terminal</span>
+                <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-primary); margin: 0;">Send a Message</h2>
+              </div>
+              
+              <form id="contactForm" novalidate>
+                
+                <!-- Name -->
+                <div class="form-group">
+                  <div class="form-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  </div>
+                  <input type="text" id="contactName" name="name" class="form-input" placeholder=" " required minlength="2">
+                  <label for="contactName" class="form-label">Full Name</label>
+                  <span class="error-message" id="nameError">Please enter your full name (minimum 2 characters).</span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                  <div class="form-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <input type="email" id="contactEmail" name="email" class="form-input" placeholder=" " required>
+                  <label for="contactEmail" class="form-label">Email Address</label>
+                  <span class="error-message" id="emailError">Please enter a valid email address.</span>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                  <div class="form-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                  <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder=" " required pattern="^[0-9]{10}$">
+                  <label for="contactPhone" class="form-label">Phone Number</label>
+                  <span class="error-message" id="phoneError">Please enter a valid 10-digit phone number.</span>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                  <div class="form-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                  </div>
+                  <input type="text" id="contactSubject" name="subject" class="form-input" placeholder=" " required minlength="4">
+                  <label for="contactSubject" class="form-label">Subject</label>
+                  <span class="error-message" id="subjectError">Please enter a subject (minimum 4 characters).</span>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <div class="form-icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  </div>
+                  <textarea id="contactMessage" name="message" class="form-input form-input-textarea" placeholder=" " required minlength="10"></textarea>
+                  <label for="contactMessage" class="form-label">Message</label>
+                  <span class="error-message" id="messageError">Please enter your message (minimum 10 characters).</span>
+                </div>
+
+                <!-- Cyber Submit Button -->
+                <button type="submit" class="btn-submit-cyber">
+                  <span>Send Message</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+              </form>
+            </div>
+
+            <!-- Interactive Accordion FAQ block -->
+            <h3 style="font-size: var(--text-base); font-weight: 800; color: var(--primary-dark); margin: var(--space-8) 0 0;">Frequently Asked Questions</h3>
+            
+            <div class="faq-accordion">
+              
+              <!-- FAQ Item 1 -->
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>How can I schedule a school visit?</span>
+                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    Visits are welcomed Monday through Saturday, between 10:00 AM and 2:00 PM. Please submit our online form or call +91 9471162439 at least 24 hours in advance to schedule a guided tour.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>Is my donation eligible for tax exemption?</span>
+                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    Yes, all donations made to the Narayani Charitable Trust (operating Pahela Kadam) are 100% tax-exempt under Section 80G of the Income Tax Act. Official receipts and tax certificates will be emailed to you within 7 working days.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>Can I donate physical materials (wheelchairs, computers)?</span>
+                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    Absolutely. We accept special education books, computers, orthopedic crutches, wheelchairs, speech training software, and art supplies. Please email pahelakadams@gmail.com with your list of items to coordinate delivery.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>What are the admission criteria for new students?</span>
+                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    Pahela Kadam supports children with autism, intellectual disabilities, cerebral palsy, down syndrome, and developmental delays. Admissions are entirely free of charge for children from underprivileged families, following an initial pediatric and special educational diagnostic evaluation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>How can corporate partners support Pahela Kadam under CSR?</span>
+                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    Corporate partners can sponsor specialized class digitizations, child pediatric therapy standing frames, or fund vocational cafe placement tracks. The trust is registered on the MCA portal (CSR Registration No: CSR00039230) for tax-exempt CSR partnerships.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
+
+    <!-- Campus & Facilities Showcase Section -->
+    <section class="section" style="padding: 0 0 var(--space-12); background-color: var(--bg-canvas);">
+      <div class="container reveal">
+        <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--primary-dark); margin: 0 0 var(--space-2); text-align: center;">Our Centers &amp; Facilities</h3>
+        <p style="font-size: var(--text-sm); color: var(--text-secondary); text-align: center; max-width: 600px; margin: 0 auto var(--space-8); line-height: 1.6;">
+          Pahela Kadam operates specialized therapy centers, learning classrooms, and vocational spaces to provide complete development and independence for our children.
+        </p>
+        
+        <div class="facility-showcase-grid">
+          
+          <div class="facility-card-item">
+            <div class="facility-img-wrap">
+              <img src="../assets/images/gallery/journey_inauguration_1.png" alt="Vocational Training Cafe">
+            </div>
+            <div class="facility-info">
+              <h4>Nayi Udaan Cafe</h4>
+              <p>Our landmark vocational project where senior students learn catering, hospitality, and finance.</p>
+            </div>
+          </div>
+
+          <div class="facility-card-item">
+            <div class="facility-img-wrap">
+              <img src="../assets/images/gallery/report_classroom_4.png" alt="Special Education Classrooms">
+            </div>
+            <div class="facility-info">
+              <h4>Special Classrooms</h4>
+              <p>Stimulating educational setups customized for autistic, cerebral palsy, and developmental needs.</p>
+            </div>
+          </div>
+
+          <div class="facility-card-item">
+            <div class="facility-img-wrap">
+              <img src="../assets/images/gallery/report_therapy_2.png" alt="Pediatric Therapy Setup">
+            </div>
+            <div class="facility-info">
+              <h4>Pediatric Therapy</h4>
+              <p>One-on-one physiotherapy, occupational therapy, and sensory integration guidance.</p>
+            </div>
+          </div>
+
+          <div class="facility-card-item">
+            <div class="facility-img-wrap">
+              <img src="../assets/images/gallery/journey_event_4.png" alt="Inclusion Sports & Rallies">
+            </div>
+            <div class="facility-info">
+              <h4>Inclusion Events</h4>
+              <p>Sports day championships, inclusion rallies, and cultural festival celebrations with the community.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Embedded Google Maps Section -->
+    <section class="section" style="padding: 0 0 var(--space-12); background-color: var(--bg-canvas);">
+      <div class="container reveal">
+        <div style="position: relative; border-radius: var(--radius-2xl); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md); aspect-ratio: 16 / 7; width: 100%; background-color: var(--bg-shaded);">
+          <!-- Floating Coordinates Badge -->
+          <div style="position: absolute; top: var(--space-4); right: var(--space-4); background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-lg); padding: 8px 14px; color: white; font-family: monospace; font-size: 10px; pointer-events: none; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 6px;">
+            <span style="display:inline-block; width: 6px; height: 6px; border-radius: 50%; background: #ef4444; position: relative;">
+              <span style="content:''; position:absolute; width:100%; height:100%; border-radius:50%; background:inherit; animation:ping-pulse 1.6s infinite ease-in-out; opacity:0.7;"></span>
+            </span>
+            <span>GPS: 23.8144° N, 86.4496° E // ALT 223M</span>
+          </div>
+          <iframe 
+            src="https://maps.google.com/maps?q=Pahela+Kadam+School+for+Special+Children+Dhanbad&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0; position: absolute; inset: 0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Pahela Kadam School Location on Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Success Message Popup Modal Overlay -->
+  <div id="successModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Message submission status">
+    <div class="modal-card">
+      <div class="success-icon-wrap">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-primary); margin: 0 0 var(--space-2);">Message Sent Successfully!</h3>
+      <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin: 0 0 var(--space-5);">
+        Thank you for reaching out to Narayani Charitable Trust. We have received your inquiry and our team will get back to you shortly.
+      </p>
+      <button class="btn btn-primary btn-sm" id="closeModalBtn" style="border: none; padding: 10px 24px;">Done</button>
+    </div>
+  </div>
 
   <!-- Dynamic Footer Injection -->
   <div data-component="footer"></div>
@@ -42,5 +1296,136 @@
   <script src="../js/component-loader.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/app.js"></script>
+
+  <!-- Form Validation, Modal & Accordion Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Accordion Logic
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.contains('is-open');
+          
+          // Close all
+          faqItems.forEach(otherItem => {
+            otherItem.classList.remove('is-open');
+            otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // 2. Form Validation Logic
+      const form = document.getElementById('contactForm');
+      const successModal = document.getElementById('successModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+
+      const isValidEmail = (email) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1-3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      };
+
+      const isSimpleValidEmail = (email) => {
+        return email.includes('@') && email.split('@')[1].includes('.');
+      };
+
+      const isValidPhone = (phone) => {
+        const re = /^[0-9]{10}$/;
+        return re.test(String(phone));
+      };
+
+      const validateInput = (input) => {
+        let isValid = true;
+        const value = input.value.trim();
+
+        if (input.required && !value) {
+          isValid = false;
+        } else if (input.id === 'contactEmail' && value && !isSimpleValidEmail(value)) {
+          isValid = false;
+        } else if (input.id === 'contactPhone' && value && !isValidPhone(value)) {
+          isValid = false;
+        } else if (input.minLength && value.length < input.minLength) {
+          isValid = false;
+        }
+
+        if (isValid) {
+          input.classList.remove('invalid');
+        } else {
+          input.classList.add('invalid');
+        }
+
+        return isValid;
+      };
+
+      const inputs = form.querySelectorAll('.form-input');
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          if (input.classList.contains('invalid')) {
+            validateInput(input);
+          }
+        });
+
+        input.addEventListener('blur', () => {
+          validateInput(input);
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let isFormValid = true;
+        inputs.forEach(input => {
+          const isInputValid = validateInput(input);
+          if (!isInputValid) {
+            isFormValid = false;
+          }
+        });
+
+        if (isFormValid) {
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalContent = submitBtn.innerHTML;
+          
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Sending...</span>';
+
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalContent;
+
+            form.reset();
+            inputs.forEach(input => input.classList.remove('invalid'));
+
+            successModal.classList.add('is-active');
+            successModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          }, 1000);
+        }
+      });
+
+      const closeModal = () => {
+        successModal.classList.remove('is-active');
+        successModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      closeModalBtn.addEventListener('click', closeModal);
+      successModal.addEventListener('click', (e) => {
+        if (e.target === successModal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && successModal.classList.contains('is-active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impact Photo Gallery | Pahela Kadam Premium Donation Platform</title>
-  <meta name="description" content="Support special children at Pahela Kadam. Managed by Narayani Charitable Trust. Fully audited 80G tax-exempt donations.">
-  
-    <!-- Browser Favicon -->
+  <meta name="description" content="View the milestones, activities, and achievements of special children at Pahela Kadam School, run by Narayani Charitable Trust.">
+
+  <!-- Browser Favicon -->
   <link rel="icon" type="image/x-icon" href="../assets/images/logos/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logos/favicon-16x16.png">
@@ -20,6 +20,1079 @@
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* ======================================================
+       PAGE-LEVEL STYLES (Navbar & Footer FOUC Prevention)
+    ====================================================== */
+    .nav-logo-img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-logo-img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1.6fr 1fr 1fr;
+        gap: var(--space-10);
+      }
+    }
+
+    .social-icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      place-items: center;
+      color: #FFFFFF;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
+      will-change: transform;
+      cursor: pointer;
+    }
+    .social-icon-btn:hover {
+      background-color: var(--primary);
+      border-color: transparent;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1023px) {
+      .desktop-only { display: none !important; }
+      .nav-burger   { display: flex !important; }
+    }
+    @media (min-width: 1024px) {
+      .desktop-only { display: flex !important; }
+      .nav-burger   { display: none !important; }
+    }
+
+    .nav-burger.is-active .burger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-burger.is-active .burger-line:nth-child(2) { opacity: 0; }
+    .nav-burger.is-active .burger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-menu.is-active {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    #main-content {
+      margin-top: 72px;
+    }
+
+    /* ======================================================
+       FUTURISTIC KEYFRAME ANIMATIONS
+    ====================================================== */
+    @keyframes bentoEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.92);
+        filter: blur(6px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes filterIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.88) rotateX(8deg);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.02) rotateX(-1deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotateX(0);
+      }
+    }
+
+    @keyframes shimmerGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+      50% { box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.15); }
+    }
+
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+      70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+    }
+
+    /* ======================================================
+       STATS COUNTER BANNER (Premium Glassmorphism Style)
+    ====================================================== */
+    .stats-banner {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05),
+                  0 1px 3px rgba(15, 23, 42, 0.03);
+      border-radius: 24px;
+      padding: var(--space-8) var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      text-align: center;
+      margin-top: var(--space-4);
+      position: relative;
+      z-index: 20;
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stats-banner:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.15);
+      box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.08);
+    }
+    
+    @media (min-width: 768px) {
+      .stats-banner {
+        grid-template-columns: repeat(4, 1fr);
+        padding: var(--space-8) var(--space-6);
+      }
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .stat-number {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    /* ======================================================
+       FEATURED HIGHLIGHT BLOCK (Storytelling Panel)
+    ====================================================== */
+    .featured-highlight-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: var(--space-12);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+
+    .featured-highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--border-hover);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      .featured-grid {
+        grid-template-columns: 1.2fr 1fr;
+      }
+    }
+
+    .featured-image-frame {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--bg-shaded);
+      position: relative;
+    }
+
+    .featured-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .featured-highlight-card:hover .featured-image-frame img {
+      transform: scale(1.03);
+    }
+
+    .featured-content-panel {
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-4);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(243, 244, 246, 0.3) 100%);
+    }
+
+    @media (min-width: 768px) {
+      .featured-content-panel {
+        padding: var(--space-8);
+      }
+    }
+
+    .featured-badge {
+      align-self: flex-start;
+      background-color: var(--accent-light);
+      color: var(--accent-hover);
+      font-size: 10px;
+      font-weight: 800;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .featured-title {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .featured-desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+
+
+    /* ======================================================
+       BENTO BOX GALLERY GRID (Modern Dynamic Layout)
+    ====================================================== */
+    .filter-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-12);
+      position: -webkit-sticky;
+      position: sticky;
+      top: 72px; /* fits cleanly below the 72px navigation header with 0px safety gap */
+      z-index: 90;
+      background: transparent;
+      padding: var(--space-4) 0;
+      transition: all 300ms ease;
+      /* Prevent scroll reveal transform from breaking sticky position */
+      transform: none !important;
+      will-change: auto !important;
+      opacity: 1 !important;
+    }
+    .filter-wrapper.is-stuck {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      padding: var(--space-4) 0 !important;
+    }
+
+    .filter-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 10px 22px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #6366F1 100%);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      animation: pulseRing 2s infinite;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--space-5);
+      grid-auto-rows: 240px;
+      perspective: 1200px;
+    }
+
+    @media (min-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 270px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        grid-auto-rows: 310px;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 400ms ease;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      will-change: transform, box-shadow;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      /* Staggered entrance — set by JS */
+      opacity: 0;
+      animation: bentoEntrance 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Bento grid spans */
+    @media (min-width: 768px) {
+      .bento-wide {
+        grid-column: span 2;
+      }
+      .bento-tall {
+        grid-row: span 2;
+      }
+      .bento-large {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+
+    /* Show/hide with smooth scale transitions */
+    .gallery-item.show {
+      display: flex;
+      animation: filterIn 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .gallery-item.hide {
+      display: none !important;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.12),
+                  0 8px 24px rgba(15, 23, 42, 0.08),
+                  0 0 0 1px rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.35);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 500ms ease;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.04) 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .gallery-card-img-wrap {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg-shaded);
+      position: relative;
+      border-radius: 20px;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+    }
+
+    .gallery-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 600ms ease;
+      filter: brightness(0.97) saturate(1.05);
+    }
+
+    .gallery-item:hover .gallery-card-img-wrap img {
+      transform: scale(1.06) translateZ(0);
+      -webkit-transform: scale(1.06) translateZ(0);
+      filter: brightness(1.02) saturate(1.15);
+    }
+
+    /* Floating tag badge inside image — frosted glass */
+    .card-category-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(16px) saturate(1.8);
+      -webkit-backdrop-filter: blur(16px) saturate(1.8);
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 350ms ease,
+                  transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+                  background 300ms ease,
+                  border-color 300ms ease;
+    }
+
+    .gallery-item:hover .card-category-tag {
+      opacity: 1;
+      transform: translateY(0);
+      background: rgba(37, 99, 235, 0.7);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Floating Card Overlay Panel (Premium Glassmorphic Slide-Up) */
+    .gallery-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 48px 20px 20px;
+      background: linear-gradient(
+        to top,
+        rgba(10, 15, 30, 0.98) 0%,
+        rgba(10, 15, 30, 0.75) 50%,
+        rgba(10, 15, 30, 0.3) 80%,
+        transparent 100%
+      );
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transform: translateY(30px);
+      opacity: 0;
+      transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 400ms ease;
+      z-index: 5;
+    }
+
+    .gallery-item:hover .gallery-card-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .gallery-card-content h3 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .gallery-card-content p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .gallery-card-content span {
+      font-size: 10px;
+      color: rgba(147, 197, 253, 0.85);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Expand icon indicator on hover */
+    .gallery-item .expand-indicator {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: opacity 350ms ease, transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10;
+    }
+
+    .gallery-item:hover .expand-indicator {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ======================================================
+       COVER FLOW SYSTEM (Apple-Inspired 3D Layout)
+    ====================================================== */
+    .coverflow-section {
+      position: relative;
+      width: 100%;
+      margin: 0 auto var(--space-12);
+      overflow: visible;
+    }
+
+    .coverflow-viewport {
+      width: 100%;
+      height: 480px;
+      position: relative;
+      overflow: hidden;
+      perspective: 1200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, rgba(37, 99, 235, 0.04) 0%, transparent 80%);
+      border-radius: 24px;
+      margin-top: var(--space-4);
+      padding: var(--space-4) 0;
+    }
+
+    /* Edge Gradient Overlays for smooth blending with light background */
+    .coverflow-viewport::before,
+    .coverflow-viewport::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 25%;
+      z-index: 25;
+      pointer-events: none;
+      transition: opacity 300ms ease;
+    }
+    .coverflow-viewport::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg-canvas) 0%, transparent 100%);
+    }
+    .coverflow-viewport::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg-canvas) 0%, transparent 100%);
+    }
+
+    .coverflow-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      user-select: none;
+      cursor: grab;
+    }
+    .coverflow-track:active {
+      cursor: grabbing;
+    }
+
+    .coverflow-slide {
+      position: absolute;
+      width: 440px;
+      height: 270px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.28),
+                  0 4px 10px rgba(15, 23, 42, 0.05);
+      background: var(--bg-surface);
+      transition: transform 550ms cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 550ms cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 550ms cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      cursor: pointer;
+      /* GPU Layer Promotion to fix lagging */
+      will-change: transform, opacity, filter;
+    }
+
+    /* Dark Overlay for non-active slides to create dark blur */
+    .coverflow-slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 15, 30, 0.55);
+      opacity: 1;
+      transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .coverflow-slide.is-active::after {
+      opacity: 0;
+    }
+
+    .coverflow-slide.is-active {
+      /* Apple water reflection applied only on active flat slide for peak GPU performance */
+      -webkit-box-reflect: below 8px linear-gradient(transparent, transparent 65%, rgba(0, 0, 0, 0.15));
+    }
+
+    .coverflow-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    /* Cover Flow Controls */
+    .coverflow-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      color: var(--primary);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 30;
+    }
+    .coverflow-nav:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    }
+    .coverflow-prev { left: 24px; }
+    .coverflow-next { right: 24px; }
+
+    .coverflow-caption-box {
+      margin-top: var(--space-4);
+      min-height: 52px;
+      text-align: center;
+    }
+
+    .coverflow-title {
+      font-size: var(--text-base);
+      font-weight: 800;
+      margin: 0;
+      transition: opacity 150ms ease;
+    }
+
+    .coverflow-desc {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      margin: var(--space-1) 0 0;
+      transition: opacity 150ms ease;
+    }
+
+    @media (max-width: 768px) {
+      .coverflow-slide {
+        width: 280px;
+        height: 180px;
+      }
+      .coverflow-viewport {
+        height: 320px;
+      }
+      .coverflow-prev { left: 8px; }
+      .coverflow-next { right: 8px; }
+      .coverflow-nav {
+        width: 36px;
+        height: 36px;
+      }
+      .coverflow-viewport::before,
+      .coverflow-viewport::after {
+        width: 15%;
+      }
+    }
+
+    /* ======================================================
+       LIGHTBOX POPUP MODAL (Backdrop Blur & Smooth Styling)
+    ====================================================== */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(10, 10, 10, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+
+    .lightbox-overlay.is-active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-container {
+      width: 92%;
+      max-width: 900px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: scale(0.97);
+      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox-overlay.is-active .lightbox-container {
+      transform: scale(1);
+    }
+
+    .lightbox-image-box {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lightbox-caption-box {
+      width: 100%;
+      background: #ffffff;
+      padding: var(--space-5) var(--space-6);
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      text-align: left;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .lightbox-tag-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-2);
+    }
+
+    .lightbox-badge {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px var(--space-2.5);
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .lightbox-date {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .lightbox-title {
+      font-size: var(--text-base);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0 0 var(--space-1);
+    }
+
+    .lightbox-desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #ffffff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all var(--transition-normal);
+      z-index: 1010;
+    }
+    .lightbox-close:hover {
+      background-color: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all var(--transition-normal);
+      z-index: 10;
+    }
+    .lightbox-nav:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+
+    .lightbox-prev { left: -60px; }
+    .lightbox-next { right: -60px; }
+
+    @media (max-width: 1024px) {
+      .lightbox-prev { left: var(--space-2); }
+      .lightbox-next { right: var(--space-2); }
+    }
+
+    /* Mobile/Touch Device Visibility Adjustments & Responsive Filter Bar */
+    @media (max-width: 768px) {
+      .filter-wrapper,
+      .filter-wrapper.is-stuck {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: var(--space-3) var(--space-3) !important;
+        margin-left: calc(-1 * var(--space-3)) !important;
+        margin-right: calc(-1 * var(--space-3)) !important;
+        gap: var(--space-2) !important;
+        scrollbar-width: none !important; /* Firefox */
+        top: 72px !important;
+        background: var(--glass-bg) !important;
+        backdrop-filter: blur(12px) saturate(190%) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(190%) !important;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+        margin-bottom: var(--space-6) !important;
+      }
+      .filter-wrapper::-webkit-scrollbar {
+        display: none !important; /* Chrome/Safari */
+      }
+      .filter-btn {
+        flex: 0 0 auto !important;
+        padding: 8px 16px !important;
+        font-size: 11px !important;
+        border-radius: var(--radius-full) !important;
+      }
+    }
+
+    @media (hover: none) or (max-width: 1023px) {
+      .card-category-tag {
+        display: inline-block !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        background: rgba(15, 23, 42, 0.65) !important;
+        backdrop-filter: blur(8px) saturate(1.4) !important;
+        -webkit-backdrop-filter: blur(8px) saturate(1.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+        font-size: 9px !important;
+        font-weight: 800 !important;
+        padding: 5px 12px !important;
+        border-radius: var(--radius-sm) !important;
+        top: 12px !important;
+        left: 12px !important;
+      }
+      .gallery-card-content {
+        display: none !important;
+      }
+      .gallery-item .expand-indicator {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        background: rgba(15, 23, 42, 0.6) !important;
+        border-color: rgba(255, 255, 255, 0.25) !important;
+      }
+    }
+
+    /* Scroll Down Indicator Button */
+    .scroll-down-wrapper {
+      margin-top: var(--space-6);
+      display: flex;
+      justify-content: center;
+    }
+    .scroll-down-btn {
+      background: rgba(37, 99, 235, 0.05);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: var(--radius-full);
+      padding: 10px 24px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+      outline: none;
+    }
+    .scroll-down-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      transform: translateY(2px);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+    }
+    .scroll-down-arrow {
+      animation: bounce-arrow 1.6s infinite ease-in-out;
+    }
+    @keyframes bounce-arrow {
+      0%, 100% { transform: translateY(-2px); }
+      50% { transform: translateY(2px); }
+    }
+
+    /* ======================================================
+       IMAGE FAILED / NO-IMAGE FALLBACK STYLES
+    ====================================================== */
+    .image-fallback-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(219, 234, 254, 0.95));
+      color: var(--text-secondary);
+      font-family: inherit;
+      gap: 12px;
+      border-radius: 20px;
+      z-index: 5;
+      padding: var(--space-4);
+      text-align: center;
+      border: 1px dashed rgba(37, 99, 235, 0.25);
+      animation: filterIn 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .fallback-icon {
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      background: rgba(37, 99, 235, 0.08);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.05);
+    }
+    .fallback-text {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .btn-retry-image {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-retry-image:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+    }
+    .btn-retry-image:active {
+      transform: translateY(0);
+    }
+    .btn-retry-image:disabled {
+      background: var(--text-muted);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .filter-wrapper.is-hidden {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
+      transform: translateY(-20px) !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -27,13 +1100,552 @@
   <header class="header-wrapper" data-component="navbar"></header>
 
   <main id="main-content">
-    <section class="section">
-      <div class="container text-center">
-        <h1 class="text-gradient">Impact Photo Gallery</h1>
-        <p class="text-story" style="margin-top: var(--space-4);">This route is ready for dynamic donation-focused copy and storytelling blocks.</p>
+    
+    <!-- Redesigned Main Content Area -->
+    <section class="section" style="padding: 0 0 var(--space-12); background-color: var(--bg-canvas);">
+      <div class="container">
+
+        
+
+        <!-- Cover Flow Carousel Section -->
+        <div class="coverflow-section reveal" style="margin-top: 0; margin-bottom: var(--space-12);">
+
+          <div class="coverflow-viewport" id="coverflowViewport">
+            <div class="coverflow-track" id="coverflowTrack">
+              
+              <!-- Slide 1: Cafe Inauguration -->
+              <div class="coverflow-slide" data-title="Nayi Udaan Cafe Launched by Adani Group" data-desc="Shri Gautam Adani inaugurating the vocational training cafe managed entirely by special needs students.">
+                <img src="../assets/images/gallery/journey_inauguration_1.png" alt="Gautam Adani Inaugurates Cafe">
+              </div>
+
+              <!-- Slide 2: Anita Agarwal Director -->
+              <div class="coverflow-slide" data-title="Director's Visionary Journey" data-desc="Anita Agarwal Mam, founder of Pahela Kadam, coordinating special child progress.">
+                <img src="../assets/images/gallery/journey_anita_mam_1.png" alt="Anita Agarwal Director">
+              </div>
+
+              <!-- Slide 3: Meeting President of India -->
+              <div class="coverflow-slide" data-title="Presidential Honor" data-desc="Director Anita Agarwal receiving appreciation from the Honorable President of India, Smt. Droupadi Murmu.">
+                <img src="../assets/images/founder/with president.png" alt="Director with President of India">
+              </div>
+
+              <!-- Slide 4: Structured Classrooms -->
+              <div class="coverflow-slide" data-title="Special Education Classrooms" data-desc="Stimulating classroom environments customized for autistic and developmental needs.">
+                <img src="../assets/images/gallery/report_classroom_4.png" alt="Classroom activities">
+              </div>
+
+              <!-- Slide 5: Pediatric Rehabilitation -->
+              <div class="coverflow-slide" data-title="Clinical Therapy Consultation" data-desc="One-on-one pediatric diagnosis and personalized occupational therapy guidance.">
+                <img src="../assets/images/gallery/journey_camp_6.png" alt="Therapy Camp">
+              </div>
+
+              <!-- Slide 6: Community Inclusion Rallies -->
+              <div class="coverflow-slide" data-title="Inclusion Sports Day Celebration" data-desc="Promoting physical sports activities, inclusion rallies, and child motor coordination milestones.">
+                <img src="../assets/images/gallery/journey_event_4.png" alt="Inclusion Sports Day">
+              </div>
+
+            </div>
+
+            <!-- Navigation Controls -->
+            <button class="coverflow-nav coverflow-prev" id="coverflowPrev" aria-label="Previous Slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="coverflow-nav coverflow-next" id="coverflowNext" aria-label="Next Slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Dynamic Caption Display -->
+          <div class="coverflow-caption-box text-center">
+            <h4 class="coverflow-title font-extrabold text-gradient" id="coverflowTitle" style="font-weight: 800;">Slide Title</h4>
+            <p class="coverflow-desc text-secondary" id="coverflowDesc">Slide Subtitle</p>
+            <div class="scroll-down-wrapper">
+              <button id="scrollToGalleryBtn" class="scroll-down-btn" aria-label="Scroll to Photo Gallery">
+                <span class="scroll-down-text">Explore All Memories</span>
+                <svg class="scroll-down-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-wrapper">
+          <button class="filter-btn active" data-filter="all">All Memories</button>
+          <button class="filter-btn" data-filter="cafe">Nayi Udaan Cafe</button>
+          <button class="filter-btn" data-filter="activities">School Activities</button>
+          <button class="filter-btn" data-filter="events">Events &amp; Rallies</button>
+          <button class="filter-btn" data-filter="camps">Therapy &amp; Camps</button>
+          <button class="filter-btn" data-filter="festivals">Festivals</button>
+        </div>
+
+
+
+        <!-- Bento Box Gallery Grid (24 Items) -->
+        <div class="gallery-grid reveal" id="galleryGrid">
+          
+          <!-- Item 1: Cafe (BENTO WIDE) -->
+          <div class="gallery-item show bento-wide" style="animation-delay: 0ms;" data-category="cafe">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Nayi Udaan Cafe</span>
+              <img src="../assets/images/gallery/inauguration_adani_1.jpg" alt="Shri Gautam Adani inaugurating the cafe">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Cafe Ribbon Cutting</h3>
+              <p>Official inauguration ceremony of Nayi Udaan Cafe by the Adani Group representatives.</p>
+              <span>December 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 2: Cafe -->
+          <div class="gallery-item show" style="animation-delay: 50ms;" data-category="cafe">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Nayi Udaan Cafe</span>
+              <img src="../assets/images/gallery/inauguration_adani_2.jpg" alt="Special kids managing the cafe counter">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Vocational Hospitality</h3>
+              <p>Special needs students training in billing, cooking, and service behind the counter.</p>
+              <span>December 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Cafe -->
+          <div class="gallery-item show" style="animation-delay: 100ms;" data-category="cafe">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Nayi Udaan Cafe</span>
+              <img src="../assets/images/gallery/journey_inauguration_1.png" alt="Shri Gautam Adani interacting with special kids at the inauguration">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Interactive Mentorship</h3>
+              <p>Shri Gautam Adani sharing inspiring conversations at the cafe counter.</p>
+              <span>December 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Activities (BENTO TALL) -->
+          <div class="gallery-item show bento-tall" style="animation-delay: 150ms;" data-category="activities">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">School Activities</span>
+              <img src="../assets/images/gallery/report_classroom_1.png" alt="Structured classroom learning session for autistic students">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Special Education Classes</h3>
+              <p>Classroom environments styled to support sensory needs, cognitive education, and social skills.</p>
+              <span>January 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 5: Activities -->
+          <div class="gallery-item show" style="animation-delay: 200ms;" data-category="activities">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">School Activities</span>
+              <img src="../assets/images/gallery/journey_classroom_2.jpeg" alt="Special kids learning drawing and art">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Art &amp; Creative Therapy</h3>
+              <p>Drawing sessions designed to improve visual coordination and creative expression.</p>
+              <span>March 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 6: Activities -->
+          <div class="gallery-item show" style="animation-delay: 250ms;" data-category="activities">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">School Activities</span>
+              <img src="../assets/images/gallery/journey_classroom_3.jpeg" alt="Classroom computer training and adaptive tools">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Digital Literacy Training</h3>
+              <p>Basic computer operations, typing, and digital play for special kids.</p>
+              <span>May 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 7: Activities -->
+          <div class="gallery-item show" style="animation-delay: 300ms;" data-category="activities">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">School Activities</span>
+              <img src="../assets/images/gallery/journey_classroom_4.jpeg" alt="Vocational candle and craft making session">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Handicraft Workshops</h3>
+              <p>Training sessions for candle making, diya painting, and paper crafts.</p>
+              <span>September 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 8: Activities -->
+          <div class="gallery-item show" style="animation-delay: 350ms;" data-category="activities">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">School Activities</span>
+              <img src="../assets/images/gallery/report_classroom_6.jpeg" alt="Group classroom session with teaching aids">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Special Educator Guidance</h3>
+              <p>Interactive group sessions using tactile puzzles and visual models to support learning.</p>
+              <span>July 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 9: Activities (BENTO WIDE) -->
+          <div class="gallery-item show bento-wide" style="animation-delay: 400ms;" data-category="activities">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">School Activities</span>
+              <img src="../assets/images/gallery/report_classroom_4.png" alt="Special child solving adaptive learning puzzle">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Cognitive Milestones</h3>
+              <p>One-on-one sessions helping children with cerebral palsy build motor-visual coordination.</p>
+              <span>July 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 10: Events -->
+          <div class="gallery-item show" style="animation-delay: 450ms;" data-category="events">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Events &amp; Rallies</span>
+              <img src="../assets/images/gallery/rally_1.jpg" alt="International Day of Persons with Disabilities awareness rally">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Awareness Rallies</h3>
+              <p>Marching on public roads in Dhanbad to promote inclusion and accessibility.</p>
+              <span>December 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 11: Events -->
+          <div class="gallery-item show" style="animation-delay: 500ms;" data-category="events">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Events &amp; Rallies</span>
+              <img src="../assets/images/gallery/rally_2.jpg" alt="Badhte Kadam awareness campaign street rally">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Badhte Kadam Drive</h3>
+              <p>Collaborative awareness drive promoting social integration of neurodivergent children.</p>
+              <span>December 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 12: Events (BENTO TALL) -->
+          <div class="gallery-item show bento-tall" style="animation-delay: 550ms;" data-category="events">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Events &amp; Rallies</span>
+              <img src="../assets/images/gallery/journey_event_2.jpeg" alt="Special children participating in sports meets">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Parasports Championships</h3>
+              <p>Special athletes participating in state sports championships, earning medals.</p>
+              <span>February 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 13: Events -->
+          <div class="gallery-item show" style="animation-delay: 600ms;" data-category="events">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Events &amp; Rallies</span>
+              <img src="../assets/images/gallery/report_event_3.jpeg" alt="Celebration of national days with flag hoisting">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Republic Day Celebration</h3>
+              <p>Students and staff gathered for the national flag hoisting ceremony.</p>
+              <span>January 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 14: Events -->
+          <div class="gallery-item show" style="animation-delay: 650ms;" data-category="events">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Events &amp; Rallies</span>
+              <img src="../assets/images/gallery/journey_event_4.png" alt="Public community event for special children support">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Community Inclusion Drive</h3>
+              <p>Public outreach programs hosting local advocates, doctors, and CSR sponsors.</p>
+              <span>August 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 15: Camps -->
+          <div class="gallery-item show" style="animation-delay: 700ms;" data-category="camps">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Therapy &amp; Camps</span>
+              <img src="../assets/images/gallery/health_camp_1.jpg" alt="Annual pediatric health checkup and assessment camp">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Pediatric Health Screening</h3>
+              <p>Free diagnostic health screening and medication distribution camp.</p>
+              <span>November 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 16: Camps -->
+          <div class="gallery-item show" style="animation-delay: 750ms;" data-category="camps">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Therapy &amp; Camps</span>
+              <img src="../assets/images/gallery/health_camp_2.jpg" alt="Physical assessment and clinical diagnosis camp">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Orthopedic Assessment</h3>
+              <p>Evaluation of motor-abilities and distribution of custom braces.</p>
+              <span>November 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 17: Camps (BENTO WIDE) -->
+          <div class="gallery-item show bento-wide" style="animation-delay: 800ms;" data-category="camps">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Therapy &amp; Camps</span>
+              <img src="../assets/images/gallery/report_therapy_1.jpeg" alt="Physiotherapy and motor-rehabilitation session">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Clinical Physiotherapy</h3>
+              <p>One-on-one motor rehabilitation training to build body posture and balance control.</p>
+              <span>July 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 18: Camps -->
+          <div class="gallery-item show" style="animation-delay: 850ms;" data-category="camps">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Therapy &amp; Camps</span>
+              <img src="../assets/images/gallery/journey_camp_2.png" alt="Clinical therapeutic assessment session">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Occupational Assessment</h3>
+              <p>Sensory integration assessments conducted by certified therapists.</p>
+              <span>April 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 19: Camps -->
+          <div class="gallery-item show" style="animation-delay: 900ms;" data-category="camps">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Therapy &amp; Camps</span>
+              <img src="../assets/images/gallery/journey_camp_6.png" alt="Outreach therapy diagnosis session">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Speech Therapy Session</h3>
+              <p>Advanced diagnostic checks and vocal exercises designed to support language.</p>
+              <span>April 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 20: Camps -->
+          <div class="gallery-item show" style="animation-delay: 950ms;" data-category="camps">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Therapy &amp; Camps</span>
+              <img src="../assets/images/gallery/report_therapy_2.png" alt="Standing frame physiotherapy exercise">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Standing Posture Therapy</h3>
+              <p>Using supportive standing frames and balancing boards to develop spinal strength.</p>
+              <span>June 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 21: Festivals (BENTO TALL) -->
+          <div class="gallery-item show bento-tall" style="animation-delay: 1000ms;" data-category="festivals">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Festivals</span>
+              <img src="../assets/images/gallery/christmas_2024_1.jpg" alt="Christmas celebrations and gifts distribution">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Christmas Celebration</h3>
+              <p>Special festival party with toy and sweet gift distributions to bring joy.</p>
+              <span>December 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 22: Festivals -->
+          <div class="gallery-item show" style="animation-delay: 1050ms;" data-category="festivals">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Festivals</span>
+              <img src="../assets/images/gallery/christmas_2024_2.jpg" alt="Dressing up as Santa Claus and festive dance performances">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Festive Dance &amp; Plays</h3>
+              <p>Students dressed up as Santa Claus performing holiday songs and skits.</p>
+              <span>December 2024</span>
+            </div>
+          </div>
+
+          <!-- Item 23: Festivals -->
+          <div class="gallery-item show" style="animation-delay: 1100ms;" data-category="festivals">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Festivals</span>
+              <img src="../assets/images/gallery/report_activity_1.jpeg" alt="Holi festival celebrations with organic colors">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Holi Festival of Colors</h3>
+              <p>Celebrating Holi using safe, organic colors and sharing festive dry-fruit snacks.</p>
+              <span>March 2025</span>
+            </div>
+          </div>
+
+          <!-- Item 24: Festivals -->
+          <div class="gallery-item show" style="animation-delay: 1150ms;" data-category="festivals">
+            <div class="gallery-card-img-wrap">
+              <span class="card-category-tag">Festivals</span>
+              <img src="../assets/images/gallery/report_activity_2.jpeg" alt="Diwali festival celebrations and lighting of clay lamps">
+            
+              <div class="expand-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </div>
+            </div>
+            <div class="gallery-card-content">
+              <h3>Diwali Lamp Lighting</h3>
+              <p>Students decorating school boundaries with hand-painted clay lamps.</p>
+              <span>October 2025</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Stats Counter Panel (Relocated to Bottom & Animated) -->
+        <div class="stats-banner reveal" style="margin-top: var(--space-16); margin-bottom: var(--space-4);">
+          <div class="stat-item">
+            <span class="stat-number"><span class="counter" data-target="5000">0</span>+</span>
+            <span class="stat-label">Memories Captured</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number"><span class="counter" data-target="250">0</span>+</span>
+            <span class="stat-label">Outings & Rallies</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number"><span class="counter" data-target="15">0</span>+</span>
+            <span class="stat-label">Years of Service</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number"><span class="counter" data-target="21">0</span>+</span>
+            <span class="stat-label">Disabilities Supported</span>
+          </div>
+        </div>
+
       </div>
     </section>
+
   </main>
+
+  <div id="lightboxOverlay" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-label="Expanded photo viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+
+    <div class="lightbox-container">
+      <div class="lightbox-image-box">
+        <img id="lightboxImg" src="" alt="Expanded View">
+      </div>
+      <div class="lightbox-caption-box">
+        <div class="lightbox-tag-row">
+          <span class="lightbox-badge" id="lightboxTag">Tag</span>
+          <span class="lightbox-date" id="lightboxDate">Date</span>
+        </div>
+        <h3 class="lightbox-title" id="lightboxTitle">Title</h3>
+        <p class="lightbox-desc" id="lightboxDesc">Description</p>
+      </div>
+    </div>
+
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
 
   <!-- Dynamic Footer Injection -->
   <div data-component="footer"></div>
@@ -42,5 +1654,499 @@
   <script src="../js/component-loader.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/app.js"></script>
+
+  <!-- Interactive Filtering & Lightbox Pagination -->
+  <script>
+    /* ======================================================
+       GLOBAL RETRY & NO-IMAGE PLACEHOLDER LOGIC
+    ====================================================== */
+    window.addEventListener('error', function(event) {
+      if (event.target && event.target.tagName === 'IMG') {
+        handleImageError(event.target);
+      }
+    }, true);
+
+    function handleImageError(img) {
+      // Avoid infinite error loop if the error placeholder itself has images or retry fails
+      if (img.dataset.failed) return;
+      img.dataset.failed = "true";
+
+      // Hide broken image
+      img.style.display = 'none';
+
+      // Find closest container wrapper
+      const wrap = img.closest('.gallery-card-img-wrap') || 
+                   img.closest('.coverflow-img-wrap') || 
+                   img.closest('.featured-image-frame') || 
+                   img.parentElement;
+      if (!wrap) return;
+
+      // Check if a placeholder is already present
+      if (wrap.querySelector('.image-fallback-placeholder')) return;
+
+      // Create fallback placeholder
+      const placeholder = document.createElement('div');
+      placeholder.className = 'image-fallback-placeholder';
+      placeholder.innerHTML = `
+        <div class="fallback-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="21" y1="21" x2="3" y2="3"></line>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </div>
+        <span class="fallback-text">Failed to Load</span>
+        <button class="btn-retry-image">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          <span style="vertical-align:middle;">Retry</span>
+        </button>
+      `;
+
+      // Prevent parent gallery item click from firing when clicking the retry button
+      const retryBtn = placeholder.querySelector('.btn-retry-image');
+      retryBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        // Update UI
+        retryBtn.disabled = true;
+        retryBtn.querySelector('span').textContent = 'Loading...';
+
+        // Add cache buster and attempt reload
+        const originalSrc = img.src.split('?')[0];
+        img.src = `${originalSrc}?t=${Date.now()}`;
+
+        img.onload = function() {
+          // Success: remove placeholder and show image
+          placeholder.remove();
+          img.style.display = '';
+          img.removeAttribute('data-failed');
+        };
+
+        img.onerror = function() {
+          // Failure: restore button state for another attempt
+          retryBtn.disabled = false;
+          retryBtn.querySelector('span').textContent = 'Retry';
+        };
+      });
+
+      wrap.appendChild(placeholder);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ======================================================
+         3D COVER FLOW SYSTEM INTERACTION LOGIC
+      ====================================================== */
+      const cfTrack = document.getElementById('coverflowTrack');
+      const cfSlides = Array.from(document.querySelectorAll('.coverflow-slide'));
+      const cfPrevBtn = document.getElementById('coverflowPrev');
+      const cfNextBtn = document.getElementById('coverflowNext');
+      const cfTitle = document.getElementById('coverflowTitle');
+      const cfDesc = document.getElementById('coverflowDesc');
+      
+      let cfActiveIndex = 2; // start on the 3rd slide (President Smt. Droupadi Murmu visit)
+
+      const updateCoverflow = () => {
+        cfSlides.forEach((slide, idx) => {
+          let offset = idx - cfActiveIndex;
+          
+          // Normalized circular offset for visual looping (exactly 2 cards visible on both sides)
+          const N = cfSlides.length;
+          offset = ((offset + 3) % N + N) % N - 3;
+          
+          let transformStr = "";
+          let filterStr = "";
+          let opacityVal = 1;
+          let zIndexVal = 10 - Math.abs(offset);
+          
+          // Toggle active class to manage dark overlay opacity in CSS
+          slide.classList.toggle('is-active', idx === cfActiveIndex);
+          
+          if (offset === 0) {
+            transformStr = `translate3d(0, 0, 160px) rotateY(0deg) scale(1.05)`;
+            filterStr = "blur(0px)";
+            opacityVal = 1;
+          } else if (offset === 1 || offset === 2) {
+            transformStr = `translate3d(${180 + offset * 90}px, 0, -120px) rotateY(-55deg)`;
+            filterStr = "blur(4px)";
+            opacityVal = offset === 1 ? 0.9 : 0.45;
+          } else if (offset === -1 || offset === -2) {
+            transformStr = `translate3d(${-180 + offset * 90}px, 0, -120px) rotateY(55deg)`;
+            filterStr = "blur(4px)";
+            opacityVal = offset === -1 ? 0.9 : 0.45;
+          } else {
+            // Invisible far background card (6th card)
+            transformStr = `translate3d(0, 0, -200px) scale(0.8)`;
+            filterStr = "blur(8px)";
+            opacityVal = 0;
+          }
+          
+          slide.style.transform = transformStr;
+          slide.style.filter = filterStr;
+          slide.style.opacity = opacityVal;
+          slide.style.zIndex = zIndexVal;
+        });
+        
+        // Update captions with smooth fade
+        const activeSlide = cfSlides[cfActiveIndex];
+        if (activeSlide) {
+          cfTitle.style.opacity = 0;
+          cfDesc.style.opacity = 0;
+          setTimeout(() => {
+            cfTitle.textContent = activeSlide.getAttribute('data-title');
+            cfDesc.textContent = activeSlide.getAttribute('data-desc');
+            cfTitle.style.opacity = 1;
+            cfDesc.style.opacity = 1;
+          }, 150);
+        }
+      };
+
+      // Auto-play / swap timer system (Forward auto-swap direction & faster speed)
+      let autoPlayInterval = setInterval(() => {
+        cfActiveIndex = (cfActiveIndex - 1 + cfSlides.length) % cfSlides.length;
+        updateCoverflow();
+      }, 2600);
+
+      const resetAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(() => {
+          cfActiveIndex = (cfActiveIndex - 1 + cfSlides.length) % cfSlides.length;
+          updateCoverflow();
+        }, 2600);
+      };
+
+      // Initial call
+      updateCoverflow();
+
+      // Click to transition (aligned with the auto-play direction)
+      cfPrevBtn.addEventListener('click', () => {
+        resetAutoPlay();
+        if (cfActiveIndex < cfSlides.length - 1) {
+          cfActiveIndex++;
+        } else {
+          cfActiveIndex = 0; // loop to first
+        }
+        updateCoverflow();
+      });
+
+      cfNextBtn.addEventListener('click', () => {
+        resetAutoPlay();
+        if (cfActiveIndex > 0) {
+          cfActiveIndex--;
+        } else {
+          cfActiveIndex = cfSlides.length - 1; // loop to last
+        }
+        updateCoverflow();
+      });
+
+      // Direct slide click
+      cfSlides.forEach((slide, idx) => {
+        slide.addEventListener('click', (e) => {
+          if (idx !== cfActiveIndex) {
+            e.stopPropagation();
+            resetAutoPlay();
+            cfActiveIndex = idx;
+            updateCoverflow();
+          }
+        });
+      });
+
+      // Dragging physics
+      let isDragging = false;
+      let startX = 0;
+      let currentX = 0;
+
+      const handleDragStart = (e) => {
+        isDragging = true;
+        resetAutoPlay();
+        startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      };
+
+      const handleDragMove = (e) => {
+        if (!isDragging) return;
+        currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const diffX = currentX - startX;
+        
+        if (Math.abs(diffX) > 60) {
+          resetAutoPlay();
+          if (diffX > 0) {
+            // Drag right: show previous slide (index increases to go chronologically backward)
+            if (cfActiveIndex < cfSlides.length - 1) {
+              cfActiveIndex++;
+            } else {
+              cfActiveIndex = 0;
+            }
+            startX = currentX;
+            updateCoverflow();
+          } else if (diffX < 0) {
+            // Drag left: show next slide (index decreases to go chronologically forward)
+            if (cfActiveIndex > 0) {
+              cfActiveIndex--;
+            } else {
+              cfActiveIndex = cfSlides.length - 1;
+            }
+            startX = currentX;
+            updateCoverflow();
+          }
+        }
+      };
+
+      const handleDragEnd = () => {
+        isDragging = false;
+      };
+
+      cfTrack.addEventListener('mousedown', handleDragStart);
+      cfTrack.addEventListener('mousemove', handleDragMove);
+      window.addEventListener('mouseup', handleDragEnd);
+
+      cfTrack.addEventListener('touchstart', handleDragStart, { passive: true });
+      cfTrack.addEventListener('touchmove', handleDragMove, { passive: true });
+      window.addEventListener('touchend', handleDragEnd);
+
+      // Keyboard support
+      document.addEventListener('keydown', (e) => {
+        const lightboxActive = document.getElementById('lightboxOverlay').classList.contains('is-active');
+        if (!lightboxActive) {
+          if (e.key === 'ArrowLeft') {
+            resetAutoPlay();
+            if (cfActiveIndex < cfSlides.length - 1) {
+              cfActiveIndex++;
+            } else {
+              cfActiveIndex = 0;
+            }
+            updateCoverflow();
+          } else if (e.key === 'ArrowRight') {
+            resetAutoPlay();
+            if (cfActiveIndex > 0) {
+              cfActiveIndex--;
+            } else {
+              cfActiveIndex = cfSlides.length - 1;
+            }
+            updateCoverflow();
+          }
+        }
+      });
+
+      const filters = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.gallery-item');
+      const grid = document.getElementById('galleryGrid');
+      
+
+
+      // Sticky Filter Bar Scroll Observer (toggles glass shadow and visibility)
+      const filterWrapper = document.querySelector('.filter-wrapper');
+      if (filterWrapper && grid) {
+        window.addEventListener('scroll', () => {
+          const rect = filterWrapper.getBoundingClientRect();
+          const gridRect = grid.getBoundingClientRect();
+          
+          if (rect.top <= 73) {
+            filterWrapper.classList.add('is-stuck');
+          } else {
+            filterWrapper.classList.remove('is-stuck');
+          }
+          
+          // Hide when scrolled past the gallery grid bottom
+          if (gridRect.bottom <= rect.bottom) {
+            filterWrapper.classList.add('is-hidden');
+          } else {
+            filterWrapper.classList.remove('is-hidden');
+          }
+        });
+      }
+
+      // Category descriptive metadata
+      const categoryMetadata = {
+        all: {
+          icon: '📸',
+          text: 'Showing all memories, milestone celebrations, therapy sessions, and classroom activities of our special children.'
+        },
+        cafe: {
+          icon: '☕',
+          text: 'The Nayi Udaan Cafe is a landmark vocational project where our senior special students learn catering, hospitality, and finance management first-hand.'
+        },
+        activities: {
+          icon: '✏️',
+          text: 'Classroom teaching, computers, arts & crafts, and candle workshops designed to develop cognitive abilities and fine motor skills.'
+        },
+        events: {
+          icon: '🏃',
+          text: 'Inclusion rallies, sports championships, awareness campaigns, and national days celebrated actively with the community.'
+        },
+        camps: {
+          icon: '🩺',
+          text: 'Free diagnostic pediatric checkup camps, orthotic fittings, and one-on-one physiotherapy, occupational therapy, and speech development.'
+        },
+        festivals: {
+          icon: '🎉',
+          text: 'Christmas, Holi, and Diwali celebrations where children dress up, perform cultural events, and share festive moments together.'
+        }
+      };
+
+      // Filter function
+      filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          // Remove active classes
+          filters.forEach(btn => btn.classList.remove('active'));
+          filter.classList.add('active');
+
+          const category = filter.getAttribute('data-filter');
+
+          // Show/Hide items with staggered entrance animation
+          let visibleIndex = 0;
+          items.forEach(item => {
+            const itemCat = item.getAttribute('data-category');
+            if (category === 'all' || itemCat === category) {
+              item.classList.remove('hide');
+              item.classList.add('show');
+              item.style.animationDelay = `${visibleIndex * 60}ms`;
+              visibleIndex++;
+            } else {
+              item.classList.remove('show');
+              item.classList.add('hide');
+              item.style.animationDelay = '0ms';
+            }
+          });
+
+          // Scroll up to the start of the gallery grid
+          if (grid) {
+            const offset = 145; // Offset to account for sticky filters and header
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = grid.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Smooth Scroll Button from Cover Flow to Gallery Grid
+      const scrollToGalleryBtn = document.getElementById('scrollToGalleryBtn');
+      if (scrollToGalleryBtn) {
+        scrollToGalleryBtn.addEventListener('click', () => {
+          const gallerySection = document.getElementById('galleryGrid');
+          if (gallerySection) {
+            // Offset to account for sticky filters and header
+            const offset = 145;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = gallerySection.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+
+      /* ======================================================
+         LIGHTBOX PAGINATION CODE
+      ====================================================== */
+      const lightbox = document.getElementById('lightboxOverlay');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxTag = document.getElementById('lightboxTag');
+      const lightboxDate = document.getElementById('lightboxDate');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxDesc = document.getElementById('lightboxDesc');
+      
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+
+      let currentFilteredIndex = 0;
+      let activeFilteredItems = [];
+
+      // Get list of currently displayed (visible) items
+      const updateActiveItems = () => {
+        activeFilteredItems = Array.from(items).filter(item => !item.classList.contains('hide'));
+      };
+
+      // Populate Lightbox card with data
+      const populateLightbox = (index) => {
+        if (index < 0 || index >= activeFilteredItems.length) return;
+        currentFilteredIndex = index;
+        
+        const selectedItem = activeFilteredItems[index];
+        const img = selectedItem.querySelector('img');
+        const tag = selectedItem.querySelector('.card-category-tag');
+        const title = selectedItem.querySelector('h3');
+        const desc = selectedItem.querySelector('p');
+        const date = selectedItem.querySelector('span');
+
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxTag.textContent = tag.textContent;
+        lightboxDate.textContent = date.textContent;
+        lightboxTitle.textContent = title.textContent;
+        lightboxDesc.textContent = desc.textContent;
+      };
+
+      // Open Lightbox
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          updateActiveItems();
+          const itemIdx = activeFilteredItems.indexOf(item);
+          populateLightbox(itemIdx);
+
+          lightbox.classList.add('is-active');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close Lightbox
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Paginate Next
+      const nextPhoto = () => {
+        let newIdx = currentFilteredIndex + 1;
+        if (newIdx >= activeFilteredItems.length) {
+          newIdx = 0; // cycle back to start
+        }
+        populateLightbox(newIdx);
+      };
+
+      // Paginate Prev
+      const prevPhoto = () => {
+        let newIdx = currentFilteredIndex - 1;
+        if (newIdx < 0) {
+          newIdx = activeFilteredItems.length - 1; // cycle to end
+        }
+        populateLightbox(newIdx);
+      };
+
+      nextBtn.addEventListener('click', nextPhoto);
+      prevBtn.addEventListener('click', prevPhoto);
+
+      // Keyboard support
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('is-active')) {
+          if (e.key === 'ArrowRight') nextPhoto();
+          if (e.key === 'ArrowLeft') prevPhoto();
+          if (e.key === 'Escape') closeLightbox();
+        }
+      });
+    });
+  </script>
 </body>
 </html>

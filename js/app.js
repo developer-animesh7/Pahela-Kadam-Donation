@@ -1,3 +1,21 @@
+// Disable browser's native automatic history scroll restoration
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+// Reset scroll position to top on page load and on back-forward cache restores (pageshow)
+window.addEventListener('pageshow', () => {
+  window.scrollTo(0, 0);
+  setTimeout(() => window.scrollTo(0, 0), 50);
+  setTimeout(() => window.scrollTo(0, 0), 150);
+});
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+  setTimeout(() => window.scrollTo(0, 0), 50);
+  setTimeout(() => window.scrollTo(0, 0), 150);
+});
+
 // Global Image Error Fallback Handler (enables clean programmatic SVG placeholders, preventing inline parsing syntax errors)
 document.addEventListener('error', (event) => {
   if (event.target && event.target.tagName === 'IMG') {
@@ -11,6 +29,9 @@ document.addEventListener('error', (event) => {
 }, true);
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // Explicitly reset scroll position to top
+  window.scrollTo(0, 0);
+
   // 1. Register Reusable Interactive Components before loading
   registerNavbarComponent();
   registerDonationCardComponent();
@@ -19,6 +40,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (window.ComponentLoaderInstance) {
     await window.ComponentLoaderInstance.loadAll();
   }
+
+  // Reset scroll to top again after async layout height changes
+  window.scrollTo(0, 0);
+  setTimeout(() => window.scrollTo(0, 0), 50);
 
   // 3. Initialize static header components
   initializeStaticNavbar();
@@ -151,6 +176,7 @@ function registerNavbarComponent() {
   if (!window.ComponentLoaderInstance) return;
 
   window.ComponentLoaderInstance.register('navbar', (navbarElement) => {
+    navbarElement.dataset.navbarInitialized = 'true';
     const burgerBtn = navbarElement.querySelector('.nav-burger');
     const menuEl = navbarElement.querySelector('.nav-menu');
 
@@ -315,6 +341,11 @@ function registerDonationCardComponent() {
 function initializeStaticNavbar() {
   const navbarElement = document.querySelector('.header-wrapper');
   if (!navbarElement) return;
+
+  if (navbarElement.dataset.navbarInitialized === 'true' || navbarElement.getAttribute('data-component-loaded') === 'navbar') {
+    return;
+  }
+  navbarElement.dataset.navbarInitialized = 'true';
 
   const burgerBtn = navbarElement.querySelector('.nav-burger');
   const menuEl = navbarElement.querySelector('.nav-menu');

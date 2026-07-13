@@ -25,9 +25,63 @@ class ComponentLoader {
    * Returns a promise that resolves when all components have loaded.
    */
   async loadAll() {
+    if (window.location.protocol === 'file:') {
+      this.showFileProtocolWarning();
+    }
     const targets = document.querySelectorAll('[data-component]');
     const promises = Array.from(targets).map(target => this.loadComponent(target));
     return Promise.all(promises);
+  }
+
+  /**
+   * Display a helpful warning banner when opening pages directly via file://
+   */
+  showFileProtocolWarning() {
+    if (document.getElementById('file-protocol-warning-banner')) return;
+    
+    const banner = document.createElement('div');
+    banner.id = 'file-protocol-warning-banner';
+    
+    // Find current page path to link correctly
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const isPagesSubdir = window.location.pathname.includes('/pages/');
+    const serverUrl = `http://localhost:8002/${isPagesSubdir ? 'pages/' + currentFile : currentFile}`;
+
+    banner.style.cssText = `
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      z-index: 999999;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.15);
+      max-width: 90vw;
+      width: 520px;
+      line-height: 1.6;
+    `;
+    
+    banner.innerHTML = `
+      <div style="display:flex; align-items:center; gap:8px; font-weight:800; color:#ef4444; margin-bottom: 6px;">
+        ⚠️ Browser Security Restriction (CORS)
+      </div>
+      <p style="margin:0 0 10px; color:#cbd5e1;">
+        Local templates (Navbar, Footer) cannot load directly when opening html files via <code>file://</code> due to browser security policies.
+      </p>
+      <p style="margin:0 0 10px; color:#cbd5e1; font-weight:700;">
+        Please open via the local server: 
+        <a href="${serverUrl}" target="_blank" style="color:#60a5fa; text-decoration:underline; font-family: monospace;">${serverUrl}</a>
+      </p>
+      <div style="font-size:11px; color:#94a3b8; border-top:1px solid rgba(255,255,255,0.1); padding-top:8px; margin-top:8px;">
+        To launch the server, run <code>./run_website.sh</code> in your terminal.
+      </div>
+    `;
+    document.body.appendChild(banner);
   }
 
   /**

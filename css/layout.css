@@ -131,7 +131,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   transition: background 250ms ease-out, background-color 250ms ease-out, backdrop-filter 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out;
   border-bottom: 1px solid rgba(37, 99, 235, 0.08);
   background: linear-gradient(180deg, rgba(239, 246, 255, 0.95) 0%, rgba(248, 251, 255, 0.92) 100%);
