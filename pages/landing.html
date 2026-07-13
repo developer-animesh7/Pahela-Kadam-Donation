@@ -160,6 +160,12 @@
       transform: scale(1.03);
     }
 
+    /* Skeleton loading animation */
+    @keyframes skeleton-pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.3; }
+    }
+
     /* Infinite Marquee Partner Showcase Styles */
     .marquee-container {
       overflow: hidden;
@@ -446,168 +452,12 @@
           </p>
         </div>
 
-        <!-- Cards Grid -->
-        <div class="campaign-grid" style="margin-bottom: var(--space-8);">
-          
-          <!-- Card 1: Speech Therapy Kits -->
-          <div class="campaign-card reveal" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform 250ms ease-out, box-shadow 250ms ease-out; box-shadow: var(--shadow-sm);">
-            <!-- Image Area -->
-            <div style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
-              <img src="../assets/images/campaigns/therapy_kits.png" alt="Sponsor Speech Therapy Kits" class="campaign-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease-out; will-change: transform;">
-              <span style="position: absolute; top: var(--space-3); left: var(--space-3); background: rgba(15, 25, 35, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">🗣 Speech Therapy</span>
-            </div>
-            
-            <!-- Card Body -->
-            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; gap: var(--space-4);">
-              
-              <!-- Trust badge & Title -->
-              <div>
-                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
-                  <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    Verified Campaign
-                  </span>
-                  <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">12 Children Benefited</span>
-                </div>
-                <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3;">Sponsor Speech Therapy Kits</h3>
-                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: var(--space-2) 0 0; min-height: 3.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                  Provide specialized tactile sound kits to help special needs children with autism and down syndrome speak and communicate effectively.
-                </p>
-              </div>
-
-              <!-- Progress bar & numbers -->
-              <div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; margin-bottom: var(--space-1); font-weight: 600;">
-                  <span style="color: var(--text-primary);">₹1,44,000 <span style="color: var(--text-secondary); font-weight: 400;">Raised</span></span>
-                  <span style="color: var(--primary); font-weight: 700;">72%</span>
-                </div>
-                <div style="width: 100%; height: 6px; background-color: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
-                  <div class="progress-fill" data-percent="72" style="width: 0%; height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
-                  <span>Goal: ₹2,00,000</span>
-                  <span style="font-weight: 600; color: var(--warning);">14 Days Left</span>
-                </div>
-              </div>
-
-              <!-- CTAs -->
-              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: auto;">
-                <a href="https://razorpay.me/@narayanicharitabletrust" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full" style="justify-content: center; font-size: var(--text-xs); padding: 0.7rem var(--space-4);">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                  <span>Donate Now</span>
-                </a>
-                <a href="/pages/campaigns.html#speech-kits" style="text-align: center; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-decoration: none; padding: 4px 0; transition: color 150ms;">Learn More</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Card 2: Pediatric Walkers -->
-          <div class="campaign-card reveal" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform 250ms ease-out, box-shadow 250ms ease-out; box-shadow: var(--shadow-sm);">
-            <!-- Image Area -->
-            <div style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
-              <img src="../assets/images/campaigns/mobility_walkers.png" alt="Pediatric Mobility & Walkers" class="campaign-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease-out; will-change: transform;">
-              <span style="position: absolute; top: var(--space-3); left: var(--space-3); background: rgba(15, 25, 35, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">🦽 Assistive Devices</span>
-            </div>
-            
-            <!-- Card Body -->
-            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; gap: var(--space-4);">
-              
-              <!-- Trust badge & Title -->
-              <div>
-                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
-                  <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    Managed by Trust
-                  </span>
-                  <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">8 Children Benefited</span>
-                </div>
-                <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3;">Pediatric Mobility &amp; Walkers</h3>
-                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: var(--space-2) 0 0; min-height: 3.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                  Custom supportive walkers, pediatric orthotics, and active physical therapy aids for independent steps and physical gait rehabilitation.
-                </p>
-              </div>
-
-              <!-- Progress bar & numbers -->
-              <div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; margin-bottom: var(--space-1); font-weight: 600;">
-                  <span style="color: var(--text-primary);">₹2,98,000 <span style="color: var(--text-secondary); font-weight: 400;">Raised</span></span>
-                  <span style="color: var(--primary); font-weight: 700;">85%</span>
-                </div>
-                <div style="width: 100%; height: 6px; background-color: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
-                  <div class="progress-fill" data-percent="85" style="width: 0%; height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
-                  <span>Goal: ₹3,50,000</span>
-                  <span style="font-weight: 600; color: var(--warning);">8 Days Left</span>
-                </div>
-              </div>
-
-              <!-- CTAs -->
-              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: auto;">
-                <a href="https://razorpay.me/@narayanicharitabletrust" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full" style="justify-content: center; font-size: var(--text-xs); padding: 0.7rem var(--space-4);">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                  <span>Donate Now</span>
-                </a>
-                <a href="/pages/campaigns.html#mobility-walkers" style="text-align: center; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-decoration: none; padding: 4px 0; transition: color 150ms;">Learn More</a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Card 3: Sensory Integration Room -->
-          <div class="campaign-card reveal" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform 250ms ease-out, box-shadow 250ms ease-out; box-shadow: var(--shadow-sm);">
-            <!-- Image Area -->
-            <div style="position: relative; overflow: hidden; aspect-ratio: 16/10;">
-              <img src="../assets/images/campaigns/sensory_room.png" alt="Equip Sensory Integration Room" class="campaign-img" style="width: 100%; height: 100%; object-fit: cover; transition: transform 250ms ease-out; will-change: transform;">
-              <span style="position: absolute; top: var(--space-3); left: var(--space-3); background: rgba(15, 25, 35, 0.75); backdrop-filter: blur(4px); color: #ffffff; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">🧠 Occupational Therapy</span>
-            </div>
-            
-            <!-- Card Body -->
-            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; gap: var(--space-4);">
-              
-              <!-- Trust badge & Title -->
-              <div>
-                <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
-                  <span style="display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    Verified Campaign
-                  </span>
-                  <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">20 Children Benefited</span>
-                </div>
-                <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-primary); margin: 0; line-height: 1.3;">Equip Sensory Integration Room</h3>
-                <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin: var(--space-2) 0 0; min-height: 3.2em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                  A safe bubble tube, sound-proof sensory swing, and interactive tactile play environment for autistic children and those with sensory challenges.
-                </p>
-              </div>
-
-              <!-- Progress bar & numbers -->
-              <div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; margin-bottom: var(--space-1); font-weight: 600;">
-                  <span style="color: var(--text-primary);">₹1,80,000 <span style="color: var(--text-secondary); font-weight: 400;">Raised</span></span>
-                  <span style="color: var(--primary); font-weight: 700;">36%</span>
-                </div>
-                <div style="width: 100%; height: 6px; background-color: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
-                  <div class="progress-fill" data-percent="36" style="width: 0%; height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);"></div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--text-muted); margin-top: 4px;">
-                  <span>Goal: ₹5,00,000</span>
-                  <span style="font-weight: 600; color: var(--text-secondary);">30 Days Left</span>
-                </div>
-              </div>
-
-              <!-- CTAs -->
-              <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-top: auto;">
-                <a href="https://razorpay.me/@narayanicharitabletrust" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full" style="justify-content: center; font-size: var(--text-xs); padding: 0.7rem var(--space-4);">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                  <span>Donate Now</span>
-                </a>
-                <a href="/pages/campaigns.html#sensory-room" style="text-align: center; font-size: 11px; font-weight: 700; color: var(--text-secondary); text-decoration: none; padding: 4px 0; transition: color 150ms;">Learn More</a>
-              </div>
-
-            </div>
-          </div>
-
+        <!-- Dynamic Campaign Cards Container -->
+        <div class="campaign-grid" id="campaign-cards-container" style="margin-bottom: var(--space-8);">
+          <!-- Skeleton placeholders while loading -->
+          <div class="campaign-card-skeleton" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; height: 420px; animation: skeleton-pulse 1.5s ease infinite;"></div>
+          <div class="campaign-card-skeleton" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; height: 420px; animation: skeleton-pulse 1.5s ease infinite; animation-delay: 100ms;"></div>
+          <div class="campaign-card-skeleton" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; height: 420px; animation: skeleton-pulse 1.5s ease infinite; animation-delay: 200ms;"></div>
         </div>
 
         <!-- Center CTA: View All Campaigns -->
@@ -703,5 +553,68 @@
   <script src="../js/component-loader.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/app.js"></script>
+
+  <!-- Dynamic Campaign Cards Loader -->
+  <script>
+    (function() {
+      var container = document.getElementById('campaign-cards-container');
+      if (!container) return;
+
+      var basePath = window.location.pathname.includes('/pages/') ? '../' : './';
+
+      fetch(basePath + 'data/campaigns.json?t=' + Date.now(), { cache: 'no-cache' })
+        .then(function(res) { return res.json(); })
+        .then(function(campaigns) {
+          var cards = campaigns.slice(0, 3).map(function(c) {
+            var percent = Math.round((c.raised / c.goal) * 100);
+            var raisedFormatted = '₹' + c.raised.toLocaleString('en-IN');
+            var goalFormatted = '₹' + c.goal.toLocaleString('en-IN');
+            var daysColor = c.daysLeft <= 14 ? 'var(--warning)' : 'var(--text-secondary)';
+
+            return '<div class="campaign-card reveal" style="background:#ffffff;border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden;display:flex;flex-direction:column;transition:transform 250ms ease-out,box-shadow 250ms ease-out;box-shadow:var(--shadow-sm);">' +
+              '<div style="position:relative;overflow:hidden;aspect-ratio:16/10;">' +
+                '<img src="' + c.image + '" alt="' + c.title + '" class="campaign-img" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 250ms ease-out;will-change:transform;">' +
+                '<span style="position:absolute;top:var(--space-3);left:var(--space-3);background:rgba(15,25,35,0.75);backdrop-filter:blur(4px);color:#ffffff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--radius-full);text-transform:uppercase;">' + c.tag + '</span>' +
+              '</div>' +
+              '<div style="padding:var(--space-5);display:flex;flex-direction:column;flex-grow:1;gap:var(--space-4);">' +
+                '<div>' +
+                  '<h3 style="font-size:var(--text-base);font-weight:700;color:var(--text-primary);margin:0 0 var(--space-2);line-height:1.3;">' + c.title + '</h3>' +
+                  '<p style="font-size:var(--text-xs);color:var(--text-secondary);line-height:1.7;margin:0;font-style:italic;">"' + c.tagline + '"</p>' +
+                '</div>' +
+                '<div>' +
+                  '<div style="display:flex;justify-content:space-between;align-items:flex-end;font-size:11px;margin-bottom:var(--space-1);font-weight:600;">' +
+                    '<span style="color:var(--text-primary);">' + raisedFormatted + ' <span style="color:var(--text-secondary);font-weight:400;">Raised</span></span>' +
+                    '<span style="color:var(--primary);font-weight:700;">' + percent + '%</span>' +
+                  '</div>' +
+                  '<div style="width:100%;height:6px;background-color:var(--border-light);border-radius:var(--radius-full);overflow:hidden;">' +
+                    '<div class="progress-fill" data-percent="' + percent + '" style="width:0%;height:100%;background:var(--gradient-primary);border-radius:var(--radius-full);transition:width 1s cubic-bezier(0.16,1,0.3,1);"></div>' +
+                  '</div>' +
+                  '<div style="display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--text-muted);margin-top:4px;">' +
+                    '<span>Goal: ' + goalFormatted + '</span>' +
+                    '<span style="font-weight:600;color:' + daysColor + ';">' + c.daysLeft + ' Days Left</span>' +
+                  '</div>' +
+                '</div>' +
+                '<div style="margin-top:auto;">' +
+                  '<a href="https://razorpay.me/@narayanicharitabletrust" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full" style="justify-content:center;font-size:var(--text-xs);padding:0.7rem var(--space-4);">' +
+                    '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="margin-right:4px;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>' +
+                    '<span>Donate Now</span>' +
+                  '</a>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+          });
+
+          container.innerHTML = cards.join('');
+
+          // Re-initialize scroll reveals and progress bars for new cards
+          if (window.ScrollRevealEngine) {
+            window.ScrollRevealEngine.refresh();
+          }
+        })
+        .catch(function() {
+          container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);grid-column:1/-1;">Unable to load campaigns. <a href="/pages/campaigns.html">View all campaigns</a></p>';
+        });
+    })();
+  </script>
 </body>
 </html>

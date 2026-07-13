@@ -875,6 +875,18 @@
     gap: var(--space-3) !important;
     max-width: 100% !important;
   }
+  .footer-col-brand > a {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .footer-col-brand > a > div {
+    align-items: center !important;
+    text-align: center !important;
+  }
   .footer-social-row {
     justify-content: center !important;
   }
@@ -885,6 +897,10 @@
   }
   .footer-col-heading {
     display: none !important;
+  }
+  .footer-col-contact,
+  .footer-col-address {
+    align-items: center !important;
   }
   .footer-contact-cards {
     display: grid !important;

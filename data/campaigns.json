@@ -1,42 +1,42 @@
 [
   {
-    "id": "speech-kits",
-    "title": "Sponsor Speech Therapy Kits",
-    "tagline": "Provide specialized tactile sound kits to help children communicate.",
+    "id": "empower-possibilities",
+    "title": "Empower Possibilities",
+    "tagline": "Support disabled children today. Your kindness can empower dreams, build confidence, and create brighter futures.",
+    "tag": "💙 Empowerment",
     "goal": 200000,
     "raised": 144000,
     "daysLeft": 14,
-    "image": "../assets/images/campaigns/therapy_kits.webp",
-    "isUrgent": true
+    "image": "/assets/images/campaigns/Empower Possibilities.png"
   },
   {
-    "id": "mobility-walkers",
-    "title": "Pediatric Mobility & Walkers",
-    "tagline": "Custom supportive walkers and physical therapy aids for independent steps.",
-    "goal": 350000,
-    "raised": 298000,
-    "daysLeft": 8,
-    "image": "../assets/images/campaigns/mobility_walkers.webp",
-    "isUrgent": true
-  },
-  {
-    "id": "sensory-room",
-    "title": "Equip Sensory Integration Room",
-    "tagline": "A safe bubble tube, sound-proof, and tactile environment for ADHD & Autistic children.",
+    "id": "people-need-help",
+    "title": "People That Need Your Help",
+    "tagline": "Support disabled children in need today. Your donation can change lives, restore hope, and give every child the care they deserve.",
+    "tag": "🤝 Support",
     "goal": 500000,
     "raised": 180000,
     "daysLeft": 30,
-    "image": "../assets/images/campaigns/sensory_room.webp",
-    "isUrgent": false
+    "image": "/assets/images/campaigns/People That Need Your Help.png"
   },
   {
-    "id": "daily-meals",
+    "id": "midday-meals",
     "title": "Sponsor Nutritious Mid-day Meals",
-    "tagline": "Ensure special children receive balanced nutritional lunch boxes daily.",
+    "tagline": "A nutritious meal gives a child the strength to learn, grow, and smile. Help provide healthy meals and brighter tomorrows.",
+    "tag": "🍽 Nutrition",
     "goal": 150000,
-    "raised": 95000,
+    "raised": 94500,
     "daysLeft": 12,
-    "image": "../assets/images/campaigns/daily_meals.webp",
-    "isUrgent": false
+    "image": "/assets/images/campaigns/daily_meals.png"
+  },
+  {
+    "id": "health-checkup",
+    "title": "Regular Health Checkup",
+    "tagline": "Help us give disabled children a brighter future. Your donation can provide essential health checkups and support their well-being.",
+    "tag": "🩺 Health & Wellness",
+    "goal": 350000,
+    "raised": 298000,
+    "daysLeft": 8,
+    "image": "/assets/images/campaigns/regular health checkup.png"
   }
 ]
