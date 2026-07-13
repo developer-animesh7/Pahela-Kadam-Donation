@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pahela Kadam - Premium Donation Platform | Narayani Charitable Trust</title>
+  <title>Pahela Kadam School - Premium Donation Platform | Narayani Charitable Trust</title>
 
   <!-- SEO Optimization -->
-  <meta name="description" content="Support special children at Pahela Kadam. Sponsored by Narayani Charitable Trust. Fully audited 80G tax-exempt donations.">
-  <meta name="keywords" content="donate, special children, physical therapy, Narayani Charitable Trust, Pahela Kadam, Dhanbad">
-  <meta property="og:title" content="Pahela Kadam - Premium Donation Platform">
+  <meta name="description" content="Support special children at Pahela Kadam School. Sponsored by Narayani Charitable Trust. Fully audited 80G tax-exempt donations.">
+  <meta name="keywords" content="donate, special children, physical therapy, Narayani Charitable Trust, Pahela Kadam School, Dhanbad">
+  <meta property="og:title" content="Pahela Kadam School - Premium Donation Platform">
   <meta property="og:description" content="Help special children stand, speak, and thrive. Direct therapy sponsorship and 100% transparency.">
 
   <!-- Browser Favicon -->
@@ -176,14 +176,14 @@
       display: flex;
       user-select: none;
       gap: var(--space-6);
-      mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
-      padding: var(--space-4) 0;
+      mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+      padding: var(--space-5) 0;
     }
     .marquee-track {
       display: flex;
-      gap: var(--space-6);
-      animation: marquee-scroll 28s linear infinite;
+      gap: var(--space-5);
+      animation: marquee-scroll 40s linear infinite;
       width: max-content;
     }
     .marquee-track:hover {
@@ -191,33 +191,36 @@
     }
     .partner-card {
       background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      box-shadow: var(--shadow-sm);
-      width: 220px;
-      height: 120px;
+      border: 1px solid rgba(37, 99, 235, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.04);
+      width: 200px;
+      height: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: var(--space-4) var(--space-6);
-      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+      padding: var(--space-4) var(--space-5);
+      transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
       flex-shrink: 0;
       cursor: pointer;
     }
     .partner-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(37, 99, 235, 0.2);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 28px rgba(37, 99, 235, 0.1);
+      border-color: rgba(37, 99, 235, 0.18);
     }
     .partner-logo {
-      max-height: 80px;
-      max-width: 170px;
+      max-height: 70px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
       object-fit: contain;
-      filter: grayscale(15%) contrast(95%);
-      transition: filter 200ms ease;
+      filter: grayscale(10%) contrast(95%);
+      transition: filter 250ms ease, transform 250ms ease;
     }
     .partner-card:hover .partner-logo {
       filter: none;
+      transform: scale(1.03);
     }
     @keyframes marquee-scroll {
       0% { transform: translateX(0); }
@@ -225,17 +228,18 @@
     }
     @media (max-width: 767px) {
       .partner-card {
-        width: 160px;
-        height: 90px;
-        border-radius: 20px;
+        width: 150px;
+        height: 85px;
+        border-radius: 16px;
         padding: var(--space-3) var(--space-4);
       }
       .partner-logo {
-        max-height: 55px;
-        max-width: 120px;
+        max-height: 50px;
+        max-width: 110px;
       }
       .marquee-track {
-        animation-duration: 22s;
+        gap: var(--space-4);
+        animation-duration: 30s;
       }
     }
   </style>
@@ -250,14 +254,14 @@
     <div class="container-wide flex-between" style="height: 72px;">
 
       <!-- Brand Logo (PNG icon + Brand typography text next to it) -->
-      <a href="/pages/landing.html" class="d-flex" style="align-items: center; gap: var(--space-3); text-decoration: none;" aria-label="Pahela Kadam – Home">
+      <a href="/pages/landing.html" class="d-flex" style="align-items: center; gap: var(--space-3); text-decoration: none;" aria-label="Pahela Kadam School � Home">
         <img src="../assets/images/logos/PAHELA KADAM.png"
              alt="Pahela Kadam Logo"
              class="nav-logo-img"
              onerror="this.style.display='none'">
-        <div class="d-flex flex-column" style="line-height: 1.15;">
-          <span class="font-extrabold text-primary-color" style="letter-spacing: -0.02em; font-size: var(--text-base); font-weight: 800;">Pahela Kadam</span>
-          <span class="text-muted-label" style="font-size: 8px; letter-spacing: 0.05em; font-weight: 700; color: var(--text-muted);">Narayani Charitable Trust</span>
+        <div class="d-flex flex-column" style="line-height: 1.1;">
+          <span class="font-extrabold text-primary-color" style="letter-spacing: -0.025em; font-size: var(--text-lg); font-weight: 800;">Pahela Kadam</span>
+          <span style="font-size: 7.5px; letter-spacing: 0.12em; font-weight: 600; color: var(--text-muted); margin-top: 1px;">SCHOOL FOR SPECIAL CHILDREN</span>
         </div>
       </a>
 
@@ -296,9 +300,9 @@
       <!-- Logo brand area inside mobile menu overlay -->
       <div class="nav-menu-brand" style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
         <img src="../assets/images/logos/PAHELA KADAM.png" alt="Pahela Kadam Logo" style="height: 52px; width: auto;">
-        <div class="d-flex flex-column" style="line-height: 1.15; text-align: left;">
-          <span class="font-extrabold" style="letter-spacing: -0.02em; font-size: var(--text-lg); color: var(--primary-dark); font-weight: 800;">Pahela Kadam</span>
-          <span style="font-size: 9px; letter-spacing: 0.05em; font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">Narayani Charitable Trust</span>
+        <div class="d-flex flex-column" style="line-height: 1.1; text-align: left;">
+          <span class="font-extrabold" style="letter-spacing: -0.025em; font-size: var(--text-xl); color: var(--primary-dark); font-weight: 800;">Pahela Kadam</span>
+          <span style="font-size: 9px; letter-spacing: 0.12em; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; margin-top: 1px;">SCHOOL FOR SPECIAL CHILDREN</span>
         </div>
       </div>
 
@@ -325,7 +329,7 @@
     <!-- Hero Section -->
     <div data-component="hero"></div>
 
-    <!-- ─── 1. NSE TRUST VERIFICATION CARD ─────────────────── -->
+    <!-- --- 1. NSE TRUST VERIFICATION CARD ------------------- -->
     <section class="section" style="padding-top: 0; z-index: 10;">
       <div class="container">
         <div class="nse-trust-card reveal" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); border-radius: var(--radius-xl); padding: var(--space-6) var(--space-8);">
@@ -380,7 +384,7 @@
           </div>
         </div>
 
-        <!-- Right Side: Narrative about Pahela Kadam -->
+        <!-- Right Side: Narrative about Pahela Kadam School -->
         <div class="d-flex flex-column reveal-right" style="gap: var(--space-4);">
           <div>
             <span class="text-muted-label" style="color: var(--primary);">About Us</span>
@@ -485,7 +489,7 @@
           <span class="text-muted-label" style="color: var(--primary); font-weight: 700; letter-spacing: 0.1em;">TRUSTED BY</span>
           <h2 style="font-size: var(--text-3xl); color: var(--primary-dark); margin: 0; line-height: 1.2;">Our Partners &amp; Supporters</h2>
           <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin: 0;">
-            We are grateful to the government organizations, corporate partners, NGOs, and institutions that continuously support Pahela Kadam in empowering children with disabilities through education, therapy, healthcare, and inclusive development.
+            We are grateful to the government organizations, corporate partners, NGOs, and institutions that continuously support Pahela Kadam School in empowering children with disabilities through education, therapy, healthcare, and inclusive development.
           </p>
         </div>
 
@@ -497,48 +501,72 @@
             
             <!-- SET 1 -->
             <div class="partner-card">
-              <img src="../assets/images/partners/coal_india.png" alt="Coal India Limited Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Coal_India.png" alt="Coal India Limited" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/jharkhand_gov.png" alt="Government of Jharkhand Emblem" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Government_of_Jharkhand.png" alt="Government of Jharkhand" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/maithan_alloys.png" alt="Maithan Alloys Ltd Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Maithan-Alloys-Limited.webp" alt="Maithan Alloys Limited" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/niepmd.png" alt="NIEPMD National Institute Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/NSE-preview.png" alt="National Stock Exchange SSE" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/parivaar.png" alt="Parivaar Association Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Parivaar.png" alt="Parivaar Association" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/darpan.png" alt="Darpan NGO Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/darpan.png" alt="NGO Darpan" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/national_trust.png" alt="The National Trust India Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/adani%20foundation.png" alt="Adani Foundation" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/sbi%20foundation.png" alt="SBI Foundation" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/_ujjivan%20bank.jpg" alt="Ujjivan Small Finance Bank" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/castron%20tech.png" alt="Castron Technologies" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/cocmos.jpeg" alt="Cocmos" class="partner-logo" loading="lazy">
             </div>
 
-            <!-- SET 2 (Duplicate set for seamless transition) -->
+            <!-- SET 2 (Duplicate for seamless infinite scroll) -->
             <div class="partner-card">
-              <img src="../assets/images/partners/coal_india.png" alt="Coal India Limited Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Coal_India.png" alt="Coal India Limited" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/jharkhand_gov.png" alt="Government of Jharkhand Emblem" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Government_of_Jharkhand.png" alt="Government of Jharkhand" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/maithan_alloys.png" alt="Maithan Alloys Ltd Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Maithan-Alloys-Limited.webp" alt="Maithan Alloys Limited" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/niepmd.png" alt="NIEPMD National Institute Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/NSE-preview.png" alt="National Stock Exchange SSE" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/parivaar.png" alt="Parivaar Association Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/Parivaar.png" alt="Parivaar Association" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/darpan.png" alt="Darpan NGO Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/darpan.png" alt="NGO Darpan" class="partner-logo" loading="lazy">
             </div>
             <div class="partner-card">
-              <img src="../assets/images/partners/national_trust.png" alt="The National Trust India Logo" class="partner-logo" loading="lazy">
+              <img src="../assets/images/partners/adani%20foundation.png" alt="Adani Foundation" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/sbi%20foundation.png" alt="SBI Foundation" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/_ujjivan%20bank.jpg" alt="Ujjivan Small Finance Bank" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/castron%20tech.png" alt="Castron Technologies" class="partner-logo" loading="lazy">
+            </div>
+            <div class="partner-card">
+              <img src="../assets/images/partners/cocmos.jpeg" alt="Cocmos" class="partner-logo" loading="lazy">
             </div>
 
           </div>
@@ -570,8 +598,8 @@
         .then(function(campaigns) {
           var cards = campaigns.slice(0, 3).map(function(c) {
             var percent = Math.round((c.raised / c.goal) * 100);
-            var raisedFormatted = '₹' + c.raised.toLocaleString('en-IN');
-            var goalFormatted = '₹' + c.goal.toLocaleString('en-IN');
+            var raisedFormatted = '?' + c.raised.toLocaleString('en-IN');
+            var goalFormatted = '?' + c.goal.toLocaleString('en-IN');
             var daysColor = c.daysLeft <= 14 ? 'var(--warning)' : 'var(--text-secondary)';
 
             return '<div class="campaign-card reveal" style="background:#ffffff;border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden;display:flex;flex-direction:column;transition:transform 250ms ease-out,box-shadow 250ms ease-out;box-shadow:var(--shadow-sm);">' +
