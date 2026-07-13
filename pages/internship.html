@@ -1,818 +1,2637 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internships & Volunteering | Pahela Kadam School Dhanbad</title>
-  
-  <!-- SEO Optimization -->
-  <meta name="description" content="Apply for Clinical Psychology Fieldwork, Special Education, and Therapy internships at Pahela Kadam School. Check our 3-month curriculum roadmap, student testimonials, and FAQs.">
-  <meta name="keywords" content="psychology internship, clinical fieldwork, special education training, physiotherapy placement, NGO volunteering, Dhanbad, Narayani Charitable Trust">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Academic Placements & Internships | Pahela Kadam School Dhanbad
+    </title>
 
-  <!-- Browser Favicon -->
-  <link rel="icon" type="image/x-icon" href="../assets/images/logos/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logos/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logos/apple-touch-icon.png">
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/typography.css">
-  <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/utilities.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+    <!-- SEO Optimization -->
+    <meta
+      name="description"
+      content="Apply for Clinical Psychology Fieldwork, Special Education, and Therapy internships at Pahela Kadam School. Check our 3-month curriculum roadmap, student testimonials, and FAQs."
+    />
+    <meta
+      name="keywords"
+      content="psychology internship, clinical fieldwork, special education training, physiotherapy placement, NGO volunteering, Dhanbad, Narayani Charitable Trust"
+    />
 
-  <style>
-    /* ======================================================
-       PAGE-LEVEL STYLES (Navbar & Footer FOUC Prevention)
+    <!-- Browser Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/logos/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/logos/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/logos/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/logos/apple-touch-icon.png"
+    />
+
+    <!-- Resource Hints: Preconnect to Google Fonts (eliminates DNS+TLS round-trip delay) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Web Font: Loaded via link instead of @import to parallelize with CSS downloads -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    />
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <style>
+      /* ======================================================
+       PAGE-LEVEL STYLES & OVERRIDES
     ====================================================== */
-    .nav-logo-img {
-      height: 52px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
+      .nav-logo-img {
+        height: 52px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
 
-    .footer-logo-img {
-      height: 72px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
+      .footer-logo-img {
+        height: 72px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
-    }
-    @media (min-width: 768px) {
-      .footer-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (min-width: 1024px) {
       .footer-grid {
-        grid-template-columns: 1.6fr 1fr 1fr;
-        gap: var(--space-10);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
       }
-    }
-
-    .social-icon-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      display: grid;
-      place-items: center;
-      color: #FFFFFF;
-      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 150ms ease;
-      will-change: transform;
-      cursor: pointer;
-    }
-    .social-icon-btn:hover {
-      background-color: var(--primary);
-      border-color: transparent;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 1023px) {
-      .desktop-only { display: none !important; }
-      .nav-burger   { display: flex !important; }
-    }
-    @media (min-width: 1024px) {
-      .desktop-only { display: flex !important; }
-      .nav-burger   { display: none !important; }
-    }
-
-    .nav-burger.is-active .burger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .nav-burger.is-active .burger-line:nth-child(2) { opacity: 0; }
-    .nav-burger.is-active .burger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    .nav-menu.is-active {
-      transform: translateY(0) !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-
-    #main-content {
-      margin-top: 72px;
-    }
-
-    /* ======================================================
-       CURRICULUM TIMELINE CSS (3-Month Roadmap)
-    ====================================================== */
-    .timeline {
-      position: relative;
-      padding-left: var(--space-6);
-      border-left: 2px dashed rgba(37, 99, 235, 0.25);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-8);
-      margin-top: var(--space-6);
-      margin-bottom: var(--space-6);
-    }
-
-    .timeline-item {
-      position: relative;
-    }
-
-    .timeline-marker {
-      position: absolute;
-      left: calc(-1 * var(--space-6) - 7px);
-      top: 4px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-      transition: background-color 300ms ease;
-    }
-
-    .timeline-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: var(--space-5) var(--space-6);
-      box-shadow: var(--shadow-sm);
-    }
-    
-    .timeline-card h4 {
-      font-size: var(--text-sm);
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin: 0 0 6px;
-    }
-
-    .timeline-card p {
-      font-size: var(--text-xs);
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* ======================================================
-       STUDENT TESTIMONIALS PANEL
-    ====================================================== */
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-      margin-top: var(--space-6);
-    }
-    @media (min-width: 768px) {
-      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .testimonial-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-    }
-    
-    .testimonial-stars {
-      color: var(--accent);
-      font-size: 16px;
-    }
-
-    .testimonial-quote {
-      font-size: var(--text-sm);
-      color: var(--text-secondary);
-      line-height: 1.6;
-      font-style: italic;
-      margin: 0;
-      flex-grow: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      border-top: 1px solid var(--border-color);
-      padding-top: var(--space-3);
-    }
-
-    .testimonial-author h4 {
-      font-size: var(--text-xs);
-      font-weight: 700;
-      color: var(--text-primary);
-      margin: 0;
-    }
-
-    .testimonial-author span {
-      font-size: 10px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    /* ======================================================
-       INTERACTIVE ACCORDION FAQ SYSTEM
-    ====================================================== */
-    .faq-accordion {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-      margin-top: var(--space-6);
-    }
-
-    .faq-item {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .faq-item:hover {
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-md);
-    }
-
-    .faq-trigger {
-      width: 100%;
-      background: transparent;
-      border: none;
-      padding: var(--space-4) var(--space-5);
-      text-align: left;
-      font-size: var(--text-sm);
-      font-weight: 700;
-      color: var(--text-primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-3);
-    }
-
-    .faq-icon-arrow {
-      color: var(--text-secondary);
-      transition: transform 250ms ease;
-    }
-
-    .faq-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 300ms cubic-bezier(0.16, 1, 0.3, 1), padding 300ms ease;
-      background-color: var(--bg-shaded);
-      padding: 0 var(--space-5);
-    }
-
-    .faq-content p {
-      font-size: var(--text-xs);
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin: 0;
-      padding-bottom: var(--space-4);
-    }
-
-    /* Active state overrides */
-    .faq-item.is-open {
-      border-color: var(--primary);
-    }
-    .faq-item.is-open .faq-icon-arrow {
-      transform: rotate(180deg);
-      color: var(--primary);
-    }
-    .faq-item.is-open .faq-content {
-      max-height: 150px;
-      padding-top: var(--space-4);
-    }
-
-    /* ======================================================
-       SPLIT LAYOUT & PHOTO SHOWCASE
-    ====================================================== */
-    .internship-split-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
-    }
-    @media (min-width: 1024px) {
-      .internship-split-grid {
-        grid-template-columns: 1.2fr 1fr;
-        gap: var(--space-10);
+      @media (min-width: 768px) {
+        .footer-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
-    }
+      @media (min-width: 1024px) {
+        .footer-grid {
+          grid-template-columns: 1.6fr 1fr 1fr;
+          gap: var(--space-10);
+        }
+      }
 
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-      margin-bottom: var(--space-6);
-    }
+      .social-icon-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: grid;
+        place-items: center;
+        color: #ffffff;
+        transition:
+          background-color 150ms ease,
+          color 150ms ease,
+          border-color 150ms ease,
+          transform 150ms ease;
+        will-change: transform;
+        cursor: pointer;
+      }
+      .social-icon-btn:hover {
+        background-color: var(--primary);
+        border-color: transparent;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
 
-    .showcase-image-frame {
-      aspect-ratio: 16 / 11;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
-      background-color: var(--bg-shaded);
-    }
-    
-    .showcase-image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+      @media (max-width: 1023px) {
+        .desktop-only {
+          display: none !important;
+        }
+        .nav-burger {
+          display: flex !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .desktop-only {
+          display: flex !important;
+        }
+        .nav-burger {
+          display: none !important;
+        }
+      }
 
-    /* Program Cards */
-    .program-card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-5);
-      margin-bottom: var(--space-8);
-    }
-    @media (min-width: 768px) {
-      .program-card-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+      .nav-burger.is-active .burger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .nav-burger.is-active .burger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-burger.is-active .burger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
 
-    .program-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
-    }
-    
-    .program-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-md);
-    }
+      .nav-menu.is-active {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
 
-    .program-icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-md);
-      background-color: var(--primary-light);
-      display: grid;
-      place-items: center;
-      color: var(--primary);
-      flex-shrink: 0;
-    }
+      #main-content {
+        margin-top: 72px;
+      }
 
-    .program-card h3 {
-      font-size: var(--text-base);
-      font-weight: 800;
-      color: var(--primary-dark);
-      margin: 0;
-    }
-    .program-card p {
-      font-size: var(--text-xs);
-      color: var(--text-secondary);
-      line-height: 1.55;
-      margin: 0;
-    }
+      /* ======================================================
+       PERFORMANCE: content-visibility for below-fold sections
+       Browser skips layout/paint/render until scrolled into view
+    ====================================================== */
+      .placement-tracks-section,
+      .showcase-section,
+      .timeline-section,
+      .trust-section,
+      .testimonials-section,
+      .centered-faq-section,
+      .centered-apply-section {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 600px;
+      }
 
-    /* Form card styling */
-    .form-wrapper-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
-      padding: var(--space-6) var(--space-6) var(--space-8);
-      box-shadow: var(--shadow-sm);
-    }
-    @media (min-width: 768px) {
+      /* ======================================================
+       INTERNSHIP HERO SECTION
+    ====================================================== */
+      .internship-hero {
+        background: var(--bg-canvas-gradient);
+        padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .internship-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 80% 20%,
+          rgba(37, 99, 235, 0.05) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .internship-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        align-items: center;
+      }
+      @media (min-width: 992px) {
+        .internship-hero-grid {
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: var(--space-12);
+        }
+      }
+
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: 6px 14px;
+        background-color: var(--primary-light);
+        color: var(--primary-dark);
+        font-size: var(--text-xs);
+        font-weight: 700;
+        border-radius: var(--radius-full);
+        border: 1px solid rgba(37, 99, 235, 0.15);
+        margin-bottom: var(--space-4);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .hero-headline {
+        font-size: var(--text-4xl);
+        font-weight: 900;
+        color: var(--primary-dark);
+        line-height: 1.15;
+        margin-bottom: var(--space-4);
+        letter-spacing: -0.02em;
+      }
+
+      .hero-subhead {
+        font-size: var(--text-base);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: var(--space-6);
+      }
+
+      .hero-bullets {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        margin-bottom: var(--space-8);
+      }
+
+      .hero-bullet-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .hero-bullet-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--success-soft);
+        color: var(--primary);
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      /* Premium Image Overlays for Hero Visual */
+      .hero-visual-frame {
+        position: relative;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        box-shadow: var(--shadow-xl);
+        border: 1px solid var(--border-color);
+      }
+
+      .hero-visual-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-floating-card {
+        position: absolute;
+        bottom: var(--space-4);
+        left: var(--space-4);
+        right: var(--space-4);
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* ======================================================
+       INTERACTIVE STATS COUNTER SECTION
+    ====================================================== */
+      .stats-counter-section {
+        padding: 0;
+        margin-top: calc(-1 * var(--space-8));
+        position: relative;
+        z-index: 12;
+      }
+
+      .stats-card-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+      @media (min-width: 480px) {
+        .stats-card-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 768px) {
+        .stats-card-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: var(--space-5);
+        }
+      }
+
+      .stat-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        padding: var(--space-5) var(--space-4);
+        box-shadow: var(--shadow-md);
+        text-align: center;
+        contain: content;
+        transition:
+          transform var(--transition-normal),
+          border-color var(--transition-normal),
+          box-shadow var(--transition-normal);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .stat-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .stat-value {
+        font-size: var(--text-3xl);
+        font-weight: 900;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: var(--space-1);
+        letter-spacing: -0.02em;
+      }
+
+      .stat-card-label {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* ======================================================
+       PLACEMENT TRACKS SECTION
+    ====================================================== */
+      .placement-tracks-section {
+        padding: var(--space-12) 0;
+        background-color: var(--bg-canvas);
+      }
+
+      .section-tag {
+        text-align: center;
+        font-size: var(--text-xs);
+        font-weight: 800;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: var(--space-2);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: var(--text-3xl);
+        font-weight: 900;
+        color: var(--primary-dark);
+        margin-bottom: var(--space-4);
+        letter-spacing: -0.015em;
+      }
+
+      .section-desc {
+        text-align: center;
+        max-width: var(--container-narrow);
+        margin: 0 auto var(--space-10);
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .tracks-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      @media (min-width: 768px) {
+        .tracks-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .tracks-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: var(--space-6);
+        }
+      }
+
+      .track-card {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+        cursor: pointer;
+        contain: content;
+        transition:
+          transform var(--transition-normal),
+          box-shadow var(--transition-normal);
+      }
+      .track-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      /* Track Card Overlay (Premium bottom black gradient visible all the time) */
+      .track-card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 48px var(--space-5) var(--space-5);
+        background: linear-gradient(
+          to top,
+          rgba(10, 15, 30, 0.98) 0%,
+          rgba(10, 15, 30, 0.75) 50%,
+          rgba(10, 15, 30, 0.3) 80%,
+          transparent 100%
+        );
+        color: #ffffff !important;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        z-index: 5;
+        text-align: left !important;
+      }
+
+      .track-card-overlay h3 {
+        font-size: var(--text-sm);
+        font-weight: 800;
+        color: #ffffff !important;
+        margin: 0;
+        line-height: 1.3;
+        text-align: left !important;
+      }
+
+      .track-card-overlay p {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.88) !important;
+        line-height: 1.5;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        text-align: left !important;
+      }
+
+      /* ======================================================
+       APPLICATION FORM SECTION (CENTERED)
+    ====================================================== */
+      .centered-apply-section {
+        padding: var(--space-6) 0;
+        background-color: var(--bg-canvas);
+        border-top: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+
       .form-wrapper-card {
-        padding: var(--space-8) var(--space-8) var(--space-10);
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6) var(--space-6) var(--space-8);
+        box-shadow: var(--shadow-sm);
       }
-    }
+      @media (min-width: 768px) {
+        .form-wrapper-card {
+          padding: var(--space-8) var(--space-8) var(--space-10);
+        }
+      }
 
-    .form-group {
-      position: relative;
-      margin-bottom: var(--space-5);
-    }
+      .form-scroll-container {
+        max-height: 520px;
+        overflow-y: auto;
+        padding-right: var(--space-4);
+        margin-bottom: var(--space-6);
+        scroll-behavior: smooth;
+      }
+      .form-scroll-container::-webkit-scrollbar {
+        width: 6px;
+      }
+      .form-scroll-container::-webkit-scrollbar-track {
+        background: var(--bg-canvas);
+        border-radius: var(--radius-full);
+      }
+      .form-scroll-container::-webkit-scrollbar-thumb {
+        background: var(--border-hover);
+        border-radius: var(--radius-full);
+      }
+      .form-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+      }
 
-    .form-input {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 14px 16px;
-      width: 100%;
-      font-size: var(--text-sm);
-      color: var(--text-primary);
-      transition: all var(--transition-normal);
-      font-family: inherit;
-    }
-    .form-input:focus {
-      outline: 3px solid var(--accent);
-      border-color: var(--primary);
-    }
+      .form-group {
+        position: relative;
+        margin-bottom: var(--space-5);
+      }
 
-    .form-label {
-      position: absolute;
-      left: var(--space-4);
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-secondary);
-      transition: all var(--transition-normal);
-      pointer-events: none;
-      background: transparent;
-      padding: 0 var(--space-1);
-    }
+      .form-input {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 14px 16px;
+        width: 100%;
+        font-size: var(--text-sm);
+        color: var(--text-primary);
+        transition: all var(--transition-normal);
+        font-family: inherit;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
 
-    .form-input:focus ~ .form-label,
-    .form-input:not(:placeholder-shown) ~ .form-label {
-      top: 0;
-      font-size: var(--text-xs);
-      color: var(--primary);
-      font-weight: 700;
-      background: var(--bg-surface);
-      transform: translateY(-50%) scale(0.95);
-    }
+      .form-label {
+        position: absolute;
+        left: var(--space-4);
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-secondary);
+        transition: all var(--transition-normal);
+        pointer-events: none;
+        background: transparent;
+        padding: 0 var(--space-1);
+      }
 
-    .form-input-textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .form-input-textarea ~ .form-label {
-      top: var(--space-4);
-      transform: none;
-    }
-    .form-input-textarea:focus ~ .form-label,
-    .form-input-textarea:not(:placeholder-shown) ~ .form-label {
-      top: 0;
-      transform: translateY(-50%) scale(0.95);
-    }
+      .form-input:focus ~ .form-label,
+      .form-input:not(:placeholder-shown) ~ .form-label {
+        top: 0;
+        font-size: var(--text-xs);
+        color: var(--primary);
+        font-weight: 700;
+        background: var(--bg-surface);
+        transform: translateY(-50%) scale(0.95);
+      }
 
-    /* Custom Upload Box styling */
-    .cv-upload-container {
-      border: 2px dashed var(--border-color);
-      border-radius: var(--radius-md);
-      padding: var(--space-6);
-      text-align: center;
-      cursor: pointer;
-      background-color: var(--bg-shaded);
-      transition: all var(--transition-normal);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-2);
-    }
-    .cv-upload-container:hover {
-      border-color: var(--primary);
-      background-color: var(--primary-light);
-    }
-    .cv-upload-container.has-file {
-      border-color: var(--primary);
-      border-style: solid;
-      background-color: var(--primary-light);
-    }
-    .cv-upload-container.invalid {
-      border-color: #EF4444;
-      background-color: rgba(239, 68, 68, 0.02);
-    }
+      .form-input-textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+      .form-input-textarea ~ .form-label {
+        top: var(--space-4);
+        transform: none;
+      }
+      .form-input-textarea:focus ~ .form-label,
+      .form-input-textarea:not(:placeholder-shown) ~ .form-label {
+        top: 0;
+        transform: translateY(-50%) scale(0.95);
+      }
 
-    .error-message {
-      display: none;
-      color: #EF4444;
-      font-size: 11px;
-      margin-top: 4px;
-      font-weight: 500;
-      padding-left: var(--space-1);
-    }
+      /* Custom Upload Box styling */
+      .cv-upload-container {
+        border: 2px dashed var(--border-color);
+        border-radius: var(--radius-md);
+        padding: var(--space-6);
+        text-align: center;
+        cursor: pointer;
+        background-color: var(--bg-shaded);
+        transition: all var(--transition-normal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+      }
+      .cv-upload-container:hover {
+        border-color: var(--primary);
+        background-color: var(--primary-light);
+      }
+      .cv-upload-container.has-file {
+        border-color: var(--primary);
+        border-style: solid;
+        background-color: var(--primary-light);
+      }
+      .cv-upload-container.invalid {
+        border-color: #ef4444;
+        background-color: rgba(239, 68, 68, 0.02);
+      }
 
-    .form-input.invalid {
-      border-color: #EF4444;
-    }
-    .form-input.invalid ~ .error-message {
-      display: block;
-    }
+      .error-message {
+        display: none;
+        color: #ef4444;
+        font-size: 11px;
+        margin-top: 4px;
+        font-weight: 500;
+        padding-left: var(--space-1);
+      }
 
-    /* ======================================================
+      .form-input.invalid {
+        border-color: #ef4444;
+      }
+      .form-input.invalid ~ .error-message {
+        display: block;
+      }
+
+      /* ======================================================
+       PHOTO SHOWCASE / GALLERY SECTION
+    ====================================================== */
+      .showcase-section {
+        padding: var(--space-12) 0;
+        background-color: var(--bg-surface);
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      @media (min-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1200px) {
+        .gallery-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .gallery-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        contain: content;
+        transition:
+          transform var(--transition-normal),
+          box-shadow var(--transition-normal);
+      }
+      .gallery-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .gallery-image-frame {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background-color: var(--bg-shaded);
+        border-bottom: 1px solid var(--border-color);
+      }
+      .gallery-image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--transition-normal);
+      }
+      .gallery-card:hover .gallery-image-frame img {
+        transform: scale(1.05);
+      }
+
+      .gallery-card-content {
+        padding: var(--space-4);
+      }
+      .gallery-card-title {
+        font-size: var(--text-xs);
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+      .gallery-card-desc {
+        font-size: 11px;
+        color: var(--text-secondary);
+        line-height: 1.4;
+      }
+
+      /* ======================================================
+       CURRICULUM TIMELINE SECTION
+    ====================================================== */
+      .timeline-section {
+        padding: var(--space-12) 0;
+        background-color: var(--bg-canvas);
+      }
+
+      .curriculum-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: var(--space-8) auto 0;
+        padding-left: var(--space-8);
+      }
+
+      .curriculum-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 7px;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary) 0%,
+          rgba(37, 99, 235, 0.15) 100%
+        );
+      }
+
+      .timeline-step {
+        position: relative;
+        margin-bottom: var(--space-8);
+      }
+      .timeline-step:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: calc(-1 * var(--space-8) - 1px);
+        top: 6px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 4px solid var(--bg-canvas);
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+        z-index: 2;
+      }
+
+      .timeline-body {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        box-shadow: var(--shadow-sm);
+        contain: content;
+        transition:
+          transform var(--transition-normal),
+          box-shadow var(--transition-normal);
+      }
+      .timeline-body:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .timeline-step-meta {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 4px;
+      }
+
+      .timeline-body h4 {
+        font-size: var(--text-base);
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin-bottom: var(--space-2);
+      }
+
+      .timeline-body p {
+        font-size: var(--text-xs);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: var(--space-3);
+      }
+
+      .timeline-body ul {
+        margin: 0;
+        padding-left: var(--space-4);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .timeline-body li {
+        font-size: var(--text-xs);
+        color: var(--text-secondary);
+        list-style-type: disc;
+      }
+
+      /* ======================================================
+       TRUST CREDENTIALS SECTION
+    ====================================================== */
+      .trust-section {
+        padding: var(--space-12) 0;
+        background-color: var(--bg-surface);
+        border-top: 1px solid var(--border-light);
+      }
+
+      .trust-badge-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+      }
+      @media (min-width: 768px) {
+        .trust-badge-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 1200px) {
+        .trust-badge-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: var(--space-5);
+        }
+      }
+
+      .trust-badge-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--space-5);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        box-shadow: var(--shadow-sm);
+        contain: content;
+        transition:
+          transform var(--transition-normal),
+          border-color var(--transition-normal),
+          box-shadow var(--transition-normal);
+      }
+      .trust-badge-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow-md);
+      }
+
+      .trust-badge-title {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--primary-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .trust-badge-value {
+        font-size: var(--text-xs);
+        font-weight: 700;
+        color: var(--text-primary);
+        word-break: break-all;
+      }
+
+      .trust-badge-desc {
+        font-size: 10px;
+        color: var(--text-muted);
+        line-height: 1.4;
+      }
+
+      /* ======================================================
+       INTERN TESTIMONIALS SECTION
+    ====================================================== */
+      .testimonials-section {
+        padding: var(--space-12) 0;
+        background-color: var(--bg-canvas);
+        border-top: 1px solid var(--border-light);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin-top: var(--space-6);
+      }
+      @media (min-width: 768px) {
+        .testimonial-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .testimonial-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        contain: content;
+        transition:
+          transform var(--transition-normal),
+          box-shadow var(--transition-normal);
+      }
+      .testimonial-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .testimonial-stars {
+        color: var(--donate);
+        font-size: 16px;
+      }
+
+      .testimonial-quote {
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-style: italic;
+        margin: 0;
+        flex-grow: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        border-top: 1px solid var(--border-color);
+        padding-top: var(--space-3);
+      }
+
+      .testimonial-author h4 {
+        font-size: var(--text-xs);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+      }
+
+      .testimonial-author span {
+        font-size: 10px;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      /* ======================================================
+       CENTERED PLACEMENT FAQs SECTION
+    ====================================================== */
+      .centered-faq-section {
+        padding: var(--space-12) 0;
+        background-color: var(--bg-canvas);
+        border-top: 1px solid var(--border-light);
+      }
+
+      .faq-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+
+      .faq-item {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        contain: content;
+        transition:
+          border-color var(--transition-normal),
+          box-shadow var(--transition-normal);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .faq-item:hover {
+        border-color: var(--border-hover);
+        box-shadow: var(--shadow-md);
+      }
+
+      .faq-trigger {
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: var(--space-4) var(--space-5);
+        text-align: left;
+        font-size: var(--text-sm);
+        font-weight: 700;
+        color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .faq-icon-arrow {
+        color: var(--text-secondary);
+        transition: transform 250ms ease;
+      }
+
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 300ms cubic-bezier(0.16, 1, 0.3, 1),
+          padding 300ms ease;
+        background-color: var(--bg-shaded);
+        padding: 0 var(--space-5);
+      }
+
+      .faq-content p {
+        font-size: var(--text-xs);
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+        padding-bottom: var(--space-4);
+      }
+
+      .faq-item.is-open {
+        border-color: var(--primary);
+      }
+      .faq-item.is-open .faq-icon-arrow {
+        transform: rotate(180deg);
+        color: var(--primary);
+      }
+      .faq-item.is-open .faq-content {
+        max-height: 200px;
+        padding-top: var(--space-4);
+      }
+
+      /* ======================================================
        SUCCESS ANIMATION POPUP OVERLAY
     ====================================================== */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(15, 25, 35, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-6);
-      opacity: 0;
-      transition: opacity 200ms ease;
-    }
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(15, 25, 35, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 1000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-6);
+        opacity: 0;
+        transition: opacity 200ms ease;
+      }
 
-    .modal-overlay.is-active {
-      display: flex;
-      opacity: 1;
-    }
+      .modal-overlay.is-active {
+        display: flex;
+        opacity: 1;
+      }
 
-    .modal-card {
-      background: #ffffff;
-      max-width: 450px;
-      width: 100%;
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-6);
-      text-align: center;
-      box-shadow: var(--shadow-xl);
-      transform: scale(0.95);
-      transition: transform 200ms ease;
-    }
+      .modal-card {
+        background: #ffffff;
+        max-width: 450px;
+        width: 100%;
+        border-radius: var(--radius-xl);
+        padding: var(--space-8) var(--space-6);
+        text-align: center;
+        box-shadow: var(--shadow-xl);
+        transform: scale(0.95);
+        transition: transform 200ms ease;
+      }
 
-    .modal-overlay.is-active .modal-card {
-      transform: scale(1);
-    }
+      .modal-overlay.is-active .modal-card {
+        transform: scale(1);
+      }
 
-    .success-icon-wrap {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto var(--space-5);
-    }
+      .success-icon-wrap {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto var(--space-5);
+      }
 
-    .checkmark__circle {
-      stroke-width: 2;
-      stroke-miterlimit: 10;
-      stroke: var(--primary);
-      fill: none;
-      stroke-dasharray: 166;
-      stroke-dashoffset: 166;
-      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-    }
+      .checkmark__circle {
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: var(--primary);
+        fill: none;
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+      }
 
-    .checkmark {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: block;
-      stroke-width: 2;
-      stroke: var(--primary);
-      stroke-miterlimit: 10;
-      box-shadow: inset 0px 0px 0px var(--primary);
-      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s forwards;
-    }
+      .checkmark {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 2;
+        stroke: var(--primary);
+        stroke-miterlimit: 10;
+        box-shadow: inset 0px 0px 0px var(--primary);
+        animation:
+          fill 0.4s ease-in-out 0.4s forwards,
+          scale 0.3s ease-in-out 0.9s forwards;
+      }
 
-    .checkmark__check {
-      transform-origin: 50% 50%;
-      stroke-dasharray: 48;
-      stroke-dashoffset: 48;
-      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
+      .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+      }
 
-    @keyframes stroke {
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes scale {
-      0%, 100% { transform: none; }
-      50% { transform: scale3d(1.1, 1.1, 1); }
-    }
-    @keyframes fill {
-      100% { box-shadow: inset 0px 0px 0px 40px var(--primary-light); }
-    }
-  </style>
-</head>
-<body>
+      @keyframes stroke {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes scale {
+        0%,
+        100% {
+          transform: none;
+        }
+        50% {
+          transform: scale3d(1.1, 1.1, 1);
+        }
+      }
+      @keyframes fill {
+        100% {
+          box-shadow: inset 0px 0px 0px 40px var(--primary-light);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Dynamic Header Injection -->
+    <header class="header-wrapper" data-component="navbar"></header>
 
-  <!-- Dynamic Header Injection -->
-  <header class="header-wrapper" data-component="navbar"></header>
+    <main id="main-content">
+      <!-- 1. HERO SECTION -->
+      <section class="internship-hero">
+        <div class="container">
+          <div class="internship-hero-grid">
+            <div class="reveal">
+              <span class="hero-tag">Academic Placements</span>
+              <h1 class="hero-headline">
+                Empower Lives. Elevate Your Practice.
+              </h1>
+              <p class="hero-subhead">
+                Pahela Kadam School offers comprehensive clinical fieldwork and
+                special needs education training. Access real clinical
+                observation hours and design pathways to independence under
+                certified professionals.
+              </p>
+              <div class="hero-bullets">
+                <div class="hero-bullet-item">
+                  <span class="hero-bullet-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span>Hands-on Clinical Hours &amp; Case Study Guides</span>
+                </div>
+                <div class="hero-bullet-item">
+                  <span class="hero-bullet-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span>RCI &amp; NIOS Standard Curriculum roadmaps</span>
+                </div>
+                <div class="hero-bullet-item">
+                  <span class="hero-bullet-icon">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span>100% Free Placement — No fees, voluntary support</span>
+                </div>
+              </div>
+              <a href="#apply" class="btn btn-primary">
+                <span>Apply for Placement</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
 
-  <main id="main-content">
-    
-    <!-- Redesigned Main Content Area (Starting with title directly) -->
-    <section class="section" style="padding: clamp(2rem, 4vw, 4rem) 0 var(--space-12); background-color: var(--bg-canvas);">
-      <div class="container">
+            <div class="reveal reveal-delay-1">
+              <div class="hero-visual-frame">
+                <img
+                  src="../assets/images/gallery/report_classroom_4.png"
+                  alt="Special education teacher guiding students in sensory classroom"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+                <div class="hero-floating-card">
+                  <div
+                    class="track-icon-box"
+                    style="background-color: var(--donate); color: white"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4
+                      style="
+                        font-size: 11px;
+                        font-weight: 800;
+                        color: var(--text-primary);
+                        margin: 0;
+                      "
+                    >
+                      Certified Training Center
+                    </h4>
+                    <p
+                      style="
+                        font-size: 9px;
+                        color: var(--text-secondary);
+                        margin: 0;
+                      "
+                    >
+                      Narayani Charitable Trust, Dhanbad
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- 2. STATS SECTION -->
+      <section class="stats-counter-section">
+        <div class="container">
+          <div class="stats-card-grid reveal-scale">
+            <div class="stat-card">
+              <div class="stat-value">
+                <span class="counter" data-target="200">0</span>+
+              </div>
+              <div class="stat-card-label">Special Children Enrolled</div>
+            </div>
 
+            <div class="stat-card">
+              <div class="stat-value">
+                <span class="counter" data-target="500">0</span>+
+              </div>
+              <div class="stat-card-label">Families Supported</div>
+            </div>
 
-        <div class="internship-split-grid">
-          
-          <!-- Left Column: Guidelines, Timeline Curriculum, Testimonials -->
+            <div class="stat-card">
+              <div class="stat-value">
+                <span class="counter" data-target="21">0</span>
+              </div>
+              <div class="stat-card-label">Disability Categories Mapped</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-value">
+                <span class="counter" data-target="6">0</span>
+              </div>
+              <div class="stat-card-label">Micro-Enterprise Stores</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. PLACEMENT TRACKS (OUR SERVICES) -->
+      <section class="placement-tracks-section">
+        <div class="container">
           <div class="reveal">
-            
-            <!-- Real Photos Grid (NEW DISPLAY WITH 2 DISTINCT PHOTOS) -->
-            <div class="showcase-grid">
-              <div class="showcase-image-frame">
-                <img src="../assets/images/gallery/report_child_learning_1.jpeg" alt="Sensory education and developmental play session at school">
-              </div>
-              <div class="showcase-image-frame">
-                <img src="../assets/images/gallery/report_therapy_2.png" alt="Standing posture physiotherapy and motor rehabilitation training">
-              </div>
-            </div>
-
-            <!-- Program tracks -->
-            <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--primary-dark); margin: 0 0 var(--space-4);">Our Placement Tracks</h2>
-            
-            <div class="program-card-grid">
-              
-              <div class="program-card">
-                <div class="program-icon-box">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                </div>
-                <h3>Clinical Fieldwork</h3>
-                <p>Designed for B.A. Honors/Postgraduate Psychology students. Observe 21 disability categories mapped to academic requirements.</p>
-              </div>
-
-              <div class="program-card">
-                <div class="program-icon-box">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                </div>
-                <h3>Special Education</h3>
-                <p>Assist special educators in creating and monitoring Individualized Education Plans (IEPs) for our students.</p>
-              </div>
-
-            </div>
-
-            <!-- Detailed Timeline Curriculum -->
-            <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--primary-dark); margin: var(--space-4) 0 var(--space-2);">3-Month Internship Curriculum</h2>
-            <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
-              A structured, milestone-based timeline designed to give interns comprehensive hands-on exposure to clinical diagnostics and special needs rehabilitation.
+            <div class="section-tag">Explore Opportunities</div>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-desc">
+              We provide structured academic placements and observational hours
+              across our core child therapy and special education service
+              tracks.
             </p>
-
-            <div class="timeline">
-              
-              <div class="timeline-item">
-                <span class="timeline-marker"></span>
-                <div class="timeline-card">
-                  <h4>Month 1: Orientation &amp; Observational Shadowing</h4>
-                  <p>
-                    Understand the 21 disability categories under the RPWD Act. Read historic patient files, observe therapists, and understand sensory-friendly classroom layouts.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <span class="timeline-marker"></span>
-                <div class="timeline-card">
-                  <h4>Month 2: IEP Design &amp; Diagnostic Shadowing</h4>
-                  <p>
-                    Assist senior clinicians in preparing Individualized Education Plans (IEPs). Log daily cognitive profiling and help draft therapy milestones.
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <span class="timeline-marker"></span>
-                <div class="timeline-card">
-                  <h4>Month 3: Clinical Practice &amp; Case Study Reporting</h4>
-                  <p>
-                    Shadow speech and occupational therapy sessions. Complete and submit a detailed casework profile of two students as part of university submission guidelines.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Student Testimonials -->
-            <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--primary-dark); margin: var(--space-8) 0 var(--space-2);">Intern Testimonials</h2>
-            
-            <div class="testimonial-grid">
-              
-              <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">
-                  "Shadowing occupational therapy sessions at Pahela Kadam School gave me practical clinical insights that textbooks couldn't offer."
-                </p>
-                <div class="testimonial-author">
-                  <h4>Priya Sharma</h4>
-                  <span>M.A. Clinical Psychology, IGNOU</span>
-                </div>
-              </div>
-
-              <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">
-                  "Designing Individualized Education Plans (IEPs) for children with cerebral palsy and learning disabilities was a deeply enriching experience."
-                </p>
-                <div class="testimonial-author">
-                  <h4>Rohan Varma</h4>
-                  <span>B.Ed Special Education student</span>
-                </div>
-              </div>
-
-            </div>
-
           </div>
 
-          <!-- Right Column: Application Form & FAQs -->
-          <div class="reveal reveal-delay-1">
-            
-            <!-- Custom Form Wrapper Card -->
-            <div class="form-wrapper-card">
-              <h2 style="font-size: var(--text-xl); font-weight: 800; color: var(--text-primary); margin: 0 0 var(--space-4);">Application Desk</h2>
-              
-              <form id="internshipForm" novalidate>
-                
-                <!-- Name -->
-                <div class="form-group">
-                  <input type="text" id="internName" name="name" class="form-input" placeholder=" " required minlength="2">
-                  <label for="internName" class="form-label">Full Name</label>
-                  <span class="error-message" id="nameError">Please enter your full name (minimum 2 characters).</span>
-                </div>
-
-                <!-- Email -->
-                <div class="form-group">
-                  <input type="email" id="internEmail" name="email" class="form-input" placeholder=" " required>
-                  <label for="internEmail" class="form-label">Email Address</label>
-                  <span class="error-message" id="emailError">Please enter a valid email address.</span>
-                </div>
-
-                <!-- Phone -->
-                <div class="form-group">
-                  <input type="tel" id="internPhone" name="phone" class="form-input" placeholder=" " required pattern="^[0-9]{10}$">
-                  <label for="internPhone" class="form-label">Phone Number</label>
-                  <span class="error-message" id="phoneError">Please enter a valid 10-digit phone number.</span>
-                </div>
-
-                <!-- College -->
-                <div class="form-group">
-                  <input type="text" id="internCollege" name="college" class="form-input" placeholder=" " required minlength="3">
-                  <label for="internCollege" class="form-label">College / University</label>
-                  <span class="error-message" id="collegeError">Please enter your university name.</span>
-                </div>
-
-                <!-- Degree -->
-                <div class="form-group">
-                  <input type="text" id="internDegree" name="degree" class="form-input" placeholder=" " required minlength="2">
-                  <label for="internDegree" class="form-label">Degree / Program (e.g. M.A. Psychology)</label>
-                  <span class="error-message" id="degreeError">Please enter your degree name.</span>
-                </div>
-
-                <!-- Track Select -->
-                <div class="form-group">
-                  <select id="internTrack" name="track" class="form-input" style="appearance: none; padding-right: 40px;" required>
-                    <option value="" disabled selected hidden></option>
-                    <option value="psychology">Clinical Psychology Fieldwork</option>
-                    <option value="special-ed">Special Education &amp; Teaching</option>
-                    <option value="therapy">Speech &amp; Occupational Therapy Support</option>
-                    <option value="nonprofit">Nonprofit Management &amp; Campaigns</option>
-                  </select>
-                  <label for="internTrack" class="form-label">Select Placement Track</label>
-                  <span class="error-message" id="trackError">Please select a placement track.</span>
-                  <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-secondary);">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </div>
-                </div>
-
-                <!-- Duration Select -->
-                <div class="form-group">
-                  <select id="internDuration" name="duration" class="form-input" style="appearance: none; padding-right: 40px;" required>
-                    <option value="" disabled selected hidden></option>
-                    <option value="1month">1 Month (Introductory Exposure)</option>
-                    <option value="2month">2 Months (Extended Assessment)</option>
-                    <option value="3month">3 Months (Full Syllabus Placement)</option>
-                  </select>
-                  <label for="internDuration" class="form-label">Preferred Duration</label>
-                  <span class="error-message" id="durationError">Please select preferred placement duration.</span>
-                  <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-secondary);">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </div>
-                </div>
-
-                <!-- CV Upload Container -->
-                <div class="form-group" style="margin-bottom: var(--space-6);">
-                  <input type="file" id="internCV" name="cv" accept=".pdf,.doc,.docx" style="display: none;" required>
-                  <div class="cv-upload-container" id="cvUploadContainer">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                    <span id="uploadBoxTitle" style="font-size: var(--text-xs); font-weight: 700; color: var(--text-primary);">Upload CV / Resume (PDF/DOCX)</span>
-                    <span id="uploadBoxSubtitle" style="font-size: 10px; color: var(--text-muted);">Click to browse your device (Max 5MB)</span>
-                  </div>
-                  <span class="error-message" id="cvError">Please upload a valid CV / Resume file.</span>
-                </div>
-
-                <!-- Statement of Purpose -->
-                <div class="form-group">
-                  <textarea id="internMessage" name="message" class="form-input form-input-textarea" placeholder=" " required minlength="15"></textarea>
-                  <label for="internMessage" class="form-label">Brief Statement of Purpose</label>
-                  <span class="error-message" id="messageError">Please enter your statement of purpose (minimum 15 characters).</span>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary" style="width: 100%; border: none; justify-content: center; height: 50px;">
-                  <span>Apply Now</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                </button>
-
-              </form>
+          <div class="tracks-grid stagger-parent">
+            <!-- 1. Speech Therapy -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/speech thraphy.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Speech Therapy</h3>
+                <p>
+                  Observe clinical evaluation of speech delays, articulation
+                  guides, phonetic training, and communication tools designed
+                  for non-verbal children.
+                </p>
+              </div>
             </div>
 
-            <!-- Academic Placement FAQs -->
-            <h3 style="font-size: var(--text-base); font-weight: 800; color: var(--primary-dark); margin: var(--space-8) 0 0;">Placement FAQ</h3>
-            
+            <!-- 2. Occupational Therapy -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/occu theraphy.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Occupational Therapy</h3>
+                <p>
+                  Gain exposure to sensory integration therapies, fine motor
+                  skill exercises, balance enhancement, and sensory-friendly
+                  environmental adaptations.
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. Behaviour Modification Program -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/dr chember.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Behaviour Modification Program</h3>
+                <p>
+                  Shadow psychologists applying Applied Behavior Analysis (ABA),
+                  token economy systems, and positive reinforcement to handle
+                  behavioral challenges.
+                </p>
+              </div>
+            </div>
+
+            <!-- 4. Child Physiotherapy -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/Physiotherapy.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Child Physiotherapy</h3>
+                <p>
+                  Learn Gross Motor Function Classification (GMFCS) tracking,
+                  gross motor exercises, posture corrections, and parallel-bar
+                  gait rehabilitation.
+                </p>
+              </div>
+            </div>
+
+            <!-- 5. Special Education -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/smart classroom.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Special Education</h3>
+                <p>
+                  Shadow certified special educators as they compile
+                  Individualized Education Plans (IEPs), teach basic arithmetic,
+                  and design interactive learning boards.
+                </p>
+              </div>
+            </div>
+
+            <!-- 6. Vocational Training -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/vocational training.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Vocational Training</h3>
+                <p>
+                  Participate in workshops training teenagers in candle
+                  decorations, paper cup and plate manufacturing, packaging, and
+                  micro-business operation basics.
+                </p>
+              </div>
+            </div>
+
+            <!-- 7. ADL Training -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/helping t help t.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>ADL Training</h3>
+                <p>
+                  Observe self-care training systems for Activities of Daily
+                  Living, instructing children in self-feeding, dressing, basic
+                  hygiene, and grooming.
+                </p>
+              </div>
+            </div>
+
+            <!-- 8. Aqua Therapy -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/aqua theraphy.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Aqua Therapy</h3>
+                <p>
+                  Understand specialized water-based muscular coordination
+                  exercises, vestibular balance therapies, and physical sensory
+                  relaxation techniques.
+                </p>
+              </div>
+            </div>
+
+            <!-- 9. Child, Adult & Couple Counselling -->
+            <div
+              class="track-card reveal"
+              style="
+                background-image: url(&quot;../assets/images/facilities/parent awareness.png&quot;);
+              "
+            >
+              <div class="track-card-overlay">
+                <h3>Child, Adult &amp; Couple Counselling</h3>
+                <p>
+                  Shadow counseling sessions for children, parental support
+                  counseling, marital counseling support, and community mental
+                  health campaigns.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. APPLICATION FORM SECTION (CENTERED & POSITIONED ABOVE SHOWCASE) -->
+      <section class="centered-apply-section" id="apply">
+        <div
+          class="container"
+          style="max-width: var(--container-narrow); margin: 0 auto"
+        >
+          <div
+            class="reveal"
+            style="text-align: center; margin-bottom: var(--space-8)"
+          >
+            <div class="section-tag">Placement Application</div>
+            <h2 class="section-title">Application Desk</h2>
+            <p class="section-desc" style="margin-bottom: 0">
+              Submit your details and academic program constraints below. Our
+              coordinators will review your application and contact you within 3
+              business days.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <!-- Form Wrapper Card -->
+            <div class="form-wrapper-card" style="box-shadow: var(--shadow-lg)">
+              <form id="internshipForm" novalidate>
+                <!-- Scrollable Fields Container -->
+                <div class="form-scroll-container">
+                  <!-- Email (Account) -->
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      id="internAccountEmail"
+                      name="accountEmail"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="internAccountEmail" class="form-label"
+                      >Email *</label
+                    >
+                    <span class="error-message" id="accountEmailError"
+                      >Please enter a valid email address.</span
+                    >
+                  </div>
+
+                  <!-- Name -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internName"
+                      name="name"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      minlength="2"
+                    />
+                    <label for="internName" class="form-label">Name *</label>
+                    <span class="error-message" id="nameError"
+                      >Please enter your name (minimum 2 characters).</span
+                    >
+                  </div>
+
+                  <!-- Gender -->
+                  <div class="form-group">
+                    <select
+                      id="internGender"
+                      name="gender"
+                      class="form-input"
+                      style="appearance: none; padding-right: 40px"
+                      required
+                    >
+                      <option value="" disabled selected hidden></option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                      <option value="Prefer-not-to-say">
+                        Prefer not to say
+                      </option>
+                    </select>
+                    <label for="internGender" class="form-label"
+                      >Gender *</label
+                    >
+                    <span class="error-message" id="genderError"
+                      >Please select your gender.</span
+                    >
+                    <div
+                      style="
+                        position: absolute;
+                        right: 16px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        pointer-events: none;
+                        color: var(--text-secondary);
+                      "
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                      >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Date of Birth -->
+                  <div class="form-group">
+                    <input
+                      type="date"
+                      id="internDOB"
+                      name="dob"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label
+                      for="internDOB"
+                      class="form-label"
+                      style="
+                        top: 0;
+                        font-size: var(--text-xs);
+                        color: var(--primary);
+                        font-weight: 700;
+                        background: var(--bg-surface);
+                        transform: translateY(-50%) scale(0.95);
+                      "
+                      >Date of birth *</label
+                    >
+                    <span class="error-message" id="dobError"
+                      >Please enter your date of birth.</span
+                    >
+                  </div>
+
+                  <!-- Contact No -->
+                  <div class="form-group">
+                    <input
+                      type="tel"
+                      id="internPhone"
+                      name="phone"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      pattern="^[0-9]{10}$"
+                    />
+                    <label for="internPhone" class="form-label"
+                      >Contact no. *</label
+                    >
+                    <span class="error-message" id="phoneError"
+                      >Please enter a valid 10-digit phone number.</span
+                    >
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      id="internEmailAddress"
+                      name="emailAddress"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="internEmailAddress" class="form-label"
+                      >Email Address *</label
+                    >
+                    <span class="error-message" id="emailAddressError"
+                      >Please enter a valid email address.</span
+                    >
+                  </div>
+
+                  <!-- Address -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internAddress"
+                      name="address"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      minlength="5"
+                    />
+                    <label for="internAddress" class="form-label"
+                      >Address *</label
+                    >
+                    <span class="error-message" id="addressError"
+                      >Please enter your address.</span
+                    >
+                  </div>
+
+                  <!-- City -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internCity"
+                      name="city"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="internCity" class="form-label">City *</label>
+                    <span class="error-message" id="cityError"
+                      >Please enter your city.</span
+                    >
+                  </div>
+
+                  <!-- State -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internState"
+                      name="state"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="internState" class="form-label">State *</label>
+                    <span class="error-message" id="stateError"
+                      >Please enter your state.</span
+                    >
+                  </div>
+
+                  <!-- Pincode -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internPincode"
+                      name="pincode"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      pattern="^[0-9]{6}$"
+                    />
+                    <label for="internPincode" class="form-label"
+                      >Pincode *</label
+                    >
+                    <span class="error-message" id="pincodeError"
+                      >Please enter a valid 6-digit pincode.</span
+                    >
+                  </div>
+
+                  <!-- Highest Qualification -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internQualification"
+                      name="qualification"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="internQualification" class="form-label"
+                      >Highest Qualification *</label
+                    >
+                    <span class="error-message" id="qualificationError"
+                      >Please enter your highest qualification.</span
+                    >
+                  </div>
+
+                  <!-- Institution Name -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internInstitution"
+                      name="institution"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      minlength="3"
+                    />
+                    <label for="internInstitution" class="form-label"
+                      >Institution Name *</label
+                    >
+                    <span class="error-message" id="institutionError"
+                      >Please enter your institution name.</span
+                    >
+                  </div>
+
+                  <!-- Year of Passing -->
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      id="internPassingYear"
+                      name="passingYear"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      min="1950"
+                      max="2035"
+                    />
+                    <label for="internPassingYear" class="form-label"
+                      >Year of passing *</label
+                    >
+                    <span class="error-message" id="passingYearError"
+                      >Please enter a valid year of passing.</span
+                    >
+                  </div>
+
+                  <!-- Major/field of study -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="internMajor"
+                      name="major"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="internMajor" class="form-label"
+                      >Major/field of study *</label
+                    >
+                    <span class="error-message" id="majorError"
+                      >Please enter your major/field of study.</span
+                    >
+                  </div>
+
+                  <!-- Program Interest checkboxes -->
+                  <div
+                    class="form-group"
+                    style="
+                      margin-bottom: var(--space-5);
+                      border: 1px solid var(--border-color);
+                      padding: var(--space-4);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <span
+                      style="
+                        display: block;
+                        font-size: var(--text-xs);
+                        font-weight: 700;
+                        color: var(--text-primary);
+                        margin-bottom: var(--space-3);
+                        line-height: 1.4;
+                      "
+                    >
+                      Please select the type of program you are interested in
+                      (Tick one or more) *
+                    </span>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--space-2.5);
+                      "
+                    >
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="programType"
+                          value="Computer Training"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>Computer Training</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="programType"
+                          value="Vocational Training"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>Vocational Training</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="programType"
+                          value="Special Education"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>Special Education</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="programType"
+                          value="Skill Development"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>Skill Development</span>
+                      </label>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-2);
+                          flex-wrap: wrap;
+                        "
+                      >
+                        <label
+                          style="
+                            display: flex;
+                            align-items: center;
+                            gap: var(--space-3);
+                            font-size: var(--text-xs);
+                            color: var(--text-secondary);
+                            cursor: pointer;
+                          "
+                        >
+                          <input
+                            type="checkbox"
+                            name="programType"
+                            value="Other"
+                            id="progOtherCheck"
+                            style="accent-color: var(--primary)"
+                          />
+                          <span>Other (Please Specify)</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="progOtherText"
+                          name="programTypeOtherText"
+                          class="form-input"
+                          style="
+                            padding: 6px 12px;
+                            font-size: var(--text-xs);
+                            max-width: 200px;
+                            display: none;
+                            margin-top: 0;
+                          "
+                          placeholder="Specify program"
+                        />
+                      </div>
+                    </div>
+                    <span
+                      class="error-message"
+                      id="programTypeError"
+                      style="
+                        display: none;
+                        color: #ef4444;
+                        font-size: 11px;
+                        margin-top: 4px;
+                        font-weight: 500;
+                      "
+                      >Please select at least one program type.</span
+                    >
+                  </div>
+
+                  <!-- Internship Duration checkboxes -->
+                  <div
+                    class="form-group"
+                    style="
+                      margin-bottom: var(--space-5);
+                      border: 1px solid var(--border-color);
+                      padding: var(--space-4);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <span
+                      style="
+                        display: block;
+                        font-size: var(--text-xs);
+                        font-weight: 700;
+                        color: var(--text-primary);
+                        margin-bottom: var(--space-3);
+                        line-height: 1.4;
+                      "
+                    >
+                      Please indicate your preferred duration for internship
+                      (Tick one or more): *
+                    </span>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--space-2.5);
+                      "
+                    >
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="duration"
+                          value="3 Months"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>3 Months</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="duration"
+                          value="6 Months"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>6 Months</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="duration"
+                          value="9 Months"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>9 Months</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-3);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="checkbox"
+                          name="duration"
+                          value="12 Months"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>12 Months</span>
+                      </label>
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-2);
+                          flex-wrap: wrap;
+                        "
+                      >
+                        <label
+                          style="
+                            display: flex;
+                            align-items: center;
+                            gap: var(--space-3);
+                            font-size: var(--text-xs);
+                            color: var(--text-secondary);
+                            cursor: pointer;
+                          "
+                        >
+                          <input
+                            type="checkbox"
+                            name="duration"
+                            value="Other"
+                            id="durOtherCheck"
+                            style="accent-color: var(--primary)"
+                          />
+                          <span>Other (Please Specify)</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="durOtherText"
+                          name="durationOtherText"
+                          class="form-input"
+                          style="
+                            padding: 6px 12px;
+                            font-size: var(--text-xs);
+                            max-width: 200px;
+                            display: none;
+                            margin-top: 0;
+                          "
+                          placeholder="Specify duration"
+                        />
+                      </div>
+                    </div>
+                    <span
+                      class="error-message"
+                      id="durationError"
+                      style="
+                        display: none;
+                        color: #ef4444;
+                        font-size: 11px;
+                        margin-top: 4px;
+                        font-weight: 500;
+                      "
+                      >Please select at least one duration.</span
+                    >
+                  </div>
+
+                  <!-- Skills beneficial -->
+                  <div class="form-group">
+                    <textarea
+                      id="internSkills"
+                      name="skills"
+                      class="form-input form-input-textarea"
+                      placeholder=" "
+                      required
+                      minlength="10"
+                    ></textarea>
+                    <label for="internSkills" class="form-label"
+                      >Please mention any skills or interests you have that you
+                      believe would be beneficial for the program: *</label
+                    >
+                    <span class="error-message" id="skillsError"
+                      >Please list your beneficial skills/interests (minimum 10
+                      characters).</span
+                    >
+                  </div>
+
+                  <!-- SOP -->
+                  <div class="form-group">
+                    <textarea
+                      id="internSOP"
+                      name="sop"
+                      class="form-input form-input-textarea"
+                      placeholder=" "
+                      required
+                      minlength="15"
+                    ></textarea>
+                    <label for="internSOP" class="form-label"
+                      >In a brief paragraph, please explain why you are
+                      interested in interning with Pahela Kadam and what you
+                      hope to gain: *</label
+                    >
+                    <span class="error-message" id="sopError"
+                      >Please explain your interest (minimum 15
+                      characters).</span
+                    >
+                  </div>
+
+                  <!-- Accuracy Confirmation -->
+                  <div
+                    class="form-group"
+                    style="
+                      margin-bottom: var(--space-5);
+                      border: 1px solid var(--border-color);
+                      padding: var(--space-4);
+                      border-radius: var(--radius-md);
+                    "
+                  >
+                    <span
+                      style="
+                        display: block;
+                        font-size: var(--text-xs);
+                        font-weight: 700;
+                        color: var(--text-primary);
+                        margin-bottom: var(--space-2.5);
+                        line-height: 1.4;
+                      "
+                    >
+                      By submitting this form, I confirm that the information
+                      provided is accurate and complete to the best of my
+                      knowledge. I understand that completing this form does not
+                      guarantee placement in the internship program. *
+                    </span>
+                    <div style="display: flex; gap: var(--space-6)">
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-2);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="radio"
+                          name="confirmAccuracy"
+                          value="Yes"
+                          required
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>Yes</span>
+                      </label>
+                      <label
+                        style="
+                          display: flex;
+                          align-items: center;
+                          gap: var(--space-2);
+                          font-size: var(--text-xs);
+                          color: var(--text-secondary);
+                          cursor: pointer;
+                        "
+                      >
+                        <input
+                          type="radio"
+                          name="confirmAccuracy"
+                          value="No"
+                          style="accent-color: var(--primary)"
+                        />
+                        <span>No</span>
+                      </label>
+                    </div>
+                    <span
+                      class="error-message"
+                      id="confirmAccuracyError"
+                      style="
+                        display: none;
+                        color: #ef4444;
+                        font-size: 11px;
+                        margin-top: 4px;
+                        font-weight: 500;
+                      "
+                      >You must select 'Yes' to confirm.</span
+                    >
+                  </div>
+
+                  <!-- Date of Application -->
+                  <div class="form-group">
+                    <input
+                      type="date"
+                      id="internAppDate"
+                      name="appDate"
+                      class="form-input"
+                      placeholder=" "
+                      required
+                      readonly
+                    />
+                    <label
+                      for="internAppDate"
+                      class="form-label"
+                      style="
+                        top: 0;
+                        font-size: var(--text-xs);
+                        color: var(--primary);
+                        font-weight: 700;
+                        background: var(--bg-surface);
+                        transform: translateY(-50%) scale(0.95);
+                      "
+                      >Date of application *</label
+                    >
+                    <span class="error-message" id="appDateError"
+                      >Application date is required.</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Submit Button (outside scroll-container) -->
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="
+                    width: 100%;
+                    border: none;
+                    justify-content: center;
+                    height: 50px;
+                  "
+                >
+                  <span>Submit Application</span>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PHOTO SHOWCASE / GALLERY SECTION -->
+      <section class="showcase-section">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-tag">Inside Pahela Kadam</div>
+            <h2 class="section-title">Visualizing the Placement Journey</h2>
+            <p class="section-desc">
+              Get a glimpse into the daily learning activities, therapies, and
+              workshops our interns participate in and observe at our day school
+              premises.
+            </p>
+          </div>
+
+          <div class="gallery-grid stagger-parent">
+            <div class="gallery-card reveal">
+              <div class="gallery-image-frame">
+                <img
+                  src="../assets/images/gallery/report_therapy_2.png"
+                  alt="Standing posture physiotherapy and motor rehabilitation training"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="gallery-card-content">
+                <div class="gallery-card-title">Therapy Observation</div>
+                <div class="gallery-card-desc">
+                  Shadowing physiotherapy, sensory play, and posture correction
+                  techniques.
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card reveal">
+              <div class="gallery-image-frame">
+                <img
+                  src="../assets/images/gallery/report_child_learning_1.jpeg"
+                  alt="Sensory education and developmental play session at school"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="gallery-card-content">
+                <div class="gallery-card-title">Sensory Integration</div>
+                <div class="gallery-card-desc">
+                  Observing developmental play, vestibular balance activities,
+                  and sensory rooms.
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card reveal">
+              <div class="gallery-image-frame">
+                <img
+                  src="../assets/images/gallery/journey_classroom_3.jpeg"
+                  alt="Children studying in class with special educators"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="gallery-card-content">
+                <div class="gallery-card-title">Special Education Class</div>
+                <div class="gallery-card-desc">
+                  Shadowing educators in drafting IEP programs and basic
+                  arithmetic studies.
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card reveal">
+              <div class="gallery-image-frame">
+                <img
+                  src="../assets/images/gallery/journey_activity_special.jpeg"
+                  alt="Vocational handicraft and candle decoration training"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="gallery-card-content">
+                <div class="gallery-card-title">Vocational Rehabilitation</div>
+                <div class="gallery-card-desc">
+                  Understanding skill-building initiatives, candle decorating,
+                  and store management.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. TIMELINE ROADMAP -->
+      <section class="timeline-section">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-tag">Internship Curriculum</div>
+            <h2 class="section-title">3-Month Roadmap</h2>
+            <p class="section-desc">
+              A structured, milestone-based timeline designed to give interns
+              comprehensive hands-on exposure to clinical diagnostics and
+              special needs rehabilitation.
+            </p>
+          </div>
+
+          <div class="curriculum-timeline stagger-parent">
+            <div class="timeline-step reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <div class="timeline-step-meta">Month 1</div>
+                <h4>Orientation, RPWD Act Studies &amp; Observation</h4>
+                <p>
+                  Get acclimated with the clinical environment and understand
+                  the core operational frameworks of the day school:
+                </p>
+                <ul>
+                  <li>
+                    Study the 21 disability categories mapped under the RPWD
+                    Act, 2016.
+                  </li>
+                  <li>
+                    Analyze historical patient files to track clinical history
+                    and progress.
+                  </li>
+                  <li>
+                    Observe clinical setups and understand sensory-friendly
+                    layouts.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-step reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <div class="timeline-step-meta">Month 2</div>
+                <h4>IEP Designs &amp; Diagnostic Shadowing</h4>
+                <p>
+                  Step into drafting active interventions and assisting clinical
+                  experts with daily evaluations:
+                </p>
+                <ul>
+                  <li>
+                    Assist senior educators in drafting Individualized Education
+                    Plans (IEPs).
+                  </li>
+                  <li>
+                    Log daily cognitive and motor behavior profiling indicators.
+                  </li>
+                  <li>
+                    Observe audiometric assessments, speech therapy planning,
+                    and sensory diagnostics.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-step reveal">
+              <span class="timeline-dot"></span>
+              <div class="timeline-body">
+                <div class="timeline-step-meta">Month 3</div>
+                <h4>Active Clinical Shadowing &amp; Case Study Reports</h4>
+                <p>
+                  Complete casework logs and submit clinical evidence reports
+                  for university review:
+                </p>
+                <ul>
+                  <li>
+                    Shadow occupational, behavior modification, and
+                    physiotherapy sessions closely.
+                  </li>
+                  <li>
+                    Complete detailed case histories of two children based on
+                    observation notes.
+                  </li>
+                  <li>
+                    Receive placement certification and performance evaluation
+                    reports from the trust.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. TRUST & LEGALS BADGES -->
+      <section class="trust-section">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-tag">Verified Institution</div>
+            <h2 class="section-title">Trust &amp; Registration Credentials</h2>
+            <p class="section-desc">
+              Narayani Charitable Trust is a fully registered, audited, and
+              recognized nonprofit organization. We provide verified internships
+              that fulfill college and university board criteria.
+            </p>
+          </div>
+
+          <div class="trust-badge-grid reveal-scale">
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">Narayani Trust Registration</span>
+              <div class="trust-badge-value">10287/1283/2014</div>
+              <p class="trust-badge-desc">
+                Registered Trust under the Indian Trusts Act, 1882.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">80G Income Tax URN</span>
+              <div class="trust-badge-value">AABTN6500DF20221</div>
+              <p class="trust-badge-desc">
+                Valid till 31/03/2026. Tax-exempt donations.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">12A Registration URN</span>
+              <div class="trust-badge-value">AABTN6500DE20152</div>
+              <p class="trust-badge-desc">
+                Valid till 31/03/2027. Legal tax exemption.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">PWD Act Certification</span>
+              <div class="trust-badge-value">No. 01/2018-19</div>
+              <p class="trust-badge-desc">
+                Valid till 05/03/2031. Recognized for disability welfare.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">NGO Darpan (NITI Aayog)</span>
+              <div class="trust-badge-value">JH/2018/0188326</div>
+              <p class="trust-badge-desc">
+                Registered with the Government of India portal.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">School UDISE Code</span>
+              <div class="trust-badge-value">20120302021</div>
+              <p class="trust-badge-desc">
+                Unified District Information System for Education.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">CSR Registration No.</span>
+              <div class="trust-badge-value">CSR00008850</div>
+              <p class="trust-badge-desc">
+                MCA approved for corporate social responsibility.
+              </p>
+            </div>
+
+            <div class="trust-badge-card">
+              <span class="trust-badge-title">NSE Social Stock Exchange</span>
+              <div class="trust-badge-value">URN NSESSENPO00145</div>
+              <p class="trust-badge-desc">
+                Listed NPO on National Stock Exchange India.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. TESTIMONIALS -->
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-tag">Alumni feedback</div>
+            <h2 class="section-title">Intern Testimonials</h2>
+            <p class="section-desc">
+              Hear from clinical psychology and special education students who
+              completed their fieldwork and practical training at Pahela Kadam.
+            </p>
+          </div>
+
+          <div class="testimonial-grid stagger-parent">
+            <div class="testimonial-card reveal">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Shadowing occupational therapy and speech sessions at Pahela
+                Kadam School gave me practical clinical insights that textbooks
+                couldn't offer. Observing children in the sensory room helped me
+                understand vestibular processing issues."
+              </p>
+              <div class="testimonial-author">
+                <h4>Priya Sharma</h4>
+                <span>M.A. Clinical Psychology student, IGNOU</span>
+              </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Designing Individualized Education Plans (IEPs) for children
+                with cerebral palsy and learning disabilities was a deeply
+                enriching experience. The educators and therapists guided me at
+                every step of my fieldwork."
+              </p>
+              <div class="testimonial-author">
+                <h4>Rohan Varma</h4>
+                <span>B.Ed Special Education trainee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. PLACEMENT FAQs SECTION (CENTERED & BOTTOM) -->
+      <section class="centered-faq-section">
+        <div
+          class="container"
+          style="max-width: var(--container-narrow); margin: 0 auto"
+        >
+          <div
+            class="reveal"
+            style="text-align: center; margin-bottom: var(--space-8)"
+          >
+            <div class="section-tag">Common Questions</div>
+            <h2 class="section-title">Placement FAQs</h2>
+            <p class="section-desc" style="margin-bottom: 0">
+              Find answers to standard questions about academic credits,
+              university hours, stipends, and certificate validity.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-1">
             <div class="faq-accordion">
-              
               <div class="faq-item">
                 <button class="faq-trigger" aria-expanded="false">
                   <span>Do you provide on-site placement support?</span>
-                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg
+                    class="faq-icon-arrow"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </button>
                 <div class="faq-content">
                   <p>
-                    Yes, all clinical fieldwork and academic placements must be completed on-site at our day school premises in Dhanbad, Jharkhand, to secure hands-on therapeutic observation hours.
+                    Yes, all clinical fieldwork and academic placements must be
+                    completed on-site at our day school premises in Dhanbad,
+                    Jharkhand, to secure hands-on therapeutic observation hours.
                   </p>
                 </div>
               </div>
@@ -820,11 +2639,24 @@
               <div class="faq-item">
                 <button class="faq-trigger" aria-expanded="false">
                   <span>What certificates will be provided?</span>
-                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg
+                    class="faq-icon-arrow"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </button>
                 <div class="faq-content">
                   <p>
-                    Upon successful completion, the Narayani Charitable Trust issues an official certificate detailing your completed fieldwork hours, evaluated case study, and specific developmental training exposure.
+                    Upon successful completion, the Narayani Charitable Trust
+                    issues an official certificate detailing your completed
+                    fieldwork hours, evaluated case study, and specific
+                    developmental training exposure.
                   </p>
                 </div>
               </div>
@@ -832,219 +2664,515 @@
               <div class="faq-item">
                 <button class="faq-trigger" aria-expanded="false">
                   <span>Is there any stipend or application fee?</span>
-                  <svg class="faq-icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg
+                    class="faq-icon-arrow"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </button>
                 <div class="faq-content">
                   <p>
-                    No, we do not charge any fee for academic placements. As a charitable trust providing free care to disabled children, our internships are voluntary and unpaid.
+                    No, we do not charge any fee for academic placements. As a
+                    charitable trust providing free care to disabled children,
+                    our internships are voluntary and unpaid.
                   </p>
                 </div>
               </div>
 
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>Who can apply for these internships?</span>
+                  <svg
+                    class="faq-icon-arrow"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    We welcome students of B.A./M.A. Clinical Psychology,
+                    B.Ed/D.Ed Special Education, Physiotherapy (BPT),
+                    Speech-Language Pathology, and general social work (BSW/MSW)
+                    or NGO management degrees.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                  <span>Are there options for shorter placements?</span>
+                  <svg
+                    class="faq-icon-arrow"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </button>
+                <div class="faq-content">
+                  <p>
+                    Yes, we offer flexible durations of 3 Months, 6 Months, 9
+                    Months, or 12 Months depending on your academic university
+                    syllabus requirement.
+                  </p>
+                </div>
+              </div>
             </div>
-
           </div>
-
         </div>
+      </section>
+    </main>
 
+    <!-- Success Message Popup Modal Overlay -->
+    <div
+      id="successModal"
+      class="modal-overlay"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Application submission status"
+    >
+      <div class="modal-card">
+        <div class="success-icon-wrap">
+          <svg
+            class="checkmark"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 52 52"
+          >
+            <circle
+              class="checkmark__circle"
+              cx="26"
+              cy="26"
+              r="25"
+              fill="none"
+            />
+            <path
+              class="checkmark__check"
+              fill="none"
+              d="M14.1 27.2l7.1 7.2 16.7-16.8"
+            />
+          </svg>
+        </div>
+        <h3
+          style="
+            font-size: var(--text-lg);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 0 0 var(--space-2);
+          "
+        >
+          Application Submitted!
+        </h3>
+        <p
+          style="
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0 0 var(--space-5);
+          "
+        >
+          Thank you for applying to the Pahela Kadam School Internship Program.
+          We have successfully received your details and resume. Our
+          coordinators will review your application and contact you soon.
+        </p>
+        <button
+          class="btn btn-primary btn-sm"
+          id="closeModalBtn"
+          style="border: none; padding: 10px 24px"
+        >
+          Done
+        </button>
       </div>
-    </section>
-
-  </main>
-
-  <!-- Success Message Popup Modal Overlay -->
-  <div id="successModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-label="Application submission status">
-    <div class="modal-card">
-      <div class="success-icon-wrap">
-        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-        </svg>
-      </div>
-      <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-primary); margin: 0 0 var(--space-2);">Application Submitted!</h3>
-      <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6; margin: 0 0 var(--space-5);">
-        Thank you for applying to the Pahela Kadam School Internship Program. We have successfully received your details and resume. Our coordinators will review your application and contact you soon.
-      </p>
-      <button class="btn btn-primary btn-sm" id="closeModalBtn" style="border: none; padding: 10px 24px;">Done</button>
     </div>
-  </div>
 
-  <!-- Dynamic Footer Injection -->
-  <div data-component="footer"></div>
+    <!-- Dynamic Footer Injection -->
+    <div data-component="footer"></div>
 
-  <!-- JS Modules -->
-  <script src="../js/component-loader.js"></script>
-  <script src="../js/animations.js"></script>
-  <script src="../js/app.js"></script>
+    <!-- JS Modules -->
+    <script defer src="../js/component-loader.js"></script>
+    <script defer src="../js/animations.js"></script>
+    <script defer src="../js/app.js"></script>
 
-  <!-- File Upload, Form Validation, Modal & Accordion Logic -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Accordion Logic
-      const faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(item => {
-        const trigger = item.querySelector('.faq-trigger');
-        trigger.addEventListener('click', () => {
-          const isOpen = item.classList.contains('is-open');
-          
-          // Close all
-          faqItems.forEach(otherItem => {
-            otherItem.classList.remove('is-open');
-            otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    <!-- File Upload, Form Validation, Modal & Accordion Logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Accordion Logic
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+          const trigger = item.querySelector(".faq-trigger");
+          trigger.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+
+            // Close all
+            faqItems.forEach((otherItem) => {
+              otherItem.classList.remove("is-open");
+              otherItem
+                .querySelector(".faq-trigger")
+                .setAttribute("aria-expanded", "false");
+            });
+
+            if (!isOpen) {
+              item.classList.add("is-open");
+              trigger.setAttribute("aria-expanded", "true");
+            }
+          });
+        });
+
+        // 2. Default Date of Application to today
+        const appDateInput = document.getElementById("internAppDate");
+        if (appDateInput) {
+          const today = new Date().toISOString().split("T")[0];
+          appDateInput.value = today;
+        }
+
+        // 3. Toggle "Other" Specify text inputs
+        const progOtherCheck = document.getElementById("progOtherCheck");
+        const progOtherText = document.getElementById("progOtherText");
+        if (progOtherCheck && progOtherText) {
+          progOtherCheck.addEventListener("change", () => {
+            if (progOtherCheck.checked) {
+              progOtherText.style.display = "block";
+              progOtherText.required = true;
+              progOtherText.focus();
+            } else {
+              progOtherText.style.display = "none";
+              progOtherText.required = false;
+              progOtherText.value = "";
+              progOtherText.classList.remove("invalid");
+            }
+          });
+        }
+
+        const durOtherCheck = document.getElementById("durOtherCheck");
+        const durOtherText = document.getElementById("durOtherText");
+        if (durOtherCheck && durOtherText) {
+          durOtherCheck.addEventListener("change", () => {
+            if (durOtherCheck.checked) {
+              durOtherText.style.display = "block";
+              durOtherText.required = true;
+              durOtherText.focus();
+            } else {
+              durOtherText.style.display = "none";
+              durOtherText.required = false;
+              durOtherText.value = "";
+              durOtherText.classList.remove("invalid");
+            }
+          });
+        }
+
+        // 4. Form Validation Logic
+        const form = document.getElementById("internshipForm");
+        const successModal = document.getElementById("successModal");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        const isSimpleValidEmail = (email) => {
+          return email.includes("@") && email.split("@")[1].includes(".");
+        };
+
+        const isValidPhone = (phone) => {
+          const re = /^[0-9]{10}$/;
+          return re.test(String(phone));
+        };
+
+        const validateInput = (input) => {
+          let isValid = true;
+          const value = input.value.trim();
+
+          // Skip validation if field is hidden and not required
+          if (input.style.display === "none" && !input.required) {
+            return true;
+          }
+
+          if (input.required && !value) {
+            isValid = false;
+          } else if (
+            (input.id === "internEmailAddress" ||
+              input.id === "internAccountEmail") &&
+            value &&
+            !isSimpleValidEmail(value)
+          ) {
+            isValid = false;
+          } else if (
+            input.id === "internPhone" &&
+            value &&
+            !isValidPhone(value)
+          ) {
+            isValid = false;
+          } else if (
+            input.id === "internPincode" &&
+            value &&
+            !/^[0-9]{6}$/.test(value)
+          ) {
+            isValid = false;
+          } else if (input.minLength && value.length < input.minLength) {
+            isValid = false;
+          }
+
+          if (isValid) {
+            input.classList.remove("invalid");
+          } else {
+            input.classList.add("invalid");
+          }
+
+          return isValid;
+        };
+
+        const inputs = form.querySelectorAll(".form-input");
+        inputs.forEach((input) => {
+          input.addEventListener("input", () => {
+            if (input.classList.contains("invalid")) {
+              validateInput(input);
+            }
           });
 
-          if (!isOpen) {
-            item.classList.add('is-open');
-            trigger.setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
-
-      // 2. Custom File Upload Box Logic
-      const fileInput = document.getElementById('internCV');
-      const uploadBox = document.getElementById('cvUploadContainer');
-      const uploadTitle = document.getElementById('uploadBoxTitle');
-      const uploadSubtitle = document.getElementById('uploadBoxSubtitle');
-      const cvError = document.getElementById('cvError');
-
-      uploadBox.addEventListener('click', () => {
-        fileInput.click();
-      });
-
-      fileInput.addEventListener('change', () => {
-        if (fileInput.files.length > 0) {
-          const file = fileInput.files[0];
-          uploadBox.classList.add('has-file');
-          uploadBox.classList.remove('invalid');
-          cvError.style.display = 'none';
-          uploadTitle.textContent = 'File selected successfully!';
-          uploadSubtitle.innerHTML = `<strong style="color: var(--primary);">${file.name}</strong> (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
-        } else {
-          uploadBox.classList.remove('has-file');
-          uploadTitle.textContent = 'Upload CV / Resume (PDF/DOCX)';
-          uploadSubtitle.textContent = 'Click to browse your device (Max 5MB)';
-        }
-      });
-
-      // 3. Form Validation Logic
-      const form = document.getElementById('internshipForm');
-      const successModal = document.getElementById('successModal');
-      const closeModalBtn = document.getElementById('closeModalBtn');
-
-      const isValidEmail = (email) => {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1-3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-      };
-
-      const isSimpleValidEmail = (email) => {
-        return email.includes('@') && email.split('@')[1].includes('.');
-      };
-
-      const isValidPhone = (phone) => {
-        const re = /^[0-9]{10}$/;
-        return re.test(String(phone));
-      };
-
-      const validateInput = (input) => {
-        let isValid = true;
-        const value = input.value.trim();
-
-        if (input.required && !value) {
-          isValid = false;
-        } else if (input.id === 'internEmail' && value && !isSimpleValidEmail(value)) {
-          isValid = false;
-        } else if (input.id === 'internPhone' && value && !isValidPhone(value)) {
-          isValid = false;
-        } else if (input.minLength && value.length < input.minLength) {
-          isValid = false;
-        }
-
-        if (isValid) {
-          input.classList.remove('invalid');
-        } else {
-          input.classList.add('invalid');
-        }
-
-        return isValid;
-      };
-
-      const inputs = form.querySelectorAll('.form-input');
-      inputs.forEach(input => {
-        input.addEventListener('input', () => {
-          if (input.classList.contains('invalid')) {
+          input.addEventListener("blur", () => {
             validateInput(input);
-          }
+          });
         });
 
-        input.addEventListener('blur', () => {
-          validateInput(input);
+        // Clear custom errors on check/change
+        const programTypeCheckboxes = form.querySelectorAll(
+          'input[name="programType"]',
+        );
+        const programTypeError = document.getElementById("programTypeError");
+        programTypeCheckboxes.forEach((cb) => {
+          cb.addEventListener("change", () => {
+            programTypeError.style.display = "none";
+          });
         });
-      });
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        let isFormValid = true;
-        inputs.forEach(input => {
-          const isInputValid = validateInput(input);
-          if (!isInputValid) {
+        const durationCheckboxes = form.querySelectorAll(
+          'input[name="duration"]',
+        );
+        const durationError = document.getElementById("durationError");
+        durationCheckboxes.forEach((cb) => {
+          cb.addEventListener("change", () => {
+            durationError.style.display = "none";
+          });
+        });
+
+        const confirmAccuracyRadios = form.querySelectorAll(
+          'input[name="confirmAccuracy"]',
+        );
+        const confirmAccuracyError = document.getElementById(
+          "confirmAccuracyError",
+        );
+        confirmAccuracyRadios.forEach((radio) => {
+          radio.addEventListener("change", () => {
+            confirmAccuracyError.style.display = "none";
+          });
+        });
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          let isFormValid = true;
+
+          // Validate all text/select inputs
+          inputs.forEach((input) => {
+            const isInputValid = validateInput(input);
+            if (!isInputValid) {
+              isFormValid = false;
+            }
+          });
+
+          // Validate program type checkboxes
+          let programTypeChecked = false;
+          programTypeCheckboxes.forEach((cb) => {
+            if (cb.checked) programTypeChecked = true;
+          });
+          if (!programTypeChecked) {
+            programTypeError.style.display = "block";
             isFormValid = false;
+          } else {
+            programTypeError.style.display = "none";
+          }
+
+          // Validate duration checkboxes
+          let durationChecked = false;
+          durationCheckboxes.forEach((cb) => {
+            if (cb.checked) durationChecked = true;
+          });
+          if (!durationChecked) {
+            durationError.style.display = "block";
+            isFormValid = false;
+          } else {
+            durationError.style.display = "none";
+          }
+
+          // Validate accuracy radio
+          let accuracyConfirmed = false;
+          confirmAccuracyRadios.forEach((radio) => {
+            if (radio.checked && radio.value === "Yes")
+              accuracyConfirmed = true;
+          });
+          if (!accuracyConfirmed) {
+            confirmAccuracyError.style.display = "block";
+            isFormValid = false;
+          } else {
+            confirmAccuracyError.style.display = "none";
+          }
+
+          if (isFormValid) {
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalContent = submitBtn.innerHTML;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = "<span>Submitting...</span>";
+
+            const selectedPrograms = [];
+            programTypeCheckboxes.forEach((cb) => {
+              if (cb.checked) {
+                if (
+                  cb.value === "Other" &&
+                  progOtherText &&
+                  progOtherText.value.trim()
+                ) {
+                  selectedPrograms.push(`Other: ${progOtherText.value.trim()}`);
+                } else {
+                  selectedPrograms.push(cb.value);
+                }
+              }
+            });
+
+            const selectedDurations = [];
+            durationCheckboxes.forEach((cb) => {
+              if (cb.checked) {
+                if (
+                  cb.value === "Other" &&
+                  durOtherText &&
+                  durOtherText.value.trim()
+                ) {
+                  selectedDurations.push(`Other: ${durOtherText.value.trim()}`);
+                } else {
+                  selectedDurations.push(cb.value);
+                }
+              }
+            });
+
+            const payload = {
+              sysEmail: document.getElementById("internAccountEmail").value,
+              name: document.getElementById("internName").value,
+              gender: document.getElementById("internGender").value,
+              dob: document.getElementById("internDOB").value,
+              contactNo: document.getElementById("internPhone").value,
+              emailAddress: document.getElementById("internEmailAddress").value,
+              address: document.getElementById("internAddress").value,
+              city: document.getElementById("internCity").value,
+              state: document.getElementById("internState").value,
+              pincode: document.getElementById("internPincode").value,
+              highestQualification: document.getElementById(
+                "internQualification",
+              ).value,
+              institutionName:
+                document.getElementById("internInstitution").value,
+              yearOfPassing: document.getElementById("internYear").value,
+              major: document.getElementById("internMajor").value,
+              programs: selectedPrograms.join(", "),
+              durations: selectedDurations.join(", "),
+              skills: document.getElementById("internSkills").value,
+              sop: document.getElementById("internSOP").value,
+              consent: form.querySelector(
+                'input[name="confirmAccuracy"]:checked',
+              ).value,
+              appDate: document.getElementById("internAppDate").value,
+            };
+
+            // ========================================================
+            // GOOGLE APPS SCRIPT WEB APP INTEGRATION (100% STATIC SERVERLESS)
+            // ========================================================
+            // Paste your deployed Google Apps Script URL here to enable real sheet logging.
+            // If left empty, the form runs in simulated success mode.
+            const GOOGLE_SCRIPT_URL =
+              "https://script.google.com/macros/s/AKfycbwIBsHs6hX8lvl5P20BBwhPvQ1vUuBPuEos54Bhj2pL7CWtL1__DnfNkjvjtw3VmsxF/exec";
+
+            const handleSubmitSuccess = () => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalContent;
+
+              form.reset();
+              inputs.forEach((input) => input.classList.remove("invalid"));
+              if (progOtherText) progOtherText.style.display = "none";
+              if (durOtherText) durOtherText.style.display = "none";
+
+              // Re-default application date
+              if (appDateInput) {
+                appDateInput.value = new Date().toISOString().split("T")[0];
+              }
+
+              successModal.classList.add("is-active");
+              successModal.setAttribute("aria-hidden", "false");
+              document.body.style.overflow = "hidden";
+            };
+
+            if (GOOGLE_SCRIPT_URL) {
+              payload.formType = "internship";
+
+              fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                  "Content-Type": "text/plain;charset=utf-8",
+                },
+                body: JSON.stringify(payload),
+              })
+                .then(() => {
+                  handleSubmitSuccess();
+                })
+                .catch((err) => {
+                  console.error("Error submitting form:", err);
+                  submitBtn.disabled = false;
+                  submitBtn.innerHTML = originalContent;
+                  alert(
+                    "There was an issue submitting your application. Please try again.",
+                  );
+                });
+            } else {
+              // Simulated submission (for local preview/offline testing)
+              setTimeout(() => {
+                handleSubmitSuccess();
+              }, 1000);
+            }
           }
         });
 
-        // Validate CV file presence
-        if (fileInput.files.length === 0) {
-          uploadBox.classList.add('invalid');
-          cvError.style.display = 'block';
-          isFormValid = false;
-        } else {
-          uploadBox.classList.remove('invalid');
-          cvError.style.display = 'none';
-        }
+        const closeModal = () => {
+          successModal.classList.remove("is-active");
+          successModal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        };
 
-        if (isFormValid) {
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const originalContent = submitBtn.innerHTML;
-          
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = '<span>Submitting...</span>';
+        closeModalBtn.addEventListener("click", closeModal);
+        successModal.addEventListener("click", (e) => {
+          if (e.target === successModal) {
+            closeModal();
+          }
+        });
 
-          setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalContent;
-
-            form.reset();
-            inputs.forEach(input => input.classList.remove('invalid'));
-            uploadBox.classList.remove('has-file');
-            uploadTitle.textContent = 'Upload CV / Resume (PDF/DOCX)';
-            uploadSubtitle.textContent = 'Click to browse your device (Max 5MB)';
-
-            successModal.classList.add('is-active');
-            successModal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-          }, 1000);
-        }
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            successModal.classList.contains("is-active")
+          ) {
+            closeModal();
+          }
+        });
       });
-
-      const closeModal = () => {
-        successModal.classList.remove('is-active');
-        successModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      };
-
-      closeModalBtn.addEventListener('click', closeModal);
-      successModal.addEventListener('click', (e) => {
-        if (e.target === successModal) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && successModal.classList.contains('is-active')) {
-          closeModal();
-        }
-      });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

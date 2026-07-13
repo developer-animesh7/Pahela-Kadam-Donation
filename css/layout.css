@@ -81,7 +81,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
   }
-  
+
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-5);
@@ -93,7 +93,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
   }
-  
+
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-5);
@@ -118,12 +118,24 @@
   flex-direction: column;
 }
 
-.gap-1 { gap: var(--space-1); }
-.gap-2 { gap: var(--space-2); }
-.gap-3 { gap: var(--space-3); }
-.gap-4 { gap: var(--space-4); }
-.gap-5 { gap: var(--space-5); }
-.gap-6 { gap: var(--space-6); }
+.gap-1 {
+  gap: var(--space-1);
+}
+.gap-2 {
+  gap: var(--space-2);
+}
+.gap-3 {
+  gap: var(--space-3);
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-5 {
+  gap: var(--space-5);
+}
+.gap-6 {
+  gap: var(--space-6);
+}
 
 /* Fixed Header Wrapper (Prevents scroll bugs on ancestor overflow-x rules) */
 .header-wrapper {
@@ -132,9 +144,18 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background 250ms ease-out, background-color 250ms ease-out, backdrop-filter 250ms ease-out, border-color 250ms ease-out, box-shadow 250ms ease-out;
+  transition:
+    background 250ms ease-out,
+    background-color 250ms ease-out,
+    backdrop-filter 250ms ease-out,
+    border-color 250ms ease-out,
+    box-shadow 250ms ease-out;
   border-bottom: 1px solid rgba(37, 99, 235, 0.08);
-  background: linear-gradient(180deg, rgba(239, 246, 255, 0.95) 0%, rgba(248, 251, 255, 0.92) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(239, 246, 255, 0.95) 0%,
+    rgba(248, 251, 255, 0.92) 100%
+  );
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.03);
 }
 
@@ -146,6 +167,18 @@
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile: Remove backdrop-filter for better scroll performance */
+@media (max-width: 1023px) {
+  .header-wrapper {
+    background: linear-gradient(180deg, #eff6ff 0%, #f8fbff 100%) !important;
+  }
+  .header-wrapper.is-scrolled {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
 }
 
 /* Main Content Spacing to clear fixed header */

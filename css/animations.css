@@ -4,8 +4,12 @@
 
 /* Keyframe Core */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-up {
@@ -31,16 +35,21 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Base Scroll Reveal Classes (controlled via JS Intersection Observer) */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.active {
@@ -51,8 +60,9 @@
 .reveal-left {
   opacity: 0;
   transform: translateX(-20px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-left.active {
@@ -63,8 +73,9 @@
 .reveal-right {
   opacity: 0;
   transform: translateX(20px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-right.active {
@@ -75,8 +86,9 @@
 .reveal-scale {
   opacity: 0;
   transform: scale(0.95) translateY(10px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-scale.active {
@@ -119,7 +131,9 @@
 .header-wrapper {
   opacity: 0;
   transform: translateY(-15px);
-  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-entrance-badge,
@@ -130,21 +144,41 @@
 .hero-entrance-img {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.entrance-ready .header-wrapper      { transition-delay: 50ms; }
-.entrance-ready .hero-entrance-badge  { transition-delay: 150ms; }
-.entrance-ready .hero-entrance-title  { transition-delay: 250ms; }
-.entrance-ready .hero-entrance-desc   { transition-delay: 350ms; }
-.entrance-ready .hero-entrance-btns   { transition-delay: 450ms; }
-.entrance-ready .hero-entrance-stats  { transition-delay: 550ms; }
-.entrance-ready .hero-entrance-img    { transition-delay: 650ms; }
+.entrance-ready .header-wrapper {
+  transition-delay: 50ms;
+}
+.entrance-ready .hero-entrance-badge {
+  transition-delay: 150ms;
+}
+.entrance-ready .hero-entrance-title {
+  transition-delay: 250ms;
+}
+.entrance-ready .hero-entrance-desc {
+  transition-delay: 350ms;
+}
+.entrance-ready .hero-entrance-btns {
+  transition-delay: 450ms;
+}
+.entrance-ready .hero-entrance-stats {
+  transition-delay: 550ms;
+}
+.entrance-ready .hero-entrance-img {
+  transition-delay: 650ms;
+}
 
 /* Subtle Hero Image Zoom Animation */
 @keyframes subtleHeroZoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.03); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
 }
 .hero-img-zoom {
   animation: subtleHeroZoom 15s ease-out forwards;
@@ -155,18 +189,23 @@
    Soft glassmorphism, breathing glow, ripple click, floating hearts
    ========================================================================== */
 @keyframes premium-breathe {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
   }
   50% {
     transform: scale(1.015);
-    box-shadow: 0 4px 25px rgba(37, 99, 235, 0.4), 0 0 0 5px rgba(37, 99, 235, 0.12);
+    box-shadow:
+      0 4px 25px rgba(37, 99, 235, 0.4),
+      0 0 0 5px rgba(37, 99, 235, 0.12);
   }
 }
 .premium-donate-btn {
   animation: premium-breathe 4s ease-in-out infinite;
-  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition:
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative;
 }
 .premium-donate-btn:hover {
@@ -217,7 +256,9 @@
 
 /* Stagger systems for dynamic list items (cards) */
 .stagger-parent > .reveal {
-  transition-delay: calc(var(--stagger-index, 0) * 40ms); /* Stagger speeded up to feel instant */
+  transition-delay: calc(
+    var(--stagger-index, 0) * 40ms
+  ); /* Stagger speeded up to feel instant */
 }
 
 /* Dynamic hover effects for images inside cards (Very subtle zoom) */
@@ -235,7 +276,9 @@
 
 /* Premium Card displacement on hover - Gentle 2px lift */
 .hover-lift {
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
   will-change: transform, box-shadow;
 }
 
@@ -268,7 +311,11 @@
   background: var(--gradient-donate) !important;
   color: #ffffff !important;
   box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
-  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, filter 220ms ease !important;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease,
+    filter 220ms ease !important;
   animation: orange-glow-breathe 4s ease-in-out infinite;
   cursor: pointer;
   z-index: 5;
@@ -307,7 +354,7 @@
 }
 
 .pulse-donate::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -333,7 +380,9 @@
   will-change: transform, opacity;
   display: inline-block;
   vertical-align: middle;
-  transition: transform 220ms ease, opacity 150ms ease;
+  transition:
+    transform 220ms ease,
+    opacity 150ms ease;
 }
 
 /* Hide original white heart outline temporarily when red heart is popping */
@@ -343,11 +392,14 @@
 
 /* 3. Orange Button Glow Breathe Keyframes */
 @keyframes orange-glow-breathe {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
   }
   50% {
-    box-shadow: 0 10px 30px rgba(255, 138, 0, 0.30), 0 0 0 4px rgba(255, 138, 0, 0.08);
+    box-shadow:
+      0 10px 30px rgba(255, 138, 0, 0.3),
+      0 0 0 4px rgba(255, 138, 0, 0.08);
   }
 }
 
@@ -375,7 +427,8 @@
   position: absolute;
   pointer-events: none;
   font-size: 11px;
-  animation: header-float-heart 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: header-float-heart 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
   opacity: 0;
   z-index: 10;
 }
@@ -424,7 +477,7 @@
     border-bottom: none !important;
     z-index: 999999 !important;
   }
-  
+
   /* Disable page scrolling on html & body wrapper while menu is open */
   html.html-menu-open,
   html.html-menu-open body {
@@ -433,27 +486,29 @@
     height: 100dvh !important;
     position: relative !important;
   }
-  
+
   .nav-menu-brand {
     display: flex !important;
   }
   .nav-menu {
     position: fixed !important;
     inset: 0 !important;
-    background-color: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(24px) !important;
-    -webkit-backdrop-filter: blur(24px) !important;
+    background-color: #ffffff !important;
     z-index: 2500 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     gap: var(--space-4) !important;
-    padding: calc(var(--space-10) + env(safe-area-inset-top, 24px)) var(--space-6) var(--space-6) !important;
+    padding: calc(var(--space-10) + env(safe-area-inset-top, 24px))
+      var(--space-6) var(--space-6) !important;
     transform: translateY(-100%) !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease, visibility 300ms !important;
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 300ms ease,
+      visibility 300ms !important;
     overflow-y: auto !important;
   }
   .nav-menu.is-active {
@@ -579,14 +634,18 @@
     align-self: center !important;
   }
 
-  .hero-entrance-title, .text-display, h1 {
+  .hero-entrance-title,
+  .text-display,
+  h1 {
     order: 2 !important;
     font-size: clamp(1.8rem, 5vw + 1.2rem, 2.4rem) !important;
     line-height: 1.2 !important;
     text-align: center !important;
   }
 
-  .hero-entrance-desc, .text-story, p {
+  .hero-entrance-desc,
+  .text-story,
+  p {
     order: 3 !important;
     font-size: 16px !important;
     line-height: 1.6 !important;
@@ -594,7 +653,8 @@
     margin: 0 auto !important;
   }
 
-  .hero-entrance-btns, .btn-group {
+  .hero-entrance-btns,
+  .btn-group {
     order: 4 !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
@@ -624,7 +684,7 @@
     order: 6 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;           /* tight gap between the two cards */
+    gap: 12px !important; /* tight gap between the two cards */
     margin: var(--space-5) auto !important;
     width: 100% !important;
     max-width: 340px !important;
@@ -648,7 +708,7 @@
     margin: var(--space-5) auto !important;
     width: 100% !important;
     max-width: 340px !important;
-    border-top: none !important;  /* remove the desktop border-top */
+    border-top: none !important; /* remove the desktop border-top */
     padding-top: 0 !important;
     margin-top: var(--space-5) !important;
   }

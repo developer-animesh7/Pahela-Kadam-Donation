@@ -15,3 +15,8 @@ Thumbs.db
 # Scratch directory
 scratch/
 
+# Node dependencies
+node_modules/
+
+# Extracted gallery images (temp)
+assets/images/gallery_extracted/
