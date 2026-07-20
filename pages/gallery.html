@@ -1142,23 +1142,21 @@
         z-index: 5;
         padding: var(--space-4);
         text-align: center;
-        border: 1px dashed rgba(37, 99, 235, 0.25);
+        border: 1px dashed rgba(203, 213, 225, 0.4);
         animation: filterIn 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
       .fallback-icon {
-        color: var(--primary);
+        color: #cbd5e1;
         display: grid;
         place-items: center;
-        background: rgba(37, 99, 235, 0.08);
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.05);
+        background: transparent;
+        width: 80px;
+        height: 80px;
       }
       .fallback-text {
         font-size: 11px;
-        font-weight: 800;
-        color: var(--primary-dark);
+        font-weight: 600;
+        color: #94a3b8;
         text-transform: uppercase;
         letter-spacing: 0.06em;
       }
@@ -1221,89 +1219,7 @@
           >
             <div class="coverflow-viewport" id="coverflowViewport">
               <div class="coverflow-track" id="coverflowTrack">
-                <!-- Slide 1: Cafe Inauguration -->
-                <div
-                  class="coverflow-slide"
-                  data-title="Nayi Udaan Cafe Launched by Adani Group"
-                  data-desc="Shri Gautam Adani inaugurating the vocational training cafe managed entirely by special needs students."
-                >
-                  <img
-                    src="../assets/images/gallery/journey_inauguration_1.png"
-                    alt="Gautam Adani Inaugurates Cafe"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-
-                <!-- Slide 2: Anita Agarwal Founder -->
-                <div
-                  class="coverflow-slide"
-                  data-title="Founder's Visionary Journey"
-                  data-desc="Anita Agarwal Mam, founder of Pahela Kadam School, coordinating special child progress."
-                >
-                  <img
-                    src="../assets/images/gallery/journey_anita_mam_1.png"
-                    alt="Anita Agarwal Founder"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-
-                <!-- Slide 3: Meeting President of India -->
-                <div
-                  class="coverflow-slide"
-                  data-title="Presidential Honor"
-                  data-desc="Founder Anita Agarwal receiving appreciation from the Honorable President of India, Smt. Droupadi Murmu."
-                >
-                  <img
-                    src="../assets/images/founder/with president.png"
-                    alt="Founder with President of India"
-                    fetchpriority="high"
-                    decoding="async"
-                  />
-                </div>
-
-                <!-- Slide 4: Structured Classrooms -->
-                <div
-                  class="coverflow-slide"
-                  data-title="Special Education Classrooms"
-                  data-desc="Stimulating classroom environments customized for autistic and developmental needs."
-                >
-                  <img
-                    src="../assets/images/gallery/report_classroom_4.png"
-                    alt="Classroom activities"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-
-                <!-- Slide 5: Pediatric Rehabilitation -->
-                <div
-                  class="coverflow-slide"
-                  data-title="Clinical Therapy Consultation"
-                  data-desc="One-on-one pediatric diagnosis and personalized occupational therapy guidance."
-                >
-                  <img
-                    src="../assets/images/gallery/journey_camp_6.png"
-                    alt="Therapy Camp"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-
-                <!-- Slide 6: Community Inclusion Rallies -->
-                <div
-                  class="coverflow-slide"
-                  data-title="Inclusion Sports Day Celebration"
-                  data-desc="Promoting physical sports activities, inclusion rallies, and child motor coordination milestones."
-                >
-                  <img
-                    src="../assets/images/gallery/journey_event_4.png"
-                    alt="Inclusion Sports Day"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+                <!-- Cover flow slides are dynamically loaded by js/firebase-content.js -->
               </div>
 
               <!-- Navigation Controls -->
@@ -1400,1039 +1316,9 @@
             </button>
           </div>
 
-          <!-- Bento Box Gallery Grid (24 Items) -->
+          <!-- Bento Box Gallery Grid (Dynamic - loaded from Firebase) -->
           <div class="gallery-grid" id="galleryGrid">
-            <!-- Item 1: Cafe (BENTO WIDE) -->
-            <div
-              class="gallery-item show bento-wide"
-              style="animation-delay: 0ms"
-              data-category="cafe"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Nayi Udaan Cafe</span>
-                <img
-                  src="../assets/images/gallery/inauguration_adani_1.jpg"
-                  alt="Shri Gautam Adani inaugurating the cafe"
-                  loading="eager"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Cafe Ribbon Cutting</h3>
-                <p>
-                  Official inauguration ceremony of Nayi Udaan Cafe by the Adani
-                  Group representatives.
-                </p>
-                <span>December 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 2: Cafe -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 50ms"
-              data-category="cafe"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Nayi Udaan Cafe</span>
-                <img
-                  src="../assets/images/gallery/inauguration_adani_2.jpg"
-                  alt="Special kids managing the cafe counter"
-                  loading="eager"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Vocational Hospitality</h3>
-                <p>
-                  Special needs students training in billing, cooking, and
-                  service behind the counter.
-                </p>
-                <span>December 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 3: Cafe -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 100ms"
-              data-category="cafe"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Nayi Udaan Cafe</span>
-                <img
-                  src="../assets/images/gallery/journey_inauguration_1.png"
-                  alt="Shri Gautam Adani interacting with special kids at the inauguration"
-                  loading="eager"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Interactive Mentorship</h3>
-                <p>
-                  Shri Gautam Adani sharing inspiring conversations at the cafe
-                  counter.
-                </p>
-                <span>December 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 4: Activities (BENTO TALL) -->
-            <div
-              class="gallery-item show bento-tall"
-              style="animation-delay: 150ms"
-              data-category="activities"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">School Activities</span>
-                <img
-                  src="../assets/images/gallery/report_classroom_1.png"
-                  alt="Structured classroom learning session for autistic students"
-                  loading="eager"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Special Education Classes</h3>
-                <p>
-                  Classroom environments styled to support sensory needs,
-                  cognitive education, and social skills.
-                </p>
-                <span>January 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 5: Activities -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 200ms"
-              data-category="activities"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">School Activities</span>
-                <img
-                  src="../assets/images/gallery/journey_classroom_2.jpeg"
-                  alt="Special kids learning drawing and art"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Art &amp; Creative Therapy</h3>
-                <p>
-                  Drawing sessions designed to improve visual coordination and
-                  creative expression.
-                </p>
-                <span>March 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 6: Activities -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 250ms"
-              data-category="activities"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">School Activities</span>
-                <img
-                  src="../assets/images/gallery/journey_classroom_3.jpeg"
-                  alt="Classroom computer training and adaptive tools"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Digital Literacy Training</h3>
-                <p>
-                  Basic computer operations, typing, and digital play for
-                  special kids.
-                </p>
-                <span>May 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 7: Activities -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 300ms"
-              data-category="activities"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">School Activities</span>
-                <img
-                  src="../assets/images/gallery/journey_classroom_4.jpeg"
-                  alt="Vocational candle and craft making session"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Handicraft Workshops</h3>
-                <p>
-                  Training sessions for candle making, diya painting, and paper
-                  crafts.
-                </p>
-                <span>September 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 8: Activities -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 350ms"
-              data-category="activities"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">School Activities</span>
-                <img
-                  src="../assets/images/gallery/report_classroom_6.jpeg"
-                  alt="Group classroom session with teaching aids"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Special Educator Guidance</h3>
-                <p>
-                  Interactive group sessions using tactile puzzles and visual
-                  models to support learning.
-                </p>
-                <span>July 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 9: Activities (BENTO WIDE) -->
-            <div
-              class="gallery-item show bento-wide"
-              style="animation-delay: 400ms"
-              data-category="activities"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">School Activities</span>
-                <img
-                  src="../assets/images/gallery/report_classroom_4.png"
-                  alt="Special child solving adaptive learning puzzle"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Cognitive Milestones</h3>
-                <p>
-                  One-on-one sessions helping children with cerebral palsy build
-                  motor-visual coordination.
-                </p>
-                <span>July 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 10: Events -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 450ms"
-              data-category="events"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Events &amp; Rallies</span>
-                <img
-                  src="../assets/images/gallery/rally_1.jpg"
-                  alt="International Day of Persons with Disabilities awareness rally"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Awareness Rallies</h3>
-                <p>
-                  Marching on public roads in Dhanbad to promote inclusion and
-                  accessibility.
-                </p>
-                <span>December 2024</span>
-              </div>
-            </div>
-
-            <!-- Item 11: Events -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 500ms"
-              data-category="events"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Events &amp; Rallies</span>
-                <img
-                  src="../assets/images/gallery/rally_2.jpg"
-                  alt="Badhte Kadam awareness campaign street rally"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Badhte Kadam Drive</h3>
-                <p>
-                  Collaborative awareness drive promoting social integration of
-                  neurodivergent children.
-                </p>
-                <span>December 2024</span>
-              </div>
-            </div>
-
-            <!-- Item 12: Events (BENTO TALL) -->
-            <div
-              class="gallery-item show bento-tall"
-              style="animation-delay: 550ms"
-              data-category="events"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Events &amp; Rallies</span>
-                <img
-                  src="../assets/images/gallery/journey_event_2.jpeg"
-                  alt="Special children participating in sports meets"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Parasports Championships</h3>
-                <p>
-                  Special athletes participating in state sports championships,
-                  earning medals.
-                </p>
-                <span>February 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 13: Events -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 600ms"
-              data-category="events"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Events &amp; Rallies</span>
-                <img
-                  src="../assets/images/gallery/report_event_3.jpeg"
-                  alt="Celebration of national days with flag hoisting"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Republic Day Celebration</h3>
-                <p>
-                  Students and staff gathered for the national flag hoisting
-                  ceremony.
-                </p>
-                <span>January 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 14: Events -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 650ms"
-              data-category="events"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Events &amp; Rallies</span>
-                <img
-                  src="../assets/images/gallery/journey_event_4.png"
-                  alt="Public community event for special children support"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Community Inclusion Drive</h3>
-                <p>
-                  Public outreach programs hosting local advocates, doctors, and
-                  CSR sponsors.
-                </p>
-                <span>August 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 15: Camps -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 700ms"
-              data-category="camps"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Therapy &amp; Camps</span>
-                <img
-                  src="../assets/images/gallery/health_camp_1.jpg"
-                  alt="Annual pediatric health checkup and assessment camp"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Pediatric Health Screening</h3>
-                <p>
-                  Free diagnostic health screening and medication distribution
-                  camp.
-                </p>
-                <span>November 2024</span>
-              </div>
-            </div>
-
-            <!-- Item 16: Camps -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 750ms"
-              data-category="camps"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Therapy &amp; Camps</span>
-                <img
-                  src="../assets/images/gallery/health_camp_2.jpg"
-                  alt="Physical assessment and clinical diagnosis camp"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Orthopedic Assessment</h3>
-                <p>
-                  Evaluation of motor-abilities and distribution of custom
-                  braces.
-                </p>
-                <span>November 2024</span>
-              </div>
-            </div>
-
-            <!-- Item 17: Camps (BENTO WIDE) -->
-            <div
-              class="gallery-item show bento-wide"
-              style="animation-delay: 800ms"
-              data-category="camps"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Therapy &amp; Camps</span>
-                <img
-                  src="../assets/images/gallery/report_therapy_1.jpeg"
-                  alt="Physiotherapy and motor-rehabilitation session"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Clinical Physiotherapy</h3>
-                <p>
-                  One-on-one motor rehabilitation training to build body posture
-                  and balance control.
-                </p>
-                <span>July 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 18: Camps -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 850ms"
-              data-category="camps"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Therapy &amp; Camps</span>
-                <img
-                  src="../assets/images/gallery/journey_camp_2.png"
-                  alt="Clinical therapeutic assessment session"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Occupational Assessment</h3>
-                <p>
-                  Sensory integration assessments conducted by certified
-                  therapists.
-                </p>
-                <span>April 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 19: Camps -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 900ms"
-              data-category="camps"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Therapy &amp; Camps</span>
-                <img
-                  src="../assets/images/gallery/journey_camp_6.png"
-                  alt="Outreach therapy diagnosis session"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Speech Therapy Session</h3>
-                <p>
-                  Advanced diagnostic checks and vocal exercises designed to
-                  support language.
-                </p>
-                <span>April 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 20: Camps -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 950ms"
-              data-category="camps"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Therapy &amp; Camps</span>
-                <img
-                  src="../assets/images/gallery/report_therapy_2.png"
-                  alt="Standing frame physiotherapy exercise"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Standing Posture Therapy</h3>
-                <p>
-                  Using supportive standing frames and balancing boards to
-                  develop spinal strength.
-                </p>
-                <span>June 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 21: Festivals (BENTO TALL) -->
-            <div
-              class="gallery-item show bento-tall"
-              style="animation-delay: 1000ms"
-              data-category="festivals"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Festivals</span>
-                <img
-                  src="../assets/images/gallery/christmas_2024_1.jpg"
-                  alt="Christmas celebrations and gifts distribution"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Christmas Celebration</h3>
-                <p>
-                  Special festival party with toy and sweet gift distributions
-                  to bring joy.
-                </p>
-                <span>December 2024</span>
-              </div>
-            </div>
-
-            <!-- Item 22: Festivals -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 1050ms"
-              data-category="festivals"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Festivals</span>
-                <img
-                  src="../assets/images/gallery/christmas_2024_2.jpg"
-                  alt="Dressing up as Santa Claus and festive dance performances"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Festive Dance &amp; Plays</h3>
-                <p>
-                  Students dressed up as Santa Claus performing holiday songs
-                  and skits.
-                </p>
-                <span>December 2024</span>
-              </div>
-            </div>
-
-            <!-- Item 23: Festivals -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 1100ms"
-              data-category="festivals"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Festivals</span>
-                <img
-                  src="../assets/images/gallery/report_activity_1.jpeg"
-                  alt="Holi festival celebrations with organic colors"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Holi Festival of Colors</h3>
-                <p>
-                  Celebrating Holi using safe, organic colors and sharing
-                  festive dry-fruit snacks.
-                </p>
-                <span>March 2025</span>
-              </div>
-            </div>
-
-            <!-- Item 24: Festivals -->
-            <div
-              class="gallery-item show"
-              style="animation-delay: 1150ms"
-              data-category="festivals"
-            >
-              <div class="gallery-card-img-wrap">
-                <span class="card-category-tag">Festivals</span>
-                <img
-                  src="../assets/images/gallery/report_activity_2.jpeg"
-                  alt="Diwali festival celebrations and lighting of clay lamps"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                <div class="expand-indicator">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                  </svg>
-                </div>
-              </div>
-              <div class="gallery-card-content">
-                <h3>Diwali Lamp Lighting</h3>
-                <p>
-                  Students decorating school boundaries with hand-painted clay
-                  lamps.
-                </p>
-                <span>October 2025</span>
-              </div>
-            </div>
+            <!-- Gallery items are dynamically loaded by js/firebase-content.js -->
           </div>
 
           <!-- Stats Counter Panel (Relocated to Bottom & Animated) -->
@@ -2554,6 +1440,7 @@
     <script src="../js/component-loader.js"></script>
     <script src="../js/animations.js"></script>
     <script src="../js/app.js"></script>
+    <script type="module" src="../js/firebase-content.js"></script>
 
     <!-- Interactive Filtering & Lightbox Pagination -->
     <script>
@@ -2594,7 +1481,7 @@
         placeholder.className = "image-fallback-placeholder";
         placeholder.innerHTML = `
         <div class="fallback-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
             <line x1="21" y1="21" x2="3" y2="3"></line>
             <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -2602,41 +1489,7 @@
           </svg>
         </div>
         <span class="fallback-text">Failed to Load</span>
-        <button class="btn-retry-image">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
-            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
-          </svg>
-          <span style="vertical-align:middle;">Retry</span>
-        </button>
       `;
-
-        // Prevent parent gallery item click from firing when clicking the retry button
-        const retryBtn = placeholder.querySelector(".btn-retry-image");
-        retryBtn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          e.preventDefault();
-
-          // Update UI
-          retryBtn.disabled = true;
-          retryBtn.querySelector("span").textContent = "Loading...";
-
-          // Add cache buster and attempt reload
-          const originalSrc = img.src.split("?")[0];
-          img.src = `${originalSrc}?t=${Date.now()}`;
-
-          img.onload = function () {
-            // Success: remove placeholder and show image
-            placeholder.remove();
-            img.style.display = "";
-            img.removeAttribute("data-failed");
-          };
-
-          img.onerror = function () {
-            // Failure: restore button state for another attempt
-            retryBtn.disabled = false;
-            retryBtn.querySelector("span").textContent = "Retry";
-          };
-        });
 
         wrap.appendChild(placeholder);
       }
@@ -2644,221 +1497,218 @@
       document.addEventListener("DOMContentLoaded", () => {
         /* ======================================================
          3D COVER FLOW SYSTEM INTERACTION LOGIC
+         Extracted as global function so it can be called
+         after slides are dynamically loaded from Firebase.
       ====================================================== */
-        const cfTrack = document.getElementById("coverflowTrack");
-        const cfSlides = Array.from(
-          document.querySelectorAll(".coverflow-slide"),
-        );
-        const cfPrevBtn = document.getElementById("coverflowPrev");
-        const cfNextBtn = document.getElementById("coverflowNext");
-        const cfTitle = document.getElementById("coverflowTitle");
-        const cfDesc = document.getElementById("coverflowDesc");
+        window.initCoverflow = function () {
+          const cfTrack = document.getElementById("coverflowTrack");
+          if (!cfTrack) return;
+          const cfSlides = Array.from(
+            document.querySelectorAll(".coverflow-slide"),
+          );
+          if (cfSlides.length === 0) return;
+          const cfPrevBtn = document.getElementById("coverflowPrev");
+          const cfNextBtn = document.getElementById("coverflowNext");
+          const cfTitle = document.getElementById("coverflowTitle");
+          const cfDesc = document.getElementById("coverflowDesc");
 
-        let cfActiveIndex = 2; // start on the 3rd slide (President Smt. Droupadi Murmu visit)
+          let cfActiveIndex = Math.min(2, cfSlides.length - 1);
 
-        const updateCoverflow = () => {
-          cfSlides.forEach((slide, idx) => {
-            let offset = idx - cfActiveIndex;
+          const updateCoverflow = () => {
+            cfSlides.forEach((slide, idx) => {
+              let offset = idx - cfActiveIndex;
 
-            // Normalized circular offset for visual looping (exactly 2 cards visible on both sides)
-            const N = cfSlides.length;
-            offset = ((((offset + 3) % N) + N) % N) - 3;
+              const N = cfSlides.length;
+              offset = ((((offset + 3) % N) + N) % N) - 3;
 
-            let transformStr = "";
-            let filterStr = "";
-            let opacityVal = 1;
-            let zIndexVal = 10 - Math.abs(offset);
+              let transformStr = "";
+              let filterStr = "";
+              let opacityVal = 1;
+              let zIndexVal = 10 - Math.abs(offset);
 
-            // Toggle active class to manage dark overlay opacity in CSS
-            slide.classList.toggle("is-active", idx === cfActiveIndex);
+              slide.classList.toggle("is-active", idx === cfActiveIndex);
 
-            if (offset === 0) {
-              transformStr = `translate3d(0, 0, 160px) rotateY(0deg) scale(1.05)`;
-              filterStr = "blur(0px)";
-              opacityVal = 1;
-            } else if (offset === 1 || offset === 2) {
-              transformStr = `translate3d(${180 + offset * 90}px, 0, -120px) rotateY(-55deg)`;
-              filterStr = "blur(4px)";
-              opacityVal = offset === 1 ? 0.9 : 0.45;
-            } else if (offset === -1 || offset === -2) {
-              transformStr = `translate3d(${-180 + offset * 90}px, 0, -120px) rotateY(55deg)`;
-              filterStr = "blur(4px)";
-              opacityVal = offset === -1 ? 0.9 : 0.45;
-            } else {
-              // Invisible far background card (6th card)
-              transformStr = `translate3d(0, 0, -200px) scale(0.8)`;
-              filterStr = "blur(8px)";
-              opacityVal = 0;
+              if (offset === 0) {
+                transformStr = `translate3d(0, 0, 160px) rotateY(0deg) scale(1.05)`;
+                filterStr = "blur(0px)";
+                opacityVal = 1;
+              } else if (offset === 1 || offset === 2) {
+                transformStr = `translate3d(${180 + offset * 90}px, 0, -120px) rotateY(-55deg)`;
+                filterStr = "blur(4px)";
+                opacityVal = offset === 1 ? 0.9 : 0.45;
+              } else if (offset === -1 || offset === -2) {
+                transformStr = `translate3d(${-180 + offset * 90}px, 0, -120px) rotateY(55deg)`;
+                filterStr = "blur(4px)";
+                opacityVal = offset === -1 ? 0.9 : 0.45;
+              } else {
+                transformStr = `translate3d(0, 0, -200px) scale(0.8)`;
+                filterStr = "blur(8px)";
+                opacityVal = 0;
+              }
+
+              slide.style.transform = transformStr;
+              slide.style.filter = filterStr;
+              slide.style.opacity = opacityVal;
+              slide.style.zIndex = zIndexVal;
+            });
+
+            const activeSlide = cfSlides[cfActiveIndex];
+            if (activeSlide) {
+              cfTitle.style.opacity = 0;
+              cfDesc.style.opacity = 0;
+              setTimeout(() => {
+                cfTitle.textContent = activeSlide.getAttribute("data-title");
+                cfDesc.textContent = activeSlide.getAttribute("data-desc");
+                cfTitle.style.opacity = 1;
+                cfDesc.style.opacity = 1;
+              }, 150);
             }
+          };
 
-            slide.style.transform = transformStr;
-            slide.style.filter = filterStr;
-            slide.style.opacity = opacityVal;
-            slide.style.zIndex = zIndexVal;
-          });
-
-          // Update captions with smooth fade
-          const activeSlide = cfSlides[cfActiveIndex];
-          if (activeSlide) {
-            cfTitle.style.opacity = 0;
-            cfDesc.style.opacity = 0;
-            setTimeout(() => {
-              cfTitle.textContent = activeSlide.getAttribute("data-title");
-              cfDesc.textContent = activeSlide.getAttribute("data-desc");
-              cfTitle.style.opacity = 1;
-              cfDesc.style.opacity = 1;
-            }, 150);
-          }
-        };
-
-        // Auto-play / swap timer system (Forward auto-swap direction & faster speed)
-        let autoPlayInterval = setInterval(() => {
-          cfActiveIndex =
-            (cfActiveIndex - 1 + cfSlides.length) % cfSlides.length;
-          updateCoverflow();
-        }, 2600);
-
-        const resetAutoPlay = () => {
-          clearInterval(autoPlayInterval);
-          autoPlayInterval = setInterval(() => {
+          let autoPlayInterval = setInterval(() => {
             cfActiveIndex =
               (cfActiveIndex - 1 + cfSlides.length) % cfSlides.length;
             updateCoverflow();
           }, 2600);
-        };
 
-        // Initial call
-        updateCoverflow();
-
-        // Pause auto-play when tab is not visible (saves CPU/GPU)
-        document.addEventListener("visibilitychange", () => {
-          if (document.hidden) {
+          const resetAutoPlay = () => {
             clearInterval(autoPlayInterval);
-          } else {
-            resetAutoPlay();
-          }
-        });
-
-        // Click to transition (aligned with the auto-play direction)
-        cfPrevBtn.addEventListener("click", () => {
-          resetAutoPlay();
-          if (cfActiveIndex < cfSlides.length - 1) {
-            cfActiveIndex++;
-          } else {
-            cfActiveIndex = 0; // loop to first
-          }
-          updateCoverflow();
-        });
-
-        cfNextBtn.addEventListener("click", () => {
-          resetAutoPlay();
-          if (cfActiveIndex > 0) {
-            cfActiveIndex--;
-          } else {
-            cfActiveIndex = cfSlides.length - 1; // loop to last
-          }
-          updateCoverflow();
-        });
-
-        // Direct slide click
-        cfSlides.forEach((slide, idx) => {
-          slide.addEventListener("click", (e) => {
-            if (idx !== cfActiveIndex) {
-              e.stopPropagation();
-              resetAutoPlay();
-              cfActiveIndex = idx;
+            autoPlayInterval = setInterval(() => {
+              cfActiveIndex =
+                (cfActiveIndex - 1 + cfSlides.length) % cfSlides.length;
               updateCoverflow();
+            }, 2600);
+          };
+
+          updateCoverflow();
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+              clearInterval(autoPlayInterval);
+            } else {
+              resetAutoPlay();
             }
           });
-        });
 
-        // Dragging physics
-        let isDragging = false;
-        let startX = 0;
-        let currentX = 0;
-
-        const handleDragStart = (e) => {
-          isDragging = true;
-          resetAutoPlay();
-          startX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
-        };
-
-        const handleDragMove = (e) => {
-          if (!isDragging) return;
-          currentX = e.type.includes("touch")
-            ? e.touches[0].clientX
-            : e.clientX;
-          const diffX = currentX - startX;
-
-          if (Math.abs(diffX) > 60) {
+          cfPrevBtn.addEventListener("click", () => {
             resetAutoPlay();
-            if (diffX > 0) {
-              // Drag right: show previous slide (index increases to go chronologically backward)
-              if (cfActiveIndex < cfSlides.length - 1) {
-                cfActiveIndex++;
-              } else {
-                cfActiveIndex = 0;
-              }
-              startX = currentX;
-              updateCoverflow();
-            } else if (diffX < 0) {
-              // Drag left: show next slide (index decreases to go chronologically forward)
-              if (cfActiveIndex > 0) {
-                cfActiveIndex--;
-              } else {
-                cfActiveIndex = cfSlides.length - 1;
-              }
-              startX = currentX;
-              updateCoverflow();
+            if (cfActiveIndex < cfSlides.length - 1) {
+              cfActiveIndex++;
+            } else {
+              cfActiveIndex = 0;
             }
-          }
-        };
+            updateCoverflow();
+          });
 
-        const handleDragEnd = () => {
-          isDragging = false;
-        };
-
-        cfTrack.addEventListener("mousedown", handleDragStart);
-        cfTrack.addEventListener("mousemove", handleDragMove);
-        window.addEventListener("mouseup", handleDragEnd);
-
-        cfTrack.addEventListener("touchstart", handleDragStart, {
-          passive: true,
-        });
-        cfTrack.addEventListener("touchmove", handleDragMove, {
-          passive: true,
-        });
-        window.addEventListener("touchend", handleDragEnd);
-
-        // Keyboard support
-        document.addEventListener("keydown", (e) => {
-          const lightboxActive = document
-            .getElementById("lightboxOverlay")
-            .classList.contains("is-active");
-          if (!lightboxActive) {
-            if (e.key === "ArrowLeft") {
-              resetAutoPlay();
-              if (cfActiveIndex < cfSlides.length - 1) {
-                cfActiveIndex++;
-              } else {
-                cfActiveIndex = 0;
-              }
-              updateCoverflow();
-            } else if (e.key === "ArrowRight") {
-              resetAutoPlay();
-              if (cfActiveIndex > 0) {
-                cfActiveIndex--;
-              } else {
-                cfActiveIndex = cfSlides.length - 1;
-              }
-              updateCoverflow();
+          cfNextBtn.addEventListener("click", () => {
+            resetAutoPlay();
+            if (cfActiveIndex > 0) {
+              cfActiveIndex--;
+            } else {
+              cfActiveIndex = cfSlides.length - 1;
             }
-          }
-        });
+            updateCoverflow();
+          });
+
+          cfSlides.forEach((slide, idx) => {
+            slide.addEventListener("click", (e) => {
+              if (idx !== cfActiveIndex) {
+                e.stopPropagation();
+                resetAutoPlay();
+                cfActiveIndex = idx;
+                updateCoverflow();
+              }
+            });
+          });
+
+          let isDragging = false;
+          let startX = 0;
+          let currentX = 0;
+
+          const handleDragStart = (e) => {
+            isDragging = true;
+            resetAutoPlay();
+            startX = e.type.includes("touch")
+              ? e.touches[0].clientX
+              : e.clientX;
+          };
+
+          const handleDragMove = (e) => {
+            if (!isDragging) return;
+            currentX = e.type.includes("touch")
+              ? e.touches[0].clientX
+              : e.clientX;
+            const diffX = currentX - startX;
+
+            if (Math.abs(diffX) > 60) {
+              resetAutoPlay();
+              if (diffX > 0) {
+                if (cfActiveIndex < cfSlides.length - 1) {
+                  cfActiveIndex++;
+                } else {
+                  cfActiveIndex = 0;
+                }
+                startX = currentX;
+                updateCoverflow();
+              } else if (diffX < 0) {
+                if (cfActiveIndex > 0) {
+                  cfActiveIndex--;
+                } else {
+                  cfActiveIndex = cfSlides.length - 1;
+                }
+                startX = currentX;
+                updateCoverflow();
+              }
+            }
+          };
+
+          const handleDragEnd = () => {
+            isDragging = false;
+          };
+
+          cfTrack.addEventListener("mousedown", handleDragStart);
+          cfTrack.addEventListener("mousemove", handleDragMove);
+          window.addEventListener("mouseup", handleDragEnd);
+
+          cfTrack.addEventListener("touchstart", handleDragStart, {
+            passive: true,
+          });
+          cfTrack.addEventListener("touchmove", handleDragMove, {
+            passive: true,
+          });
+          window.addEventListener("touchend", handleDragEnd);
+
+          document.addEventListener("keydown", (e) => {
+            const lightboxActive = document
+              .getElementById("lightboxOverlay")
+              .classList.contains("is-active");
+            if (!lightboxActive) {
+              if (e.key === "ArrowLeft") {
+                resetAutoPlay();
+                if (cfActiveIndex < cfSlides.length - 1) {
+                  cfActiveIndex++;
+                } else {
+                  cfActiveIndex = 0;
+                }
+                updateCoverflow();
+              } else if (e.key === "ArrowRight") {
+                resetAutoPlay();
+                if (cfActiveIndex > 0) {
+                  cfActiveIndex--;
+                } else {
+                  cfActiveIndex = cfSlides.length - 1;
+                }
+                updateCoverflow();
+              }
+            }
+          });
+        };
 
         const filters = document.querySelectorAll(".filter-btn");
-        const items = document.querySelectorAll(".gallery-item");
         const grid = document.getElementById("galleryGrid");
+
+        // Dynamic items query — re-queried each time since content loads from Firebase
+        const getItems = () => document.querySelectorAll(".gallery-item");
 
         // JS-based Sticky Filter Bar (uses position:fixed to bypass CSS sticky ancestor issues)
         const filterWrapper = document.querySelector(".filter-wrapper");
@@ -2971,7 +1821,7 @@
 
             // Show/Hide items with staggered entrance animation
             let visibleIndex = 0;
-            items.forEach((item) => {
+            getItems().forEach((item) => {
               const itemCat = item.getAttribute("data-category");
               if (category === "all" || itemCat === category) {
                 item.classList.remove("hide");
@@ -3042,7 +1892,7 @@
 
         // Get list of currently displayed (visible) items
         const updateActiveItems = () => {
-          activeFilteredItems = Array.from(items).filter(
+          activeFilteredItems = Array.from(getItems()).filter(
             (item) => !item.classList.contains("hide"),
           );
         };
@@ -3061,24 +1911,31 @@
 
           lightboxImg.src = img.src;
           lightboxImg.alt = img.alt;
-          lightboxTag.textContent = tag.textContent;
-          lightboxDate.textContent = date.textContent;
-          lightboxTitle.textContent = title.textContent;
-          lightboxDesc.textContent = desc.textContent;
+          lightboxTag.textContent = tag ? tag.textContent : "";
+          lightboxDate.textContent = date ? date.textContent : "";
+          lightboxTitle.textContent = title ? title.textContent : "";
+          lightboxDesc.textContent = desc ? desc.textContent : "";
         };
 
-        // Open Lightbox
-        items.forEach((item) => {
-          item.addEventListener("click", () => {
-            updateActiveItems();
-            const itemIdx = activeFilteredItems.indexOf(item);
-            populateLightbox(itemIdx);
+        // Open Lightbox — attach click handlers to dynamically loaded items
+        window.initGalleryLightbox = function () {
+          getItems().forEach((item) => {
+            if (item.dataset.lightboxBound) return;
+            item.dataset.lightboxBound = "true";
+            item.addEventListener("click", () => {
+              updateActiveItems();
+              const itemIdx = activeFilteredItems.indexOf(item);
+              populateLightbox(itemIdx);
 
-            lightbox.classList.add("is-active");
-            lightbox.setAttribute("aria-hidden", "false");
-            document.body.style.overflow = "hidden";
+              lightbox.classList.add("is-active");
+              lightbox.setAttribute("aria-hidden", "false");
+              document.body.style.overflow = "hidden";
+            });
           });
-        });
+        };
+
+        // Initial lightbox binding (for any items present at load)
+        window.initGalleryLightbox();
 
         // Close Lightbox
         const closeLightbox = () => {

@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel (DEMO) | Pahela Kadam School</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/images/logos/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="./admin.css" />
+    <style>
+      .demo-banner {
+        background: #fef3c7;
+        border-bottom: 1px solid #fcd34d;
+        padding: 6px 16px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: #92400e;
+      }
+      .demo-clear-btn {
+        margin-left: 12px;
+        padding: 3px 10px;
+        background: #fee2e2;
+        border: 1px solid #fecaca;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #dc2626;
+        cursor: pointer;
+      }
+      .demo-clear-btn:hover {
+        background: #dc2626;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- DEMO BANNER -->
+    <div class="demo-banner">
+      DEMO MODE — Data stored in localStorage, no Firebase needed.
+      <button class="demo-clear-btn" onclick="window.adminAPI.clearDemoData()">
+        Clear All Demo Data
+      </button>
+    </div>
+
+    <!-- ============ LOGIN VIEW ============ -->
+    <div id="login-view" class="admin-login-view">
+      <div class="admin-login-card">
+        <img
+          src="../assets/images/logos/PAHELA KADAM.png"
+          alt="Pahela Kadam Logo"
+          class="admin-login-logo"
+          onerror="this.style.display = 'none'"
+        />
+        <h1>Admin Panel (Demo)</h1>
+        <p>
+          Click below to enter demo mode. No Google account or Firebase needed.
+          Data is saved in your browser's localStorage.
+        </p>
+        <button
+          class="admin-google-btn"
+          onclick="window.adminAPI.handleGoogleLogin()"
+        >
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google logo"
+          />
+          <span>Enter Demo Mode</span>
+        </button>
+        <div
+          id="login-error"
+          class="admin-login-error"
+          style="display: none"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ============ DASHBOARD VIEW ============ -->
+    <div id="dashboard-view" class="admin-dashboard-view">
+      <!-- Header -->
+      <div class="admin-header">
+        <div class="admin-header-left">
+          <img
+            src="../assets/images/logos/PAHELA KADAM.png"
+            alt="Logo"
+            onerror="this.style.display = 'none'"
+          />
+          <h2>Content Admin (Demo)</h2>
+        </div>
+        <div class="admin-header-right">
+          <div class="admin-user-info">
+            <img
+              id="admin-avatar"
+              src=""
+              alt="Avatar"
+              referrerpolicy="no-referrer"
+            />
+            <span id="admin-email"></span>
+          </div>
+          <button
+            class="admin-logout-btn"
+            onclick="window.adminAPI.handleLogout()"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <button
+          class="tab-btn active"
+          data-tab="gallery"
+          onclick="window.adminAPI.switchTab('gallery')"
+        >
+          Gallery
+        </button>
+        <button
+          class="tab-btn"
+          data-tab="campaigns"
+          onclick="window.adminAPI.switchTab('campaigns')"
+        >
+          Campaigns
+        </button>
+        <button
+          class="tab-btn"
+          data-tab="contact"
+          onclick="window.adminAPI.switchTab('contact')"
+        >
+          Contact
+        </button>
+        <button
+          class="tab-btn"
+          data-tab="internship"
+          onclick="window.adminAPI.switchTab('internship')"
+        >
+          Internship
+        </button>
+      </div>
+
+      <!-- Gallery Tab -->
+      <div id="tab-gallery" class="tab-panel">
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openGalleryAdd()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Gallery Item
+        </button>
+        <button
+          class="admin-import-btn"
+          onclick="window.adminAPI.importGalleryJSON()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          Import from JSON
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="gallery-table-body">
+              <tr>
+                <td colspan="5" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="admin-subheading" style="margin-top: var(--space-6)">
+          Cover Flow Carousel
+        </h3>
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openCoverflowAdd()"
+          style="margin-bottom: var(--space-4)"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Cover Flow Slide
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="coverflow-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Campaigns Tab -->
+      <div id="tab-campaigns" class="tab-panel" style="display: none">
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openCampaignAdd()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Campaign
+        </button>
+        <button
+          class="admin-import-btn"
+          onclick="window.adminAPI.importCampaignsJSON()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          Import from JSON
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Raised</th>
+                <th>Goal</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="campaign-table-body">
+              <tr>
+                <td colspan="5" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Contact Tab -->
+      <div id="tab-contact" class="tab-panel" style="display: none">
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="contact-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Internship Tab -->
+      <div id="tab-internship" class="tab-panel" style="display: none">
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="internship-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PAGE IMAGE MODAL ============ -->
+    <div id="page-image-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="page-image-form-title">Edit Image</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closePageImage()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="page-image-key" />
+          <div class="admin-form-group">
+            <label>Label</label>
+            <input type="text" id="page-image-label" disabled />
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('page-image-file').click()"
+            >
+              <input type="file" id="page-image-file" accept="image/*" />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select a new image
+              </span>
+            </div>
+            <div
+              id="page-image-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="page-image-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closePageImage()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.savePageImage()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="gallery-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="gallery-form-title">Add Gallery Item</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeGallery()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="gallery-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="gallery-title"
+              placeholder="e.g. Cafe Ribbon Cutting"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Category</label>
+              <select id="gallery-category">
+                <option value="cafe">Nayi Udaan Cafe</option>
+                <option value="activities">School Activities</option>
+                <option value="events">Events &amp; Rallies</option>
+                <option value="camps">Therapy &amp; Camps</option>
+                <option value="festivals">Festivals</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label>Date</label>
+              <input
+                type="text"
+                id="gallery-date"
+                placeholder="e.g. December 2025"
+              />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Description</label>
+            <textarea
+              id="gallery-description"
+              placeholder="Short description of the photo..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('gallery-file').click()"
+            >
+              <input type="file" id="gallery-file" accept="image/*" />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="gallery-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="gallery-current-img" src="" alt="Current image" />
+            </div>
+            <div
+              class="admin-upload-progress-wrap"
+              id="upload-progress-wrap"
+              style="display: none"
+            >
+              <div id="upload-progress"></div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeGallery()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveGallery()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ COVERFLOW MODAL ============ -->
+    <div id="coverflow-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="coverflow-form-title">Add Cover Flow Slide</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeCoverflow()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="coverflow-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="coverflow-title"
+              placeholder="e.g. Nayi Udaan Cafe Launched"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Description</label>
+            <textarea
+              id="coverflow-desc"
+              placeholder="Short caption shown below the slide..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('coverflow-file').click()"
+            >
+              <input type="file" id="coverflow-file" accept="image/*" />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="coverflow-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="coverflow-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeCoverflow()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveCoverflow()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CAMPAIGN MODAL ============ -->
+    <div id="campaign-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="campaign-form-title">Add Campaign</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeCampaign()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="campaign-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="campaign-title"
+              placeholder="e.g. Empower Possibilities"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Tagline</label>
+            <textarea
+              id="campaign-tagline"
+              placeholder="Short campaign description..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Tag (emoji + label)</label>
+            <input
+              type="text"
+              id="campaign-tag"
+              placeholder="e.g. 💙 Empowerment"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Goal (₹)</label>
+              <input type="number" id="campaign-goal" value="0" />
+            </div>
+            <div class="admin-form-group">
+              <label>Raised (₹)</label>
+              <input type="number" id="campaign-raised" value="0" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Days Left</label>
+            <input type="number" id="campaign-days" value="0" />
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('campaign-file').click()"
+            >
+              <input type="file" id="campaign-file" accept="image/*" />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="campaign-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="campaign-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeCampaign()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveCampaign()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo JS (no Firebase, uses localStorage) -->
+    <script src="./demo.js"></script>
+  </body>
+</html>
