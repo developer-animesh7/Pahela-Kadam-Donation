@@ -1,0 +1,209 @@
+- generic [active] [ref=f9e1]:
+  - banner [ref=f9e2]:
+    - generic [ref=f9e3]:
+      - link "Pahela Kadam School � Home" [ref=f9e4] [cursor=pointer]:
+        - /url: /
+        - img "Pahela Kadam Logo" [ref=f9e5]
+        - generic [ref=f9e6]:
+          - generic [ref=f9e7]: Pahela Kadam
+          - generic [ref=f9e8]: SCHOOL FOR SPECIAL CHILDREN
+      - navigation "Main Navigation" [ref=f9e10]:
+        - link "Home" [ref=f9e11] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=f9e12] [cursor=pointer]:
+          - /url: /about
+        - link "Campaign" [ref=f9e13] [cursor=pointer]:
+          - /url: /campaigns
+        - link "Gallery" [ref=f9e14] [cursor=pointer]:
+          - /url: /gallery
+        - link "Contact" [ref=f9e15] [cursor=pointer]:
+          - /url: /contact
+        - link "Intership" [ref=f9e16] [cursor=pointer]:
+          - /url: /internship
+      - link "Donate" [ref=f9e18] [cursor=pointer]:
+        - /url: https://razorpay.me/@narayanicharitabletrust
+  - main [ref=f9e22]:
+    - generic [ref=f9e25]:
+      - generic [ref=f9e26]:
+        - generic [ref=f9e27]: Registered Charitable Trust
+        - heading "Empowering Special Children to Stand, Speak, and Thrive." [level=1] [ref=f9e31]
+        - paragraph [ref=f9e32]: Every child deserves a chance to take independent steps. Your support directly funds specialized physical therapy, speech rehabilitation, special education, and vocational training that shapes a self-reliant future.
+        - generic [ref=f9e33]:
+          - link "Donate Now" [ref=f9e34] [cursor=pointer]:
+            - /url: https://razorpay.me/@narayanicharitabletrust
+          - link "Our Story" [ref=f9e38] [cursor=pointer]:
+            - /url: /pages/about.html
+        - generic [ref=f9e40]:
+          - generic [ref=f9e41]:
+            - generic [ref=f9e42]:
+              - generic [ref=f9e43]: "0"
+              - generic [ref=f9e44]: +
+            - generic [ref=f9e45]: Children Supported
+          - generic [ref=f9e46]:
+            - generic [ref=f9e47]:
+              - generic [ref=f9e48]: "0"
+              - generic [ref=f9e49]: +
+            - generic [ref=f9e50]: Years Serving
+          - generic [ref=f9e51]:
+            - generic [ref=f9e52]:
+              - generic [ref=f9e53]: "0"
+              - generic [ref=f9e54]: "%"
+            - generic [ref=f9e55]: Audited Transparency
+      - generic [ref=f9e56]:
+        - img "Happy special children in classroom gathering" [ref=f9e58]
+        - generic [ref=f9e59]:
+          - generic [ref=f9e64]:
+            - generic [ref=f9e65]: 80G Tax Deductible
+            - generic [ref=f9e66]: Instant tax receipts generated
+          - generic [ref=f9e71]:
+            - generic [ref=f9e72]: Narayani Trust
+            - generic [ref=f9e73]: 100% transparency audited
+    - generic [ref=f9e77]:
+      - generic [ref=f9e78]:
+        - generic [ref=f9e79]:
+          - generic [ref=f9e80]: NSE SSE Registered NGO
+          - generic [ref=f9e84]: SR. NO. 37
+        - heading "Narayani Charitable Trust" [level=2] [ref=f9e86]
+        - paragraph [ref=f9e87]: Narayani Charitable Trust is officially listed as a registered Social Enterprise on the National Stock Exchange (NSE) Social Stock Exchange (SSE) under Serial Number 37. This official listing subjects our organization to rigorous continuous audits, social disclosures, and financial transparency, ensuring absolute accountability.
+        - link "Verify on NSE" [ref=f9e89] [cursor=pointer]:
+          - /url: https://www.nseindia.com/static/list-registered-ngos
+      - generic [ref=f9e96]:
+        - img "NSE Logo" [ref=f9e98]
+        - generic [ref=f9e99]:
+          - generic [ref=f9e100]: National Stock Exchange
+          - text: Social Stock Exchange Listing
+    - generic [ref=f9e102]:
+      - img "Pahela Kadam School educational environment" [ref=f9e105]
+      - generic [ref=f9e106]:
+        - generic [ref=f9e107]: About Us
+        - heading "Empowering Special Children Since 2008" [level=2] [ref=f9e108]
+        - paragraph [ref=f9e109]: Narayani Charitable Trust operates the Pahela Kadam School for Special Children. Dedicated to the treatment, care, and cognitive support of children with intellectual disabilities, autism, cerebral palsy, and multiple developmental challenges, the day school provides occupational therapy, sensory integration support, early developmental care, and vocational skills.
+        - paragraph [ref=f9e110]: Our child-first model transforms physical and developmental limits into independent steps, creating a warm community environment that supports children and guides their families.
+        - link "Read Our Full Story" [ref=f9e112] [cursor=pointer]:
+          - /url: /about
+    - generic [ref=f9e115]:
+      - generic [ref=f9e116]:
+        - generic [ref=f9e117]: Our Vision & Goals
+        - heading "Why Your Support is Critical" [level=2] [ref=f9e118]
+        - paragraph [ref=f9e119]: Sustaining a premium daily rehabilitation day school requires continuous specialized resources. Your donations go directly to funding occupational therapist fees, maintaining specialized tactile board tools, distributing daily warm lunchboxes, and operating our door-to-door safety transport vans.
+        - paragraph [ref=f9e120]: Every rupee donated maps to clear developmental goals. We believe that regular therapy transforms a child's outlook and enables structural independence.
+        - link "Donate Now" [ref=f9e122] [cursor=pointer]:
+          - /url: https://razorpay.me/@narayanicharitabletrust
+      - generic [ref=f9e127]:
+        - img "Sustaining therapies and active missions at school" [ref=f9e128]
+        - generic [ref=f9e129]: Active Sensory Lab
+    - generic [ref=f9e131]:
+      - generic [ref=f9e132]:
+        - generic [ref=f9e133]:
+          - generic [ref=f9e134]: OUR CAMPAIGNS
+          - heading "Support a Cause. Change a Life." [level=2] [ref=f9e135]
+          - paragraph [ref=f9e136]: Every campaign directly supports therapy, education, healthcare, assistive devices and a better future for children with disabilities.
+        - link "View All Campaigns" [ref=f9e142] [cursor=pointer]:
+          - /url: /campaigns
+      - generic [ref=f9e145]:
+        - generic [ref=f9e146]:
+          - generic [ref=f9e147]: TRUSTED BY
+          - heading "Our Partners & Supporters" [level=2] [ref=f9e148]
+          - paragraph [ref=f9e149]: We are grateful to the government organizations, corporate partners, NGOs, and institutions that continuously support Pahela Kadam School in empowering children with disabilities through education, therapy, healthcare, and inclusive development.
+        - generic [ref=f9e151]:
+          - generic [ref=f9e152] [cursor=pointer]:
+            - img "Coal India Limited"
+          - generic [ref=f9e153] [cursor=pointer]:
+            - img "Government of Jharkhand"
+          - generic [ref=f9e154] [cursor=pointer]:
+            - img "Maithan Alloys Limited"
+          - generic [ref=f9e155] [cursor=pointer]:
+            - img "National Stock Exchange SSE"
+          - generic [ref=f9e156] [cursor=pointer]:
+            - img "Parivaar Association"
+          - generic [ref=f9e157] [cursor=pointer]:
+            - img "NGO Darpan"
+          - generic [ref=f9e158] [cursor=pointer]:
+            - img "Adani Foundation"
+          - generic [ref=f9e159] [cursor=pointer]:
+            - img "SBI Foundation"
+          - generic [ref=f9e160] [cursor=pointer]:
+            - img "Ujjivan Small Finance Bank"
+          - generic [ref=f9e161] [cursor=pointer]:
+            - img "Castron Technologies"
+          - generic [ref=f9e162] [cursor=pointer]:
+            - img "Cocmos"
+          - generic [ref=f9e163] [cursor=pointer]:
+            - img "NIEPMD"
+          - generic [ref=f9e164] [cursor=pointer]:
+            - img "The National Trust"
+          - generic [ref=f9e165] [cursor=pointer]:
+            - img "Jharkhand Government"
+          - generic [ref=f9e166] [cursor=pointer]:
+            - img "Coal India Limited"
+          - generic [ref=f9e167] [cursor=pointer]:
+            - img "Government of Jharkhand"
+          - generic [ref=f9e168] [cursor=pointer]:
+            - img "Maithan Alloys Limited"
+          - generic [ref=f9e169] [cursor=pointer]:
+            - img "National Stock Exchange SSE"
+          - generic [ref=f9e170] [cursor=pointer]:
+            - img "Parivaar Association"
+          - generic [ref=f9e171] [cursor=pointer]:
+            - img "NGO Darpan"
+          - generic [ref=f9e172] [cursor=pointer]:
+            - img "Adani Foundation"
+          - generic [ref=f9e173] [cursor=pointer]:
+            - img "SBI Foundation"
+          - generic [ref=f9e174] [cursor=pointer]:
+            - img "Ujjivan Small Finance Bank"
+          - generic [ref=f9e175] [cursor=pointer]:
+            - img "Castron Technologies"
+          - generic [ref=f9e176] [cursor=pointer]:
+            - img "Cocmos"
+          - generic [ref=f9e177] [cursor=pointer]:
+            - img "NIEPMD"
+          - generic [ref=f9e178] [cursor=pointer]:
+            - img "The National Trust"
+          - generic [ref=f9e179] [cursor=pointer]:
+            - img "Jharkhand Government"
+  - contentinfo [ref=f9e181]:
+    - generic [ref=f9e182]:
+      - generic [ref=f9e183]:
+        - generic [ref=f9e184]:
+          - link "Pahela Kadam School – Home" [ref=f9e185] [cursor=pointer]:
+            - /url: /
+            - img "Pahela Kadam Logo" [ref=f9e186]
+            - generic [ref=f9e187]:
+              - generic [ref=f9e188]: Pahela Kadam School
+              - generic [ref=f9e189]: SCHOOL FOR SPECIAL CHILDREN
+              - generic [ref=f9e190]: Run By Narayani Charitable Trust
+          - generic [ref=f9e191]:
+            - link "Follow Narayani Trust on X (Twitter)" [ref=f9e192] [cursor=pointer]:
+              - /url: https://x.com/i/flow/login?redirect_after_login=%2FTrustNarayani
+            - link "Follow Pahela Kadam on Instagram" [ref=f9e195] [cursor=pointer]:
+              - /url: https://www.instagram.com/pahela_kadam
+            - link "Follow Pahela Kadam on Facebook" [ref=f9e199] [cursor=pointer]:
+              - /url: https://www.facebook.com/pahela.kadam.96
+            - link "Subscribe to Pahela Kadam on YouTube" [ref=f9e202] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCpcMrXxyuKg_owAl3YemW3Q
+          - paragraph [ref=f9e206]: Special Schools in Dhanbad – Find the best special children schools for Intellectual, Autism, Cerebral Palsy, Hearing and Physically Challenged children in Dhanbad.
+        - generic [ref=f9e207]:
+          - heading "Contact" [level=4] [ref=f9e208]
+          - generic [ref=f9e209]:
+            - generic [ref=f9e214]:
+              - generic [ref=f9e215]: Call
+              - link "+91 9471162439" [ref=f9e216] [cursor=pointer]:
+                - /url: tel:+919471162439
+              - link "03263556440" [ref=f9e217] [cursor=pointer]:
+                - /url: tel:03263556440
+            - generic [ref=f9e223]:
+              - generic [ref=f9e224]: Email
+              - link "pahelakadams@gmail.com" [ref=f9e225] [cursor=pointer]:
+                - /url: mailto:pahelakadams@gmail.com
+        - generic [ref=f9e226]:
+          - heading "Visit Us" [level=4] [ref=f9e227]
+          - generic [ref=f9e233]:
+            - generic [ref=f9e234]: Address
+            - generic [ref=f9e235]: Pahela Kadam School
+            - generic [ref=f9e236]: Jagjeevan Nagar, Saraidhela
+            - generic [ref=f9e237]: Dhanbad, Jharkhand – 826003
+      - generic [ref=f9e238]:
+        - generic [ref=f9e239]: © Pahela Kadam School – Run By Narayani Charitable Trust. All Rights Reserved.
+        - link "Transparency Audit Records" [ref=f9e240] [cursor=pointer]:
+          - /url: /transparency

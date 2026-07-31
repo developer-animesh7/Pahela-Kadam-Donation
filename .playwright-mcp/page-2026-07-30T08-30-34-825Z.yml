@@ -1,0 +1,144 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - link "Pahela Kadam School � Home" [ref=f11e4] [cursor=pointer]:
+        - /url: /
+        - img "Pahela Kadam Logo" [ref=f11e5]
+        - generic [ref=f11e6]:
+          - generic [ref=f11e7]: Pahela Kadam
+          - generic [ref=f11e8]: SCHOOL FOR SPECIAL CHILDREN
+      - navigation "Main Navigation" [ref=f11e10]:
+        - link "Home" [ref=f11e11] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=f11e12] [cursor=pointer]:
+          - /url: /about
+        - link "Campaign" [ref=f11e13] [cursor=pointer]:
+          - /url: /campaigns
+        - link "Gallery" [ref=f11e14] [cursor=pointer]:
+          - /url: /gallery
+        - link "Contact" [ref=f11e15] [cursor=pointer]:
+          - /url: /contact
+        - link "Internship" [ref=f11e16] [cursor=pointer]:
+          - /url: /internship
+      - link "Donate" [ref=f11e18] [cursor=pointer]:
+        - /url: https://razorpay.me/@narayanicharitabletrust
+  - main [ref=f11e22]:
+    - generic [ref=f11e27]:
+      - generic [ref=f11e28]: OUR CAMPAIGNS
+      - heading "Every Contribution Creates A Better Tomorrow." [level=1] [ref=f11e29]: Every Contribution CreatesA Better Tomorrow.
+      - paragraph [ref=f11e30]: Every campaign directly supports therapy, education, rehabilitation, healthcare, vocational training and essential services for children with disabilities.
+    - generic [ref=f11e32]:
+      - generic [ref=f11e33]: FEATURED CAMPAIGN
+      - generic [ref=f11e34]:
+        - generic [ref=f11e35]:
+          - img "Regular Health Checkup for disabled children" [ref=f11e36]
+          - generic [ref=f11e37]: "?? Health & Wellness"
+        - generic [ref=f11e38]:
+          - generic [ref=f11e39]:
+            - generic [ref=f11e40]: Verified Campaign
+            - heading "Regular Health Checkup" [level=2] [ref=f11e44]
+            - paragraph [ref=f11e45]: "\"Help us give disabled children a brighter future. Your donation can provide essential health checkups and support their well-being. Donate today for a healthier tomorrow!\""
+          - generic [ref=f11e46]:
+            - generic [ref=f11e47]:
+              - generic [ref=f11e48]: "?2,98,000 Raised"
+              - generic [ref=f11e49]: 85%
+            - generic [ref=f11e51]:
+              - generic [ref=f11e52]: "Goal: ?3,50,000"
+              - generic [ref=f11e53]: 8 Days Left
+          - link "Donate Now" [ref=f11e54] [cursor=pointer]:
+            - /url: https://razorpay.me/@narayanicharitabletrust
+    - generic [ref=f11e60]:
+      - text: ALL INITIATIVES
+      - heading "Explore Active Campaigns" [level=2] [ref=f11e61]
+    - generic [ref=f11e67]:
+      - generic [ref=f11e68]:
+        - generic [ref=f11e69]: DONATION IMPACT
+        - heading "How Your Donation Helps" [level=2] [ref=f11e70]
+        - paragraph [ref=f11e71]: See how small amounts map to critical rehabilitation resources for our special students.
+      - generic [ref=f11e72]:
+        - generic [ref=f11e73]:
+          - generic [ref=f11e74]: "?500"
+          - heading "Learning Materials" [level=4] [ref=f11e75]
+          - paragraph [ref=f11e76]: Covers tactile cardboards, clay styling kits, and specialized learning puzzles for one student.
+        - generic [ref=f11e77]:
+          - generic [ref=f11e78]: "?1,000"
+          - heading "Speech Therapy" [level=4] [ref=f11e79]
+          - paragraph [ref=f11e80]: Funds one week of individual vocal articulation exercises with a certified pediatric specialist.
+        - generic [ref=f11e81]:
+          - generic [ref=f11e82]: "?2,500"
+          - heading "Medical Support" [level=4] [ref=f11e83]
+          - paragraph [ref=f11e84]: Funds pediatric diagnostic screenings, dental cleans, and orthotic fit modifications.
+        - generic [ref=f11e85]:
+          - generic [ref=f11e86]: "?5,000"
+          - heading "Vocational Training" [level=4] [ref=f11e87]
+          - paragraph [ref=f11e88]: Supplies candle wax, decorative thread, and packaging materials to train older special students.
+    - generic [ref=f11e90]:
+      - generic [ref=f11e91]:
+        - generic [ref=f11e92]: WHY SUPPORT US
+        - heading "Donors Trust Pahela Kadam" [level=2] [ref=f11e93]
+      - generic [ref=f11e94]:
+        - button [ref=f11e95] [cursor=pointer]:
+          - generic [ref=f11e99]:
+            - heading "Registered Charitable Trust" [level=4] [ref=f11e100]
+            - paragraph [ref=f11e101]: Operated under Narayani Charitable Trust. Eligible for 100% tax benefits under Section 12A and 80G.
+        - button [ref=f11e102] [cursor=pointer]:
+          - generic [ref=f11e107]:
+            - heading "NSE SSE Registered NGO" [level=4] [ref=f11e108]
+            - paragraph [ref=f11e109]: Registered on National Stock Exchange Social Stock Exchange (No. 37), ensuring top governance.
+        - button [ref=f11e110] [cursor=pointer]:
+          - generic [ref=f11e115]:
+            - heading "Transparent Reporting" [level=4] [ref=f11e116]
+            - paragraph [ref=f11e117]: Detailed audit statements, tax ledgers, and email updates so you know exactly where funds go.
+        - button [ref=f11e118] [cursor=pointer]:
+          - generic [ref=f11e124]:
+            - heading "Experienced Therapists" [level=4] [ref=f11e125]
+            - paragraph [ref=f11e126]: Certified speech, occupational, physical, and vocational rehabilitation specialists.
+        - button [ref=f11e127] [cursor=pointer]:
+          - generic [ref=f11e131]:
+            - heading "150+ Children Supported" [level=4] [ref=f11e132]
+            - paragraph [ref=f11e133]: Over 18 years in Dhanbad providing daily transport, meals, and therapies to 150+ special kids.
+  - contentinfo [ref=f11e135]:
+    - generic [ref=f11e136]:
+      - generic [ref=f11e137]:
+        - generic [ref=f11e138]:
+          - link "Pahela Kadam School – Home" [ref=f11e139] [cursor=pointer]:
+            - /url: /
+            - img "Pahela Kadam Logo" [ref=f11e140]
+            - generic [ref=f11e141]:
+              - generic [ref=f11e142]: Pahela Kadam School
+              - generic [ref=f11e143]: SCHOOL FOR SPECIAL CHILDREN
+              - generic [ref=f11e144]: Run By Narayani Charitable Trust
+          - generic [ref=f11e145]:
+            - link "Follow Narayani Trust on X (Twitter)" [ref=f11e146] [cursor=pointer]:
+              - /url: https://x.com/i/flow/login?redirect_after_login=%2FTrustNarayani
+            - link "Follow Pahela Kadam on Instagram" [ref=f11e149] [cursor=pointer]:
+              - /url: https://www.instagram.com/pahela_kadam
+            - link "Follow Pahela Kadam on Facebook" [ref=f11e153] [cursor=pointer]:
+              - /url: https://www.facebook.com/pahela.kadam.96
+            - link "Subscribe to Pahela Kadam on YouTube" [ref=f11e156] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCpcMrXxyuKg_owAl3YemW3Q
+          - paragraph [ref=f11e160]: Special Schools in Dhanbad – Find the best special children schools for Intellectual, Autism, Cerebral Palsy, Hearing and Physically Challenged children in Dhanbad.
+        - generic [ref=f11e161]:
+          - heading "Contact" [level=4] [ref=f11e162]
+          - generic [ref=f11e163]:
+            - generic [ref=f11e168]:
+              - generic [ref=f11e169]: Call
+              - link "+91 9471162439" [ref=f11e170] [cursor=pointer]:
+                - /url: tel:+919471162439
+              - link "03263556440" [ref=f11e171] [cursor=pointer]:
+                - /url: tel:03263556440
+            - generic [ref=f11e177]:
+              - generic [ref=f11e178]: Email
+              - link "pahelakadams@gmail.com" [ref=f11e179] [cursor=pointer]:
+                - /url: mailto:pahelakadams@gmail.com
+        - generic [ref=f11e180]:
+          - heading "Visit Us" [level=4] [ref=f11e181]
+          - generic [ref=f11e187]:
+            - generic [ref=f11e188]: Address
+            - generic [ref=f11e189]: Pahela Kadam School
+            - generic [ref=f11e190]: Jagjeevan Nagar, Saraidhela
+            - generic [ref=f11e191]: Dhanbad, Jharkhand – 826003
+      - generic [ref=f11e192]:
+        - generic [ref=f11e193]: © Pahela Kadam School – Run By Narayani Charitable Trust. All Rights Reserved.
+        - link "Transparency Audit Records" [ref=f11e194] [cursor=pointer]:
+          - /url: /transparency

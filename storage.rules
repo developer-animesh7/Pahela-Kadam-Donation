@@ -1,0 +1,46 @@
+rules_version = '2';
+
+// Cloud Storage for Firebase Security Rules
+// Public read access for all uploaded images (website visitors).
+// Write access restricted to the authorized admin email only.
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Helper function: admin emails allowed to write
+    function isAuthorizedAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'pahelakadamweb@gmail.com';
+    }
+
+    // Gallery images
+    match /gallery/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Campaign images
+    match /campaigns/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Page images
+    match /pageImages/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Coverflow images
+    match /coverflow/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Default: allow admin to write anywhere, public read
+    match /{allPaths=**} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+  }
+}

@@ -1,0 +1,817 @@
+- generic [active] [ref=f5e1]:
+  - link "Skip to content" [ref=f5e2] [cursor=pointer]:
+    - /url: "#content"
+  - main [ref=f5e3]:
+    - generic [ref=f5e5]:
+      - generic [ref=f5e20]:
+        - text:  
+        - list [ref=f5e22]:
+          - listitem [ref=f5e23]:
+            - link "Home " [ref=f5e24] [cursor=pointer]:
+              - /url: https://pahelakadam.in/
+              - text: Home
+              - generic [ref=f5e25]: 
+          - listitem [ref=f5e26]:
+            - link "About" [ref=f5e27] [cursor=pointer]:
+              - /url: https://pahelakadam.in/about/
+          - listitem [ref=f5e28]:
+            - link "Campaign" [ref=f5e29] [cursor=pointer]:
+              - /url: https://pahelakadam.in/campaign/
+          - listitem [ref=f5e30]:
+            - link "Gallery " [ref=f5e31] [cursor=pointer]:
+              - /url: https://pahelakadam.in/gallery/
+              - text: Gallery
+              - generic [ref=f5e32]: 
+          - listitem [ref=f5e33]:
+            - link "Contact" [ref=f5e34] [cursor=pointer]:
+              - /url: https://pahelakadam.in/contact/
+          - listitem [ref=f5e35]:
+            - link "Donate" [ref=f5e36] [cursor=pointer]:
+              - /url: https://pahelakadam.in/donate/
+          - listitem [ref=f5e37]:
+            - link "Internship" [ref=f5e38] [cursor=pointer]:
+              - /url: https://pahelakadam.in/internship/
+        - generic:  
+      - generic [ref=f5e134]:
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/1-dropadi-murmu-president.jpg?fit=1600%2C1064&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/2-C-P-Radhakrishnan-governer.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/3-hemant-soren-CM.jpg?fit=509%2C499&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/4-pramod-agarwal-CIL-Chairmen.jpg?fit=1032%2C581&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/5-Samiran-Dutta-bccl-CMD.jpg?fit=962%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/6-Sansad-P-N-Singh.jpg?fit=1080%2C902&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/7-D-C-Sandeep-Singh.jpg?fit=450%2C1000&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/8-dilip-saikia-BJP.jpg?fit=1280%2C852&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/9-pratap-sarangi-Honble-Minister-of-State-of-Fisheries.jpg?fit=880%2C1024&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/10-brijmohan-garodia-IAC.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/10-joba-manjhi-samaj-kalyan-mantri.jpg?fit=651%2C652&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/11-banna-gupta-Health-Minister.jpg?fit=1024%2C768&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/12-C-P-radhakrishnan-Bokaro-Steel-Plant-Director.jpg?fit=450%2C1000&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/13-krishi-mantri-badal-patralekh.jpg?fit=1080%2C1205&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/14-subhash-agarwalla-maithan-alloy.jpg?fit=1600%2C739&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/9425c38c-c978-467b-9aee-29daaa5128d6.jpg?fit=1280%2C1033&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/dmc-comissioner-satyendra-kumar.jpg?fit=750%2C422&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/images-7.jpg?fit=259%2C194&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/IMG_5751.jpg?fit=6000%2C4000&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/pramod-agarwal-coal-indoa-chairman.jpg?fit=1891%2C1064&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/store-2.jpg?fit=650%2C665&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Award.jpeg?fit=720%2C541&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Gift.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/20230726_101841.jpg?fit=4624%2C2084&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-2-nov-2023-6.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-2-nov-2023-7.jpg?fit=1599%2C906&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-2-nov-2023-10.jpg?fit=1280%2C576&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-2-nov-2023-3.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Director-ISM-ON-Pahela-Kadam-Diwarli-Store-2.jpg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Director-ISM-ON-Pahela-Kadam-Diwarli-Store-3.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Director-ISM-ON-Pahela-Kadam-Diwarli-Store-1.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition.jpg?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/MPL-ME-PAHLA-KADAM-KA-DIWALI-STORE-3.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/MPL-ME-PAHLA-KADAM-KA-DIWALI-STORE-2.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition-By-Pahels-Kadam-At-CISF-CAMP-KOYLA-BHAWAN-DHANBAD-1.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition-By-Pahels-Kadam-At-CISF-CAMP-KOYLA-BHAWAN-DHANBAD-2.jpg?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition-By-Pahels-Kadam-At-CISF-CAMP-KOYLA-BHAWAN-DHANBAD-3.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition-By-Pahels-Kadam-At-CISF-CAMP-KOYLA-BHAWAN-DHANBAD-4.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition-By-Pahels-Kadam-At-CISF-CAMP-KOYLA-BHAWAN-DHANBAD-5.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Diwali-Candle-Exhibition-By-Pahels-Kadam-At-CISF-CAMP-KOYLA-BHAWAN-DHANBAD-6.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/SSP-Dhanbad-With-Kaushal-Agarwal.jpg?fit=1203%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Anita-Agarwal-With-his-son.jpg?fit=652%2C1333&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Kaushal-Agarwal-with-DC-SIr-Dhanbad.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Anita-Agarwal-And-Kaushal-Agarwal-With-Director-of-Social-Welfare.jpg?fit=1280%2C576&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Kaushal-Agarwal-With-DC-Sir-Dhanbad-2.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Kaushal-Agarwal-With-SSP-Sir-Dhanbad.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/Anita-Agarwal-With-Governer-OF-Jharkhand-Draupdi-Murmu.jpg?fit=1280%2C855&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/NATIONAL-TRUST-DIRECTOR-U.K-SHUKLA-AT-PAHELA-KADAM-SCHOOL.jpg?fit=1600%2C739&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WOMENS-DAY-AT-CIMFR.jpg?fit=1600%2C1068&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472499373_1134036071415075_705030574267434381_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472188825_1134036078081741_132321489203462531_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472337748_1134036064748409_2958566639183163161_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472337488_1134036054748410_3444586218134971644_n.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472391520_1134035998081749_3862659387966684847_n-1.jpg?fit=1280%2C853&ssl=1
+      - heading "Function & Program" [level=1] [ref=f5e142]
+      - generic [ref=f5e149]:
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.09_44ef8b71-1.jpg?fit=1040%2C780&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.32_92b41c80-1.jpg?fit=1000%2C450&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.33_14d289eb-1.jpg?fit=1600%2C739&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.34_ff5f99ab-1.jpg?fit=1600%2C739&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.00_1e198eda-1.jpg?fit=1000%2C450&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.01_555ef132-1.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.07_119c4188-1.jpg?fit=1204%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.08_08c6171a-1.jpg?fit=652%2C1333&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-2.png?fit=1333%2C2000&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-1.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-2.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-3.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-4.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-5.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-25-at-15.02.39-2.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-6.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-7.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-8.jpeg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-9.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-10.jpeg?fit=1280%2C725&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-11.jpeg?fit=1599%2C906&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-12.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-13.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-14.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-15.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-16.jpeg?fit=1280%2C725&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-17.jpeg?fit=1280%2C725&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-18.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-19.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-20.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-22.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-23.jpeg?fit=1599%2C906&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-24.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-25.jpeg?fit=1599%2C906&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-26.jpeg?fit=1200%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-10.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-11.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Merry-Christmas-At-Sonotel-Hotel-21.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-1.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-2.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-3.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-5.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-12.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-6.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-7.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-8.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-9.png?fit=1920%2C1080&ssl=1
+      - generic [ref=f5e154]:
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/DSC_1059.jpg?fit=5568%2C3712&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/DSC_1054.jpg?fit=5568%2C3712&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472337488_1134036054748410_3444586218134971644_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472188825_1134036078081741_132321489203462531_n-2.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472391520_1134035998081749_3862659387966684847_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472337488_1134036054748410_3444586218134971644_n.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472391520_1134035998081749_3862659387966684847_n.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472188825_1134036078081741_132321489203462531_n-e1735963495940.jpg?fit=840%2C852&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/DSC_1041.jpg?fit=5568%2C3712&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472337748_1134036064748409_2958566639183163161_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472188825_1134036078081741_132321489203462531_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472499373_1134036071415075_705030574267434381_n-1.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472337748_1134036064748409_2958566639183163161_n.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2025/01/472499373_1134036071415075_705030574267434381_n.jpg?fit=1280%2C853&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-12.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-11.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-10.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-9.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-7.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-5.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-4.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-3.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-2.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Chiristmas-2024-1.png?fit=1920%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-8-2.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-7-2.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-6-2.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-5-2.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-3-2.jpeg?fit=706%2C441&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-2-2.jpeg?fit=706%2C392&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-1-2.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-11.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-1-1.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-9-1.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-8-1.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-7-1.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-6-1.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-5-1.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-4-1.jpeg?fit=706%2C1050&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-3-1.jpeg?fit=706%2C441&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-2-1.jpeg?fit=706%2C392&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-1-1.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-1.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-9.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-8.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-1.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-7.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-2.jpeg?fit=1040%2C780&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-9.jpeg?fit=1280%2C963&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-25.jpeg?fit=1280%2C588&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-1.jpeg?fit=1040%2C780&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-1.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-24.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-20.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-17.jpeg?fit=1280%2C963&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-2.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-41.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-40.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-39.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-38.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-37.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-36.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-35.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-34.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-33.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-32.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-31.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-26.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-30.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-29.jpeg?fit=1600%2C901&ssl=1
+      - heading "Activities" [level=1] [ref=f5e162]
+      - generic [ref=f5e169]:
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.17_0e69877c.jpg?fit=1600%2C737&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.17_a82476db.jpg?fit=1600%2C739&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.36_4cda5dc6.jpg?fit=1600%2C715&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.36_36e5a619.jpg?fit=1600%2C715&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.43_3d5dba85.jpg?fit=745%2C431&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.43_5d16b03a.jpg?fit=704%2C759&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-09-at-09.47.47_ccb4a80b.jpg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/HEALTH-CHECKUP-CAMP-AT-PAHELA-KADAM-SCHOOL-1.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/HEALTH-CHECKUP-CAMP-AT-PAHELA-KADAM-SCHOOL-2.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/HEALTH-CHECKUP-CAMP-AT-PAHELA-KADAM-SCHOOL-3.jpg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/HEALTH-CHECKUP-CAMP-AT-PAHELA-KADAM-SCHOOL-5.jpg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/HEALTH-CHECKUP-CAMP-AT-PAHELA-KADAM-SCHOOL-4.jpg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-20.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-15.jpg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-17.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-18.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-19.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-21.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-1.jpg?fit=1280%2C588&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-2.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-3.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-4.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-5.jpg?fit=1200%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-6.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-7.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-8.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-9.jpg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-10.jpg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-11.jpg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-12.jpg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-13.jpg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-14.jpg?fit=899%2C1599&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/World-Disablity-Day-Rally-By-Pahela-Kadam-School-16.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-3.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-4.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-5.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-6.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-8.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-9.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-11.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-12.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-13.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-15.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-1.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-2.jpg?fit=1280%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Drawing-Competition-At-Pahela-Kadam-School-On-World-Disablity-day-10.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-1.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-2.jpg?fit=1599%2C906&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-3.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-4.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-5.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-6.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-7.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-8.jpg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-9.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-10.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-11.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-12-e1720251543265.jpg?fit=960%2C690&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/5-Dec-2023-Parents-Awareness-Seminar-At-Pahela-Kadam-School-13.jpg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-2.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-3.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-4.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-5.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-6.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-7.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2023/12/Early-Entervantion-Capm-By-Pahela-Kadam-School-1.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-24.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-25.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-26.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-27.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-28.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-29.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-30.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-31.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-32.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-33.jpeg?fit=1280%2C588&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-1.jpeg?fit=1280%2C588&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-34.jpeg?fit=1280%2C588&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-2.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-3.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-4.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-5.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-6.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-7.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-8.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-9.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-10.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-11.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-12.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-13.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-14.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-15.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-16.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-17.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-18.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-19.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-20.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-21.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-22.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Kambal-vitran-23.jpeg?fit=588%2C1280&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Health-checkup-camp-1.png?fit=1428%2C2000&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Health-checkup-camp-1.jpeg?fit=1200%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Health-checkup-camp-2.jpeg?fit=1200%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Health-checkup-camp-3.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/01/Health-checkup-camp-4.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/03/Down-Syndrome-Day-7.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/03/Down-Syndrome-Day-8-1.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-12.jpeg?fit=1040%2C468&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-4.jpeg?fit=1200%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-02-at-10.02.30.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-5-e1720251646397.jpeg?fit=960%2C689&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-7.jpeg?fit=1600%2C1200&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-8.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-10.jpeg?fit=1280%2C960&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/04/Autism-Day-1.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/07/Doctors-Day.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-42.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-43.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-44.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-45.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-46.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-1.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-2.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-3.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-4.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-5.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-6.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-7.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-8.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-9.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-10.jpeg?fit=1204%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-11.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-12.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-13.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-14.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-15.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-16.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-17.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-18.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-19.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-20.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-21.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-22.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-23.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-24.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-25.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-26.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-27.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-28.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-29.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-30.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-31.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-32.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-33.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-34.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-35.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-36.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-37.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-38.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-39.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-40.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Rally-2-Dec-2024-41.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-3.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-4.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-8.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-9.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-10.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-11.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-12.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-13.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-14.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-15.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-16.jpeg?fit=721%2C1600&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-17.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-18.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-19.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-20.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-21.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-22.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-23.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-24.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-25.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-26.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-27.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-28.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-29.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-30.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-31.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-32.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-33.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-34.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-35.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-36.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-37.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-38.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-39.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-40.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-41.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Health-Camp-India-Therapy-Centre-2.jpeg?fit=1600%2C901&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-17.jpeg?fit=1280%2C963&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-20.jpeg?fit=1599%2C899&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-24.jpeg?fit=1600%2C1204&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-25.jpeg?fit=1280%2C588&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-1.jpeg?fit=1040%2C780&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-1.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-2.jpeg?fit=1040%2C780&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/4-Dec-2024-Inox-Movie-9.jpeg?fit=1280%2C963&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-11.jpeg?fit=1600%2C721&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-1-2.png?fit=1080%2C1080&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-2-2.jpeg?fit=706%2C392&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-3-2.jpeg?fit=706%2C441&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-5-2.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-6-2.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-7-2.jpeg?fit=1600%2C720&ssl=1
+        - link:
+          - /url: https://i0.wp.com/pahelakadam.in/wp-content/uploads/2024/12/Badhte-Kadam-8-2.jpeg?fit=1600%2C721&ssl=1
+      - paragraph [ref=f5e175]:
+        - text: All rights reserved 2023
+        - generic [ref=f5e176]: 
+        - text: Pahela Kadam Special School run by Narayani Charitable Trust
+  - generic [ref=f5e177]: desktop

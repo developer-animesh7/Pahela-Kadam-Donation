@@ -1,0 +1,33 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]
+  - main [ref=f3e3]:
+    - generic [ref=f3e5]:
+      - generic [ref=f3e6]:
+        - generic [ref=f3e7]:
+          - button "Previous Slide" [ref=f3e9] [cursor=pointer]
+          - button "Next Slide" [ref=f3e12] [cursor=pointer]
+        - generic [ref=f3e15]:
+          - heading "Slide Title" [level=4] [ref=f3e16]
+          - paragraph [ref=f3e17]: Slide Subtitle
+        - button "Scroll to Photo Gallery" [ref=f3e19] [cursor=pointer]:
+          - generic [ref=f3e20]: Explore All Memories
+      - generic [ref=f3e23]:
+        - button "All Memories" [ref=f3e24] [cursor=pointer]
+        - button "Nayi Udaan Cafe" [ref=f3e25] [cursor=pointer]
+        - button "School Activities" [ref=f3e26] [cursor=pointer]
+        - button "Events & Rallies" [ref=f3e27] [cursor=pointer]
+        - button "Therapy & Camps" [ref=f3e28] [cursor=pointer]
+        - button "Festivals" [ref=f3e29] [cursor=pointer]
+      - generic [ref=f3e43]:
+        - generic [ref=f3e44]:
+          - generic [ref=f3e45]: 0+
+          - generic [ref=f3e46]: Memories Captured
+        - generic [ref=f3e47]:
+          - generic [ref=f3e48]: 0+
+          - generic [ref=f3e49]: Outings & Rallies
+        - generic [ref=f3e50]:
+          - generic [ref=f3e51]: 0+
+          - generic [ref=f3e52]: Years of Service
+        - generic [ref=f3e53]:
+          - generic [ref=f3e54]: 0+
+          - generic [ref=f3e55]: Disabilities Supported

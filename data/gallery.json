@@ -1,0 +1,34 @@
+[
+  {
+    "id": "annual-art-2025",
+    "title": "Annual Craft & Creative Arts Festival",
+    "category": "Activity Session",
+    "date": "Oct 2025",
+    "description": "Celebrating creative skills of our special students through block paintings and hand-knit models.",
+    "image": "../assets/images/gallery/annual_day.webp"
+  },
+  {
+    "id": "sensory-opening",
+    "title": "Launch of Sensory Integration Room",
+    "category": "Therapy Lab",
+    "date": "Jan 2026",
+    "description": "New safe bubble-tube and sound-dampened sensory play setup deployed with Rotary support.",
+    "image": "../assets/images/gallery/sensory_lab.webp"
+  },
+  {
+    "id": "sports-day",
+    "title": "Special Children Sports Meet",
+    "category": "Mobility Event",
+    "date": "Dec 2025",
+    "description": "Assisted and independent race runs to build posture coordination and joy.",
+    "image": "../assets/images/gallery/sports_day.webp"
+  },
+  {
+    "id": "dental-camp",
+    "title": "Pediatric Health & Dental Checkup",
+    "category": "Medical Camp",
+    "date": "Feb 2026",
+    "description": "Annual free dental screening and hygiene kits distributed to school children.",
+    "image": "../assets/images/gallery/dental_camp.webp"
+  }
+]

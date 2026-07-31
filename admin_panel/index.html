@@ -1,0 +1,1357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Pahela Kadam School</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/images/logos/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/typography.css" />
+    <link rel="stylesheet" href="/admin_panel/admin.css" />
+  </head>
+  <body>
+    <!-- ============ LOGIN VIEW ============ -->
+    <div id="login-view" class="admin-login-view">
+      <div class="admin-login-card">
+        <img
+          src="/assets/images/logos/PAHELA KADAM.png"
+          alt="Pahela Kadam Logo"
+          class="admin-login-logo"
+          onerror="this.style.display = 'none'"
+        />
+        <h1>Admin Panel</h1>
+        <p>
+          Sign in with your authorized Google account to manage gallery and
+          campaign content.
+        </p>
+        <button
+          class="admin-google-btn"
+          onclick="window.adminAPI.handleGoogleLogin()"
+        >
+          <img
+            src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+            alt="Google logo"
+          />
+          <span>Sign in with Google</span>
+        </button>
+        <div
+          id="login-error"
+          class="admin-login-error"
+          style="display: none"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ============ DASHBOARD VIEW ============ -->
+    <div id="dashboard-view" class="admin-dashboard-view">
+      <!-- Header + Tabs (sticky) -->
+      <div class="admin-sticky-top">
+        <div class="admin-header">
+          <div class="admin-header-left">
+            <img
+              src="/assets/images/logos/PAHELA KADAM.png"
+              alt="Logo"
+              onerror="this.style.display = 'none'"
+            />
+            <h2>Content Admin</h2>
+          </div>
+          <div class="admin-header-right">
+            <div class="admin-user-info">
+              <img
+                id="admin-avatar"
+                src=""
+                alt="Avatar"
+                referrerpolicy="no-referrer"
+              />
+              <span id="admin-email"></span>
+            </div>
+            <button
+              class="admin-logout-btn"
+              onclick="window.adminAPI.handleLogout()"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="admin-tabs">
+          <button
+            class="tab-btn active"
+            data-tab="home"
+            onclick="window.adminAPI.switchTab('home')"
+          >
+            Home
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="about"
+            onclick="window.adminAPI.switchTab('about')"
+          >
+            About
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="campaigns"
+            onclick="window.adminAPI.switchTab('campaigns')"
+          >
+            Campaign
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="gallery"
+            onclick="window.adminAPI.switchTab('gallery')"
+          >
+            Gallery
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="contact"
+            onclick="window.adminAPI.switchTab('contact')"
+          >
+            Contact
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="internship"
+            onclick="window.adminAPI.switchTab('internship')"
+          >
+            Internship
+          </button>
+        </div>
+      </div>
+      <!-- /admin-sticky-top -->
+
+      <!-- Home Tab -->
+      <div id="tab-home" class="tab-panel">
+        <!-- Donation Link Editor -->
+        <h3 class="admin-subheading">Donation Link</h3>
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-4);
+          "
+        >
+          This link is used for all "Donate" buttons across the entire website.
+          Change it here once and it updates everywhere.
+        </p>
+        <div style="margin-bottom: var(--space-6)">
+          <label
+            style="
+              font-size: var(--text-xs);
+              font-weight: 600;
+              color: var(--text-secondary);
+              display: block;
+              margin-bottom: var(--space-1);
+            "
+            >Donation URL</label
+          >
+          <div style="display: flex; gap: var(--space-2); align-items: center">
+            <input
+              type="url"
+              id="donate-link-input"
+              placeholder="https://razorpay.me/@narayanicharitabletrust"
+              disabled
+              style="
+                flex-grow: 1;
+                padding: var(--space-2) var(--space-3);
+                border: 1px solid var(--border-color, #e2e8f0);
+                border-radius: var(--radius-md, 10px);
+                font-size: var(--text-sm);
+                background: #f1f5f9;
+                color: var(--text-secondary);
+              "
+            />
+            <button
+              class="admin-add-btn"
+              id="donate-link-edit-btn"
+              onclick="window.adminAPI.editDonateLink()"
+              style="flex-shrink: 0"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                ></path>
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                ></path>
+              </svg>
+              Edit
+            </button>
+            <button
+              class="admin-add-btn"
+              id="donate-link-save-btn"
+              onclick="window.adminAPI.saveDonateLink()"
+              style="display: none; flex-shrink: 0"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+                ></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+              </svg>
+              Save Link
+            </button>
+            <button
+              class="admin-add-btn"
+              id="donate-link-cancel-btn"
+              onclick="window.adminAPI.cancelEditDonateLink()"
+              style="
+                display: none;
+                flex-shrink: 0;
+                background: #f1f5f9;
+                color: var(--text-secondary);
+              "
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+              Cancel
+            </button>
+          </div>
+        </div>
+
+        <!-- Home Page Images -->
+        <h3 class="admin-subheading" style="margin-top: var(--space-6)">
+          Home Page Images
+        </h3>
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-4);
+          "
+        >
+          Manage images on the Home page (hero, about us, vision & goals
+          sections)
+        </p>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="home-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- About Tab -->
+      <div id="tab-about" class="tab-panel" style="display: none">
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-4);
+          "
+        >
+          Manage images on the About page, organized by section.
+        </p>
+
+        <!-- Section 1: About Us -->
+        <h3 class="admin-subheading">Section 1: About Us</h3>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="about-section-1-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 2: Mission & Vision -->
+        <h3 class="admin-subheading">Section 2: Mission &amp; Vision</h3>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="about-section-2-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 3: Our Journey (Founder) -->
+        <h3 class="admin-subheading">Section 3: Our Journey (Founder)</h3>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="about-section-3-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Section 4: Therapies & Rehabilitation (Full CRUD) -->
+        <h3 class="admin-subheading">
+          Section 4: Therapies &amp; Rehabilitation
+        </h3>
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: var(--space-4);
+          "
+        >
+          Add, edit, or delete facility cards. Images are managed through the
+          shared page images system.
+        </p>
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openFacilityAdd()"
+          style="margin-bottom: var(--space-4)"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Facility Card
+        </button>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Badge</th>
+                <th>Icon</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="facility-table-body">
+              <tr>
+                <td colspan="5" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Campaigns Tab -->
+      <div id="tab-campaigns" class="tab-panel" style="display: none">
+        <!-- Featured Campaign Section -->
+        <h3 class="admin-subheading">Featured Campaign</h3>
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: var(--space-4);
+          "
+        >
+          This campaign is shown prominently at the top of the Campaigns page.
+        </p>
+        <div
+          id="featured-campaign-container"
+          style="margin-bottom: var(--space-6)"
+        >
+          <div id="featured-campaign-empty" style="display: none">
+            <button
+              class="admin-add-btn"
+              onclick="window.adminAPI.openFeaturedCampaignForm()"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Add Featured Campaign
+            </button>
+          </div>
+          <div id="featured-campaign-loaded" style="display: none">
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Tag</th>
+                    <th>Raised</th>
+                    <th>Goal</th>
+                    <th>Days Left</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="featured-campaign-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Campaigns Section -->
+        <h3 class="admin-subheading">All Campaigns</h3>
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openCampaignAdd()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Campaign
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Raised</th>
+                <th>Goal</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="campaign-table-body">
+              <tr>
+                <td colspan="5" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Gallery Tab -->
+      <div id="tab-gallery" class="tab-panel" style="display: none">
+        <!-- First Gallery (Cover Flow Carousel) -->
+        <h3 class="admin-subheading">First Gallery</h3>
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openCoverflowAdd()"
+          style="margin-bottom: var(--space-4)"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New First Gallery Slide
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="coverflow-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Second Gallery (Gallery Items) -->
+        <h3 class="admin-subheading" style="margin-top: var(--space-6)">
+          Second Gallery
+        </h3>
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openGalleryAdd()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Second Gallery Item
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="gallery-table-body">
+              <tr>
+                <td colspan="5" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Contact Tab -->
+      <div id="tab-contact" class="tab-panel" style="display: none">
+        <!-- Hero Section -->
+        <h3 class="admin-subheading">Hero Section</h3>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="contact-hero-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Our Centers & Facilities -->
+        <h3 class="admin-subheading">Our Centers &amp; Facilities</h3>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="contact-facility-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Internship Tab -->
+      <div id="tab-internship" class="tab-panel" style="display: none">
+        <!-- Hero Section -->
+        <h3 class="admin-subheading">Hero Section</h3>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="internship-hero-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Our Services -->
+        <h3 class="admin-subheading">Our Services</h3>
+        <div class="admin-table-wrap" style="margin-bottom: var(--space-6)">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="internship-services-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Visualizing the Placement Journey -->
+        <h3 class="admin-subheading">Visualizing the Placement Journey</h3>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Label</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="internship-gallery-table-body">
+              <tr>
+                <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PAGE IMAGE MODAL ============ -->
+    <div id="page-image-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="page-image-form-title">Edit Image</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closePageImage()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="page-image-key" />
+          <div class="admin-form-group">
+            <label>Label</label>
+            <input type="text" id="page-image-label" disabled />
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('page-image-file').click()"
+            >
+              <input
+                type="file"
+                id="page-image-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewPageImageFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select a new image
+              </span>
+            </div>
+            <div
+              id="page-image-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="page-image-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closePageImage()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.savePageImage()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="gallery-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="gallery-form-title">Add Gallery Item</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeGallery()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="gallery-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="gallery-title"
+              placeholder="e.g. Cafe Ribbon Cutting"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Category</label>
+              <select id="gallery-category">
+                <option value="activities">School Activities</option>
+                <option value="events">Events &amp; Rallies</option>
+                <option value="camps">Therapy &amp; Camps</option>
+                <option value="festivals">Festivals</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label>Date</label>
+              <input
+                type="text"
+                id="gallery-date"
+                placeholder="e.g. December 2025"
+              />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Description</label>
+            <textarea
+              id="gallery-description"
+              placeholder="Short description of the photo..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('gallery-file').click()"
+            >
+              <input
+                type="file"
+                id="gallery-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewGalleryFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="gallery-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="gallery-current-img" src="" alt="Current image" />
+            </div>
+            <div
+              class="admin-upload-progress-wrap"
+              id="upload-progress-wrap"
+              style="display: none"
+            >
+              <div id="upload-progress"></div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeGallery()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveGallery()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ COVERFLOW MODAL ============ -->
+    <div id="coverflow-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="coverflow-form-title">Add First Gallery Slide</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeCoverflow()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="coverflow-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="coverflow-title"
+              placeholder="e.g. Annual Sports Day Celebration"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Description</label>
+            <textarea
+              id="coverflow-desc"
+              placeholder="Short caption shown below the slide..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('coverflow-file').click()"
+            >
+              <input
+                type="file"
+                id="coverflow-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewCoverflowFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="coverflow-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="coverflow-current-img" src="" alt="Current image" />
+            </div>
+            <div
+              class="admin-upload-progress-wrap"
+              id="coverflow-upload-progress-wrap"
+              style="display: none"
+            >
+              <div id="coverflow-upload-progress"></div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeCoverflow()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveCoverflow()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FACILITY MODAL ============ -->
+    <div id="facility-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="facility-form-title">Add Facility Card</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeFacility()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="facility-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="facility-title"
+              placeholder="e.g. Speech Therapy"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Description</label>
+            <textarea
+              id="facility-description"
+              placeholder="Short description of the facility/therapy..."
+            ></textarea>
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Badge (e.g. Therapy, Education, Medical)</label>
+              <input
+                type="text"
+                id="facility-badge"
+                placeholder="e.g. Therapy"
+              />
+            </div>
+            <div class="admin-form-group">
+              <label>Icon (emoji)</label>
+              <input type="text" id="facility-icon" placeholder="e.g. 🗣" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('facility-file').click()"
+            >
+              <input
+                type="file"
+                id="facility-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewFacilityFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="facility-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="facility-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeFacility()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveFacility()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FACILITY MODAL ============ -->
+    <div id="facility-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="facility-form-title">Add Facility Card</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeFacility()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="facility-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="facility-title"
+              placeholder="e.g. Speech Therapy"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Description</label>
+            <textarea
+              id="facility-description"
+              placeholder="Short description of the facility/therapy..."
+            ></textarea>
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Badge (e.g. Therapy, Education, Medical)</label>
+              <input
+                type="text"
+                id="facility-badge"
+                placeholder="e.g. Therapy"
+              />
+            </div>
+            <div class="admin-form-group">
+              <label>Icon (emoji)</label>
+              <input type="text" id="facility-icon" placeholder="e.g. 🗣" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Image (managed via shared page images system)</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('facility-file').click()"
+            >
+              <input
+                type="file"
+                id="facility-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewFacilityFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="facility-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="facility-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeFacility()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveFacility()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CAMPAIGN MODAL ============ -->
+    <div id="campaign-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="campaign-form-title">Add Campaign</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeCampaign()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="campaign-id" />
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="campaign-title"
+              placeholder="e.g. Empower Possibilities"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Tagline</label>
+            <textarea
+              id="campaign-tagline"
+              placeholder="Short campaign description..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Tag (emoji + label)</label>
+            <input
+              type="text"
+              id="campaign-tag"
+              placeholder="e.g. 💙 Empowerment"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Goal (₹)</label>
+              <input type="number" id="campaign-goal" value="0" />
+            </div>
+            <div class="admin-form-group">
+              <label>Raised (₹)</label>
+              <input type="number" id="campaign-raised" value="0" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Days Left</label>
+            <input type="number" id="campaign-days" value="0" />
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('campaign-file').click()"
+            >
+              <input
+                type="file"
+                id="campaign-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewCampaignFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="campaign-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="campaign-current-img" src="" alt="Current image" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeCampaign()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveCampaign()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Campaign Modal -->
+    <div id="featured-campaign-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="featured-campaign-form-title">Add Featured Campaign</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeFeaturedCampaign()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="featured-campaign-title"
+              placeholder="e.g. Regular Health Checkup"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Tagline</label>
+            <textarea
+              id="featured-campaign-tagline"
+              placeholder="Short campaign description..."
+            ></textarea>
+          </div>
+          <div class="admin-form-group">
+            <label>Tag (emoji + label)</label>
+            <input
+              type="text"
+              id="featured-campaign-tag"
+              placeholder="e.g. 🏥 Health &amp; Wellness"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Goal (₹)</label>
+              <input type="number" id="featured-campaign-goal" value="0" />
+            </div>
+            <div class="admin-form-group">
+              <label>Raised (₹)</label>
+              <input type="number" id="featured-campaign-raised" value="0" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Days Left</label>
+            <input type="number" id="featured-campaign-days" value="0" />
+          </div>
+          <div class="admin-form-group">
+            <label>Image</label>
+            <div
+              class="admin-file-upload"
+              onclick="
+                document.getElementById('featured-campaign-file').click()
+              "
+            >
+              <input
+                type="file"
+                id="featured-campaign-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewFeaturedCampaignFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select an image
+              </span>
+            </div>
+            <div
+              id="featured-campaign-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img
+                id="featured-campaign-current-img"
+                src=""
+                alt="Current image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeFeaturedCampaign()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveFeaturedCampaign()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin JS (ESM Module) -->
+    <script type="module" src="/admin_panel/firebase-admin.js"></script>
+  </body>
+</html>

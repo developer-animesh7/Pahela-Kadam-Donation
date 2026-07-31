@@ -1,0 +1,63 @@
+rules_version = '2';
+
+// Cloud Firestore Security Rules
+// Public read access for all website content.
+// Write access restricted to the authorized admin email only.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function: admin emails allowed to write
+    function isAuthorizedAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'pahelakadamweb@gmail.com';
+    }
+
+    // Gallery items collection
+    match /galleryItems/{itemId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Campaigns collection
+    match /campaigns/{campaignId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Page images (key-value map for dynamic page images)
+    match /pageImages/{imageKey} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Coverflow slides
+    match /coverflowSlides/{slideId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Facilities (Therapies & Rehabilitation card metadata)
+    match /facilities/{facilityId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Featured campaign (single document: featuredCampaign/current)
+    match /featuredCampaign/{docId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Site settings (donation link, etc.)
+    match /siteSettings/{settingId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Default deny for any other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

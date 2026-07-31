@@ -1,0 +1,762 @@
+/* ==========================================================================
+   INTERACTIVE ANIMATIONS & SCROLL REVEALS - MICRO INTERACTIONS SYSTEM
+   ========================================================================== */
+
+/* Keyframe Core */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px); /* Very subtle translation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-4px); /* Very subtle translation */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Base Scroll Reveal Classes (controlled via JS Intersection Observer) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Image reveal zoom */
+.reveal-zoom {
+  overflow: hidden;
+  border-radius: inherit;
+}
+.reveal-zoom img {
+  transform: scale(1.08);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-zoom.active img {
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   LANDING PAGE ENTRANCE SEQUENCE
+   Staggered entrance delays activated on body.entrance-ready
+   ========================================================================== */
+.entrance-ready .header-wrapper,
+.entrance-ready .hero-entrance-badge,
+.entrance-ready .hero-entrance-title,
+.entrance-ready .hero-entrance-desc,
+.entrance-ready .hero-entrance-btns,
+.entrance-ready .hero-entrance-stats,
+.entrance-ready .hero-entrance-img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.entrance-ready .header-wrapper {
+  transform: none !important;
+}
+
+.header-wrapper {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-entrance-badge,
+.hero-entrance-title,
+.hero-entrance-desc,
+.hero-entrance-btns,
+.hero-entrance-stats,
+.hero-entrance-img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entrance-ready .header-wrapper {
+  transition-delay: 50ms;
+}
+.entrance-ready .hero-entrance-badge {
+  transition-delay: 150ms;
+}
+.entrance-ready .hero-entrance-title {
+  transition-delay: 250ms;
+}
+.entrance-ready .hero-entrance-desc {
+  transition-delay: 350ms;
+}
+.entrance-ready .hero-entrance-btns {
+  transition-delay: 450ms;
+}
+.entrance-ready .hero-entrance-stats {
+  transition-delay: 550ms;
+}
+.entrance-ready .hero-entrance-img {
+  transition-delay: 650ms;
+}
+
+/* Subtle Hero Image Zoom Animation */
+@keyframes subtleHeroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+.hero-img-zoom {
+  animation: subtleHeroZoom 15s ease-out forwards;
+}
+
+/* ==========================================================================
+   DONATE BUTTON MICRO-ANIMATIONS
+   Soft glassmorphism, breathing glow, ripple click, floating hearts
+   ========================================================================== */
+@keyframes premium-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+  }
+  50% {
+    transform: scale(1.015);
+    box-shadow:
+      0 4px 25px rgba(37, 99, 235, 0.4),
+      0 0 0 5px rgba(37, 99, 235, 0.12);
+  }
+}
+.premium-donate-btn {
+  animation: premium-breathe 4s ease-in-out infinite;
+  transition:
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+}
+.premium-donate-btn:hover {
+  transform: translateY(-3px) scale(1.025) !important;
+  box-shadow: 0 6px 28px rgba(37, 99, 235, 0.45) !important;
+  animation-play-state: paused;
+}
+
+/* Floating heart icon keyframes */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-65px) scale(1.2);
+    opacity: 0;
+  }
+}
+.floating-heart {
+  position: absolute;
+  bottom: 5px;
+  pointer-events: none;
+  font-size: 11px;
+  animation: float-heart 1.8s ease-in-out forwards;
+  opacity: 0;
+  z-index: 10;
+}
+
+/* Ripple click effect */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Stagger systems for dynamic list items (cards) */
+.stagger-parent > .reveal {
+  transition-delay: calc(
+    var(--stagger-index, 0) * 40ms
+  ); /* Stagger speeded up to feel instant */
+}
+
+/* Dynamic hover effects for images inside cards (Very subtle zoom) */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform var(--transition-normal);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.01);
+}
+
+/* Premium Card displacement on hover - Gentle 2px lift */
+.hover-lift {
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+  will-change: transform, box-shadow;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Loader Shimmering effects for skeleton components */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f3f7f3 25%, #eaf1ea 50%, #f3f7f3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Donation Action Pulse - Primary Orange CTA with Glass Shimmers and Breathing Glows */
+.pulse-donate {
+  position: relative;
+  overflow: hidden;
+  height: 56px !important;
+  padding: 0 28px !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-full) !important;
+  border: 1px solid rgba(255, 138, 0, 0.2) !important;
+  background: var(--gradient-donate) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease,
+    filter 220ms ease !important;
+  animation: orange-glow-breathe 4s ease-in-out infinite;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Hover: Lift, Brighter gradient, Stronger shadow, Heart rotate */
+.pulse-donate:hover {
+  transform: translateY(-3px);
+  background: var(--gradient-donate-hover) !important;
+  box-shadow: 0 10px 30px rgba(255, 138, 0, 0.4) !important;
+  filter: brightness(1.03);
+}
+
+.pulse-donate:hover::before {
+  animation-duration: 1.6s; /* Shimmer speeds up on hover */
+}
+
+.pulse-donate:hover svg {
+  transform: scale(1.2) translateY(-2px) rotate(5deg) !important;
+}
+
+/* Active click states */
+.pulse-donate:active {
+  transform: scale(0.97) translateY(-1px) !important;
+  transition: transform 150ms ease !important;
+}
+
+/* 1. Continuous Glass Shimmer (Wider, blurred, soft) */
+@keyframes shimmer-move {
+  0% {
+    transform: translateX(-180%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(180%) skewX(-25deg);
+  }
+}
+
+.pulse-donate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%; /* 40% of the button width */
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05) 10%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.05) 90%,
+    transparent
+  );
+  filter: blur(4px);
+  transform: translateX(-180%) skewX(-25deg);
+  animation: shimmer-move 3.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2. Static Outline Heart transition rule */
+.pulse-donate svg {
+  will-change: transform, opacity;
+  display: inline-block;
+  vertical-align: middle;
+  transition:
+    transform 220ms ease,
+    opacity 150ms ease;
+}
+
+/* Hide original white heart outline temporarily when red heart is popping */
+.pulse-donate.heart-pop-active svg {
+  opacity: 0 !important;
+}
+
+/* 3. Orange Button Glow Breathe Keyframes */
+@keyframes orange-glow-breathe {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(255, 138, 0, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 10px 30px rgba(255, 138, 0, 0.3),
+      0 0 0 4px rgba(255, 138, 0, 0.08);
+  }
+}
+
+/* 4. Instagram-like Pop Single Heart Particle Animation (Scale 0.7 -> 1.25 -> 1, Up 12px, Rotate, Eased Fade) */
+@keyframes header-float-heart {
+  0% {
+    transform: translate(-50%, 0) scale(0.7) rotate(-5deg);
+    opacity: 0;
+  }
+  35% {
+    transform: translate(-50%, -6px) scale(1.25) rotate(5deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(-50%, -10px) scale(1) rotate(-3deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -12px) scale(0.9) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.header-floating-heart {
+  position: absolute;
+  pointer-events: none;
+  font-size: 11px;
+  animation: header-float-heart 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    forwards;
+  opacity: 0;
+  z-index: 10;
+}
+
+/* WCAG accessibility: Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .hover-zoom img,
+  .hover-lift,
+  .pulse-donate {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Base Mobile Menu Hidden State for Desktop */
+.nav-menu,
+.nav-menu-close,
+.nav-menu-brand {
+  display: none !important;
+}
+
+/* Base Trust Cards Group container for Desktop (no layout impact) */
+.hero-trust-cards-group {
+  display: contents;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+@media (max-width: 1023px) {
+  /* 1. Mobile Menu Redesign */
+  .header-wrapper.menu-open {
+    transform: none !important;
+    opacity: 1 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    z-index: 999999 !important;
+  }
+
+  /* Disable page scrolling on html & body wrapper while menu is open */
+  html.html-menu-open,
+  html.html-menu-open body {
+    overflow: hidden !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    position: relative !important;
+  }
+
+  .nav-menu-brand {
+    display: flex !important;
+  }
+  .nav-menu {
+    position: fixed !important;
+    inset: 0 !important;
+    background-color: #ffffff !important;
+    z-index: 2500 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: var(--space-4) !important;
+    padding: calc(var(--space-10) + env(safe-area-inset-top, 24px))
+      var(--space-6) var(--space-6) !important;
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 300ms ease,
+      visibility 300ms !important;
+    overflow-y: auto !important;
+  }
+  .nav-menu.is-active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .nav-menu-close {
+    position: fixed !important;
+    top: calc(20px + env(safe-area-inset-top, 0px)) !important;
+    right: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 38px !important;
+    color: var(--primary) !important;
+    cursor: pointer !important;
+    z-index: 2510 !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .nav-menu .nav-link {
+    font-size: var(--text-lg) !important;
+    font-weight: 700 !important;
+    color: var(--primary-dark) !important;
+    text-decoration: none !important;
+    padding: var(--space-1) var(--space-3) !important;
+    transition: color 200ms ease !important;
+  }
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.is-current-page {
+    color: var(--accent) !important;
+  }
+
+  /* 2. Hero Section Collapses Stack */
+  .container.grid.grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8) !important;
+    text-align: center !important;
+  }
+  .hero-entrance-img {
+    flex-direction: column !important;
+    gap: var(--space-6) !important;
+  }
+  .slideshow-container,
+  .hero-entrance-img > div:first-child {
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+
+  /* 3. Floating cards position static below image */
+  .hero-floating-badge {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  /* 4. Spacing overrides */
+  section.section {
+    padding: var(--space-10) 0 !important;
+  }
+  .nse-trust-card {
+    padding: var(--space-6) var(--space-4) !important;
+  }
+  .media-frame-offset {
+    margin-top: var(--space-4) !important;
+    margin-bottom: var(--space-4) !important;
+  }
+}
+
+/* ==========================================================================
+   HERO IMAGE ENTRANCE ANIMATION (Mobile – graceful fade-up)
+   ========================================================================== */
+@keyframes heroImgFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 767px) {
+  /* Initial hidden state — image waits off-screen */
+  .mobile-hero-img-frame {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  /* Triggered by JS adding .is-visible to the wrapper */
+  .mobile-hero-img-frame.is-visible {
+    animation: heroImgFadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) 400ms both;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 1. Stack Hero Content elements in custom mobile sequence */
+  .container.grid.grid-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--space-6) !important;
+  }
+
+  /* Make column wrappers display contents to expose children to flexbox ordering */
+  .container.grid.grid-2 > div:first-child {
+    display: contents !important;
+  }
+
+  .hero-entrance-img {
+    display: contents !important;
+  }
+
+  .hero-entrance-badge {
+    order: 1 !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+  }
+
+  .hero-entrance-title,
+  .text-display,
+  h1 {
+    order: 2 !important;
+    font-size: clamp(1.8rem, 5vw + 1.2rem, 2.4rem) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  .hero-entrance-desc,
+  .text-story,
+  p {
+    order: 3 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-entrance-btns,
+  .btn-group {
+    order: 4 !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: var(--space-3) !important;
+    margin: 0 auto !important;
+  }
+
+  /* Hero Image Frame Wrapper */
+  .hero-entrance-img > div:first-child {
+    order: 5 !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: var(--space-4) auto !important;
+  }
+
+  /* 2. Trust Cards — grouped with tight gap, equal breathing room above & below */
+  .hero-floating-badge {
+    order: 6 !important;
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+  /* Wrapper group for the two trust cards */
+  .hero-trust-cards-group {
+    order: 6 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important; /* tight gap between the two cards */
+    margin: var(--space-5) auto !important;
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+  /* Each card inside the group has no extra margin of its own */
+  .hero-trust-cards-group .hero-floating-badge {
+    order: unset !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* 3. Statistics Row — 2-column grid: [220+][18+] / [100% full-width] */
+  .hero-entrance-stats,
+  .hero-stats-row {
+    order: 7 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 12px !important;
+    margin: var(--space-5) auto !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    border-top: none !important; /* remove the desktop border-top */
+    padding-top: 0 !important;
+    margin-top: var(--space-5) !important;
+  }
+  /* Third stat (100%) spans both columns */
+  .hero-stats-row .stat-item:nth-child(3),
+  .hero-entrance-stats .stat-item:nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+  /* Each stat item becomes a card */
+  .hero-stats-row .stat-item,
+  .hero-entrance-stats .stat-item {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    padding: var(--space-3) var(--space-4) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    text-align: center !important;
+  }
+  .hero-stats-row .stat-count,
+  .hero-entrance-stats .stat-count {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* At very small screens keep 2-column grid but reduce font slightly */
+  .hero-stats-row .stat-count,
+  .hero-entrance-stats .stat-count {
+    font-size: var(--text-xl) !important;
+  }
+}

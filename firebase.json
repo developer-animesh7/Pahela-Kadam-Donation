@@ -1,0 +1,295 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "firestore.rules",
+      "firestore.indexes.json",
+      "storage.rules",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      ".git/**",
+      "js/github-config.js",
+      "cloudflare-worker/**",
+      "run_website.sh",
+      "run_website.bat",
+      "README.md",
+      "SCALING_GUIDE.md",
+      "google-apps-script.gs"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/*.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/*.css",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|png|webp|gif|svg|ico|avif)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=2592000" }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/pages/landing.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/landing",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/landing/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/gallery.html",
+        "destination": "/gallery/",
+        "type": 301
+      },
+      {
+        "source": "/pages/gallery",
+        "destination": "/gallery/",
+        "type": 301
+      },
+      {
+        "source": "/pages/gallery/",
+        "destination": "/gallery/",
+        "type": 301
+      },
+      {
+        "source": "/pages/about.html",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/pages/about",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/pages/about/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/pages/campaigns.html",
+        "destination": "/campaigns/",
+        "type": 301
+      },
+      {
+        "source": "/pages/campaigns",
+        "destination": "/campaigns/",
+        "type": 301
+      },
+      {
+        "source": "/pages/campaigns/",
+        "destination": "/campaigns/",
+        "type": 301
+      },
+      {
+        "source": "/pages/contact.html",
+        "destination": "/contact/",
+        "type": 301
+      },
+      {
+        "source": "/pages/contact",
+        "destination": "/contact/",
+        "type": 301
+      },
+      {
+        "source": "/pages/contact/",
+        "destination": "/contact/",
+        "type": 301
+      },
+      {
+        "source": "/pages/donate.html",
+        "destination": "/donate/",
+        "type": 301
+      },
+      {
+        "source": "/pages/donate",
+        "destination": "/donate/",
+        "type": 301
+      },
+      {
+        "source": "/pages/donate/",
+        "destination": "/donate/",
+        "type": 301
+      },
+      {
+        "source": "/pages/internship.html",
+        "destination": "/internship/",
+        "type": 301
+      },
+      {
+        "source": "/pages/internship",
+        "destination": "/internship/",
+        "type": 301
+      },
+      {
+        "source": "/pages/internship/",
+        "destination": "/internship/",
+        "type": 301
+      },
+      {
+        "source": "/pages/transparency.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/transparency",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/transparency/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/transparency",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/transparency/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/faq.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/faq",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/faq/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/faq",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/faq/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/founder-story.html",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/pages/founder-story",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/pages/founder-story/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/founder-story",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/founder-story/",
+        "destination": "/about/",
+        "type": 301
+      },
+      {
+        "source": "/pages/annual-reports.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/annual-reports",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/pages/annual-reports/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/annual-reports",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/annual-reports/",
+        "destination": "/",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/pages/landing.html"
+      },
+      {
+        "source": "/gallery",
+        "destination": "/pages/gallery.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/pages/about.html"
+      },
+      {
+        "source": "/campaigns",
+        "destination": "/pages/campaigns.html"
+      },
+      {
+        "source": "/campaign",
+        "destination": "/pages/campaigns.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/pages/contact.html"
+      },
+      {
+        "source": "/donate",
+        "destination": "/pages/donate.html"
+      },
+      {
+        "source": "/internship",
+        "destination": "/pages/internship.html"
+      }
+    ]
+  }
+}

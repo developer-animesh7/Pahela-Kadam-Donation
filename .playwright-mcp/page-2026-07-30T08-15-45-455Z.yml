@@ -1,0 +1,100 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Pahela Kadam School – Home" [ref=e4] [cursor=pointer]:
+        - /url: /pages/landing.html
+        - img "Pahela Kadam Logo" [ref=e5]
+        - generic [ref=e6]:
+          - generic [ref=e7]: Pahela Kadam
+          - generic [ref=e8]: SCHOOL FOR SPECIAL CHILDREN
+      - navigation "Main Navigation" [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: /pages/landing.html
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: /pages/about.html
+        - link "Campaign" [ref=e13] [cursor=pointer]:
+          - /url: /pages/campaigns.html
+        - link "Gallery" [ref=e14] [cursor=pointer]:
+          - /url: /pages/gallery.html
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /pages/contact.html
+        - link "Internship" [ref=e16] [cursor=pointer]:
+          - /url: /pages/internship.html
+      - link "Donate" [ref=e18] [cursor=pointer]:
+        - /url: https://razorpay.me/@narayanicharitabletrust
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - button "Previous Slide" [ref=e28] [cursor=pointer]
+          - button "Next Slide" [ref=e31] [cursor=pointer]
+        - generic [ref=e34]:
+          - heading "Slide Title" [level=4] [ref=e35]
+          - paragraph [ref=e36]: Slide Subtitle
+        - button "Scroll to Photo Gallery" [ref=e38] [cursor=pointer]:
+          - generic [ref=e39]: Explore All Memories
+      - generic [ref=e42]:
+        - button "All Memories" [ref=e43] [cursor=pointer]
+        - button "Nayi Udaan Cafe" [ref=e44] [cursor=pointer]
+        - button "School Activities" [ref=e45] [cursor=pointer]
+        - button "Events & Rallies" [ref=e46] [cursor=pointer]
+        - button "Therapy & Camps" [ref=e47] [cursor=pointer]
+        - button "Festivals" [ref=e48] [cursor=pointer]
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: 0+
+          - generic [ref=e65]: Memories Captured
+        - generic [ref=e66]:
+          - generic [ref=e67]: 0+
+          - generic [ref=e68]: Outings & Rallies
+        - generic [ref=e69]:
+          - generic [ref=e70]: 0+
+          - generic [ref=e71]: Years of Service
+        - generic [ref=e72]:
+          - generic [ref=e73]: 0+
+          - generic [ref=e74]: Disabilities Supported
+  - contentinfo [ref=e76]:
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - link "Pahela Kadam School – Home" [ref=e80] [cursor=pointer]:
+            - /url: /pages/landing.html
+            - img "Pahela Kadam Logo" [ref=e81]
+            - generic [ref=e82]:
+              - generic [ref=e83]: Pahela Kadam School
+              - generic [ref=e84]: SCHOOL FOR SPECIAL CHILDREN
+              - generic [ref=e85]: Run By Narayani Charitable Trust
+          - generic [ref=e86]:
+            - link "Follow Narayani Trust on X (Twitter)" [ref=e87] [cursor=pointer]:
+              - /url: https://x.com/i/flow/login?redirect_after_login=%2FTrustNarayani
+            - link "Follow Pahela Kadam on Instagram" [ref=e90] [cursor=pointer]:
+              - /url: https://www.instagram.com/pahela_kadam
+            - link "Follow Pahela Kadam on Facebook" [ref=e94] [cursor=pointer]:
+              - /url: https://www.facebook.com/pahela.kadam.96
+            - link "Subscribe to Pahela Kadam on YouTube" [ref=e97] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCpcMrXxyuKg_owAl3YemW3Q
+          - paragraph [ref=e101]: Special Schools in Dhanbad – Find the best special children schools for Intellectual, Autism, Cerebral Palsy, Hearing and Physically Challenged children in Dhanbad.
+        - generic [ref=e102]:
+          - heading "Contact" [level=4] [ref=e103]
+          - generic [ref=e104]:
+            - generic [ref=e109]:
+              - generic [ref=e110]: Call
+              - link "+91 9471162439" [ref=e111] [cursor=pointer]:
+                - /url: tel:+919471162439
+              - link "03263556440" [ref=e112] [cursor=pointer]:
+                - /url: tel:03263556440
+            - generic [ref=e118]:
+              - generic [ref=e119]: Email
+              - link "pahelakadams@gmail.com" [ref=e120] [cursor=pointer]:
+                - /url: mailto:pahelakadams@gmail.com
+        - generic [ref=e121]:
+          - heading "Visit Us" [level=4] [ref=e122]
+          - generic [ref=e128]:
+            - generic [ref=e129]: Address
+            - generic [ref=e130]: Pahela Kadam School
+            - generic [ref=e131]: Jagjeevan Nagar, Saraidhela
+            - generic [ref=e132]: Dhanbad, Jharkhand – 826003
+      - generic [ref=e133]:
+        - generic [ref=e134]: © Pahela Kadam School – Run By Narayani Charitable Trust. All Rights Reserved.
+        - link "Transparency Audit Records" [ref=e135] [cursor=pointer]:
+          - /url: /pages/transparency.html

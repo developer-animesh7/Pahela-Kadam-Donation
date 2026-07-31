@@ -1,0 +1,204 @@
+- generic [active] [ref=f12e1]:
+  - banner [ref=f12e2]:
+    - generic [ref=f12e3]:
+      - link "Pahela Kadam School – Home" [ref=f12e4] [cursor=pointer]:
+        - /url: /
+        - img "Pahela Kadam Logo" [ref=f12e5]
+        - generic [ref=f12e6]:
+          - generic [ref=f12e7]: Pahela Kadam
+          - generic [ref=f12e8]: SCHOOL FOR SPECIAL CHILDREN
+      - navigation "Main Navigation" [ref=f12e10]:
+        - link "Home" [ref=f12e11] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=f12e12] [cursor=pointer]:
+          - /url: /about
+        - link "Campaign" [ref=f12e13] [cursor=pointer]:
+          - /url: /campaigns
+        - link "Gallery" [ref=f12e14] [cursor=pointer]:
+          - /url: /gallery
+        - link "Contact" [ref=f12e15] [cursor=pointer]:
+          - /url: /contact
+        - link "Internship" [ref=f12e16] [cursor=pointer]:
+          - /url: /internship
+      - link "Donate" [ref=f12e18] [cursor=pointer]:
+        - /url: https://razorpay.me/@narayanicharitabletrust
+  - main [ref=f12e22]:
+    - generic [ref=f12e25]:
+      - generic [ref=f12e26]:
+        - generic [ref=f12e27]:
+          - img "Mrs. Anita Agarwal - Founder of Pahela Kadam School" [ref=f12e29]
+          - generic [ref=f12e30]:
+            - paragraph [ref=f12e31]: "\"Every special child holds a unique spark. At Pahela Kadam School, we nurture that spark into a flame of independence. Connect with us directly to visit, volunteer, or coordinate CSR initiatives.\""
+            - generic [ref=f12e32]:
+              - heading "Mrs. Anita Agarwal" [level=4] [ref=f12e33]
+              - text: Founder & Secretary, Pahela Kadam School
+        - heading "Points of Contact" [level=3] [ref=f12e34]
+        - generic [ref=f12e35]:
+          - generic [ref=f12e36]:
+            - heading "Admissions & Visits" [level=4] [ref=f12e38]
+            - paragraph [ref=f12e40]:
+              - text: "Special Education TeamPhone:"
+              - link "+91 9471162439" [ref=f12e41] [cursor=pointer]:
+                - /url: tel:+919471162439
+              - text: ","
+              - link "+91 7004912363" [ref=f12e42] [cursor=pointer]:
+                - /url: tel:+917004912363
+              - text: Mon-Sat, 9:00 AM - 4:00 PM
+          - generic [ref=f12e43]:
+            - heading "CSR & Sponsorships" [level=4] [ref=f12e45]
+            - paragraph [ref=f12e47]: "Mrs. Anita Agarwal (Secretary)Email: pahelakadams@gmail.comMon-Fri, 10:00 AM - 5:00 PM"
+        - generic [ref=f12e48]:
+          - heading "School Address" [level=4] [ref=f12e53]
+          - paragraph [ref=f12e54]:
+            - text: Bungalow No. 8, Jagjeevan Nagar, Near Saraidhela Police Station, Saraidhella, Dhanbad, Jharkhand – 826003
+            - strong [ref=f12e55]: "Landline:"
+            - link "+91 03263146628" [ref=f12e56] [cursor=pointer]:
+              - /url: tel:+9103263146628
+          - link "Get Directions →" [ref=f12e57] [cursor=pointer]:
+            - /url: https://maps.google.com/?q=Pahela+Kadam+School+for+Special+Children+Dhanbad
+        - generic [ref=f12e58]:
+          - heading "Narayani Charitable Trust Credentials" [level=3] [ref=f12e59]
+          - paragraph [ref=f12e60]: Pahela Kadam School is managed by Narayani Charitable Trust (Dhanbad), a registered public charitable trust.
+          - generic [ref=f12e61]:
+            - generic [ref=f12e62]:
+              - generic [ref=f12e63]: Trust Registration No.
+              - generic [ref=f12e64]: 10287 / 1283 / 2014
+              - generic [ref=f12e65]: Registered under the Indian Trusts Act, 1882
+            - generic [ref=f12e66]:
+              - generic [ref=f12e67]:
+                - generic [ref=f12e68]: Permanent Account No.
+                - generic [ref=f12e69]: AABTN6500D
+              - generic [ref=f12e70]:
+                - generic [ref=f12e71]: CSR Registration No.
+                - generic [ref=f12e72]: CSR00008850
+            - generic [ref=f12e73]:
+              - generic [ref=f12e74]:
+                - generic [ref=f12e75]: NITI Aayog Darpan UID
+                - generic [ref=f12e76]: JH/2018/0188326
+              - generic [ref=f12e77]:
+                - generic [ref=f12e78]: National Trust ID
+                - generic [ref=f12e79]: JHAR19521418106
+            - generic [ref=f12e80]:
+              - generic [ref=f12e81]:
+                - generic [ref=f12e82]: UDISE School Code
+                - generic [ref=f12e83]: "20120302021"
+              - generic [ref=f12e84]:
+                - generic [ref=f12e85]: Tax Exemption Status
+                - generic [ref=f12e86]: 12AA & 80G Active
+      - generic [ref=f12e87]:
+        - generic [ref=f12e88]:
+          - generic [ref=f12e89]:
+            - generic [ref=f12e90]: Secure Message Terminal
+            - heading "Send a Message" [level=2] [ref=f12e91]
+          - generic [ref=f12e92]:
+            - generic [ref=f12e93]:
+              - textbox "Full Name" [ref=f12e94]:
+                - /placeholder: " "
+              - generic: Full Name
+            - generic [ref=f12e95]:
+              - textbox "Email Address" [ref=f12e96]:
+                - /placeholder: " "
+              - generic: Email Address
+            - generic [ref=f12e97]:
+              - textbox "Phone Number" [ref=f12e98]:
+                - /placeholder: " "
+              - generic: Phone Number
+            - generic [ref=f12e99]:
+              - textbox "Subject" [ref=f12e100]:
+                - /placeholder: " "
+              - generic: Subject
+            - generic [ref=f12e101]:
+              - textbox "Message" [ref=f12e102]:
+                - /placeholder: " "
+              - generic: Message
+            - button "Send Message" [ref=f12e103] [cursor=pointer]
+        - heading "Frequently Asked Questions" [level=3] [ref=f12e108]
+        - generic [ref=f12e109]:
+          - generic [ref=f12e110]:
+            - button "How can I schedule a school visit?" [ref=f12e111] [cursor=pointer]
+            - paragraph [ref=f12e115]: Visits are welcomed Monday through Saturday, between 10:00 AM and 2:00 PM. Please submit our online form or call +91 9471162439 at least 24 hours in advance to schedule a guided tour.
+          - generic [ref=f12e116]:
+            - button "Is my donation eligible for tax exemption?" [ref=f12e117] [cursor=pointer]
+            - paragraph [ref=f12e121]: Yes, all donations made to the Narayani Charitable Trust (operating Pahela Kadam School) are 100% tax-exempt under Section 80G of the Income Tax Act. Official receipts and tax certificates will be emailed to you within 7 working days.
+          - generic [ref=f12e122]:
+            - button "Can I donate physical materials (wheelchairs, computers)?" [ref=f12e123] [cursor=pointer]
+            - paragraph [ref=f12e127]: Absolutely. We accept special education books, computers, orthopedic crutches, wheelchairs, speech training software, and art supplies. Please email pahelakadams@gmail.com with your list of items to coordinate delivery.
+          - generic [ref=f12e128]:
+            - button "What are the admission criteria for new students?" [ref=f12e129] [cursor=pointer]
+            - paragraph [ref=f12e133]: Pahela Kadam School supports children with autism, intellectual disabilities, cerebral palsy, down syndrome, and developmental delays. Admissions are entirely free of charge for children from underprivileged families, following an initial pediatric and special educational diagnostic evaluation.
+          - generic [ref=f12e134]:
+            - button "How can corporate partners support Pahela Kadam School under CSR?" [ref=f12e135] [cursor=pointer]
+            - paragraph [ref=f12e139]: "Corporate partners can sponsor specialized class digitizations, child pediatric therapy standing frames, or fund vocational cafe placement tracks. The trust is registered on the MCA portal (CSR Registration No: CSR00008850) for tax-exempt CSR partnerships."
+    - generic [ref=f12e141]:
+      - heading "Our Centers & Facilities" [level=3] [ref=f12e142]
+      - paragraph [ref=f12e143]: Pahela Kadam School operates specialized therapy centers, learning classrooms, and vocational spaces to provide complete development and independence for our children.
+      - generic [ref=f12e144]:
+        - generic [ref=f12e145]:
+          - img "Vocational Training Cafe" [ref=f12e147]
+          - generic [ref=f12e148]:
+            - heading "Nayi Udaan Cafe" [level=4] [ref=f12e149]
+            - paragraph [ref=f12e150]: Our landmark vocational project where senior students learn catering, hospitality, and finance.
+        - generic [ref=f12e151]:
+          - img "Special Education Classrooms" [ref=f12e153]
+          - generic [ref=f12e154]:
+            - heading "Special Classrooms" [level=4] [ref=f12e155]
+            - paragraph [ref=f12e156]: Stimulating educational setups customized for autistic, cerebral palsy, and developmental needs.
+        - generic [ref=f12e157]:
+          - img "Pediatric Therapy Setup" [ref=f12e159]
+          - generic [ref=f12e160]:
+            - heading "Pediatric Therapy" [level=4] [ref=f12e161]
+            - paragraph [ref=f12e162]: One-on-one physiotherapy, occupational therapy, and sensory integration guidance.
+        - generic [ref=f12e163]:
+          - img "Inclusion Sports & Rallies" [ref=f12e165]
+          - generic [ref=f12e166]:
+            - heading "Inclusion Events" [level=4] [ref=f12e167]
+            - paragraph [ref=f12e168]: Sports day championships, inclusion rallies, and cultural festival celebrations with the community.
+    - generic [ref=f12e171]:
+      - generic: "GPS: 23.8144° N, 86.4496° E // ALT 223M"
+      - iframe [ref=f12e172]:
+        
+  - contentinfo [ref=f12e174]:
+    - generic [ref=f12e175]:
+      - generic [ref=f12e176]:
+        - generic [ref=f12e177]:
+          - link "Pahela Kadam School – Home" [ref=f12e178] [cursor=pointer]:
+            - /url: /
+            - img "Pahela Kadam Logo" [ref=f12e179]
+            - generic [ref=f12e180]:
+              - generic [ref=f12e181]: Pahela Kadam School
+              - generic [ref=f12e182]: SCHOOL FOR SPECIAL CHILDREN
+              - generic [ref=f12e183]: Run By Narayani Charitable Trust
+          - generic [ref=f12e184]:
+            - link "Follow Narayani Trust on X (Twitter)" [ref=f12e185] [cursor=pointer]:
+              - /url: https://x.com/i/flow/login?redirect_after_login=%2FTrustNarayani
+            - link "Follow Pahela Kadam on Instagram" [ref=f12e188] [cursor=pointer]:
+              - /url: https://www.instagram.com/pahela_kadam
+            - link "Follow Pahela Kadam on Facebook" [ref=f12e192] [cursor=pointer]:
+              - /url: https://www.facebook.com/pahela.kadam.96
+            - link "Subscribe to Pahela Kadam on YouTube" [ref=f12e195] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCpcMrXxyuKg_owAl3YemW3Q
+          - paragraph [ref=f12e199]: Special Schools in Dhanbad – Find the best special children schools for Intellectual, Autism, Cerebral Palsy, Hearing and Physically Challenged children in Dhanbad.
+        - generic [ref=f12e200]:
+          - heading "Contact" [level=4] [ref=f12e201]
+          - generic [ref=f12e202]:
+            - generic [ref=f12e207]:
+              - generic [ref=f12e208]: Call
+              - link "+91 9471162439" [ref=f12e209] [cursor=pointer]:
+                - /url: tel:+919471162439
+              - link "03263556440" [ref=f12e210] [cursor=pointer]:
+                - /url: tel:03263556440
+            - generic [ref=f12e216]:
+              - generic [ref=f12e217]: Email
+              - link "pahelakadams@gmail.com" [ref=f12e218] [cursor=pointer]:
+                - /url: mailto:pahelakadams@gmail.com
+        - generic [ref=f12e219]:
+          - heading "Visit Us" [level=4] [ref=f12e220]
+          - generic [ref=f12e226]:
+            - generic [ref=f12e227]: Address
+            - generic [ref=f12e228]: Pahela Kadam School
+            - generic [ref=f12e229]: Jagjeevan Nagar, Saraidhela
+            - generic [ref=f12e230]: Dhanbad, Jharkhand – 826003
+      - generic [ref=f12e231]:
+        - generic [ref=f12e232]: © Pahela Kadam School – Run By Narayani Charitable Trust. All Rights Reserved.
+        - link "Transparency Audit Records" [ref=f12e233] [cursor=pointer]:
+          - /url: /transparency

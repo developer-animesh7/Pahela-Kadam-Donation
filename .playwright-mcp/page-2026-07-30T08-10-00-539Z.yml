@@ -1,0 +1,7 @@
+- generic [ref=f6e3]:
+  - img "Pahela Kadam Logo" [ref=f6e4]
+  - heading "Admin Panel" [level=1] [ref=f6e5]
+  - paragraph [ref=f6e6]: Sign in with your authorized Google account to manage gallery and campaign content.
+  - button "Google logo Sign in with Google" [ref=f6e7] [cursor=pointer]:
+    - img "Google logo" [ref=f6e8]
+    - generic [ref=f6e9]: Sign in with Google

@@ -1,0 +1,8 @@
+name = "pahelakadm-uploader"
+main = "src/index.js"
+compatibility_date = "2024-09-25"
+
+# R2 bucket binding — lets the Worker read/write objects directly
+[[r2_buckets]]
+binding = "IMAGES_BUCKET"
+bucket_name = "pahelakadam-images"
