@@ -37,6 +37,12 @@ service firebase.storage {
       allow write: if isAuthorizedAdmin();
     }
 
+    // Partner logos
+    match /partners/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
     // Default: allow admin to write anywhere, public read
     match /{allPaths=**} {
       allow read: if true;

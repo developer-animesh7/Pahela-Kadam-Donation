@@ -269,11 +269,11 @@
       <div class="desktop-only centered-nav-links-wrap" style="position: absolute; left: 50%; transform: translateX(-50%);">
         <nav style="display: flex; gap: var(--space-5); align-items: center;" aria-label="Main Navigation">
           <a href="/"   class="nav-link">Home</a>
-          <a href="/about"     class="nav-link">About</a>
-          <a href="/campaigns" class="nav-link">Campaign</a>
-          <a href="/gallery"   class="nav-link">Gallery</a>
-          <a href="/contact"   class="nav-link">Contact</a>
-          <a href="/internship" class="nav-link">Intership</a>
+          <a href="/pages/about.html"     class="nav-link">About</a>
+          <a href="/pages/campaigns.html" class="nav-link">Campaign</a>
+          <a href="/pages/gallery.html"   class="nav-link">Gallery</a>
+          <a href="/pages/contact.html"   class="nav-link">Contact</a>
+          <a href="/pages/internship.html" class="nav-link">Intership</a>
         </nav>
       </div>
 
@@ -307,11 +307,11 @@
       </div>
 
       <a href="/" class="nav-link">Home</a>
-      <a href="/about" class="nav-link">About</a>
-      <a href="/campaigns" class="nav-link">Campaign</a>
-      <a href="/gallery" class="nav-link">Gallery</a>
-      <a href="/contact" class="nav-link">Contact</a>
-      <a href="/internship" class="nav-link">Internship</a>
+      <a href="/pages/about.html" class="nav-link">About</a>
+      <a href="/pages/campaigns.html" class="nav-link">Campaign</a>
+      <a href="/pages/gallery.html" class="nav-link">Gallery</a>
+      <a href="/pages/contact.html" class="nav-link">Contact</a>
+      <a href="/pages/internship.html" class="nav-link">Internship</a>
 
       <a href="https://razorpay.me/@narayanicharitabletrust" data-donate-link target="_blank" rel="noopener noreferrer" class="btn btn-accent pulse-donate" style="width: 200px; margin-top: var(--space-2);">
         <span>Donate</span>
@@ -341,7 +341,7 @@
                   <span>NSE SSE Registered NGO</span>
                 </span>
                 <span class="nse-badge nse-badge-neutral" style="margin-left: 8px;">
-                  <span>SR. NO. 37</span>
+                  <span>Certified Social Enterprise</span>
                 </span>
               </div>
               <h2 style="font-size: var(--text-2xl); color: var(--primary-dark); margin: 0; letter-spacing: -0.02em;">Narayani Charitable Trust</h2>
@@ -396,7 +396,7 @@
             Our child-first model transforms physical and developmental limits into independent steps, creating a warm community environment that supports children and guides their families.
           </p>
           <div style="margin-top: var(--space-2);">
-            <a href="/about" class="btn btn-secondary btn-lg">
+            <a href="/pages/about.html" class="btn btn-secondary btn-lg">
               <span>Read Our Full Story</span>
             </a>
           </div>
@@ -468,7 +468,7 @@
 
         <!-- Center CTA: View All Campaigns -->
         <div style="text-align: center; margin-top: var(--space-6);">
-          <a href="/campaigns" class="btn btn-secondary btn-lg" style="box-shadow: var(--shadow-sm);">
+          <a href="/pages/campaigns.html" class="btn btn-secondary btn-lg" style="box-shadow: var(--shadow-sm);">
             <span>View All Campaigns</span>
           </a>
         </div>
@@ -492,13 +492,14 @@
           </p>
         </div>
 
-        <!-- Infinite Marquee container -->
+        <!-- Infinite Marquee container (populated dynamically from Firestore) -->
         <div class="marquee-container">
 
           <!-- Track containing two identical lists of logo cards for infinite seamless looping -->
-          <div class="marquee-track">
+          <div class="marquee-track" id="partnersTrack">
 
-            <!-- SET 1 -->
+            <!-- Fallback static cards (SET 1 + SET 2 duplicate for seamless CSS loop)
+                 shown until Firestore data loads, or if JS fails -->
             <div class="partner-card">
               <img src="../assets/images/partners/coal_india-removebg-preview.png" alt="Coal India Limited" class="partner-logo" loading="lazy">
             </div>
@@ -541,8 +542,6 @@
             <div class="partner-card">
               <img src="../assets/images/partners/jharkhand_gov-removebg-preview.png" alt="Jharkhand Government" class="partner-logo" loading="lazy">
             </div>
-
-            <!-- SET 2 (Duplicate for seamless infinite scroll) -->
             <div class="partner-card">
               <img src="../assets/images/partners/coal_india-removebg-preview.png" alt="Coal India Limited" class="partner-logo" loading="lazy">
             </div>
@@ -598,9 +597,9 @@
   <div data-component="footer"></div>
 
   <!-- JS Modules -->
-  <script src="../js/component-loader.js"></script>
-  <script src="../js/animations.js"></script>
-  <script src="../js/app.js"></script>
-  <script type="module" src="../js/firebase-content.js?v=14"></script>
+  <script src="../js/component-loader.js?v=16"></script>
+  <script src="../js/animations.js?v=16"></script>
+  <script src="../js/app.js?v=16"></script>
+  <script type="module" src="../js/firebase-content.js?v=16"></script>
 </body>
 </html>

@@ -55,6 +55,30 @@ service cloud.firestore {
       allow write: if isAuthorizedAdmin();
     }
 
+    // Partners & Supporters logos
+    match /partners/{partnerId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Government Support statistics
+    match /govSupport/{itemId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Team Statistics
+    match /teamStats/{itemId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
+    // Hero Statistics
+    match /heroStats/{itemId} {
+      allow read: if true;
+      allow write: if isAuthorizedAdmin();
+    }
+
     // Default deny for any other collections
     match /{document=**} {
       allow read, write: if false;

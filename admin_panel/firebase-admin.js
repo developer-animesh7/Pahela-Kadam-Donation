@@ -35,7 +35,11 @@ let galleryItems = [];
 let campaignItems = [];
 let pageImages = {};
 let coverflowItems = [];
+let partnerItems = [];
 let facilityItems = [];
+let govSupportItems = [];
+let teamStatItems = [];
+let heroStatItems = [];
 let editingId = null;
 let editingPageKey = null;
 
@@ -216,6 +220,10 @@ async function loadAllData() {
     loadCoverflowItems(),
     loadFacilityItems(),
     loadDonateLink(),
+    loadPartnerItems(),
+    loadGovSupportItems(),
+    loadTeamStatItems(),
+    loadHeroStatItems(),
   ]);
 }
 
@@ -888,6 +896,421 @@ function blobToBase64(blob) {
 }
 
 // ==========================================
+// GOVERNMENT SUPPORT CRUD
+// ==========================================
+
+const DEFAULT_GOV_SUPPORT = [
+  { value: 200, title: "Aadhaar Card" },
+  { value: 170, title: "Bank Account" },
+  { value: 65, title: "Ration Card" },
+  { value: 170, title: "UDID Card" },
+  { value: 120, title: "Disability Certificate" },
+  { value: 35, title: "Swami Vivekananda Scholarship" },
+  { value: 40, title: "Legal Guardianship" },
+  { value: 35, title: "Niramaya Health Insurance" },
+  { value: 40, title: "Railway Concession" },
+];
+
+async function loadGovSupportItems() {
+  try {
+    let snap;
+    try {
+      snap = await getDocs(
+        query(collection(db, "govSupport"), orderBy("order", "asc")),
+      );
+    } catch (queryErr) {
+      console.warn("GovSupport orderBy failed, fetching unordered:", queryErr.message);
+      snap = await getDocs(collection(db, "govSupport"));
+    }
+    govSupportItems = [];
+    snap.forEach((d) => govSupportItems.push({ id: d.id, ...d.data() }));
+    govSupportItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    if (govSupportItems.length === 0 && currentUser) {
+      for (let i = 0; i < DEFAULT_GOV_SUPPORT.length; i++) {
+        const item = DEFAULT_GOV_SUPPORT[i];
+        await addDoc(collection(db, "govSupport"), {
+          value: item.value,
+          title: item.title,
+          order: i,
+          active: true,
+          updatedAt: Date.now(),
+        });
+      }
+      const snap2 = await getDocs(collection(db, "govSupport"));
+      govSupportItems = [];
+      snap2.forEach((d) => govSupportItems.push({ id: d.id, ...d.data() }));
+      govSupportItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+
+    renderGovSupportTable();
+  } catch (err) {
+    console.error("Error loading gov support:", err);
+    govSupportItems = [];
+    renderGovSupportTable();
+  }
+}
+
+function renderGovSupportTable() {
+  const tbody = document.getElementById("govsupport-table-body");
+  if (!tbody) return;
+  if (govSupportItems.length === 0) {
+    tbody.innerHTML =
+      '<tr><td colspan="4" class="admin-empty">No gov support items yet. Click "Add New Gov Support Item" to create one.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = govSupportItems
+    .map(
+      (item) => `
+    <tr>
+      <td>${item.value ?? 0}</td>
+      <td>${escapeHtml(item.title || "")}</td>
+      <td>${item.order ?? 0}</td>
+      <td class="admin-actions">
+        <button class="btn-edit" onclick="window.adminAPI.editGovSupport('${item.id}')">Edit</button>
+        <button class="btn-delete" onclick="window.adminAPI.deleteGovSupport('${item.id}')">Delete</button>
+      </td>
+    </tr>`,
+    )
+    .join("");
+}
+
+function openGovSupportForm(id) {
+  editingId = id;
+  const item = id ? govSupportItems.find((p) => p.id === id) : null;
+  document.getElementById("govsupport-form-title").textContent = id
+    ? "Edit Gov Support Item"
+    : "Add Gov Support Item";
+  document.getElementById("govsupport-id").value = id || "";
+  document.getElementById("govsupport-value").value = item?.value ?? "";
+  document.getElementById("govsupport-title").value = item?.title || "";
+  document.getElementById("govsupport-order").value = item?.order ?? 0;
+  document.getElementById("govsupport-modal").style.display = "flex";
+}
+
+function closeGovSupportForm() {
+  document.getElementById("govsupport-modal").style.display = "none";
+  editingId = null;
+}
+
+async function saveGovSupportItem() {
+  const value = parseInt(document.getElementById("govsupport-value").value);
+  const title = document.getElementById("govsupport-title").value.trim();
+  if (isNaN(value) || !title) {
+    alert("Value and Title are required.");
+    return;
+  }
+  const order = parseInt(document.getElementById("govsupport-order").value) || 0;
+
+  const data = {
+    value,
+    title,
+    order,
+    active: true,
+    updatedAt: Date.now(),
+  };
+
+  try {
+    if (editingId) {
+      await updateDoc(doc(db, "govSupport", editingId), data);
+    } else {
+      await addDoc(collection(db, "govSupport"), data);
+    }
+    closeGovSupportForm();
+    await loadGovSupportItems();
+  } catch (err) {
+    alert("Save failed: " + err.message);
+  }
+}
+
+async function deleteGovSupportItem(id) {
+  if (!confirm("Delete this gov support item? This cannot be undone.")) return;
+  try {
+    await deleteDoc(doc(db, "govSupport", id));
+    await loadGovSupportItems();
+  } catch (err) {
+    alert("Delete failed: " + err.message);
+  }
+}
+
+// ==========================================
+// TEAM STATISTICS CRUD
+// ==========================================
+
+const DEFAULT_TEAM_STATS = [
+  { value: 12, title: "Teachers", isHighlight: false },
+  { value: 4, title: "Administration", isHighlight: false },
+  { value: 7, title: "Assistant Teachers", isHighlight: false },
+  { value: 4, title: "Helpers", isHighlight: false },
+  { value: 4, title: "Support Staff / Maids", isHighlight: false },
+  { value: 31, title: "Total Team", isHighlight: true },
+];
+
+async function loadTeamStatItems() {
+  try {
+    let snap;
+    try {
+      snap = await getDocs(
+        query(collection(db, "teamStats"), orderBy("order", "asc")),
+      );
+    } catch (queryErr) {
+      console.warn("TeamStats orderBy failed, fetching unordered:", queryErr.message);
+      snap = await getDocs(collection(db, "teamStats"));
+    }
+    teamStatItems = [];
+    snap.forEach((d) => teamStatItems.push({ id: d.id, ...d.data() }));
+    teamStatItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    if (teamStatItems.length === 0 && currentUser) {
+      for (let i = 0; i < DEFAULT_TEAM_STATS.length; i++) {
+        const item = DEFAULT_TEAM_STATS[i];
+        await addDoc(collection(db, "teamStats"), {
+          value: item.value,
+          title: item.title,
+          isHighlight: item.isHighlight,
+          order: i,
+          active: true,
+          updatedAt: Date.now(),
+        });
+      }
+      const snap2 = await getDocs(collection(db, "teamStats"));
+      teamStatItems = [];
+      snap2.forEach((d) => teamStatItems.push({ id: d.id, ...d.data() }));
+      teamStatItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+
+    renderTeamStatTable();
+  } catch (err) {
+    console.error("Error loading team stats:", err);
+    teamStatItems = [];
+    renderTeamStatTable();
+  }
+}
+
+function renderTeamStatTable() {
+  const tbody = document.getElementById("teamstat-table-body");
+  if (!tbody) return;
+  if (teamStatItems.length === 0) {
+    tbody.innerHTML =
+      '<tr><td colspan="5" class="admin-empty">No team stats yet. Click "Add New Team Stat" to create one.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = teamStatItems
+    .map(
+      (item) => `
+    <tr>
+      <td>${item.value ?? 0}</td>
+      <td>${escapeHtml(item.title || "")}</td>
+      <td>${item.isHighlight ? '<span style="background:var(--primary);color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Highlight</span>' : "—"}</td>
+      <td>${item.order ?? 0}</td>
+      <td class="admin-actions">
+        <button class="btn-edit" onclick="window.adminAPI.editTeamStat('${item.id}')">Edit</button>
+        <button class="btn-delete" onclick="window.adminAPI.deleteTeamStat('${item.id}')">Delete</button>
+      </td>
+    </tr>`,
+    )
+    .join("");
+}
+
+function openTeamStatForm(id) {
+  editingId = id;
+  const item = id ? teamStatItems.find((p) => p.id === id) : null;
+  document.getElementById("teamstat-form-title").textContent = id
+    ? "Edit Team Stat"
+    : "Add Team Stat";
+  document.getElementById("teamstat-id").value = id || "";
+  document.getElementById("teamstat-value").value = item?.value ?? "";
+  document.getElementById("teamstat-title").value = item?.title || "";
+  document.getElementById("teamstat-highlight").value = item?.isHighlight ? "true" : "false";
+  document.getElementById("teamstat-order").value = item?.order ?? 0;
+  document.getElementById("teamstat-modal").style.display = "flex";
+}
+
+function closeTeamStatForm() {
+  document.getElementById("teamstat-modal").style.display = "none";
+  editingId = null;
+}
+
+async function saveTeamStatItem() {
+  const value = parseInt(document.getElementById("teamstat-value").value);
+  const title = document.getElementById("teamstat-title").value.trim();
+  if (isNaN(value) || !title) {
+    alert("Value and Title are required.");
+    return;
+  }
+  const order = parseInt(document.getElementById("teamstat-order").value) || 0;
+  const isHighlight = document.getElementById("teamstat-highlight").value === "true";
+
+  const data = {
+    value,
+    title,
+    isHighlight,
+    order,
+    active: true,
+    updatedAt: Date.now(),
+  };
+
+  try {
+    if (editingId) {
+      await updateDoc(doc(db, "teamStats", editingId), data);
+    } else {
+      await addDoc(collection(db, "teamStats"), data);
+    }
+    closeTeamStatForm();
+    await loadTeamStatItems();
+  } catch (err) {
+    alert("Save failed: " + err.message);
+  }
+}
+
+async function deleteTeamStatItem(id) {
+  if (!confirm("Delete this team stat? This cannot be undone.")) return;
+  try {
+    await deleteDoc(doc(db, "teamStats", id));
+    await loadTeamStatItems();
+  } catch (err) {
+    alert("Delete failed: " + err.message);
+  }
+}
+
+// ==========================================
+// HERO STATISTICS CRUD
+// ==========================================
+
+const DEFAULT_HERO_STATS = [
+  { value: 220, suffix: "+", label: "Children Supported" },
+  { value: 18, suffix: "+", label: "Years Serving" },
+  { value: 100, suffix: "%", label: "Audited Transparency" },
+];
+
+async function loadHeroStatItems() {
+  try {
+    let snap;
+    try {
+      snap = await getDocs(
+        query(collection(db, "heroStats"), orderBy("order", "asc")),
+      );
+    } catch (queryErr) {
+      console.warn("HeroStats orderBy failed, fetching unordered:", queryErr.message);
+      snap = await getDocs(collection(db, "heroStats"));
+    }
+    heroStatItems = [];
+    snap.forEach((d) => heroStatItems.push({ id: d.id, ...d.data() }));
+    heroStatItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    if (heroStatItems.length === 0 && currentUser) {
+      for (let i = 0; i < DEFAULT_HERO_STATS.length; i++) {
+        const item = DEFAULT_HERO_STATS[i];
+        await addDoc(collection(db, "heroStats"), {
+          value: item.value,
+          suffix: item.suffix,
+          label: item.label,
+          order: i,
+          active: true,
+          updatedAt: Date.now(),
+        });
+      }
+      const snap2 = await getDocs(collection(db, "heroStats"));
+      heroStatItems = [];
+      snap2.forEach((d) => heroStatItems.push({ id: d.id, ...d.data() }));
+      heroStatItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+
+    renderHeroStatTable();
+  } catch (err) {
+    console.error("Error loading hero stats:", err);
+    heroStatItems = [];
+    renderHeroStatTable();
+  }
+}
+
+function renderHeroStatTable() {
+  const tbody = document.getElementById("herostat-table-body");
+  if (!tbody) return;
+  if (heroStatItems.length === 0) {
+    tbody.innerHTML =
+      '<tr><td colspan="5" class="admin-empty">No hero stats yet. Click "Add New Hero Stat" to create one.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = heroStatItems
+    .map(
+      (item) => `
+    <tr>
+      <td>${item.value ?? 0}</td>
+      <td>${escapeHtml(item.suffix || "")}</td>
+      <td>${escapeHtml(item.label || "")}</td>
+      <td>${item.order ?? 0}</td>
+      <td class="admin-actions">
+        <button class="btn-edit" onclick="window.adminAPI.editHeroStat('${item.id}')">Edit</button>
+        <button class="btn-delete" onclick="window.adminAPI.deleteHeroStat('${item.id}')">Delete</button>
+      </td>
+    </tr>`,
+    )
+    .join("");
+}
+
+function openHeroStatForm(id) {
+  editingId = id;
+  const item = id ? heroStatItems.find((p) => p.id === id) : null;
+  document.getElementById("herostat-form-title").textContent = id
+    ? "Edit Hero Stat"
+    : "Add Hero Stat";
+  document.getElementById("herostat-id").value = id || "";
+  document.getElementById("herostat-value").value = item?.value ?? "";
+  document.getElementById("herostat-suffix").value = item?.suffix || "";
+  document.getElementById("herostat-label").value = item?.label || "";
+  document.getElementById("herostat-order").value = item?.order ?? 0;
+  document.getElementById("herostat-modal").style.display = "flex";
+}
+
+function closeHeroStatForm() {
+  document.getElementById("herostat-modal").style.display = "none";
+  editingId = null;
+}
+
+async function saveHeroStatItem() {
+  const value = parseInt(document.getElementById("herostat-value").value);
+  const label = document.getElementById("herostat-label").value.trim();
+  if (isNaN(value) || !label) {
+    alert("Value and Label are required.");
+    return;
+  }
+  const suffix = document.getElementById("herostat-suffix").value.trim();
+  const order = parseInt(document.getElementById("herostat-order").value) || 0;
+
+  const data = {
+    value,
+    suffix,
+    label,
+    order,
+    active: true,
+    updatedAt: Date.now(),
+  };
+
+  try {
+    if (editingId) {
+      await updateDoc(doc(db, "heroStats", editingId), data);
+    } else {
+      await addDoc(collection(db, "heroStats"), data);
+    }
+    closeHeroStatForm();
+    await loadHeroStatItems();
+  } catch (err) {
+    alert("Save failed: " + err.message);
+  }
+}
+
+async function deleteHeroStatItem(id) {
+  if (!confirm("Delete this hero stat? This cannot be undone.")) return;
+  try {
+    await deleteDoc(doc(db, "heroStats", id));
+    await loadHeroStatItems();
+  } catch (err) {
+    alert("Delete failed: " + err.message);
+  }
+}
+
+// ==========================================
 // HELPERS
 // ==========================================
 
@@ -986,6 +1409,12 @@ window.adminAPI = {
   deleteCoverflow: (id) => deleteCoverflowItem(id),
   saveCoverflow: saveCoverflowItem,
   closeCoverflow: closeCoverflowForm,
+  openPartnerAdd: () => openPartnerForm(null),
+  editPartner: (id) => openPartnerForm(id),
+  deletePartner: (id) => deletePartnerItem(id),
+  savePartner: savePartnerItem,
+  closePartner: closePartnerForm,
+  previewPartnerFile,
   openFacilityAdd: () => openFacilityForm(null),
   editFacility: (id) => openFacilityForm(id),
   deleteFacility: (id) => deleteFacilityItem(id),
@@ -995,6 +1424,21 @@ window.adminAPI = {
   saveDonateLink,
   editDonateLink,
   cancelEditDonateLink,
+  openGovSupportAdd: () => openGovSupportForm(null),
+  editGovSupport: (id) => openGovSupportForm(id),
+  deleteGovSupport: (id) => deleteGovSupportItem(id),
+  saveGovSupport: saveGovSupportItem,
+  closeGovSupport: closeGovSupportForm,
+  openTeamStatAdd: () => openTeamStatForm(null),
+  editTeamStat: (id) => openTeamStatForm(id),
+  deleteTeamStat: (id) => deleteTeamStatItem(id),
+  saveTeamStat: saveTeamStatItem,
+  closeTeamStat: closeTeamStatForm,
+  openHeroStatAdd: () => openHeroStatForm(null),
+  editHeroStat: (id) => openHeroStatForm(id),
+  deleteHeroStat: (id) => deleteHeroStatItem(id),
+  saveHeroStat: saveHeroStatItem,
+  closeHeroStat: closeHeroStatForm,
 };
 
 // ==========================================
@@ -1222,6 +1666,19 @@ function previewCampaignFile(input) {
   reader.readAsDataURL(file);
 }
 
+function previewPartnerFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const imgEl = document.getElementById("partner-current-img");
+  const wrap = document.getElementById("partner-current-img-wrap");
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    imgEl.src = e.target.result;
+    wrap.style.display = "block";
+  };
+  reader.readAsDataURL(file);
+}
+
 async function savePageImage() {
   if (!editingPageKey) return;
   const file = document.getElementById("page-image-file").files[0];
@@ -1372,6 +1829,198 @@ async function deleteCoverflowItem(id) {
   try {
     await deleteDoc(doc(db, "coverflowSlides", id));
     await loadCoverflowItems();
+  } catch (err) {
+    alert("Delete failed: " + err.message);
+  }
+}
+
+// ==========================================
+// PARTNERS & SUPPORTERS CRUD
+// ==========================================
+
+// Static fallback logos (from the live Home page marquee) — used to
+// auto-seed Firestore on first admin login so every existing partner
+// logo becomes immediately editable, exactly like the Facilities seed.
+const DEFAULT_PARTNERS = [
+  { name: "Coal India Limited", imageUrl: "/assets/images/partners/coal_india-removebg-preview.png" },
+  { name: "Government of Jharkhand", imageUrl: "/assets/images/partners/Government_of_Jharkhand-removebg-preview.png" },
+  { name: "Maithan Alloys Limited", imageUrl: "/assets/images/partners/maithan_alloys-removebg-preview.png" },
+  { name: "National Stock Exchange SSE", imageUrl: "/assets/images/partners/NSE-preview-removebg-preview.png" },
+  { name: "Parivaar Association", imageUrl: "/assets/images/partners/parivaar-removebg-preview.png" },
+  { name: "NGO Darpan", imageUrl: "/assets/images/partners/darpan.png" },
+  { name: "Adani Foundation", imageUrl: "/assets/images/partners/adani_foundation-removebg-preview.png" },
+  { name: "SBI Foundation", imageUrl: "/assets/images/partners/sbi_foundation-removebg-preview.png" },
+  { name: "Ujjivan Small Finance Bank", imageUrl: "/assets/images/partners/_ujjivan_bank-removebg-preview.png" },
+  { name: "Castron Technologies", imageUrl: "/assets/images/partners/castron_tech-removebg-preview.png" },
+  { name: "Cocmos", imageUrl: "/assets/images/partners/cocmos-removebg-preview.png" },
+  { name: "NIEPMD", imageUrl: "/assets/images/partners/niepmd-removebg-preview.png" },
+  { name: "The National Trust", imageUrl: "/assets/images/partners/national_trust-removebg-preview.png" },
+  { name: "Jharkhand Government", imageUrl: "/assets/images/partners/jharkhand_gov-removebg-preview.png" },
+];
+
+async function loadPartnerItems() {
+  try {
+    let snap;
+    try {
+      snap = await getDocs(
+        query(collection(db, "partners"), orderBy("order", "asc")),
+      );
+    } catch (queryErr) {
+      // Fallback: if orderBy fails (e.g., no index yet), get without ordering
+      console.warn("Partners orderBy failed, fetching unordered:", queryErr.message);
+      snap = await getDocs(collection(db, "partners"));
+    }
+    partnerItems = [];
+    snap.forEach((d) => partnerItems.push({ id: d.id, ...d.data() }));
+    // Sort client-side as fallback
+    partnerItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    // Auto-seed Firestore with the existing website logos on first load,
+    // so every current partner becomes editable instead of only allowing
+    // brand-new additions. Runs once — subsequent loads find existing docs.
+    if (partnerItems.length === 0 && currentUser) {
+      for (let i = 0; i < DEFAULT_PARTNERS.length; i++) {
+        const p = DEFAULT_PARTNERS[i];
+        await addDoc(collection(db, "partners"), {
+          name: p.name,
+          website: "",
+          imageUrl: p.imageUrl,
+          order: i,
+          active: true,
+          updatedAt: Date.now(),
+        });
+      }
+      const snap2 = await getDocs(collection(db, "partners"));
+      partnerItems = [];
+      snap2.forEach((d) => partnerItems.push({ id: d.id, ...d.data() }));
+      partnerItems.sort((a, b) => (a.order || 0) - (b.order || 0));
+    }
+
+    renderPartnerTable();
+  } catch (err) {
+    console.error("Error loading partners:", err);
+    partnerItems = [];
+    renderPartnerTable();
+  }
+}
+
+function renderPartnerTable() {
+  const tbody = document.getElementById("partner-table-body");
+  if (!tbody) return;
+  if (partnerItems.length === 0) {
+    tbody.innerHTML =
+      '<tr><td colspan="6" class="admin-empty">No partners yet. Click "Add New Partner" to create one.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = partnerItems
+    .map(
+      (item) => `
+    <tr>
+      <td><img src="${item.imageUrl || ""}" alt="" class="admin-thumb" onerror="this.style.opacity=0"></td>
+      <td>${escapeHtml(item.name || "")}</td>
+      <td>${item.website ? `<a href="${escapeHtml(item.website)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.website)}</a>` : "—"}</td>
+      <td>${item.active === false ? "Inactive" : "Active"}</td>
+      <td>${item.order ?? 0}</td>
+      <td class="admin-actions">
+        <button class="btn-edit" onclick="window.adminAPI.editPartner('${item.id}')">Edit</button>
+        <button class="btn-delete" onclick="window.adminAPI.deletePartner('${item.id}')">Delete</button>
+      </td>
+    </tr>`,
+    )
+    .join("");
+}
+
+function openPartnerForm(id) {
+  editingId = id;
+  const item = id ? partnerItems.find((p) => p.id === id) : null;
+  document.getElementById("partner-form-title").textContent = id
+    ? "Edit Partner"
+    : "Add Partner";
+  document.getElementById("partner-id").value = id || "";
+  document.getElementById("partner-name").value = item?.name || "";
+  document.getElementById("partner-website").value = item?.website || "";
+  document.getElementById("partner-order").value = item?.order ?? 0;
+  document.getElementById("partner-active").value =
+    item?.active === false ? "false" : "true";
+  const origUrl = item?.imageUrl || "";
+  document.getElementById("partner-current-img").dataset.originalUrl =
+    origUrl;
+  document.getElementById("partner-current-img").src = origUrl;
+  document.getElementById("partner-current-img-wrap").style.display = origUrl
+    ? "block"
+    : "none";
+  document.getElementById("partner-file").value = "";
+  document.getElementById("partner-modal").style.display = "flex";
+}
+
+function closePartnerForm() {
+  document.getElementById("partner-modal").style.display = "none";
+  editingId = null;
+}
+
+async function savePartnerItem() {
+  const name = document.getElementById("partner-name").value.trim();
+  if (!name) {
+    alert("Partner name is required.");
+    return;
+  }
+  const website = document.getElementById("partner-website").value.trim();
+  const order = parseInt(document.getElementById("partner-order").value) || 0;
+  const active = document.getElementById("partner-active").value === "true";
+  const file = document.getElementById("partner-file").files[0];
+  let imageUrl =
+    document.getElementById("partner-current-img").dataset.originalUrl || "";
+
+  if (file) {
+    // Delete old logo from R2 before uploading new one
+    await deleteOldImage(imageUrl);
+    const compressed = await compressImage(file, 600, 0.9);
+    const uploadedUrl = await uploadImage(
+      compressed,
+      "partners/" + makeWebpFilename(name),
+    );
+    imageUrl = uploadedUrl;
+  }
+
+  // Always cache-bust so browser fetches fresh logo
+  imageUrl = cacheBustUrl(imageUrl);
+
+  if (!imageUrl) {
+    alert("A logo image is required.");
+    return;
+  }
+
+  const data = {
+    name,
+    website,
+    order,
+    active,
+    imageUrl,
+    updatedAt: Date.now(),
+  };
+
+  try {
+    if (editingId) {
+      await updateDoc(doc(db, "partners", editingId), data);
+    } else {
+      await addDoc(collection(db, "partners"), data);
+    }
+    closePartnerForm();
+    await loadPartnerItems();
+  } catch (err) {
+    alert("Save failed: " + err.message);
+  }
+}
+
+async function deletePartnerItem(id) {
+  if (!confirm("Delete this partner? This cannot be undone.")) return;
+  try {
+    const item = partnerItems.find((p) => p.id === id);
+    await deleteDoc(doc(db, "partners", id));
+    if (item?.imageUrl) {
+      await deleteOldImage(item.imageUrl);
+    }
+    await loadPartnerItems();
   } catch (err) {
     alert("Delete failed: " + err.message);
   }

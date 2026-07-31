@@ -166,6 +166,41 @@ export async function loadCampaigns() {
 }
 
 // ==========================================
+// PARTNERS & SUPPORTERS LOADER
+// ==========================================
+
+export async function loadPartners() {
+  const track = document.getElementById("partnersTrack");
+  if (!track) return;
+
+  try {
+    const snap = await getDocs(collection(db, "partners"));
+    let items = [];
+    snap.forEach((d) => items.push({ id: d.id, ...d.data() }));
+
+    // Only active partners, sorted by display order
+    items = items
+      .filter((item) => item.active !== false)
+      .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    // If Firestore has no partner docs yet, keep the static fallback
+    // markup already in the DOM instead of showing an empty section.
+    if (items.length === 0) return;
+
+    const cardHtml = (item) => `
+        <div class="partner-card">
+          <img src="${escapeAttr(item.imageUrl || "")}" alt="${escapeAttr(item.name || "")}" class="partner-logo" loading="lazy" decoding="async">
+        </div>`;
+
+    // Render the set twice back-to-back so the CSS marquee keyframe
+    // (translateX(-50%)) loops seamlessly, matching the original markup.
+    track.innerHTML = items.map(cardHtml).join("") + items.map(cardHtml).join("");
+  } catch (err) {
+    console.error("[Firebase Content] Partners load error:", err);
+  }
+}
+
+// ==========================================
 // FEATURED CAMPAIGN LOADER
 // ==========================================
 
@@ -485,6 +520,110 @@ function applyDonateLink(url) {
 }
 
 // ==========================================
+// GOVERNMENT SUPPORT LOADER
+// ==========================================
+
+export async function loadGovSupport() {
+  const container = document.getElementById("govSupportGrid");
+  if (!container) return;
+
+  try {
+    const snap = await getDocs(collection(db, "govSupport"));
+    let items = [];
+    snap.forEach((d) => items.push({ id: d.id, ...d.data() }));
+    items = items.filter((item) => item.active !== false);
+    items.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    if (items.length === 0) return; // keep fallback HTML
+
+    container.innerHTML = items
+      .map(
+        (item) => `<div class="gov-card reveal">
+  <span class="gov-value"><span class="counter" data-target="${item.value}">0</span>+</span>
+  <span class="gov-label">${escapeHtml(item.title)}</span>
+</div>`,
+      )
+      .join("");
+
+    if (window.ScrollRevealEngine) window.ScrollRevealEngine.refresh();
+  } catch (err) {
+    console.error("Error loading gov support:", err);
+  }
+}
+
+// ==========================================
+// TEAM STATISTICS LOADER
+// ==========================================
+
+export async function loadTeamStats() {
+  const container = document.getElementById("teamStatsGrid");
+  if (!container) return;
+
+  try {
+    const snap = await getDocs(collection(db, "teamStats"));
+    let items = [];
+    snap.forEach((d) => items.push({ id: d.id, ...d.data() }));
+    items = items.filter((item) => item.active !== false);
+    items.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    if (items.length === 0) return; // keep fallback HTML
+
+    container.innerHTML = items
+      .map(
+        (item) => `<div class="team-stat-card${item.isHighlight ? " is-highlight" : ""} reveal">
+  <span class="team-stat-value"><span class="counter" data-target="${item.value}">0</span></span>
+  <span class="team-stat-label">${escapeHtml(item.title)}</span>
+</div>`,
+      )
+      .join("");
+
+    if (window.ScrollRevealEngine) window.ScrollRevealEngine.refresh();
+  } catch (err) {
+    console.error("Error loading team stats:", err);
+  }
+}
+
+// ==========================================
+// HERO STATISTICS LOADER
+// ==========================================
+
+export async function loadHeroStats() {
+  const container = document.getElementById("heroStatsRow");
+  if (!container) return;
+
+  try {
+    const snap = await getDocs(collection(db, "heroStats"));
+    let items = [];
+    snap.forEach((d) => items.push({ id: d.id, ...d.data() }));
+    items = items.filter((item) => item.active !== false);
+    items.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+    if (items.length === 0) return; // keep fallback HTML
+
+    container.innerHTML = items
+      .map(
+        (item) => `<div class="stat-item">
+  <div class="stat-count d-flex" style="color: var(--primary)">
+    <span class="counter" data-target="${item.value}">0</span>
+    <span>${escapeHtml(item.suffix || "+")}</span>
+  </div>
+  <span class="stat-label">${escapeHtml(item.label)}</span>
+</div>`,
+      )
+      .join("");
+
+    if (window.ScrollRevealEngine) window.ScrollRevealEngine.refresh();
+  } catch (err) {
+    console.error("Error loading hero stats:", err);
+  }
+}
+
+// Expose to window so app.js and component lifecycle hooks can call them reliably
+window.loadHeroStats = loadHeroStats;
+window.loadGovSupport = loadGovSupport;
+window.loadTeamStats = loadTeamStats;
+
+// ==========================================
 // AUTO-INIT ON DOMContentLoaded
 // ==========================================
 
@@ -528,6 +667,14 @@ document.addEventListener("DOMContentLoaded", () => {
   loadFacilities();
   loadPageImages();
   loadDonateLink();
+  loadPartners();
+  loadGovSupport();
+  loadTeamStats();
+  // loadHeroStats() is intentionally NOT called here.
+  // #heroStatsRow is inside components/hero.html which is fetched async by
+  // ComponentLoaderInstance.loadAll() in app.js. Calling loadHeroStats() here
+  // races against that fetch and finds the container null, silently returning.
+  // Instead, app.js calls window.loadHeroStats() after loadAll() completes.
 });
 
 // ==========================================

@@ -98,7 +98,10 @@ class ComponentLoader {
     // Use absolute path for components — works with clean URLs (/gallery/)
     // and legacy URLs (/pages/gallery.html) alike
     const basePath = "/components/";
-    const templateUrl = `${basePath}${name}.html`;
+    // Python's simple development server does not send Cache-Control headers.
+    // Version this request so a cached component cannot re-inject old static
+    // statistic values after the public page has been refreshed.
+    const templateUrl = `${basePath}${name}.html?v=16`;
 
     try {
       const response = await fetch(templateUrl);

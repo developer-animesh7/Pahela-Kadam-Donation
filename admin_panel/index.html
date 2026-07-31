@@ -126,6 +126,13 @@
           >
             Internship
           </button>
+          <button
+            class="tab-btn"
+            data-tab="statistics"
+            onclick="window.adminAPI.switchTab('statistics')"
+          >
+            Statistics
+          </button>
         </div>
       </div>
       <!-- /admin-sticky-top -->
@@ -269,6 +276,57 @@
             <tbody id="home-table-body">
               <tr>
                 <td colspan="3" class="admin-empty">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Partners & Supporters -->
+        <h3 class="admin-subheading" style="margin-top: var(--space-6)">
+          Partners &amp; Supporters
+        </h3>
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-4);
+          "
+        >
+          Manage the partner logos shown in the "Our Partners &amp;
+          Supporters" marquee on the Home page.
+        </p>
+        <button
+          class="admin-add-btn"
+          onclick="window.adminAPI.openPartnerAdd()"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Partner
+        </button>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Logo</th>
+                <th>Name</th>
+                <th>Website</th>
+                <th>Status</th>
+                <th>Order</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="partner-table-body">
+              <tr>
+                <td colspan="6" class="admin-empty">Loading...</td>
               </tr>
             </tbody>
           </table>
@@ -671,6 +729,113 @@
           </table>
         </div>
       </div>
+
+    <!-- Statistics Tab -->
+    <div id="tab-statistics" class="tab-panel" style="display: none">
+      <!-- Hero Statistics -->
+      <h3 class="admin-subheading">Hero Statistics</h3>
+      <button class="admin-add-btn" onclick="window.adminAPI.openHeroStatAdd()">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add New Hero Stat
+      </button>
+      <div class="admin-table-wrap" style="margin-bottom: var(--space-8)">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Suffix</th>
+              <th>Label</th>
+              <th>Order</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="herostat-table-body">
+            <tr>
+              <td colspan="5" class="admin-empty">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Government Support -->
+      <h3 class="admin-subheading">Government Support</h3>
+      <button class="admin-add-btn" onclick="window.adminAPI.openGovSupportAdd()">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add New Gov Support Item
+      </button>
+      <div class="admin-table-wrap" style="margin-bottom: var(--space-8)">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Title</th>
+              <th>Order</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="govsupport-table-body">
+            <tr>
+              <td colspan="4" class="admin-empty">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Team Statistics -->
+      <h3 class="admin-subheading">Team Statistics</h3>
+      <button class="admin-add-btn" onclick="window.adminAPI.openTeamStatAdd()">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add New Team Stat
+      </button>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Title</th>
+              <th>Highlight</th>
+              <th>Order</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="teamstat-table-body">
+            <tr>
+              <td colspan="5" class="admin-empty">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     </div>
 
     <!-- ============ PAGE IMAGE MODAL ============ -->
@@ -935,6 +1100,122 @@
           <button
             class="admin-btn-save"
             onclick="window.adminAPI.saveCoverflow()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ PARTNER MODAL ============ -->
+    <div id="partner-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="partner-form-title">Add Partner</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closePartner()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="partner-id" />
+          <div class="admin-form-group">
+            <label>Partner Name</label>
+            <input
+              type="text"
+              id="partner-name"
+              placeholder="e.g. Coal India Limited"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Website URL (optional)</label>
+            <input
+              type="url"
+              id="partner-website"
+              placeholder="https://www.example.com"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Display Order</label>
+              <input type="number" id="partner-order" value="0" />
+            </div>
+            <div class="admin-form-group">
+              <label>Status</label>
+              <select id="partner-active">
+                <option value="true" selected>Active</option>
+                <option value="false">Inactive</option>
+              </select>
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Logo</label>
+            <div
+              class="admin-file-upload"
+              onclick="document.getElementById('partner-file').click()"
+            >
+              <input
+                type="file"
+                id="partner-file"
+                accept="image/*"
+                onchange="window.adminAPI.previewPartnerFile(this)"
+              />
+              <span class="admin-file-upload-label">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Click to select a logo
+              </span>
+            </div>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 12px;
+                margin: var(--space-2) 0 0;
+                line-height: 1.5;
+              "
+            >
+              Recommended Size: 500 &times; 300 px &bull; Minimum Size: 400
+              &times; 240 px<br />
+              Accepted Formats: PNG, JPG, JPEG (auto-optimized on upload)
+            </p>
+            <div
+              id="partner-current-img-wrap"
+              class="admin-current-img"
+              style="display: none"
+            >
+              <img id="partner-current-img" src="" alt="Current logo" />
+            </div>
+            <div
+              class="admin-upload-progress-wrap"
+              id="partner-upload-progress-wrap"
+              style="display: none"
+            >
+              <div id="partner-upload-progress"></div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closePartner()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.savePartner()"
           >
             Save
           </button>
@@ -1351,7 +1632,166 @@
       </div>
     </div>
 
+    <!-- ============ HERO STAT MODAL ============ -->
+    <div id="herostat-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="herostat-form-title">Add Hero Stat</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeHeroStat()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="herostat-id" />
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Value (number)</label>
+              <input type="number" id="herostat-value" placeholder="e.g. 220" />
+            </div>
+            <div class="admin-form-group">
+              <label>Suffix (+, %, etc)</label>
+              <input type="text" id="herostat-suffix" placeholder="e.g. +" />
+            </div>
+          </div>
+          <div class="admin-form-group">
+            <label>Label</label>
+            <input
+              type="text"
+              id="herostat-label"
+              placeholder="e.g. Children Supported"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Display Order</label>
+            <input type="number" id="herostat-order" value="0" />
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeHeroStat()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveHeroStat()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ GOV SUPPORT MODAL ============ -->
+    <div id="govsupport-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="govsupport-form-title">Add Gov Support Item</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeGovSupport()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="govsupport-id" />
+          <div class="admin-form-group">
+            <label>Value (number)</label>
+            <input type="number" id="govsupport-value" placeholder="e.g. 200" />
+          </div>
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="govsupport-title"
+              placeholder="e.g. Aadhaar Card"
+            />
+          </div>
+          <div class="admin-form-group">
+            <label>Display Order</label>
+            <input type="number" id="govsupport-order" value="0" />
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeGovSupport()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveGovSupport()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TEAM STAT MODAL ============ -->
+    <div id="teamstat-modal" class="admin-modal-overlay">
+      <div class="admin-modal">
+        <div class="admin-modal-header">
+          <h3 id="teamstat-form-title">Add Team Stat</h3>
+          <button
+            class="admin-modal-close"
+            onclick="window.adminAPI.closeTeamStat()"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="admin-modal-body">
+          <input type="hidden" id="teamstat-id" />
+          <div class="admin-form-group">
+            <label>Value (number)</label>
+            <input type="number" id="teamstat-value" placeholder="e.g. 12" />
+          </div>
+          <div class="admin-form-group">
+            <label>Title</label>
+            <input
+              type="text"
+              id="teamstat-title"
+              placeholder="e.g. Teachers"
+            />
+          </div>
+          <div class="admin-form-row">
+            <div class="admin-form-group">
+              <label>Is Highlight</label>
+              <select id="teamstat-highlight">
+                <option value="false" selected>No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+            <div class="admin-form-group">
+              <label>Display Order</label>
+              <input type="number" id="teamstat-order" value="0" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button
+            class="admin-btn-cancel"
+            onclick="window.adminAPI.closeTeamStat()"
+          >
+            Cancel
+          </button>
+          <button
+            class="admin-btn-save"
+            onclick="window.adminAPI.saveTeamStat()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Admin JS (ESM Module) -->
-    <script type="module" src="/admin_panel/firebase-admin.js"></script>
+    <script type="module" src="/admin_panel/firebase-admin.js?v=16"></script>
   </body>
 </html>

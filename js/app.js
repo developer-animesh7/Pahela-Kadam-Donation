@@ -42,11 +42,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 1. Register Reusable Interactive Components before loading
   registerNavbarComponent();
   registerDonationCardComponent();
+  registerHeroComponent();
 
   // 2. Execute dynamic HTML template compilation
   if (window.ComponentLoaderInstance) {
     await window.ComponentLoaderInstance.loadAll();
   }
+
+  // 2b. Fallback trigger for statistics loaders after component compilation completes
+  triggerStatisticsLoaders();
 
   // Reset scroll to top again after async layout height changes
   resetScroll();
@@ -469,3 +473,43 @@ function initializeMobileHeroImageAnimation() {
 
   observer.observe(frame);
 }
+
+/**
+ * Registry callback: Hero component lifecycle manager.
+ * Triggers hero stats loading immediately when hero.html template is injected into the DOM.
+ */
+function registerHeroComponent() {
+  if (!window.ComponentLoaderInstance) return;
+
+  window.ComponentLoaderInstance.register("hero", () => {
+    runStatLoader("loadHeroStats");
+  });
+}
+
+/**
+ * Executes statistical loader functions safely, accounting for module script deferral.
+ */
+function triggerStatisticsLoaders() {
+  runStatLoader("loadHeroStats");
+  runStatLoader("loadGovSupport");
+  runStatLoader("loadTeamStats");
+}
+
+function runStatLoader(fnName) {
+  if (typeof window[fnName] === "function") {
+    window[fnName]();
+  } else {
+    // Retry if module script (firebase-content.js) has not finished executing yet
+    let retries = 0;
+    const interval = setInterval(() => {
+      retries++;
+      if (typeof window[fnName] === "function") {
+        clearInterval(interval);
+        window[fnName]();
+      } else if (retries > 20) {
+        clearInterval(interval);
+      }
+    }, 100);
+  }
+}
+
