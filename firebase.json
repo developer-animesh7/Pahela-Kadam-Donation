@@ -6,6 +6,8 @@
   "hosting": {
     "public": ".",
     "ignore": [
+      "index.html",
+      "local-index.html",
       "firebase.json",
       "firestore.rules",
       "firestore.indexes.json",
