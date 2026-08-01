@@ -1,6 +1,6 @@
-# Pahela Kadam – Premium Donation Platform
+# Pahela Kadam School
 
-A premium redesigned web application and fundraising platform for the **Pahela Kadam School for Special Children**, operated under the governance of the **Narayani Charitable Trust** in Dhanbad, Jharkhand.
+A web application and fundraising platform for the **Pahela Kadam School for Special Children**, operated under the governance of the **Narayani Charitable Trust** in Dhanbad, Jharkhand.
 
 This platform connects donors, sponsors, and supporters to active therapies, clinical camps, and educational campaigns. Designed with modern nonprofit aesthetics (Charity: Water, UNICEF, GiveIndia inspired) to optimize user trust, information accessibility, and frictionless donation flows.
 
