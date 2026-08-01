@@ -112,3 +112,5 @@ When editing or adding pages to the Pahela Kadam platform, ask this question fir
 *   **Do not create text-heavy brochure pages.** Introduce real-world transformation stories immediately.
 *   **Always couple stories with clear CTAs.** An informational paragraph about speech therapy should be immediately followed by: *"Sponsor a therapy session (₹1,500)"* linked directly to the donation portal.
 *   **Audit with Trust indicators.** Whenever financial numbers or metrics are shown, display a verification tag (e.g., audited annual report links or 80G tax benefit reminders).
+
+<!-- Pahela Kadam - School For Special Children -->

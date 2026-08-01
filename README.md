@@ -99,3 +99,5 @@ Pahela-Kadam-Donation/
 1.  **Transparency Records Integration**: Expand transparency audit listings with downloadable audit reports.
 2.  **Interactive Payment Gateway**: Connect checkout workflows to local test payment systems (Razorpay / UPI).
 3.  **Unified Component Compilations**: Refactor navbar and footer blocks so editing a single file propagates across all pages instantly.
+
+<!-- Pahela Kadam - School For Special Children -->

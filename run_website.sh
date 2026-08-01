@@ -12,3 +12,5 @@ echo ""
 echo "* Note: Terminate this script/process to stop the server *"
 echo "=========================================================="
 python3 -m http.server 8002
+
+# Pahela Kadam - School For Special Children

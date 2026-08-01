@@ -13,3 +13,5 @@ echo.
 echo * Note: Close this command prompt window to stop the server *
 echo ==========================================================
 python -m http.server 8002
+
+REM Pahela Kadam - School For Special Children
