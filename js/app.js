@@ -3,6 +3,25 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
+/**
+ * Derive a short canonical slug from a URL pathname.
+ * Used by both registerNavbarComponent and initializeStaticNavbar
+ * to determine which nav link should be highlighted as active.
+ *   "/"                  → "home"
+ *   "/index.html"        → "home"
+ *   "/pages/about.html" → "about"
+ *   "/about/"           → "about"
+ *   "/internship/"      → "internship"
+ */
+function slugFromPath(p) {
+  let s = p.replace(/\/$/, "").replace(/^\//, "").replace(/\.html$/, "");
+  s = s.replace(/^pages\//, "");
+  // "landing" is the actual home page file (index.html redirects to /pages/landing.html)
+  // "/" and "/index.html" also map to "home"
+  return s === "" || s === "index" || s === "landing" ? "home" : s;
+}
+
+
 // Single efficient scroll reset handler
 function resetScroll() {
   window.scrollTo(0, 0);
@@ -196,18 +215,19 @@ function registerNavbarComponent() {
 
     if (!burgerBtn || !menuEl) return;
 
-    // Highlight current page link based on browser URL
-    const path = window.location.pathname;
-    const links = navbarElement.querySelectorAll(".nav-link");
-    links.forEach((link) => {
-      const href = link.getAttribute("href");
-      if (
-        href &&
-        (path.endsWith(href) ||
-          (path === "/" && href.includes("landing.html")) ||
-          (path.endsWith("/") && href.includes("landing.html")))
-      ) {
+    // Highlight current page link based on browser URL.
+    // slugFromPath() is defined at module level above DOMContentLoaded.
+    // It normalises both the current path and each nav-link href into a
+    // canonical slug (e.g. "about", "gallery", "home") and compares them.
+    const currentSlug = slugFromPath(window.location.pathname);
+    const navLinks = navbarElement.querySelectorAll(".nav-link");
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      if (slugFromPath(href) === currentSlug) {
         link.classList.add("is-current-page");
+      } else {
+        link.classList.remove("is-current-page");
       }
     });
     burgerBtn.addEventListener("click", () => {
@@ -236,8 +256,8 @@ function registerNavbarComponent() {
     }
 
     // Close menu when links are clicked (useful for anchors on same page)
-    const navLinks = menuEl.querySelectorAll("a");
-    navLinks.forEach((link) => {
+    const mobileMenuLinks = menuEl.querySelectorAll("a");
+    mobileMenuLinks.forEach((link) => {
       link.addEventListener("click", () => {
         burgerBtn.setAttribute("aria-expanded", "false");
         burgerBtn.classList.remove("is-active");
@@ -396,18 +416,16 @@ function initializeStaticNavbar() {
 
   if (!burgerBtn || !menuEl) return;
 
-  // Highlight current page link based on browser URL
-  const path = window.location.pathname;
-  const links = navbarElement.querySelectorAll(".nav-link");
-  links.forEach((link) => {
-    const href = link.getAttribute("href");
-    if (
-      href &&
-      (path.endsWith(href) ||
-        (path === "/" && href.includes("landing.html")) ||
-        (path.endsWith("/") && href.includes("landing.html")))
-    ) {
+  // Highlight current page link based on browser URL.
+  // slugFromPath() is defined at module level — no local re-declaration needed.
+  const currentSlug = slugFromPath(window.location.pathname);
+  const currentNavLinks = navbarElement.querySelectorAll(".nav-link");
+  currentNavLinks.forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    if (slugFromPath(href) === currentSlug) {
       link.classList.add("is-current-page");
+    } else {
+      link.classList.remove("is-current-page");
     }
   });
 
@@ -433,8 +451,8 @@ function initializeStaticNavbar() {
     });
   }
 
-  const navLinks = menuEl.querySelectorAll("a");
-  navLinks.forEach((link) => {
+  const mobileNavLinks = menuEl.querySelectorAll("a");
+  mobileNavLinks.forEach((link) => {
     link.addEventListener("click", () => {
       burgerBtn.setAttribute("aria-expanded", "false");
       burgerBtn.classList.remove("is-active");
