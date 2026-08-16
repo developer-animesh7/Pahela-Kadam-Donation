@@ -17,6 +17,25 @@
   <meta name="twitter:title" content="Pahela Kadam - School For Special Children">
   <meta name="twitter:description" content="Schooling and Training for Special Children & Adults.">
 
+  <!-- Facebook Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1796065928214864');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1796065928214864&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
   <!-- Browser Favicon -->
   <link rel="icon" type="image/x-icon" href="../assets/images/logos/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logos/favicon-32x32.png">
@@ -285,7 +304,7 @@
 
       <!-- Right: Donate CTA + Burger -->
       <div class="d-flex" style="align-items: center; gap: var(--space-3);">
-        <a href="https://razorpay.me/@narayanicharitabletrust" data-donate-link target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm pulse-donate desktop-only">
+        <a href="https://razorpay.me/@narayanicharitabletrust" data-donate-link target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm pulse-donate desktop-only" onclick="if(typeof fbq==='function'){fbq('track','Donate');}">
           <span>Donate</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 2px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </a>
@@ -319,7 +338,7 @@
       <a href="/pages/contact.html" class="nav-link">Contact</a>
       <a href="/pages/internship.html" class="nav-link">Internship</a>
 
-      <a href="https://razorpay.me/@narayanicharitabletrust" data-donate-link target="_blank" rel="noopener noreferrer" class="btn btn-accent pulse-donate" style="width: 200px; margin-top: var(--space-2);">
+      <a href="https://razorpay.me/@narayanicharitabletrust" data-donate-link target="_blank" rel="noopener noreferrer" class="btn btn-accent pulse-donate" style="width: 200px; margin-top: var(--space-2);" onclick="if(typeof fbq==='function'){fbq('track','Donate');}">
         <span>Donate</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       </a>
